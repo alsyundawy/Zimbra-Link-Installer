@@ -82,7 +82,7 @@ Repositori ini menyatukan:
 
 Tautan resmi portal Zimbra Synacor, dokumentasi wiki, repository build system, dan rujukan biner komunitas (Unofficial FOSS / OSE):
 
-### 🌐 Portal Resmi & Dokumentasi Zimbra Synacor
+<h3 id="-portal-resmi--dokumentasi-zimbra-synacor">🌐 Portal Resmi & Dokumentasi Zimbra Synacor</h3>
 
 - **Official Network Edition Portal:** <https://www.zimbra.com/downloads/zimbra-collaboration/>
 - **Official Open Source Edition Portal:** <https://www.zimbra.com/downloads/zimbra-collaboration-open-source/>
@@ -92,13 +92,13 @@ Tautan resmi portal Zimbra Synacor, dokumentasi wiki, repository build system, d
 - **Official Product Management Portal & Release Notes:** <https://pm.zimbra.com>
 - **Official Zimbra Source Repositories (GitHub):** <https://github.com/Zimbra>
 
-### 📦 Unduhan Biner Komunitas Unofficial FOSS / OSE & Mirror
+<h3 id="-unduhan-biner-komunitas-unofficial-foss--ose--mirror">📦 Unduhan Biner Komunitas Unofficial FOSS / OSE & Mirror</h3>
 
 - **Maldua Zimbra FOSS Archive & Mirror Repository:** [maldua/zimbra-foss](https://github.com/maldua/zimbra-foss) (Server Mirror: `https://maldua.dlinkddns.com/zimbra/`)
 - **TechFiles Unofficial ZCS FOSS CDN (Ian Walker Builds):** <https://techfiles.online>
 - **Zextras Community Portal & Carbonio Ecosystem:** <https://community.zextras.com>
 
-### 🛠️ Script Builder, Incident Response & Toolkits
+<h3 id="-script-builder-incident-response--toolkits">🛠️ Script Builder, Incident Response & Toolkits</h3>
 
 - **Official Zimbra Build System (`zm-build`):** [Zimbra/zm-build](https://github.com/Zimbra/zm-build)
 - **Zimbra Link Installer & Telemetry Suite:** [alsyundawy/Zimbra-Link-Installer](https://github.com/alsyundawy/Zimbra-Link-Installer)
@@ -111,7 +111,7 @@ Tautan resmi portal Zimbra Synacor, dokumentasi wiki, repository build system, d
 
 ## Quickstart
 
-### Metode 1: Menggunakan Script Otomatis Interaktif (Direkomendasikan)
+<h3 id="metode-1-menggunakan-script-otomatis-interaktif-direkomendasikan">Metode 1: Menggunakan Script Otomatis Interaktif (Direkomendasikan)</h3>
 
 Cukup jalankan satu perintah berikut pada terminal server Anda:
 
@@ -122,7 +122,7 @@ chmod +x zimbra-link-installer.sh
 sudo ./zimbra-link-installer.sh
 ```
 
-### Metode 2: Unduhan Manual Biner Target
+<h3 id="metode-2-unduhan-manual-biner-target">Metode 2: Unduhan Manual Biner Target</h3>
 
 ```bash
 # 1. Unduh paket installer target (Contoh: ZCS FOSS 10.1.20 untuk Ubuntu 22.04 LTS)
@@ -162,7 +162,7 @@ PILIH KATEGORI BINER ZIMBRA:
 ====================================================================
 ```
 
-### Fitur Utama CLI
+<h3 id="fitur-utama-cli">Fitur Utama CLI</h3>
 
 - **Defensive Shell Architecture:** Dilengkapi `set -Eeuo pipefail`, `IFS=$'
 '`, dan `umask 022` untuk perlindungan dari race-condition dan word splitting.
@@ -178,14 +178,14 @@ PILIH KATEGORI BINER ZIMBRA:
 
 Sebelum instalasi atau kompilasi ZCS, pastikan dependensi sistem berikut telah terpenuhi:
 
-### 1. Kebutuhan Runtime Minimum
+<h3 id="1-kebutuhan-runtime-minimum">1. Kebutuhan Runtime Minimum</h3>
 
 - **Arsitektur:** `x86_64` (64-bit Linux).
 - **Memori RAM:** Minimal 8 GB RAM (Direkomendasikan 16–32 GB untuk server produksi aktif).
 - **Disk Space:** Minimal 50 GB ruang kosong pada direktori `/opt/zimbra`.
 - **Utilitas Wajib:** `pax`, `net-tools`, `sysstat`, `libaio1`, `perl`, `cron`.
 
-### 2. Kebutuhan Toolchain Kompilasi (Build Environment)
+<h3 id="2-kebutuhan-toolchain-kompilasi-build-environment">2. Kebutuhan Toolchain Kompilasi (Build Environment)</h3>
 
 - **Java Development Kit:** OpenJDK 11 / OpenJDK 17 (`openjdk-11-jdk`, `openjdk-17-jdk`).
 - **Build Automations:** Apache Ant (`ant`, `ant-optional`), Apache Maven (`mvn`).
@@ -209,7 +209,7 @@ Setiap tautan unduhan dalam repositori ini telah diuji secara berkala dengan skr
 > [!NOTE]
 > Seluruh tautan biner resmi dari **ZCS 4.5.x hingga 10.1.x**, paket rilis komersial **Network Edition (NE)**, edisi **Open Source Edition (FOSS)**, serta **Cumulative Security Patches** langsung dari server resmi `files.zimbra.com` (berdasarkan dokumentasi [Zimbra Releases Wiki](https://wiki.zimbra.com/wiki/Zimbra_Releases)):
 
-### ZCS 10.1.x Series Official Releases (Daffodil)
+<h3 id="zcs-101x-series-official-releases-daffodil">ZCS 10.1.x Series Official Releases (Daffodil)</h3>
 
 | <sub>Version</sub>       | <sub>Edition</sub> | <sub>OS / Platform</sub>         |                                                    <sub>Binary (.tgz)</sub>                                                    |                                                        <sub>MD5</sub>                                                        |                                                         <sub>SHA256</sub>                                                          |
 | :----------------------- | :----------------: | :------------------------------- | :----------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------: |
@@ -220,7 +220,7 @@ Setiap tautan unduhan dalam repositori ini telah diuji secara berkala dengan skr
 | <sub>`10.1.0 GA`</sub>   | <sub>**NE**</sub>  | <sub>RHEL / Rocky / Alma 9</sub> |   <sub>[Download](https://files.zimbra.com/downloads/10.1.0_GA/zcs-NETWORK-10.1.0_GA_4688.RHEL9_64.20240911074203.tgz)</sub>   |  <sub>[MD5](https://files.zimbra.com/downloads/10.1.0_GA/zcs-NETWORK-10.1.0_GA_4688.RHEL9_64.20240911074203.tgz.md5)</sub>   |  <sub>[SHA256](https://files.zimbra.com/downloads/10.1.0_GA/zcs-NETWORK-10.1.0_GA_4688.RHEL9_64.20240911074203.tgz.sha256)</sub>   |
 | <sub>`10.1.0 BETA`</sub> | <sub>**NE**</sub>  | <sub>RHEL / Rocky / Alma 9</sub> | <sub>[Download](https://files.zimbra.com/downloads/10.1.0_BETA/zcs-NETWORK-10.1.0_BETA_4649.RHEL9_64.20240726093615.tgz)</sub> |                                                         <sub>-</sub>                                                         |                                                            <sub>-</sub>                                                            |
 
-### ZCS 10.0.x Series Official Releases (Daffodil)
+<h3 id="zcs-100x-series-official-releases-daffodil">ZCS 10.0.x Series Official Releases (Daffodil)</h3>
 
 | <sub>Version</sub>     | <sub>Edition</sub> | <sub>OS / Platform</sub>         |                                                   <sub>Binary (.tgz)</sub>                                                    |                                                        <sub>MD5</sub>                                                        |                                                         <sub>SHA256</sub>                                                          |
 | :--------------------- | :----------------: | :------------------------------- | :---------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------: |
@@ -229,7 +229,7 @@ Setiap tautan unduhan dalam repositori ini telah diuji secara berkala dengan skr
 | <sub>`10.0.0 GA`</sub> | <sub>**NE**</sub>  | <sub>RHEL 7 / CentOS 7</sub>     |  <sub>[Download](https://files.zimbra.com/downloads/10.0.0_GA/zcs-NETWORK-10.0.0_GA_4518.RHEL7_64.20230301065514.tgz)</sub>   |  <sub>[MD5](https://files.zimbra.com/downloads/10.0.0_GA/zcs-NETWORK-10.0.0_GA_4518.RHEL7_64.20230301065514.tgz.md5)</sub>   |                                                            <sub>-</sub>                                                            |
 | <sub>`10.0.0 GA`</sub> | <sub>**NE**</sub>  | <sub>RHEL / Rocky / Alma 8</sub> |                                                         <sub>-</sub>                                                          |  <sub>[MD5](https://files.zimbra.com/downloads/10.0.0_GA/zcs-NETWORK-10.0.0_GA_4518.RHEL8_64.20230301065514.tgz.md5)</sub>   |                                                            <sub>-</sub>                                                            |
 
-### ZCS 9.0.0.x Series Official Releases (Kepler)
+<h3 id="zcs-900x-series-official-releases-kepler">ZCS 9.0.0.x Series Official Releases (Kepler)</h3>
 
 | <sub>Version</sub>      | <sub>Edition</sub> | <sub>OS / Platform</sub>         |                                                          <sub>Binary (.tgz)</sub>                                                          |                                                              <sub>MD5</sub>                                                               |                                                                <sub>SHA256</sub>                                                                |
 | :---------------------- | :----------------: | :------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------: |
@@ -243,7 +243,7 @@ Setiap tautan unduhan dalam repositori ini telah diuji secara berkala dengan skr
 | <sub>`9.0.0 GA`</sub>   | <sub>**NE**</sub>  | <sub>RHEL / Rocky / Alma 8</sub> |          <sub>[Download](https://files.zimbra.com/downloads/9.0.0_GA/zcs-NETWORK-9.0.0_GA_4325.RHEL8_64.20220629074359.tgz)</sub>          |                                                               <sub>-</sub>                                                                |          <sub>[SHA256](https://files.zimbra.com/downloads/9.0.0_GA/zcs-NETWORK-9.0.0_GA_4325.RHEL8_64.20220629074359.tgz.sha256)</sub>          |
 | <sub>`9.0.0 BETA`</sub> | <sub>**NE**</sub>  | <sub>RHEL / Rocky / Alma 8</sub> | <sub>[Download](https://files.zimbra.com/downloads/9.0.0_BETA/Rocky_Linux_8/zcs-NETWORK-9.0.0_BETA_1014.RHEL8_64.20220326065507.tgz)</sub> | <sub>[MD5](https://files.zimbra.com/downloads/9.0.0_BETA/Rocky_Linux_8/zcs-NETWORK-9.0.0_BETA_1014.RHEL8_64.20220326065507.tgz.md5)</sub> | <sub>[SHA256](https://files.zimbra.com/downloads/9.0.0_BETA/Rocky_Linux_8/zcs-NETWORK-9.0.0_BETA_1014.RHEL8_64.20220326065507.tgz.sha256)</sub> |
 
-### ZCS 8.8.x Series Official Releases (Joule)
+<h3 id="zcs-88x-series-official-releases-joule">ZCS 8.8.x Series Official Releases (Joule)</h3>
 
 | <sub>Version</sub>       | <sub>Edition</sub>  | <sub>OS / Platform</sub>         |                                                   <sub>Binary (.tgz)</sub>                                                    |                                                        <sub>MD5</sub>                                                        |                                                                 <sub>SHA256</sub>                                                                 |
 | :----------------------- | :-----------------: | :------------------------------- | :---------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------------: |
@@ -295,7 +295,7 @@ Setiap tautan unduhan dalam repositori ini telah diuji secara berkala dengan skr
 | <sub>`8.8.11 GA`</sub>   | <sub>**FOSS**</sub> | <sub>RHEL 6 / CentOS 6</sub>     |      <sub>[Download](https://files.zimbra.com/downloads/8.8.11_GA/zcs-8.8.11_GA_3737.RHEL6_64.20181207111719.tgz)</sub>       |      <sub>[MD5](https://files.zimbra.com/downloads/8.8.11_GA/zcs-8.8.11_GA_3737.RHEL6_64.20181207111719.tgz.md5)</sub>       |              <sub>[SHA256](https://files.zimbra.com/downloads/8.8.11_GA/zcs-8.8.11_GA_3737.RHEL6_64.20181207111719.tgz.sha256)</sub>              |
 | <sub>`8.8.10 GA`</sub>   |  <sub>**NE**</sub>  | <sub>Ubuntu 16.04</sub>          |                                                         <sub>-</sub>                                                          | <sub>[MD5](https://files.zimbra.com/downloads/8.8.10_GA/zcs-NETWORK-8.8.10_GA_3039.UBUNTU16_64.20180928094617.tgz.md5)</sub> |                                                                   <sub>-</sub>                                                                    |
 
-### ZCS 8.7.x Series Official Releases (JudasPriest)
+<h3 id="zcs-87x-series-official-releases-judaspriest">ZCS 8.7.x Series Official Releases (JudasPriest)</h3>
 
 | <sub>Version</sub>     |  <sub>Edition</sub>  | <sub>OS / Platform</sub>     |                                                   <sub>Binary (.tgz)</sub>                                                    |                                                        <sub>MD5</sub>                                                        |                                                         <sub>SHA256</sub>                                                          |
 | :--------------------- | :------------------: | :--------------------------- | :---------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------: |
@@ -357,7 +357,7 @@ Setiap tautan unduhan dalam repositori ini telah diuji secara berkala dengan skr
 | <sub>`8.7.0 GA`</sub>  | <sub>**FOSS**</sub>  | <sub>RHEL 7 / CentOS 7</sub> |       <sub>[Download](https://files.zimbra.com/downloads/8.7.0_GA/zcs-8.7.0_GA_1659.RHEL7_64.20160628202714.tgz)</sub>        |       <sub>[MD5](https://files.zimbra.com/downloads/8.7.0_GA/zcs-8.7.0_GA_1659.RHEL7_64.20160628202714.tgz.md5)</sub>        |       <sub>[SHA256](https://files.zimbra.com/downloads/8.7.0_GA/zcs-8.7.0_GA_1659.RHEL7_64.20160628202714.tgz.sha256)</sub>        |
 | <sub>`8.7.0 GA`</sub>  | <sub>**FOSS**</sub>  | <sub>RHEL 6 / CentOS 6</sub> |       <sub>[Download](https://files.zimbra.com/downloads/8.7.0_GA/zcs-8.7.0_GA_1659.RHEL6_64.20160628192545.tgz)</sub>        |       <sub>[MD5](https://files.zimbra.com/downloads/8.7.0_GA/zcs-8.7.0_GA_1659.RHEL6_64.20160628192545.tgz.md5)</sub>        |       <sub>[SHA256](https://files.zimbra.com/downloads/8.7.0_GA/zcs-8.7.0_GA_1659.RHEL6_64.20160628192545.tgz.sha256)</sub>        |
 
-### ZCS 8.6.0 Series Official Releases & Cumulative Security Patches
+<h3 id="zcs-860-series-official-releases--cumulative-security-patches">ZCS 8.6.0 Series Official Releases & Cumulative Security Patches</h3>
 
 | <sub>Version</sub>    |  <sub>Edition</sub>  | <sub>OS / Platform</sub>     |                                                  <sub>Binary (.tgz)</sub>                                                   |                                                       <sub>MD5</sub>                                                       |                                                        <sub>SHA256</sub>                                                         |
 | :-------------------- | :------------------: | :--------------------------- | :-------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------: |
@@ -381,7 +381,7 @@ Setiap tautan unduhan dalam repositori ini telah diuji secara berkala dengan skr
 | <sub>`8.6.0 GA`</sub> | <sub>**FOSS**</sub>  | <sub>RHEL 7 / CentOS 7</sub> |      <sub>[Download](https://files.zimbra.com/downloads/8.6.0_GA/zcs-8.6.0_GA_1153.RHEL7_64.20141215151110.tgz)</sub>       |      <sub>[MD5](https://files.zimbra.com/downloads/8.6.0_GA/zcs-8.6.0_GA_1153.RHEL7_64.20141215151110.tgz.md5)</sub>       |      <sub>[SHA256](https://files.zimbra.com/downloads/8.6.0_GA/zcs-8.6.0_GA_1153.RHEL7_64.20141215151110.tgz.sha256)</sub>       |
 | <sub>`8.6.0 GA`</sub> | <sub>**FOSS**</sub>  | <sub>RHEL 6 / CentOS 6</sub> |      <sub>[Download](https://files.zimbra.com/downloads/8.6.0_GA/zcs-8.6.0_GA_1153.RHEL6_64.20141215151155.tgz)</sub>       |      <sub>[MD5](https://files.zimbra.com/downloads/8.6.0_GA/zcs-8.6.0_GA_1153.RHEL6_64.20141215151155.tgz.md5)</sub>       |      <sub>[SHA256](https://files.zimbra.com/downloads/8.6.0_GA/zcs-8.6.0_GA_1153.RHEL6_64.20141215151155.tgz.sha256)</sub>       |
 
-### ZCS 8.5.x Series Official Releases (8.5.1 GA & 8.5.0 GA)
+<h3 id="zcs-85x-series-official-releases-851-ga--850-ga">ZCS 8.5.x Series Official Releases (8.5.1 GA & 8.5.0 GA)</h3>
 
 | <sub>Version</sub>    |  <sub>Edition</sub>  | <sub>OS / Platform</sub>     |                                                  <sub>Binary (.tgz)</sub>                                                   |                                                       <sub>MD5</sub>                                                       |                                                        <sub>SHA256</sub>                                                         |
 | :-------------------- | :------------------: | :--------------------------- | :-------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------: |
@@ -407,7 +407,7 @@ Setiap tautan unduhan dalam repositori ini telah diuji secara berkala dengan skr
 | <sub>`8.5.0 GA`</sub> | <sub>**FOSS**</sub>  | <sub>RHEL 7 / CentOS 7</sub> |      <sub>[Download](https://files.zimbra.com/downloads/8.5.0_GA/zcs-8.5.0_GA_3042.RHEL7_64.20140828204420.tgz)</sub>       |      <sub>[MD5](https://files.zimbra.com/downloads/8.5.0_GA/zcs-8.5.0_GA_3042.RHEL7_64.20140828204420.tgz.md5)</sub>       |                                                           <sub>-</sub>                                                           |
 | <sub>`8.5.0 GA`</sub> | <sub>**FOSS**</sub>  | <sub>RHEL 6 / CentOS 6</sub> |      <sub>[Download](https://files.zimbra.com/downloads/8.5.0_GA/zcs-8.5.0_GA_3042.RHEL6_64.20140828192005.tgz)</sub>       |      <sub>[MD5](https://files.zimbra.com/downloads/8.5.0_GA/zcs-8.5.0_GA_3042.RHEL6_64.20140828192005.tgz.md5)</sub>       |                                                           <sub>-</sub>                                                           |
 
-### ZCS 8.0.x Series Official Releases (8.0.9 GA down to 8.0.3 GA)
+<h3 id="zcs-80x-series-official-releases-809-ga-down-to-803-ga">ZCS 8.0.x Series Official Releases (8.0.9 GA down to 8.0.3 GA)</h3>
 
 | <sub>Version</sub>    | <sub>Edition</sub>  | <sub>OS / Platform</sub>     |                                                  <sub>Binary (.tgz)</sub>                                                   |                                                       <sub>MD5</sub>                                                       |                                                        <sub>SHA256</sub>                                                         |
 | :-------------------- | :-----------------: | :--------------------------- | :-------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------: |
@@ -428,7 +428,7 @@ Setiap tautan unduhan dalam repositori ini telah diuji secara berkala dengan skr
 | <sub>`8.0.6 GA`</sub> | <sub>**FOSS**</sub> | <sub>Linux x86_64</sub>      |          <sub>[Download](https://files.zimbra.com/downloads/8.0.6_GA/openssl/UBUNTU12_64/openssl-1.0.1e.tgz)</sub>          |                                                        <sub>-</sub>                                                        |                                                           <sub>-</sub>                                                           |
 | <sub>`8.0.3 GA`</sub> | <sub>**FOSS**</sub> | <sub>Linux x86_64</sub>      |          <sub>[Download](https://files.zimbra.com/downloads/8.0.3_GA/openssl/UBUNTU12_64/openssl-1.0.1d.tgz)</sub>          |                                                        <sub>-</sub>                                                        |                                                           <sub>-</sub>                                                           |
 
-### ZCS 7.x Legacy Official Releases (7.2.7 GA, 7.2.0 GA, 7.1.3 GA, 7.0.1 GA)
+<h3 id="zcs-7x-legacy-official-releases-727-ga-720-ga-713-ga-701-ga">ZCS 7.x Legacy Official Releases (7.2.7 GA, 7.2.0 GA, 7.1.3 GA, 7.0.1 GA)</h3>
 
 | <sub>Version</sub>    | <sub>Edition</sub>  | <sub>OS / Platform</sub>              |                                                  <sub>Binary (.tgz)</sub>                                                   |                                                       <sub>MD5</sub>                                                       | <sub>SHA256</sub> |
 | :-------------------- | :-----------------: | :------------------------------------ | :-------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------: | :---------------: |
@@ -463,7 +463,7 @@ Setiap tautan unduhan dalam repositori ini telah diuji secara berkala dengan skr
 | <sub>`7.1.3 GA`</sub> | <sub>**FOSS**</sub> | <sub>Ubuntu 8.04 (32-bit)</sub>       |       <sub>[Download](https://files.zimbra.com/downloads/7.1.3_GA/zcs-7.1.3_GA_3346.UBUNTU8.20110928134533.tgz)</sub>       |                                                        <sub>-</sub>                                                        |   <sub>-</sub>    |
 | <sub>`7.0.1 GA`</sub> | <sub>**FOSS**</sub> | <sub>Ubuntu 8.04 (64-bit)</sub>       |     <sub>[Download](https://files.zimbra.com/downloads/7.0.1_GA/zcs-7.0.1_GA_3105.UBUNTU8_64.20110304205531.tgz)</sub>      |                                                        <sub>-</sub>                                                        |   <sub>-</sub>    |
 
-### ZCS 6.x Legacy Official Releases (6.0.10 GA, 6.0.9 GA, 6.0.7 GA)
+<h3 id="zcs-6x-legacy-official-releases-6010-ga-609-ga-607-ga">ZCS 6.x Legacy Official Releases (6.0.10 GA, 6.0.9 GA, 6.0.7 GA)</h3>
 
 | <sub>Version</sub>     | <sub>Edition</sub>  | <sub>OS / Platform</sub>              |                                                 <sub>Binary (.tgz)</sub>                                                 | <sub>MD5</sub> | <sub>SHA256</sub> |
 | :--------------------- | :-----------------: | :------------------------------------ | :----------------------------------------------------------------------------------------------------------------------: | :------------: | :---------------: |
@@ -471,7 +471,7 @@ Setiap tautan unduhan dalam repositori ini telah diuji secara berkala dengan skr
 | <sub>`6.0.7 GA`</sub>  |  <sub>**NE**</sub>  | <sub>RHEL 4 / CentOS 4 (32-bit)</sub> |  <sub>[Download](https://files.zimbra.com/downloads/6.0.7_GA/zcs-NETWORK-6.0.7_GA_2470.RHEL4.20100610202621.tgz)</sub>   |  <sub>-</sub>  |   <sub>-</sub>    |
 | <sub>`6.0.10 GA`</sub> | <sub>**FOSS**</sub> | <sub>Ubuntu 8.04 (32-bit)</sub>       |    <sub>[Download](https://files.zimbra.com/downloads/6.0.10_GA/zcs-6.0.10_GA_2692.UBUNTU8.20101215171146.tgz)</sub>     |  <sub>-</sub>  |   <sub>-</sub>    |
 
-### ZCS 5.x Legacy Official Releases (5.0.10 GA down to 5.0.0 GA)
+<h3 id="zcs-5x-legacy-official-releases-5010-ga-down-to-500-ga">ZCS 5.x Legacy Official Releases (5.0.10 GA down to 5.0.0 GA)</h3>
 
 | <sub>Version</sub>     |  <sub>Edition</sub>  | <sub>OS / Platform</sub>              |                                                 <sub>Binary (.tgz)</sub>                                                 | <sub>MD5</sub> | <sub>SHA256</sub> |
 | :--------------------- | :------------------: | :------------------------------------ | :----------------------------------------------------------------------------------------------------------------------: | :------------: | :---------------: |
@@ -495,7 +495,7 @@ Setiap tautan unduhan dalam repositori ini telah diuji secara berkala dengan skr
 | <sub>`5.0.0 GA`</sub>  | <sub>**FOSS**</sub>  | <sub>Fedora 7</sub>                   |        <sub>[Download](https://files.zimbra.com/downloads/5.0.0_GA/zcs-5.0.0_GA_1869.F7.20071218205447.tgz)</sub>        |  <sub>-</sub>  |   <sub>-</sub>    |
 | <sub>`5.0.0 GA`</sub>  | <sub>**FOSS**</sub>  | <sub>Debian 4.0</sub>                 |    <sub>[Download](https://files.zimbra.com/downloads/5.0.0_GA/zcs-5.0.0_GA_1869.DEBIAN4.0.20071218200820.tgz)</sub>     |  <sub>-</sub>  |   <sub>-</sub>    |
 
-### ZCS 4.5.x Historical Archive (4.5.10 GA down to 4.5.5 GA)
+<h3 id="zcs-45x-historical-archive-4510-ga-down-to-455-ga">ZCS 4.5.x Historical Archive (4.5.10 GA down to 4.5.5 GA)</h3>
 
 | <sub>Version</sub>     | <sub>Edition</sub>  | <sub>OS / Platform</sub>              |                                          <sub>Binary (.tgz)</sub>                                           | <sub>MD5</sub> | <sub>SHA256</sub> |
 | :--------------------- | :-----------------: | :------------------------------------ | :---------------------------------------------------------------------------------------------------------: | :------------: | :---------------: |
@@ -513,7 +513,7 @@ Setiap tautan unduhan dalam repositori ini telah diuji secara berkala dengan skr
 > [!IMPORTANT]
 > **Status Verifikasi Biner Komunitas:** Seluruh **53+ paket rilis biner komunitas** pada tabel di bawah ini telah teruji **aktif (HTTP 200 OK)** dan terbebas dari tautan rusak melalui pengujian telemetri.
 
-### TechFiles.online Zimbra FOSS 10.1.x (Ian Walker Builds)
+<h3 id="techfilesonline-zimbra-foss-101x-ian-walker-builds">TechFiles.online Zimbra FOSS 10.1.x (Ian Walker Builds)</h3>
 
 Portal: <https://techfiles.online/zimbra/> | Maintainer: **Ian Walker** (`@ianw1974`)
 
@@ -526,7 +526,7 @@ Portal: <https://techfiles.online/zimbra/> | Maintainer: **Ian Walker** (`@ianw1
 
 _Gunakan header `Referer: https://techfiles.online/` saat mengunduh via curl/wget._
 
-### ZCS FOSS 10.1.x Series (All 26 Community Releases 2024–2026)
+<h3 id="zcs-foss-101x-series-all-26-community-releases-20242026">ZCS FOSS 10.1.x Series (All 26 Community Releases 2024–2026)</h3>
 
 | <sub>Version</sub>           | <sub>OS / Platform</sub>         |                                                                                     <sub>Binary (.tgz)</sub>                                                                                     |                                                                                         <sub>MD5</sub>                                                                                          |                                                                                           <sub>SHA256</sub>                                                                                           |
 | :--------------------------- | :------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
@@ -669,7 +669,7 @@ _Gunakan header `Referer: https://techfiles.online/` saat mengunduh via curl/wge
 | <sub>`10.1.0.beta`</sub>     | <sub>Ubuntu 20.04 (Focal)</sub>  | <sub>[Download](https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-20.04/10.1.0.beta/zcs-10.1.0_BETAz10x1x0xbetaZmaldua_1000.UBUNTU20_64.20240411124830.tgz)</sub> | <sub>[MD5](https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-20.04/10.1.0.beta/zcs-10.1.0_BETAz10x1x0xbetaZmaldua_1000.UBUNTU20_64.20240411124830.tgz.md5)</sub> | <sub>[SHA256](https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-20.04/10.1.0.beta/zcs-10.1.0_BETAz10x1x0xbetaZmaldua_1000.UBUNTU20_64.20240411124830.tgz.sha256)</sub> |
 | <sub>`10.1.0.beta`</sub>     | <sub>RHEL / Rocky / Alma 8</sub> |     <sub>[Download](https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/10.1.0.beta/zcs-10.1.0_BETAz10x1x0xbetaZmaldua_1000.RHEL8_64.20240411124821.tgz)</sub>      |     <sub>[MD5](https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/10.1.0.beta/zcs-10.1.0_BETAz10x1x0xbetaZmaldua_1000.RHEL8_64.20240411124821.tgz.md5)</sub>      |     <sub>[SHA256](https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/10.1.0.beta/zcs-10.1.0_BETAz10x1x0xbetaZmaldua_1000.RHEL8_64.20240411124821.tgz.sha256)</sub>      |
 
-### ZCS FOSS 10.0.x Series (All 17 Community Releases 2023–2026)
+<h3 id="zcs-foss-100x-series-all-17-community-releases-20232026">ZCS FOSS 10.0.x Series (All 17 Community Releases 2023–2026)</h3>
 
 | <sub>Version</sub>      | <sub>OS / Platform</sub>         |                                                                              <sub>Binary (.tgz)</sub>                                                                              |                                                                                  <sub>MD5</sub>                                                                                   |                                                                                    <sub>SHA256</sub>                                                                                    |
 | :---------------------- | :------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
@@ -737,7 +737,7 @@ _Gunakan header `Referer: https://techfiles.online/` saat mengunduh via curl/wge
 | <sub>`10.0.7`</sub>     | <sub>RHEL / Rocky / Alma 8</sub> |    <sub>[Download](https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/10.0.7/zcs-10.0.7_GA_10.0.7_maldua_1000.RHEL8_64.20240331160936.tgz)</sub>     |    <sub>[MD5](https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/10.0.7/zcs-10.0.7_GA_10.0.7_maldua_1000.RHEL8_64.20240331160936.tgz.md5)</sub>     |    <sub>[SHA256](https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/10.0.7/zcs-10.0.7_GA_10.0.7_maldua_1000.RHEL8_64.20240331160936.tgz.sha256)</sub>     |
 | <sub>`10.0.7`</sub>     | <sub>RHEL 7 / CentOS 7</sub>     |    <sub>[Download](https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-7/10.0.7/zcs-10.0.7_GA_10.0.7_maldua_1000.RHEL7_64.20240331181149.tgz)</sub>     |    <sub>[MD5](https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-7/10.0.7/zcs-10.0.7_GA_10.0.7_maldua_1000.RHEL7_64.20240331181149.tgz.md5)</sub>     |    <sub>[SHA256](https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-7/10.0.7/zcs-10.0.7_GA_10.0.7_maldua_1000.RHEL7_64.20240331181149.tgz.sha256)</sub>     |
 
-### ZCS FOSS 9.0.0.x Series (All 8 Kepler Community Releases 2020–2025)
+<h3 id="zcs-foss-900x-series-all-8-kepler-community-releases-20202025">ZCS FOSS 9.0.0.x Series (All 8 Kepler Community Releases 2020–2025)</h3>
 
 | <sub>Version</sub>     | <sub>OS / Platform</sub>         |                                                                                 <sub>Binary (.tgz)</sub>                                                                                  |                                                                                      <sub>MD5</sub>                                                                                      |                                                                                       <sub>SHA256</sub>                                                                                        |
 | :--------------------- | :------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
@@ -774,7 +774,7 @@ _Gunakan header `Referer: https://techfiles.online/` saat mengunduh via curl/wge
 | <sub>`9.0.0.p39`</sub> | <sub>RHEL / Rocky / Alma 8</sub> |     <sub>[Download](https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/9.0.0.p39/zcs-9.0.0_GA_9.0.0.p39_maldua_1000.RHEL8_64.20240331162400.tgz)</sub>      |     <sub>[MD5](https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/9.0.0.p39/zcs-9.0.0_GA_9.0.0.p39_maldua_1000.RHEL8_64.20240331162400.tgz.md5)</sub>      |     <sub>[SHA256](https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/9.0.0.p39/zcs-9.0.0_GA_9.0.0.p39_maldua_1000.RHEL8_64.20240331162400.tgz.sha256)</sub>      |
 | <sub>`9.0.0.p39`</sub> | <sub>RHEL 7 / CentOS 7</sub>     |     <sub>[Download](https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-7/9.0.0.p39/zcs-9.0.0_GA_9.0.0.p39_maldua_1000.RHEL7_64.20240331181255.tgz)</sub>      |     <sub>[MD5](https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-7/9.0.0.p39/zcs-9.0.0_GA_9.0.0.p39_maldua_1000.RHEL7_64.20240331181255.tgz.md5)</sub>      |     <sub>[SHA256](https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-7/9.0.0.p39/zcs-9.0.0_GA_9.0.0.p39_maldua_1000.RHEL7_64.20240331181255.tgz.sha256)</sub>      |
 
-### ZCS FOSS 8.8.15.x Series (All Joule Community Releases 2018–2024)
+<h3 id="zcs-foss-8815x-series-all-joule-community-releases-20182024">ZCS FOSS 8.8.15.x Series (All Joule Community Releases 2018–2024)</h3>
 
 | <sub>Version</sub>      | <sub>OS / Platform</sub>         |                                                                                   <sub>Binary (.tgz)</sub>                                                                                   |                                                                                       <sub>MD5</sub>                                                                                        |                                                                                         <sub>SHA256</sub>                                                                                         |
 | :---------------------- | :------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
@@ -793,7 +793,7 @@ _Gunakan header `Referer: https://techfiles.online/` saat mengunduh via curl/wge
 
 Panduan kompilasi mandiri kode sumber resmi (_official upstream source code_) menggunakan framework `zm-build` pada **Ubuntu 20.04–24.04 LTS** dan **RHEL / Rocky / AlmaLinux 8–9**.
 
-### OS & ZCS Build Compatibility Matrix
+<h3 id="os--zcs-build-compatibility-matrix">OS & ZCS Build Compatibility Matrix</h3>
 
 | <sub>Version</sub>    | <sub>Codename</sub> | <sub>Ubuntu 24</sub>  | <sub>Ubuntu 22</sub>  | <sub>Ubuntu 20</sub>  |   <sub>RHEL 9</sub>   |   <sub>RHEL 8</sub>   |   <sub>RHEL 7</sub>   |
 | :-------------------- | :-----------------: | :-------------------: | :-------------------: | :-------------------: | :-------------------: | :-------------------: | :-------------------: |
@@ -802,7 +802,7 @@ Panduan kompilasi mandiri kode sumber resmi (_official upstream source code_) me
 | <sub>**9.0.0**</sub>  |  <sub>Kepler</sub>  | <sub>Container</sub>  | <sub>Container</sub>  | <sub>**Native**</sub> | <sub>Container</sub>  | <sub>**Native**</sub> | <sub>**Native**</sub> |
 | <sub>**8.8.15**</sub> |  <sub>Joule</sub>   | <sub>Container</sub>  | <sub>Container</sub>  | <sub>**Native**</sub> | <sub>Container</sub>  | <sub>**Native**</sub> | <sub>**Native**</sub> |
 
-### Step-by-Step Native Compilation
+<h3 id="step-by-step-native-compilation">Step-by-Step Native Compilation</h3>
 
 1. **Persiapan Dependensi Host:**
 
@@ -840,7 +840,7 @@ Panduan kompilasi mandiri kode sumber resmi (_official upstream source code_) me
    ./build.pl --ant-options -DskipTests=true --git-default-tag=8.8.15.p47,8.8.15-GA      --build-release-no=8.8.15 --build-type=FOSS --build-release=JOULE      --build-release-candidate=GA --build-thirdparty-server=files.zimbra.com --no-interactive
    ```
 
-### Automated Docker & Helper Methods
+<h3 id="automated-docker--helper-methods">Automated Docker & Helper Methods</h3>
 
 - **Docker Builder:** `git clone https://github.com/maldua/zimbra-foss-builder.git && cd zimbra-foss-builder && ./build.sh --os=ubuntu-24.04 --release=10.1.20.p1`
 - **Helper Script:** `git clone https://github.com/ianw1974/zimbra-build-scripts.git && cd zimbra-build-scripts && ./zimbra-build-helper.sh --build-type=FOSS --release=10.1`
@@ -851,7 +851,7 @@ Panduan kompilasi mandiri kode sumber resmi (_official upstream source code_) me
 
 Konfigurasi optimal sistem operasi host sebelum menjalankan instalasi Zimbra:
 
-### 1. File Descriptor & Security Limits (`/etc/security/limits.conf`)
+<h3 id="1-file-descriptor--security-limits-etcsecuritylimitsconf">1. File Descriptor & Security Limits (`/etc/security/limits.conf`)</h3>
 
 ```ini
 zimbra soft nofile 65536
@@ -860,7 +860,7 @@ zimbra soft nproc 2048
 zimbra hard nproc 4096
 ```
 
-### 2. Kernel Tuning (`/etc/sysctl.d/99-zimbra.conf`)
+<h3 id="2-kernel-tuning-etcsysctld99-zimbraconf">2. Kernel Tuning (`/etc/sysctl.d/99-zimbra.conf`)</h3>
 
 ```ini
 vm.swappiness = 1
@@ -871,7 +871,7 @@ net.ipv4.ip_local_port_range = 1024 65535
 
 Terapkan segera: `sudo sysctl --system`
 
-### 3. Konfigurasi FQDN & Local DNS (`/etc/hosts`)
+<h3 id="3-konfigurasi-fqdn--local-dns-etchosts">3. Konfigurasi FQDN & Local DNS (`/etc/hosts`)</h3>
 
 ```ini
 127.0.0.1 localhost
@@ -886,7 +886,7 @@ Analisis mendalam arsitektur pertahanan, taksonomi vektor serangan, dan katalog 
 
 ---
 
-### Master Vulnerability Matrix & Affected Versions (2016–2026)
+<h3 id="master-vulnerability-matrix--affected-versions-20162026">Master Vulnerability Matrix & Affected Versions (2016–2026)</h3>
 
 Tabel berikut menyajikan seluruh riwayat CVE resmi yang diverifikasi pada sistem Zimbra Collaboration Suite:
 
@@ -937,7 +937,7 @@ Tabel berikut menyajikan seluruh riwayat CVE resmi yang diverifikasi pada sistem
 
 ---
 
-### Deep Architecture & Attack Surface Analysis
+<h3 id="deep-architecture--attack-surface-analysis">Deep Architecture & Attack Surface Analysis</h3>
 
 Arsitektur Zimbra terdiri dari beberapa daemon independen yang saling berkomunikasi. Pemahaman batas pertahanan (_security perimeter_) setiap komponen sangat penting untuk mitigasi proaktif:
 
@@ -977,7 +977,7 @@ Arsitektur Zimbra terdiri dari beberapa daemon independen yang saling berkomunik
 
 ---
 
-### Taxonomy of Zimbra Threat Vectors & Exploit Chains
+<h3 id="taxonomy-of-zimbra-threat-vectors--exploit-chains">Taxonomy of Zimbra Threat Vectors & Exploit Chains</h3>
 
 Diagram di bawah ini mengilustrasikan bagaimana penyerang merangkai (_exploit chaining_) berbagai kerentanan dari level pre-authentication hingga mencapai eksekusi kode tingkat sistem (_Remote Code Execution & Root Takeover_):
 
@@ -1010,11 +1010,11 @@ flowchart TD
 
 ---
 
-### Zero-Day Emergency Incident Response & Hardening Protocol
+<h3 id="zero-day-emergency-incident-response--hardening-protocol">Zero-Day Emergency Incident Response & Hardening Protocol</h3>
 
 Jika server Anda dicurigai telah disusupi atau terdapat pengumuman Zero-Day baru di alam liar (_active exploitation_), jalankan prosedur triase dan sanitasi darurat berikut:
 
-#### 1. Isolasi dan Nonaktifkan Vektor RCE Umum
+<h4 id="1-isolasi-dan-nonaktifkan-vektor-rce-umum">1. Isolasi dan Nonaktifkan Vektor RCE Umum</h4>
 
 ```bash
 # 1. Nonaktifkan postjournal (Mitigasi CVE-2024-45519)
@@ -1028,7 +1028,7 @@ sudo apt-get update && sudo apt-get install -y pax
 sudo dnf install -y pax
 ```
 
-#### 2. Audit dan Karantina JSP Webshell di Webroot Jetty
+<h4 id="2-audit-dan-karantina-jsp-webshell-di-webroot-jetty">2. Audit dan Karantina JSP Webshell di Webroot Jetty</h4>
 
 ```bash
 # Cari file JSP yang dimodifikasi atau mencurigakan dalam direktori webapps
@@ -1038,7 +1038,7 @@ find /opt/zimbra/jetty/webapps/ -type f -name "*.jsp" -exec ls -la {} +
 grep -rnE "(Runtime\.getRuntime\(\)\.exec|ProcessBuilder|passthru|shell_exec)" /opt/zimbra/jetty/webapps/
 ```
 
-#### 3. Audit Persistensi Crontab & SSH Keys
+<h4 id="3-audit-persistensi-crontab--ssh-keys">3. Audit Persistensi Crontab & SSH Keys</h4>
 
 ```bash
 # Periksa crontab user zimbra dan root
@@ -1049,7 +1049,7 @@ crontab -u root -l
 cat /opt/zimbra/.ssh/authorized_keys 2>/dev/null || true
 ```
 
-#### 4. Rotasi Kredensial LDAP & Kunci Enkripsi
+<h4 id="4-rotasi-kredensial-ldap--kunci-enkripsi">4. Rotasi Kredensial LDAP & Kunci Enkripsi</h4>
 
 ```bash
 # Gunakan toolkit pembersih forensik resmi
@@ -1065,7 +1065,7 @@ Klasifikasi pedoman tata kelola dan konfigurasi operasional server Zimbra Collab
 
 ---
 
-### 🔴 1. MUST / REQUIRED (Wajib Mutlak)
+<h3 id="-1-must--required-wajib-mutlak">🔴 1. MUST / REQUIRED (Wajib Mutlak)</h3>
 
 Klausul di bawah ini merupakan persyaratan absolut yang **wajib dipenuhi** oleh administrator pada seluruh instance produksi:
 
@@ -1085,7 +1085,7 @@ Klausul di bawah ini merupakan persyaratan absolut yang **wajib dipenuhi** oleh 
 
 ---
 
-### 🚫 2. MUST NOT / SHALL NOT (Dilarang Keras)
+<h3 id="-2-must-not--shall-not-dilarang-keras">🚫 2. MUST NOT / SHALL NOT (Dilarang Keras)</h3>
 
 Tindakan atau konfigurasi berikut **benar-benar dilarang** dalam pengoperasian server Zimbra:
 
@@ -1100,7 +1100,7 @@ Tindakan atau konfigurasi berikut **benar-benar dilarang** dalam pengoperasian s
 
 ---
 
-### 🟡 3. SHOULD / RECOMMENDED (Sangat Disarankan)
+<h3 id="-3-should--recommended-sangat-disarankan">🟡 3. SHOULD / RECOMMENDED (Sangat Disarankan)</h3>
 
 Klausul ini merepresentasikan praktik terbaik standar industri untuk mencapai efisiensi, pertahanan berlapis, dan reputasi pengiriman email optimal:
 
@@ -1117,7 +1117,7 @@ Klausul ini merepresentasikan praktik terbaik standar industri untuk mencapai ef
 
 ---
 
-### ⚠️ 4. SHOULD NOT / NOT RECOMMENDED (Sebaiknya Dihindari)
+<h3 id="-4-should-not--not-recommended-sebaiknya-dihindari">⚠️ 4. SHOULD NOT / NOT RECOMMENDED (Sebaiknya Dihindari)</h3>
 
 Praktik-praktik berikut tidak disarankan karena dapat menimbulkan risiko keandalan dan celah keamanan laten:
 
@@ -1130,7 +1130,7 @@ Praktik-praktik berikut tidak disarankan karena dapat menimbulkan risiko keandal
 
 ---
 
-### 🟢 5. MAY / OPTIONAL (Pilihan Tambahan)
+<h3 id="-5-may--optional-pilihan-tambahan">🟢 5. MAY / OPTIONAL (Pilihan Tambahan)</h3>
 
 Langkah-langkah opsional yang dapat diimplementasikan sesuai kebutuhan arsitektur dan skala infrastruktur organisasi:
 
