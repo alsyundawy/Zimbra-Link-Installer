@@ -17,6 +17,8 @@ jobs:
   validate-links:
     name: Validate Binary Download Links
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -33,6 +35,8 @@ jobs:
   shellcheck:
     name: Lint Bash Installer
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
