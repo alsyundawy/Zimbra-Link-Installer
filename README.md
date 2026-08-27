@@ -80,15 +80,32 @@ Repositori ini menyatukan:
 
 ## Original Links & References
 
-Tautan resmi portal Zimbra Synacor, dokumentasi wiki, dan repository referensi:
+Tautan resmi portal Zimbra Synacor, dokumentasi wiki, repository build system, dan rujukan biner komunitas (Unofficial FOSS / OSE):
 
-- Official Open Source Downloads: <https://www.zimbra.com/downloads/zimbra-collaboration-open-source/>
-- Official Network Edition Downloads: <https://www.zimbra.com/downloads/zimbra-collaboration/>
-- Zimbra Wiki Releases: <https://wiki.zimbra.com/wiki/Zimbra_Releases>
-- Zimbra Security Advisories: <https://wiki.zimbra.com/wiki/Zimbra_Security_Advisories>
-- Zimbra Source Repositories: <https://github.com/Zimbra/zm-build>
-- Upstream Bit Repository: [alsyundawy/zimbra_bits](https://github.com/alsyundawy/zimbra_bits)
-- Direct Download Reference: [martbrooks/zimbra_direct_downloads](https://github.com/martbrooks/zimbra_direct_downloads)
+### 🌐 Portal Resmi & Dokumentasi Zimbra Synacor
+
+- **Official Network Edition Portal:** <https://www.zimbra.com/downloads/zimbra-collaboration/>
+- **Official Open Source Edition Portal:** <https://www.zimbra.com/downloads/zimbra-collaboration-open-source/>
+- **Official Zimbra Releases Wiki:** <https://wiki.zimbra.com/wiki/Zimbra_Releases>
+- **Official Zimbra Security Advisories & CVE Center:** <https://wiki.zimbra.com/wiki/Zimbra_Security_Advisories>
+- **Official Zimbra Technical Documentation Wiki:** <https://wiki.zimbra.com/wiki/Main_Page>
+- **Official Product Management Portal & Release Notes:** <https://pm.zimbra.com>
+- **Official Zimbra Source Repositories (GitHub):** <https://github.com/Zimbra>
+
+### 📦 Unduhan Biner Komunitas Unofficial FOSS / OSE & Mirror
+
+- **Maldua Zimbra FOSS Archive & Mirror Repository:** [maldua/zimbra-foss](https://github.com/maldua/zimbra-foss) (Server Mirror: `https://maldua.dlinkddns.com/zimbra/`)
+- **TechFiles Unofficial ZCS FOSS CDN (Ian Walker Builds):** <https://techfiles.online>
+- **Zextras Community Portal & Carbonio Ecosystem:** <https://community.zextras.com>
+
+### 🛠️ Script Builder, Incident Response & Toolkits
+
+- **Official Zimbra Build System (`zm-build`):** [Zimbra/zm-build](https://github.com/Zimbra/zm-build)
+- **Zimbra Link Installer & Telemetry Suite:** [alsyundawy/Zimbra-Link-Installer](https://github.com/alsyundawy/Zimbra-Link-Installer)
+- **Eradicate Zimbra Malware (Forensic & IR Toolkit):** [alsyundawy/eradicate-zimbra-malware](https://github.com/alsyundawy/eradicate-zimbra-malware)
+- **Z2C (Zimbra to Carbonio Mailbox Migration Engine):** [alsyundawy/Z2C](https://github.com/alsyundawy/Z2C)
+- **zmbackup (Automated Backup & Restore Utility):** [alsyundawy/zmbackup](https://github.com/alsyundawy/zmbackup)
+- **Zimbra-Clean-Spam (Mail Queue Cleaner):** [alsyundawy/Zimbra-Clean-Spam](https://github.com/alsyundawy/Zimbra-Clean-Spam)
 
 ---
 
