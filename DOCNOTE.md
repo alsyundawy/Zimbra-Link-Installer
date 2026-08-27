@@ -1,4 +1,4 @@
-<!-- markdownlint-disable MD013 MD024 -->
+<!-- markdownlint-disable MD013 MD024 MD033 -->
 
 # TECHNICAL DOCUMENTATION NOTE (DOCNOTE)
 
@@ -62,11 +62,11 @@ Sebelum mengunduh atau menginstal ZCS, skrip melakukan 4 tahap audit:
 
 ### 3. Matriks Kompatibilitas Sistem Operasi
 
-| Distribusi Host         | Versi OS                                                                                                       |    Arsitektur     | Status Dukungan Installer |
-| :---------------------- | :------------------------------------------------------------------------------------------------------------- | :---------------: | :-----------------------: |
-| **Ubuntu Server**       | 24.04 LTS (Noble), 22.04 LTS (Jammy), 20.04 LTS (Focal), 18.04 LTS, 16.04 LTS, 14.04 LTS, 12.04 LTS, 10.04 LTS |     `x86_64`      |         ✅ Penuh          |
-| **Debian GNU/Linux**    | 12 (Bookworm), 11 (Bullseye), 10 (Buster), 8 (Jessie), 7 (Wheezy), 5 (Lenny), 4.0 (Etch)                       |     `x86_64`      |         ✅ Penuh          |
-| **RHEL / Rocky / Alma** | 9.x, 8.x, 7.x, 6.x, 5.x, 4.x                                                                                   |     `x86_64`      |         ✅ Penuh          |
-| **Oracle Linux (OL)**   | 9.x, 8.x, 7.x, 6.x                                                                                             |     `x86_64`      |         ✅ Penuh          |
-| **SUSE Linux / SLES**   | SLES 12, SLES 11, SLES 10, openSUSE                                                                            |     `x86_64`      |   ✅ Arsip Biner Resmi    |
-| **Fedora Linux**        | Fedora 13, 11, 7, Core 5, Core 4                                                                               | `x86_64` / `i386` |  ✅ Arsip Biner Historis  |
+| <small>Distribusi Host</small>         | <small>Versi OS</small>                                               |    <small>Arsitektur</small>     |  <small>Status Dukungan</small>  |
+| :------------------------------------- | :-------------------------------------------------------------------- | :------------------------------: | :------------------------------: |
+| <small>**Ubuntu Server**</small>       | <small>24.04, 22.04, 20.04, 18.04, 16.04, 14.04, 12.04, 10.04</small> |     <small>`x86_64`</small>      |     <small>✅ Penuh</small>      |
+| <small>**Debian GNU/Linux**</small>    | <small>12 (Bookworm), 11 (Bullseye), 10, 8, 7, 5, 4.0</small>         |     <small>`x86_64`</small>      |     <small>✅ Penuh</small>      |
+| <small>**RHEL / Rocky / Alma**</small> | <small>9.x, 8.x, 7.x, 6.x, 5.x, 4.x</small>                           |     <small>`x86_64`</small>      |     <small>✅ Penuh</small>      |
+| <small>**Oracle Linux (OL)**</small>   | <small>9.x, 8.x, 7.x, 6.x</small>                                     |     <small>`x86_64`</small>      |     <small>✅ Penuh</small>      |
+| <small>**SUSE Linux / SLES**</small>   | <small>SLES 12, SLES 11, SLES 10, openSUSE</small>                    |     <small>`x86_64`</small>      |  <small>✅ Arsip Resmi</small>   |
+| <small>**Fedora Linux**</small>        | <small>Fedora 13, 11, 7, Core 5, Core 4</small>                       | <small>`x86_64` / `i386`</small> | <small>✅ Arsip Historis</small> |
