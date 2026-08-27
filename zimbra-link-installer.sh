@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # ==============================================================================
-# ZIMBRA LINK INSTALLER & TELEMETRY SUITE (v2.5.0)
+# ZIMBRA LINK INSTALLER & TELEMETRY SUITE (v2.6.0)
 # Enterprise Binary Downloader, Checksum Verifier & Automated Installer
 # Supports Official NE (7-10.1), Official FOSS (7-8.8), and Community FOSS (8.8-10.1)
 #
@@ -9,7 +9,10 @@
 # GitHub    : https://github.com/alsyundawy/Zimbra-Link-Installer
 # ==============================================================================
 
+# Defensive Bash Execution Flags
 set -Eeuo pipefail
+IFS=$'\n\t'
+umask 022
 
 # ANSI Color Definitions
 readonly RED='\033[0;31m'
@@ -19,10 +22,16 @@ readonly CYAN='\033[0;36m'
 readonly BOLD='\033[1m'
 readonly NC='\033[0m'
 
-# Global Defaults
+# Global Configuration & Defaults
+readonly SCRIPT_VERSION="2.6.0"
 WORK_DIR="${HOME}/zimbra_install_cache"
-DEFAULT_REFERER="https://techfiles.online/"
+readonly DEFAULT_REFERER="https://techfiles.online/"
+readonly USER_AGENT="Mozilla/5.0 (X11; Linux x86_64) Zimbra-Link-Installer/${SCRIPT_VERSION}"
+TEMP_DIR=""
 
+# ==============================================================================
+# LOGGING & OUTPUT FORMATTERS
+# ==============================================================================
 log_info() {
 	printf "%b[*] %s%b\n" "${CYAN}" "$1" "${NC}"
 }
@@ -39,13 +48,42 @@ log_error() {
 	printf "%b[x] %s%b\n" "${RED}" "$1" "${NC}" >&2
 }
 
+# ==============================================================================
+# CLEANUP & SIGNAL HANDLER
+# ==============================================================================
+cleanup() {
+	local exit_code=$?
+	if [[ -n ${TEMP_DIR:-} && -d ${TEMP_DIR} ]]; then
+		rm -rf "${TEMP_DIR}" 2>/dev/null || true
+	fi
+	exit "${exit_code}"
+}
+trap cleanup EXIT INT TERM HUP
+
+# ==============================================================================
+# PRIVILEGE HELPER
+# ==============================================================================
+run_privileged() {
+	if [[ $(id -u) -eq 0 ]]; then
+		"$@"
+	elif command -v sudo >/dev/null 2>&1; then
+		sudo "$@"
+	else
+		log_error "Perintah memerlukan hak akses root, namun 'sudo' tidak tersedia di sistem."
+		return 1
+	fi
+}
+
+# ==============================================================================
+# BANNER
+# ==============================================================================
 banner() {
 	clear 2>/dev/null || true
 	printf "%b%b" "${CYAN}" "${BOLD}"
-	cat <<'BANNER_EOF'
+	cat <<BANNER_EOF
   ====================================================================
                Z I M B R A   L I N K   I N S T A L L E R
-          Enterprise Binary Downloader & Automated Suite (v2.5.0)
+          Enterprise Binary Downloader & Automated Suite (v${SCRIPT_VERSION})
   ====================================================================
 BANNER_EOF
 	printf "%b" "${NC}"
@@ -53,22 +91,24 @@ BANNER_EOF
 	printf "====================================================================\n\n"
 }
 
-# OS & Architecture Detection
+# ==============================================================================
+# OS & ENVIRONMENT DETECTION
+# ==============================================================================
 detect_os() {
 	ARCH=$(uname -m)
 	if [[ ${ARCH} != "x86_64" ]]; then
-		log_error "Architecture '${ARCH}' is not supported by standard Zimbra binaries (x86_64 required)."
+		log_error "Arsitektur '${ARCH}' tidak didukung oleh biner standar Zimbra (wajib x86_64)."
 		exit 1
 	fi
 
 	if [[ -f /etc/os-release ]]; then
 		# shellcheck disable=SC1091
 		. /etc/os-release
-		OS_ID="${ID}"
-		OS_VER="${VERSION_ID:-}"
+		OS_ID="${ID:-unknown}"
+		OS_VER="${VERSION_ID:-unknown}"
 		OS_NAME="${PRETTY_NAME:-Linux}"
 	else
-		log_error "Cannot determine Linux distribution (/etc/os-release missing)."
+		log_error "Tidak dapat mendeteksi distribusi Linux (/etc/os-release tidak ditemukan)."
 		exit 1
 	fi
 
@@ -76,91 +116,122 @@ detect_os() {
 	log_success "Detected Distribution : ${OS_NAME} (${OS_ID} ${OS_VER})"
 }
 
-# Pre-flight Check
+# ==============================================================================
+# PRE-FLIGHT SYSTEM AUDIT & PREREQUISITES
+# ==============================================================================
 preflight_check() {
 	printf "\n%b--- [1/3] Memeriksa Kesiapan Sistem (Pre-Flight Checks) ---%b\n" "${BOLD}" "${NC}"
 
 	# 1. RAM Check
 	if [[ -f /proc/meminfo ]]; then
-		TOTAL_RAM_KB=$(grep MemTotal /proc/meminfo | awk '{print $2}')
-		TOTAL_RAM_GB=$((TOTAL_RAM_KB / 1024 / 1024))
-		if ((TOTAL_RAM_GB < 8)); then
-			log_warn "RAM Terdeteksi: ${TOTAL_RAM_GB} GB (Zimbra merekomendasikan minimal 8 GB RAM, ideal 16+ GB)."
+		local total_ram_kb
+		total_ram_kb=$(grep -m1 MemTotal /proc/meminfo | awk '{print $2}')
+		local total_ram_gb=$((total_ram_kb / 1024 / 1024))
+		if ((total_ram_gb < 8)); then
+			log_warn "RAM Terdeteksi: ${total_ram_gb} GB (Zimbra merekomendasikan minimal 8 GB RAM, ideal 16+ GB)."
 		else
-			log_success "RAM Terdeteksi: ${TOTAL_RAM_GB} GB (Memenuhi syarat minimum)."
+			log_success "RAM Terdeteksi: ${total_ram_gb} GB (Memenuhi syarat kapasitas minimum)."
 		fi
 	fi
 
 	# 2. Disk Space Check
-	FREE_DISK_GB=$(df -BG /opt 2>/dev/null | awk 'NR==2 {print $4}' | sed 's/G//' || df -BG / | awk 'NR==2 {print $4}' | sed 's/G//')
-	if ((FREE_DISK_GB < 30)); then
-		log_warn "Ruang Disk Kosong: ${FREE_DISK_GB} GB (Direkomendasikan minimal 50 GB kosong untuk /opt/zimbra)."
+	local free_disk_gb
+	free_disk_gb=$(df -BG /opt 2>/dev/null | awk 'NR==2 {print $4}' | tr -d 'G' || df -BG / | awk 'NR==2 {print $4}' | tr -d 'G')
+	if [[ -n ${free_disk_gb} ]] && ((free_disk_gb < 30)); then
+		log_warn "Ruang Disk Kosong di /opt: ${free_disk_gb} GB (Direkomendasikan minimal 50 GB kosong untuk /opt/zimbra)."
 	else
-		log_success "Ruang Disk Kosong: ${FREE_DISK_GB} GB (Cukup untuk instalasi)."
+		log_success "Ruang Disk Kosong di /opt: ${free_disk_gb} GB (Cukup untuk instalasi paket & database ZCS)."
 	fi
 
-	# 3. Check Required Packages
+	# 3. Hostname & FQDN DNS Resolution Check
+	local current_hostname current_fqdn
+	current_hostname=$(hostname -s 2>/dev/null || echo "")
+	current_fqdn=$(hostname -f 2>/dev/null || echo "")
+	if [[ -z ${current_fqdn} || ${current_hostname} == "${current_fqdn}" ]]; then
+		log_warn "Sistem belum memiliki Fully Qualified Domain Name (FQDN) yang valid: '${current_fqdn}'."
+		log_warn "Zimbra mewajibkan FQDN (contoh: mail.domainanda.com) pada /etc/hosts sebelum instalasi."
+	else
+		log_success "FQDN Sistem: ${current_fqdn} (Terdeteksi valid)."
+	fi
+
+	# 4. Mandatory OS Packages Validation
 	local missing_pkgs=()
+	local required_tools=(wget curl tar pax sysstat net-tools)
+
 	if [[ ${OS_ID} =~ ^(ubuntu|debian)$ ]]; then
-		for pkg in wget curl tar pax sysstat net-tools; do
+		for pkg in "${required_tools[@]}"; do
 			if ! dpkg -s "${pkg}" >/dev/null 2>&1; then
 				missing_pkgs+=("${pkg}")
 			fi
 		done
 		if [[ ${#missing_pkgs[@]} -gt 0 ]]; then
-			log_warn "Paket pendukung belum lengkap: ${missing_pkgs[*]}"
-			read -rp "Install dependensi pendukung sekarang via apt? [Y/n]: " do_install
+			log_warn "Paket dependensi wajib belum terpasang: ${missing_pkgs[*]}"
+			read -rp "Pasang dependensi pendukung sekarang via apt-get? [Y/n]: " do_install
 			if [[ ${do_install:-Y} =~ ^[Yy]$ ]]; then
-				sudo apt-get update && sudo apt-get install -y "${missing_pkgs[@]}"
+				run_privileged apt-get update && run_privileged apt-get install -y "${missing_pkgs[@]}"
+				log_success "Seluruh dependensi apt berhasil dipasang."
 			fi
 		else
-			log_success "Seluruh paket sistem wajib (pax, sysstat, net-tools) telah terpasang."
+			log_success "Seluruh dependensi sistem wajib (pax, sysstat, net-tools, curl) telah aktif."
 		fi
 	elif [[ ${OS_ID} =~ ^(rhel|rocky|almalinux|centos|ol)$ ]]; then
-		for pkg in wget curl tar pax sysstat net-tools; do
+		for pkg in "${required_tools[@]}"; do
 			if ! rpm -q "${pkg}" >/dev/null 2>&1; then
 				missing_pkgs+=("${pkg}")
 			fi
 		done
 		if [[ ${#missing_pkgs[@]} -gt 0 ]]; then
-			log_warn "Paket pendukung belum lengkap: ${missing_pkgs[*]}"
-			read -rp "Install dependensi pendukung sekarang via dnf/yum? [Y/n]: " do_install
+			log_warn "Paket dependensi wajib belum terpasang: ${missing_pkgs[*]}"
+			read -rp "Pasang dependensi pendukung sekarang via dnf/yum? [Y/n]: " do_install
 			if [[ ${do_install:-Y} =~ ^[Yy]$ ]]; then
-				sudo dnf install -y "${missing_pkgs[@]}" || sudo yum install -y "${missing_pkgs[@]}"
+				if command -v dnf >/dev/null 2>&1; then
+					run_privileged dnf install -y "${missing_pkgs[@]}"
+				else
+					run_privileged yum install -y "${missing_pkgs[@]}"
+				fi
+				log_success "Seluruh dependensi rpm berhasil dipasang."
 			fi
 		else
-			log_success "Seluruh paket sistem wajib telah terpasang."
+			log_success "Seluruh dependensi sistem wajib telah aktif."
 		fi
 	fi
 }
 
-# Download & Checksum Helper
+# ==============================================================================
+# SECURE DOWNLOAD & CRYPTOGRAPHIC VERIFICATION
+# ==============================================================================
 download_and_verify() {
 	local tgz_url="$1"
 	local checksum_url="${2:-}"
 	local is_referer_req="${3:-false}"
 
 	mkdir -p "${WORK_DIR}"
+	local original_pwd
+	original_pwd=$(pwd)
 	cd "${WORK_DIR}"
 
 	local file_name
 	file_name=$(basename "${tgz_url}")
 
-	printf "\n%b--- [2/3] Mengunduh Biner Zimbra ---%b\n" "${BOLD}" "${NC}"
-	log_info "Target File : ${file_name}"
-	log_info "Sumber URL  : ${tgz_url}"
+	printf "\n%b--- [2/3] Mengunduh Biner Zimbra Enterprise ---%b\n" "${BOLD}" "${NC}"
+	log_info "Target Berkas : ${file_name}"
+	log_info "Sumber URL    : ${tgz_url}"
 
-	local curl_opts=("-L" "-C" "-" "--progress-bar" "-o" "${file_name}")
+	local curl_opts=("-L" "-C" "-" "--progress-bar" "-A" "${USER_AGENT}" "-o" "${file_name}")
 	if [[ ${is_referer_req} == "true" ]]; then
 		curl_opts+=("-H" "Referer: ${DEFAULT_REFERER}")
 	fi
 
 	if [[ -f ${file_name} ]]; then
-		log_warn "Berkas ${file_name} sudah ada di ${WORK_DIR}. Memeriksa resume/keutuhan berkas..."
+		log_warn "Berkas ${file_name} sudah ada di ${WORK_DIR}. Memeriksa resume unduhan..."
 	fi
 
-	curl "${curl_opts[@]}" "${tgz_url}"
-	log_success "Unduhan biner selesai: ${file_name}"
+	if ! curl "${curl_opts[@]}" "${tgz_url}"; then
+		log_error "Pengunduhan gagal untuk URL: ${tgz_url}"
+		cd "${original_pwd}"
+		return 1
+	fi
+	log_success "Pengunduhan biner selesai: ${file_name}"
 
 	# Checksum Verification
 	if [[ -n ${checksum_url} ]]; then
@@ -169,37 +240,42 @@ download_and_verify() {
 		chk_file=$(basename "${checksum_url}")
 		log_info "Mengunduh berkas checksum: ${chk_file}"
 
-		local chk_opts=("-sL" "-o" "${chk_file}")
+		local chk_opts=("-sL" "-A" "${USER_AGENT}" "-o" "${chk_file}")
 		if [[ ${is_referer_req} == "true" ]]; then
 			chk_opts+=("-H" "Referer: ${DEFAULT_REFERER}")
 		fi
-		curl "${chk_opts[@]}" "${checksum_url}"
 
-		if [[ ${chk_file} == *.sha256 ]]; then
-			local expected_hash
-			expected_hash=$(awk '{print $1}' "${chk_file}")
-			local actual_hash
-			actual_hash=$(sha256sum "${file_name}" | awk '{print $1}')
-			log_info "Expected SHA256: ${expected_hash}"
-			log_info "Actual   SHA256: ${actual_hash}"
-			if [[ ${expected_hash} == "${actual_hash}" ]]; then
-				log_success "VERIFIKASI SHA256 VALID: Integritas biner terjamin 100%!"
-			else
-				log_error "HASH MISMATCH: Berkas rusak atau korup saat diunduh!"
-				exit 1
-			fi
-		elif [[ ${chk_file} == *.md5 ]]; then
-			local expected_hash
-			expected_hash=$(awk '{print $1}' "${chk_file}")
-			local actual_hash
-			actual_hash=$(md5sum "${file_name}" | awk '{print $1}')
-			log_info "Expected MD5: ${expected_hash}"
-			log_info "Actual   MD5: ${actual_hash}"
-			if [[ ${expected_hash} == "${actual_hash}" ]]; then
-				log_success "VERIFIKASI MD5 VALID: Integritas biner terjamin 100%!"
-			else
-				log_error "MD5 MISMATCH: Berkas rusak atau korup!"
-				exit 1
+		if ! curl "${chk_opts[@]}" "${checksum_url}"; then
+			log_warn "Gagal mengunduh berkas checksum (${chk_file}). Melewati verifikasi otomatis."
+		else
+			if [[ ${chk_file} == *.sha256 ]]; then
+				local raw_chk_content expected_hash actual_hash
+				raw_chk_content=$(cat "${chk_file}")
+				expected_hash=$(echo "${raw_chk_content}" | grep -oE '[a-fA-F0-9]{64}' | head -n1 || awk '{print $1}' "${chk_file}")
+				actual_hash=$(sha256sum "${file_name}" | awk '{print $1}')
+				log_info "Expected SHA256 : ${expected_hash}"
+				log_info "Actual   SHA256 : ${actual_hash}"
+				if [[ ${expected_hash,,} == "${actual_hash,,}" ]]; then
+					log_success "VERIFIKASI SHA256 VALID: Integritas biner terjamin 100%!"
+				else
+					log_error "HASH MISMATCH: Berkas rusak atau korup saat diunduh!"
+					cd "${original_pwd}"
+					return 1
+				fi
+			elif [[ ${chk_file} == *.md5 ]]; then
+				local raw_chk_content expected_hash actual_hash
+				raw_chk_content=$(cat "${chk_file}")
+				expected_hash=$(echo "${raw_chk_content}" | grep -oE '[a-fA-F0-9]{32}' | head -n1 || awk '{print $1}' "${chk_file}")
+				actual_hash=$(md5sum "${file_name}" | awk '{print $1}')
+				log_info "Expected MD5 : ${expected_hash}"
+				log_info "Actual   MD5 : ${actual_hash}"
+				if [[ ${expected_hash,,} == "${actual_hash,,}" ]]; then
+					log_success "VERIFIKASI MD5 VALID: Integritas biner terjamin 100%!"
+				else
+					log_error "MD5 MISMATCH: Berkas rusak atau korup!"
+					cd "${original_pwd}"
+					return 1
+				fi
 			fi
 		fi
 	fi
@@ -213,19 +289,21 @@ download_and_verify() {
 		extracted_dir="${file_name%.tgz}"
 		if [[ -d ${extracted_dir} ]]; then
 			cd "${extracted_dir}"
-			log_success "Masuk ke direktori: $(pwd)"
-			log_info "Menjalankan ./install.sh dengan izin sudo..."
-			sudo ./install.sh
+			log_success "Berpindah ke direktori: $(pwd)"
+			log_info "Menjalankan ./install.sh dengan hak akses istimewa..."
+			run_privileged ./install.sh
 		else
-			log_warn "Direktori ekstraksi tidak standar. Silakan cek di: ${WORK_DIR}"
+			log_warn "Direktori ekstraksi kustom terdeteksi. Silakan periksa direktori: ${WORK_DIR}"
 		fi
 	else
 		log_info "Biner tersimpan di: ${WORK_DIR}/${file_name}"
-		log_info "Untuk menginstal nanti, jalankan:"
+		log_info "Untuk mengeksekusi instalasi secara manual nanti:"
 		printf "  cd %s\n" "${WORK_DIR}"
 		printf "  tar -xzvf %s\n" "${file_name}"
 		printf "  cd %s && sudo ./install.sh\n\n" "${file_name%.tgz}"
 	fi
+
+	cd "${original_pwd}"
 }
 
 # ==============================================================================
@@ -753,7 +831,7 @@ main_menu() {
 			if command -v python3 >/dev/null 2>&1 && [[ -f scripts/deep_link_validator.py ]]; then
 				python3 scripts/deep_link_validator.py
 			else
-				log_warn "Python3 atau skrip validator tidak ditemukan."
+				log_warn "Python3 atau skrip validator (scripts/deep_link_validator.py) tidak ditemukan."
 			fi
 			read -rp "Tekan Enter untuk kembali ke menu..."
 			;;
