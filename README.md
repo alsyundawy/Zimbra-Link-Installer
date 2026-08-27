@@ -493,7 +493,8 @@ Setiap tautan unduhan dalam repositori ini telah diuji secara berkala dengan skr
 
 ## Unofficial & Community FOSS Archive (2018–2026)
 
-> [!IMPORTANT] > **Status Verifikasi Biner Komunitas:** Sebanyak **seluruh 53+ paket rilis biner komunitas** pada tabel di bawah ini telah teruji **100% aktif (HTTP 200 OK)** dan terbebas dari tautan rusak.
+> [!IMPORTANT]
+> **Status Verifikasi Biner Komunitas:** Seluruh **53+ paket rilis biner komunitas** pada tabel di bawah ini telah teruji **aktif (HTTP 200 OK)** dan terbebas dari tautan rusak melalui pengujian telemetri.
 
 ### TechFiles.online Zimbra FOSS 10.1.x (Ian Walker Builds)
 
@@ -1043,21 +1044,85 @@ cd /tmp/ezm && sudo ./eradicate.sh --scan-and-heal
 
 ## Operational Best Practices (RFC 2119)
 
-Klasifikasi pedoman operasional untuk administrator sistem:
+Klasifikasi pedoman tata kelola dan konfigurasi operasional server Zimbra Collaboration Suite berdasarkan konvensi taksonomi formal **[RFC 2119](https://www.ietf.org/rfc/rfc2119.txt)** (_Key words for use in RFCs to Indicate Requirement Levels_). Seluruh klausul dirancang untuk menjamin _defense-in-depth_, integritas data, ketersediaan tinggi (_high availability_), dan ketahanan terhadap vektor eksploitasi siber modern.
 
-- **MUST:**
-  - **MUST Install Pax:** Wajib memastikan paket `pax` terpasang di OS agar Amavis kebal dari eksploitasi `cpio` (CVE-2022-41352).
-  - **MUST Disable Postjournal:** Wajib menonaktifkan postjournal (`zmlocalconfig -e postjournal_enabled=false`) jika tidak menggunakan compliance archiving.
-  - **MUST Isolate Admin Port:** Port `7071` HANYA boleh diakses via VPN / LAN Admin terenkripsi.
-- **SHOULD:**
-  - **SHOULD Run Local DNS:** Gunakan Unbound pada `127.0.0.1` sebagai recursive caching resolver lokal.
-  - **SHOULD Enforce DMARC Reject:** Pasang kebijakan DMARC `p=reject` dengan reporting harian.
-  - **SHOULD Implement Fail2Ban:** Lindungi port SMTP Submission (587), IMAPS (993), dan Webmail dari serangan brute-force.
-- **MAY:**
-  - **MAY Deploy CBPolicyD:** Terapkan rate-limiting pengiriman email per jam per akun untuk mencegah spamming internal.
-- **AVOID:**
-  - **AVOID Public Admin Access:** Jangan pernah membuka port `7071` ke `0.0.0.0/0`.
-  - **AVOID Skipping Upgrades:** Jangan menunda instalasi security patch kumulatif saat rilis advisory baru diumumkan.
+---
+
+### 🔴 1. MUST / REQUIRED (Wajib Mutlak)
+
+Klausul di bawah ini merupakan persyaratan absolut yang **wajib dipenuhi** oleh administrator pada seluruh instance produksi:
+
+- 🛡️ **MUST Install POSIX `pax` Utility:**
+  Host OS **wajib** memiliki paket `pax` terinstal (`apt-get install -y pax` / `dnf install -y pax`). Amavisd menggunakan utilitas ini untuk dekompresi arsip email; ketiadaannya memicu _fallback_ ke `cpio` yang rentan terhadap eksekusi kode arbitrer jarak jauh (RCE) ([CVE-2022-41352](https://nvd.nist.gov/vuln/detail/CVE-2022-41352)).
+- 🔒 **MUST Isolate Admin Port (`7071` / `9071`):**
+  Port administrasi ZCS (`7071` untuk Admin Web Console & SOAP Admin Servlet) **wajib diisolasi** dari internet publik (`0.0.0.0/0`) dan hanya boleh diakses melalui VPN korporat terenkripsi, IP bastion/manajemen khusus, atau SSH tunneling lokal (`127.0.0.1`).
+- 🛑 **MUST Disable Postjournal When Not in Use:**
+  Bagi sistem yang tidak menggunakan audit compliance journaling eksternal, layanan postjournal **wajib dinonaktifkan** untuk menutup celah RCE unauthenticated recipient injection ([CVE-2024-45519](https://nvd.nist.gov/vuln/detail/CVE-2024-45519)):
+  ```bash
+  su - zimbra -c "zmlocalconfig -e postjournal_enabled=false && zmcontrol restart"
+  ```
+- 🔗 **MUST Bind Internal Daemons to Loopback (`127.0.0.1`):**
+  Layanan internal seperti Memcached (`port 11211`), MySQL (`port 7306`), dan LDAP replica **wajib di-bind** hanya pada interface loopback lokal guna mencegah eksploitasi route cache poisoning ([CVE-2022-27924](https://nvd.nist.gov/vuln/detail/CVE-2022-27924)) dan ekstraksi basis data langsung.
+- 🔑 **MUST Enforce Cryptographic Checksum Validation:**
+  Setiap arsip rilis biner ZCS yang diunduh dari repositori mirror **wajib diverifikasi** menggunakan hash kriptografis `SHA256` atau `MD5` resmi sebelum diekstraksi ke direktori sistem.
+
+---
+
+### 🚫 2. MUST NOT / SHALL NOT (Dilarang Keras)
+
+Tindakan atau konfigurasi berikut **benar-benar dilarang** dalam pengoperasian server Zimbra:
+
+- ⛔ **MUST NOT Expose Admin Console to Public WAN:**
+  Dilarang memetakan port `7071` atau direktori `/zimbraAdmin` secara langsung ke alamat IP publik, karena merupakan sasaran utama pemindaian otomatis botnet, CSRF, dan kerentanan Zimlet UI ([CVE-2023-34192](https://nvd.nist.gov/vuln/detail/CVE-2023-34192), [CVE-2024-33535](https://nvd.nist.gov/vuln/detail/CVE-2024-33535)).
+- ⛔ **MUST NOT Run Core Zimbra Processes as `root`:**
+  Dilarang menjalankan daemon aplikasi (`mailboxd`, `slapd`, `postfix`, `amavisd`, `nginx`) langsung di bawah hak pengguna `root`. Seluruh tugas pemeliharaan harian wajib didelegasikan ke user sistem unprivileged `zimbra`.
+- ⛔ **MUST NOT Defer Cumulative Security Patches:**
+  Dilarang menunda penerapan Patch / Security Advisory resmi melebihi 14 hari kalender sejak tanggal pengumuman rilis oleh tim keamanan Zimbra / Synacor.
+- ⛔ **MUST NOT Enable Deprecated Protocols & Weak Ciphers:**
+  Dilarang mengaktifkan protokol usang SSLv2, SSLv3, TLSv1.0, TLSv1.1 serta cipher lemah (RC4, 3DES, CBC, EXPORT) pada Mail Proxy Nginx maupun Postfix MTA.
+
+---
+
+### 🟡 3. SHOULD / RECOMMENDED (Sangat Disarankan)
+
+Klausul ini merepresentasikan praktik terbaik standar industri untuk mencapai efisiensi, pertahanan berlapis, dan reputasi pengiriman email optimal:
+
+- ⚡ **SHOULD Deploy Dedicated Local Caching DNS Resolver:**
+  Sangat disarankan memasang **Unbound** atau BIND9 pada `127.0.0.1` sebagai recursive resolver lokal. Hal ini secara signifikan memangkas latensi lookup SpamAssassin / DNSBL serta mencegah kegagalan resolusi MX timeout akibat _public DNS rate-limiting_.
+- ✉️ **SHOULD Enforce Strict DMARC Policy (`p=reject`):**
+  Domain pengirim email harus menerapkan catatan DMARC dengan kebijakan penolakan tegas (`p=reject`), penyelarasan SPF `strict` (`aspf=s`), DKIM `strict` (`adkim=s`), serta mengonfigurasi pelaporan agregat harian (`rua=mailto:dmarc-rua@domain.com`).
+- 🛡️ **SHOULD Implement Dynamic Brute-Force Defense (Fail2Ban):**
+  Konfigurasikan Fail2Ban dengan filter regex khusus pada `/opt/zimbra/log/mailbox.log` dan `/var/log/mail.log` untuk mendeteksi serta memblokir otomatis alamat IP penyerang pada port Webmail, SMTP Submission (587), dan IMAPS (993).
+- 🔐 **SHOULD Mandate Multi-Factor Authentication (2FA / TOTP):**
+  Wajibkan autentikasi dua faktor berbasis waktu (RFC 6238 TOTP) bagi seluruh akun berhak istimewa (_Global Administrator_, _Delegated Admin_) dan disarankan untuk seluruh akun mailbox pengguna.
+- ⏱️ **SHOULD Implement CBPolicyD Rate-Limiting:**
+  Aktifkan modul Cluebringer (CBPolicyD) untuk membatasi kuota pengiriman email keluar per jam/per akun (misal maks. 100-200 email/jam/user) guna mencegah domain masuk daftar hitam (_blacklist_) jika terdapat akun pengguna yang terkompromi.
+
+---
+
+### ⚠️ 4. SHOULD NOT / NOT RECOMMENDED (Sebaiknya Dihindari)
+
+Praktik-praktik berikut tidak disarankan karena dapat menimbulkan risiko keandalan dan celah keamanan laten:
+
+- ⚠️ **SHOULD NOT Rely Solely on Web Interface for Configuration:**
+  Hindari melakukan perubahan parameter arsitektur kritis hanya melalui antarmuka grafis Webmail/Admin UI; prioritaskan penggunaan CLI resmi (`zmprov`, `zmlocalconfig`, `zmcontrol`) yang dapat terdokumentasi dan terrekam dalam audit log.
+- ⚠️ **SHOULD NOT Retain Unencrypted Backups on Same Storage Node:**
+  Hindari menyimpan berkas cadangan mailbox hanya pada volume lokal atau storage server yang sama tanpa replikasi terenkripsi ke lokasi fisik / cloud terpisah (_off-site disaster recovery_).
+- ⚠️ **SHOULD NOT Use Self-Signed Certificates in Production:**
+  Hindari membiarkan sertifikat SSL/TLS bawaan (_self-signed_) terpasang pada lingkungan produksi publik; selalu gunakan sertifikat valid terpercaya publik (Let's Encrypt / Commercial CA).
+
+---
+
+### 🟢 5. MAY / OPTIONAL (Pilihan Tambahan)
+
+Langkah-langkah opsional yang dapat diimplementasikan sesuai kebutuhan arsitektur dan skala infrastruktur organisasi:
+
+- 📊 **MAY Integrate Centralized SIEM / Syslog Forwarding:**
+  Administrator dapat memforward log audit ZCS (`/opt/zimbra/log/audit.log`, `mailbox.log`, `nginx.access.log`) ke platform SIEM terpusat (Wazuh, Elastic SIEM, Graylog, Splunk) via rsyslog TLS terenkripsi.
+- 🌍 **MAY Implement GeoIP Ingress Filtering on Reverse Proxy:**
+  Dapat menerapkan modul Nginx GeoIP2 untuk membatasi atau menolak akses autentikasi Webmail dari wilayah geografis di luar jangkauan operasional bisnis.
+- 🩺 **MAY Deploy Automated Forensic & Webshell Scanners:**
+  Dapat menjadwalkan pemeriksaan berkala berkas sistem dan webroot Jetty menggunakan toolkit pemulihan insiden seperti **[eradicate-zimbra-malware](https://github.com/alsyundawy/eradicate-zimbra-malware)**.
 
 ---
 
