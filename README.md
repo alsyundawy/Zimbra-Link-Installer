@@ -2,13 +2,13 @@
 
 # ZIMBRA LINK INSTALLER — THE COMPLETE ZIMBRA COLLABORATION ARCHIVE & INSTALLER SUITE
 
-Enterprise Direct Binary Downloads, Official & Unofficial Community Builds, Cryptographic Checksums, Security Advisories, and Automated CLI Installer (ZCS 7.x – 10.1.x)
+Enterprise Direct Binary Downloads, Official & Unofficial Community Builds, Cryptographic Checksums, Security Advisories, and Automated CLI Installer (ZCS 4.5.x – 10.1.x)
 
 By **Harry Dertin Sutisna Alsyundawy**
 
 [![Maintenance Status](https://img.shields.io/badge/Maintained%3F-yes-brightgreen.svg)](https://github.com/alsyundawy)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![ZCS Versions](https://img.shields.io/badge/ZCS%20Versions-7.x%20%7C%208.x%20%7C%209.x%20%7C%2010.x%20%7C%2010.1.x-blue.svg)](https://github.com/alsyundawy/Zimbra-Link-Installer)
+[![ZCS Versions](https://img.shields.io/badge/ZCS%20Versions-4.5.x%20%7C%205.x%20%7C%206.x%20%7C%207.x%20%7C%208.x%20%7C%209.x%20%7C%2010.x%20%7C%2010.1.x-blue.svg)](https://github.com/alsyundawy/Zimbra-Link-Installer)
 [![Edition](https://img.shields.io/badge/Edition-Network%20%7C%20FOSS%20%7C%20Community-orange.svg)](https://github.com/alsyundawy/Zimbra-Link-Installer)
 [![Platform](https://img.shields.io/badge/Platform-Ubuntu%20%7C%20Debian%20%7C%20CentOS%20%7C%20RHEL%20%7C%20Rocky%20%7C%20Alma-lightgrey.svg)](https://github.com/alsyundawy)
 [![WhatsApp](https://img.shields.io/badge/WhatsApp-Chat%20%26%20Call-25D366?style=flat&logo=whatsapp&logoColor=white)](https://wa.me/6285658515212)
@@ -27,7 +27,7 @@ By **Harry Dertin Sutisna Alsyundawy**
 - [Automated CLI Installer (`zimbra-link-installer.sh`)](#automated-cli-installer-zimbra-link-installersh)
 - [Dependencies](#dependencies)
 - [Download Verification Status & Legend](#download-verification-status--legend)
-- [Official Zimbra Release Archive (7.x – 10.1.x)](#official-zimbra-release-archive-7x--101x)
+- [Official Zimbra Release Archive (4.5.x – 10.1.x)](#official-zimbra-release-archive-45x--101x)
   - [ZCS 10.1.x Series Official Releases (Daffodil)](#zcs-101x-series-official-releases-daffodil)
   - [ZCS 10.0.x Series Official Releases (Daffodil)](#zcs-100x-series-official-releases-daffodil)
   - [ZCS 9.0.0.x Series Official Releases (Kepler)](#zcs-900x-series-official-releases-kepler)
@@ -35,8 +35,11 @@ By **Harry Dertin Sutisna Alsyundawy**
   - [ZCS 8.7.x Series Official Releases (JudasPriest)](#zcs-87x-series-official-releases-judaspriest)
   - [ZCS 8.6.0 Series Official Releases & Cumulative Security Patches](#zcs-860-series-official-releases--cumulative-security-patches)
   - [ZCS 8.5.x Series Official Releases (8.5.1 GA & 8.5.0 GA)](#zcs-85x-series-official-releases-851-ga--850-ga)
-  - [ZCS 8.0.x Series Official Releases (8.0.9 GA)](#zcs-80x-series-official-releases-809-ga)
+  - [ZCS 8.0.x Series Official Releases (8.0.9 GA down to 8.0.3 GA)](#zcs-80x-series-official-releases-809-ga-down-to-803-ga)
   - [ZCS 7.x Legacy Official Releases (7.2.7 GA, 7.2.0 GA, 7.1.3 GA, 7.0.1 GA)](#zcs-7x-legacy-official-releases-727-ga-720-ga-713-ga-701-ga)
+  - [ZCS 6.x Legacy Official Releases (6.0.10 GA, 6.0.9 GA, 6.0.7 GA)](#zcs-6x-legacy-official-releases-6010-ga-609-ga-607-ga)
+  - [ZCS 5.x Legacy Official Releases (5.0.10 GA down to 5.0.0 GA)](#zcs-5x-legacy-official-releases-5010-ga-down-to-500-ga)
+  - [ZCS 4.5.x Historical Archive (4.5.10 GA down to 4.5.5 GA)](#zcs-45x-historical-archive-4510-ga-down-to-455-ga)
 - [Unofficial & Community FOSS Archive (2018–2026)](#unofficial--community-foss-archive-20182026)
   - [TechFiles.online Zimbra FOSS 10.1.x (Ian Walker Builds)](#techfilesonline-zimbra-foss-101x-ian-walker-builds)
   - [ZCS FOSS 10.1.x Series (All 26 Community Releases 2024–2026)](#zcs-foss-101x-series-all-26-community-releases-20242026)
@@ -58,7 +61,7 @@ By **Harry Dertin Sutisna Alsyundawy**
 
 ## Overview
 
-**Zimbra Link Installer** adalah repositori referensi arsitektural komprehensif, indeks arsip biner lengkap, dan utilitas instalasi otomatis untuk **Zimbra Collaboration Suite (ZCS)** dari rilis legasi **7.x hingga rilis aktif 10.1.x**.
+**Zimbra Link Installer** adalah repositori referensi arsitektural komprehensif, indeks arsip biner lengkap, dan utilitas instalasi otomatis untuk **Zimbra Collaboration Suite (ZCS)** dari rilis historis **4.5.x hingga rilis aktif 10.1.x**.
 
 Repositori ini menyatukan:
 
@@ -72,7 +75,7 @@ Repositori ini menyatukan:
 
 ## Original Links & References
 
-Tautan resmi portal Zimbra Synacor dan repository referensi:
+Tautan resmi portal Zimbra Synacor, dokumentasi wiki, dan repository referensi:
 
 - Official Open Source Downloads: <https://www.zimbra.com/downloads/zimbra-collaboration-open-source/>
 - Official Network Edition Downloads: <https://www.zimbra.com/downloads/zimbra-collaboration/>
@@ -127,8 +130,8 @@ Skrip `zimbra-link-installer.sh` menyederhanakan siklus pengunduhan dan instalas
 [+] Detected Operating System: Ubuntu 22.04 LTS (jammy)
 
 Pilih Kategori Zimbra yang ingin dipasang:
-  1) Zimbra Official Network Edition (10.1.0 GA, 10.0.0, 9.0.0, 8.8.15, 8.7.x, 8.6.0, 8.5.x, 8.0.9, 7.2.7)
-  2) Zimbra Official FOSS & Legacy LTS (8.8.15, 8.8.11, 8.8.9, 8.8.8, 8.8.7, 8.7.x, 8.6.0, 8.5.x, 8.0.9, 7.x)
+  1) Zimbra Official Network Edition (10.1.0 GA, 10.0.0, 9.0.0, 8.8.x, 8.7.x, 8.6.0, 8.5.x, 8.0.x, 7.x, 6.x, 5.x, 4.5.x)
+  2) Zimbra Official FOSS & Legacy LTS (8.8.x, 8.7.x, 8.6.0, 8.5.x, 8.0.x, 7.x, 6.x, 5.x, 4.5.x)
   3) Zimbra FOSS 10.1.x (TechFiles / Ian Walker Builds - Latest)
   4) Zimbra FOSS 10.1.x (Maldua GitHub Releases - 26 Versions)
   5) Zimbra FOSS 10.0.x (Maldua GitHub Releases - 17 Versions)
@@ -180,10 +183,10 @@ Setiap tautan unduhan dalam repositori ini telah diuji secara berkala dengan skr
 
 ---
 
-## Official Zimbra Release Archive (7.x – 10.1.x)
+## Official Zimbra Release Archive (4.5.x – 10.1.x)
 
 > [!NOTE]
-> Seluruh tautan biner resmi, paket rilis komersial **Network Edition (NE)**, edisi **Open Source Edition (FOSS)**, serta **Cumulative Security Patches** langsung dari server resmi `files.zimbra.com`:
+> Seluruh tautan biner resmi dari **ZCS 4.5.x hingga 10.1.x**, paket rilis komersial **Network Edition (NE)**, edisi **Open Source Edition (FOSS)**, serta **Cumulative Security Patches** langsung dari server resmi `files.zimbra.com` (berdasarkan dokumentasi [Zimbra Releases Wiki](https://wiki.zimbra.com/wiki/Zimbra_Releases)):
 
 ### ZCS 10.1.x Series Official Releases (Daffodil)
 
@@ -383,7 +386,7 @@ Setiap tautan unduhan dalam repositori ini telah diuji secara berkala dengan skr
 | **`8.5.0 GA`** | Network Edition            | RHEL 7 / CentOS 7 |  [Download](https://files.zimbra.com/downloads/8.5.0_GA/zcs-NETWORK-8.5.0_GA_3042.RHEL7_64.20140828204423.tgz)   |  [MD5](https://files.zimbra.com/downloads/8.5.0_GA/zcs-NETWORK-8.5.0_GA_3042.RHEL7_64.20140828204423.tgz.md5)   |                                                           -                                                           |
 | **`8.5.0 GA`** | Network Edition            | RHEL 6 / CentOS 6 |  [Download](https://files.zimbra.com/downloads/8.5.0_GA/zcs-NETWORK-8.5.0_GA_3042.RHEL6_64.20140828192109.tgz)   |  [MD5](https://files.zimbra.com/downloads/8.5.0_GA/zcs-NETWORK-8.5.0_GA_3042.RHEL6_64.20140828192109.tgz.md5)   |                                                           -                                                           |
 
-### ZCS 8.0.x Series Official Releases (8.0.9 GA)
+### ZCS 8.0.x Series Official Releases (8.0.9 GA down to 8.0.3 GA)
 
 | Release        | Edition                    | Target OS         |                                              Direct Archive (.tgz)                                               |                                                       MD5                                                       |                                                        SHA256                                                         |
 | :------------- | :------------------------- | :---------------- | :--------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------: |
@@ -399,6 +402,10 @@ Setiap tautan unduhan dalam repositori ini telah diuji secara berkala dengan skr
 | **`8.0.9 GA`** | Network Edition            | SLES 11 (64-bit)  |  [Download](https://files.zimbra.com/downloads/8.0.9_GA/zcs-NETWORK-8.0.9_GA_6191.SLES11_64.20141103151718.tgz)  |  [MD5](https://files.zimbra.com/downloads/8.0.9_GA/zcs-NETWORK-8.0.9_GA_6191.SLES11_64.20141103151718.tgz.md5)  |  [SHA256](https://files.zimbra.com/downloads/8.0.9_GA/zcs-NETWORK-8.0.9_GA_6191.SLES11_64.20141103151718.tgz.sha256)  |
 | **`8.0.9 GA`** | Network Edition            | RHEL 7 / CentOS 7 |  [Download](https://files.zimbra.com/downloads/8.0.9_GA/zcs-NETWORK-8.0.9_GA_6191.RHEL7_64.20141103151627.tgz)   |  [MD5](https://files.zimbra.com/downloads/8.0.9_GA/zcs-NETWORK-8.0.9_GA_6191.RHEL7_64.20141103151627.tgz.md5)   |  [SHA256](https://files.zimbra.com/downloads/8.0.9_GA/zcs-NETWORK-8.0.9_GA_6191.RHEL7_64.20141103151627.tgz.sha256)   |
 | **`8.0.9 GA`** | Network Edition            | RHEL 6 / CentOS 6 |  [Download](https://files.zimbra.com/downloads/8.0.9_GA/zcs-NETWORK-8.0.9_GA_6191.RHEL6_64.20141103151719.tgz)   |  [MD5](https://files.zimbra.com/downloads/8.0.9_GA/zcs-NETWORK-8.0.9_GA_6191.RHEL6_64.20141103151719.tgz.md5)   |  [SHA256](https://files.zimbra.com/downloads/8.0.9_GA/zcs-NETWORK-8.0.9_GA_6191.RHEL6_64.20141103151719.tgz.sha256)   |
+| **`8.0.7 GA`** | Open Source Edition (FOSS) | Linux x86_64      |             [Download](https://files.zimbra.com/downloads/8.0.7_GA/curl/UBUNTU12_64/curl-7.35.0.tgz)             |                                                        -                                                        |                                                           -                                                           |
+| **`8.0.7 GA`** | Open Source Edition (FOSS) | Linux x86_64      |          [Download](https://files.zimbra.com/downloads/8.0.7_GA/openssl/UBUNTU12_64/openssl-1.0.1f.tgz)          |                                                        -                                                        |                                                           -                                                           |
+| **`8.0.6 GA`** | Open Source Edition (FOSS) | Linux x86_64      |          [Download](https://files.zimbra.com/downloads/8.0.6_GA/openssl/UBUNTU12_64/openssl-1.0.1e.tgz)          |                                                        -                                                        |                                                           -                                                           |
+| **`8.0.3 GA`** | Open Source Edition (FOSS) | Linux x86_64      |          [Download](https://files.zimbra.com/downloads/8.0.3_GA/openssl/UBUNTU12_64/openssl-1.0.1d.tgz)          |                                                        -                                                        |                                                           -                                                           |
 
 ### ZCS 7.x Legacy Official Releases (7.2.7 GA, 7.2.0 GA, 7.1.3 GA, 7.0.1 GA)
 
@@ -434,6 +441,49 @@ Setiap tautan unduhan dalam repositori ini telah diuji secara berkala dengan skr
 | **`7.2.0 GA`** | Open Source Edition (FOSS) | Ubuntu 10.04 LTS           |     [Download](https://files.zimbra.com/downloads/7.2.0_GA/zcs-7.2.0_GA_2669.UBUNTU10_64.20120410002303.tgz)     |                                                        -                                                        |   -    |
 | **`7.1.3 GA`** | Open Source Edition (FOSS) | Ubuntu 8.04 (32-bit)       |       [Download](https://files.zimbra.com/downloads/7.1.3_GA/zcs-7.1.3_GA_3346.UBUNTU8.20110928134533.tgz)       |                                                        -                                                        |   -    |
 | **`7.0.1 GA`** | Open Source Edition (FOSS) | Ubuntu 8.04 LTS (64-bit)   |     [Download](https://files.zimbra.com/downloads/7.0.1_GA/zcs-7.0.1_GA_3105.UBUNTU8_64.20110304205531.tgz)      |                                                        -                                                        |   -    |
+
+### ZCS 6.x Legacy Official Releases (6.0.10 GA, 6.0.9 GA, 6.0.7 GA)
+
+| Release         | Edition                    | Target OS                  |                                             Direct Archive (.tgz)                                             | MD5 | SHA256 |
+| :-------------- | :------------------------- | :------------------------- | :-----------------------------------------------------------------------------------------------------------: | :-: | :----: |
+| **`6.0.9 GA`**  | Network Edition            | RHEL 5 / CentOS 5 (64-bit) | [Download](https://files.zimbra.com/downloads/6.0.9_GA/zcs-NETWORK-6.0.9_GA_2686.RHEL5_64.20101115224141.tgz) |  -  |   -    |
+| **`6.0.7 GA`**  | Network Edition            | RHEL 4 (32-bit)            |  [Download](https://files.zimbra.com/downloads/6.0.7_GA/zcs-NETWORK-6.0.7_GA_2470.RHEL4.20100610202621.tgz)   |  -  |   -    |
+| **`6.0.10 GA`** | Open Source Edition (FOSS) | Ubuntu 8.04 (32-bit)       |    [Download](https://files.zimbra.com/downloads/6.0.10_GA/zcs-6.0.10_GA_2692.UBUNTU8.20101215171146.tgz)     |  -  |   -    |
+
+### ZCS 5.x Legacy Official Releases (5.0.10 GA down to 5.0.0 GA)
+
+| Release         | Edition                    | Target OS                  |                                             Direct Archive (.tgz)                                             | MD5 | SHA256 |
+| :-------------- | :------------------------- | :------------------------- | :-----------------------------------------------------------------------------------------------------------: | :-: | :----: |
+| **`5.0.9 GA`**  | Open Source Edition (FOSS) | Debian 4.0 Etch            |    [Download](https://files.zimbra.com/downloads/5.0.9_GA/zcs-5.0.9_GA_2533.DEBIAN4.0.20080815215219.tgz)     |  -  |   -    |
+| **`5.0.6 GA`**  | Open Source Edition (FOSS) | Ubuntu 6.06 Dapper         |     [Download](https://files.zimbra.com/downloads/5.0.6_GA/zcs-5.0.6_GA_2313.UBUNTU6.20080522130240.tgz)      |  -  |   -    |
+| **`5.0.6 GA`**  | Network Edition            | RHEL 5 / CentOS 5 (64-bit) | [Download](https://files.zimbra.com/downloads/5.0.6_GA/zcs-NETWORK-5.0.6_GA_2313.RHEL5_64.20080522105815.tgz) |  -  |   -    |
+| **`5.0.2 GA`**  | Open Source Edition (FOSS) | RHEL 5 (32-bit)            |      [Download](https://files.zimbra.com/downloads/5.0.2_GA/zcs-5.0.2_GA_1975.RHEL5.20080130221917.tgz)       |  -  |   -    |
+| **`5.0.2 GA`**  | Open Source Edition (FOSS) | Fedora 7                   |        [Download](https://files.zimbra.com/downloads/5.0.2_GA/zcs-5.0.2_GA_1975.F7.20080130225918.tgz)        |  -  |   -    |
+| **`5.0.2 GA`**  | Open Source Edition (FOSS) | Debian 4.0 Etch            |    [Download](https://files.zimbra.com/downloads/5.0.2_GA/zcs-5.0.2_GA_1975.DEBIAN4.0.20080130234700.tgz)     |  -  |   -    |
+| **`5.0.1 GA`**  | Open Source Edition (FOSS) | RHEL 5 / CentOS 5 (64-bit) |     [Download](https://files.zimbra.com/downloads/5.0.1_GA/zcs-5.0.1_GA_1902.RHEL5_64.20080109205909.tgz)     |  -  |   -    |
+| **`5.0.1 GA`**  | Open Source Edition (FOSS) | RHEL 5 (32-bit)            |      [Download](https://files.zimbra.com/downloads/5.0.1_GA/zcs-5.0.1_GA_1902.RHEL5.20080109200629.tgz)       |  -  |   -    |
+| **`5.0.10 GA`** | Security Patch             | Linux x86_64               |               [Download](https://files.zimbra.com/downloads/5.0.10_GA/portal/ZCS5010_patch.tgz)               |  -  |   -    |
+| **`5.0.0 GA`**  | Open Source Edition (FOSS) | openSUSE 10.2              |  [Download](https://files.zimbra.com/downloads/5.0.0_GA/zcs-5.0.0_GA_1869.openSUSE_10.2.20071218202215.tgz)   |  -  |   -    |
+| **`5.0.0 GA`**  | Open Source Edition (FOSS) | Ubuntu 6.06 Dapper         |     [Download](https://files.zimbra.com/downloads/5.0.0_GA/zcs-5.0.0_GA_1869.UBUNTU6.20071218195304.tgz)      |  -  |   -    |
+| **`5.0.0 GA`**  | Open Source Edition (FOSS) | SuSE Enterprise 10         |     [Download](https://files.zimbra.com/downloads/5.0.0_GA/zcs-5.0.0_GA_1869.SuSEES10.20071218185942.tgz)     |  -  |   -    |
+| **`5.0.0 GA`**  | Open Source Edition (FOSS) | SLES 10 (64-bit)           |    [Download](https://files.zimbra.com/downloads/5.0.0_GA/zcs-5.0.0_GA_1869.SLES10_64.20071218192720.tgz)     |  -  |   -    |
+| **`5.0.0 GA`**  | Open Source Edition (FOSS) | RHEL 5 / CentOS 5 (64-bit) |     [Download](https://files.zimbra.com/downloads/5.0.0_GA/zcs-5.0.0_GA_1869.RHEL5_64.20071218190015.tgz)     |  -  |   -    |
+| **`5.0.0 GA`**  | Open Source Edition (FOSS) | RHEL 5 (32-bit)            |      [Download](https://files.zimbra.com/downloads/5.0.0_GA/zcs-5.0.0_GA_1869.RHEL5.20071218205219.tgz)       |  -  |   -    |
+| **`5.0.0 GA`**  | Open Source Edition (FOSS) | RHEL 4 (64-bit)            |     [Download](https://files.zimbra.com/downloads/5.0.0_GA/zcs-5.0.0_GA_1869.RHEL4_64.20071218185942.tgz)     |  -  |   -    |
+| **`5.0.0 GA`**  | Open Source Edition (FOSS) | RHEL 4 (32-bit)            |      [Download](https://files.zimbra.com/downloads/5.0.0_GA/zcs-5.0.0_GA_1869.RHEL4.20071218182359.tgz)       |  -  |   -    |
+| **`5.0.0 GA`**  | Open Source Edition (FOSS) | Fedora 7                   |        [Download](https://files.zimbra.com/downloads/5.0.0_GA/zcs-5.0.0_GA_1869.F7.20071218205447.tgz)        |  -  |   -    |
+| **`5.0.0 GA`**  | Open Source Edition (FOSS) | Debian 4.0 Etch            |    [Download](https://files.zimbra.com/downloads/5.0.0_GA/zcs-5.0.0_GA_1869.DEBIAN4.0.20071218200820.tgz)     |  -  |   -    |
+
+### ZCS 4.5.x Historical Archive (4.5.10 GA down to 4.5.5 GA)
+
+| Release         | Edition                    | Target OS          |                                      Direct Archive (.tgz)                                       | MD5 | SHA256 |
+| :-------------- | :------------------------- | :----------------- | :----------------------------------------------------------------------------------------------: | :-: | :----: |
+| **`4.5.9 GA`**  | Open Source Edition (FOSS) | Ubuntu 6.06 Dapper |      [Download](https://files.zimbra.com/downloads/4.5.9_GA/zcs-4.5.9_GA_1454.UBUNTU6.tgz)       |  -  |   -    |
+| **`4.5.9 GA`**  | Open Source Edition (FOSS) | Fedora Core 5      |        [Download](https://files.zimbra.com/downloads/4.5.9_GA/zcs-4.5.9_GA_1454.FC5.tgz)         |  -  |   -    |
+| **`4.5.9 GA`**  | Open Source Edition (FOSS) | Fedora Core 4      |        [Download](https://files.zimbra.com/downloads/4.5.9_GA/zcs-4.5.9_GA_1454.FC4.tgz)         |  -  |   -    |
+| **`4.5.5 GA`**  | Network Edition            | Linux x86_64       | [Download](https://files.zimbra.com/downloads/4.5.5_GA/zcs-NETWORK-4.5.5_GA_838.RPL1-vmware.zip) |  -  |   -    |
+| **`4.5.10 GA`** | Open Source Edition (FOSS) | Ubuntu 6.06 Dapper |     [Download](https://files.zimbra.com/downloads/4.5.10_GA/zcs-4.5.10_GA_1575.UBUNTU6.tgz)      |  -  |   -    |
+| **`4.5.10 GA`** | Open Source Edition (FOSS) | RHEL 5 (32-bit)    |      [Download](https://files.zimbra.com/downloads/4.5.10_GA/zcs-4.5.10_GA_1575.RHEL5.tgz)       |  -  |   -    |
 
 ---
 
