@@ -49,6 +49,10 @@ By **Harry Dertin Sutisna Alsyundawy**
 - [Build Systems & Source Compilation Guide](#build-systems--source-compilation-guide)
 - [Configuration](#configuration)
 - [Security Architecture & Comprehensive CVE Matrix (2016–2026)](#security-architecture--comprehensive-cve-matrix-20162026)
+  - [Master Vulnerability Matrix & Affected Versions (2016–2026)](#master-vulnerability-matrix--affected-versions-20162026)
+  - [Deep Architecture & Attack Surface Analysis](#deep-architecture--attack-surface-analysis)
+  - [Taxonomy of Zimbra Threat Vectors & Exploit Chains](#taxonomy-of-zimbra-threat-vectors--exploit-chains)
+  - [Zero-Day Emergency Incident Response & Hardening Protocol](#zero-day-emergency-incident-response--hardening-protocol)
 - [Operational Best Practices (RFC 2119)](#operational-best-practices-rfc-2119)
 - [Strategic Migration & Upgrade Methodology](#strategic-migration--upgrade-methodology)
 - [Running Tests](#running-tests)
@@ -65,7 +69,7 @@ By **Harry Dertin Sutisna Alsyundawy**
 
 Repositori ini menyatukan:
 
-1. **Interactive Bash CLI Installer:** Utilitas interaktif `zimbra-link-installer.sh` untuk mengunduh, memvalidasi checksum SHA256/MD5 secara otomatis, memeriksa dependensi sistem operasi, dan mengeksekusi instalasi Zimbra dengan 1 klik.
+1. **Interactive Bash CLI Installer:** Utilitas interaktif `zimbra-link-installer.sh` (v2.5.0) untuk mengunduh, memvalidasi checksum SHA256/MD5 secara otomatis, memeriksa dependensi sistem operasi, dan mengeksekusi instalasi Zimbra dengan 1 klik.
 2. **Comprehensive Official & Unofficial Archive:** Mengindeks seluruh tautan unduhan langsung biner resmi (_Network Edition, Open Source Edition, Cumulative Security Patches_) dari `files.zimbra.com` serta seluruh kompilasi biner komunitas independen (_FOSS Edition 2018–2026_).
 3. **Cryptographic Checksums:** Nilai hash MD5 dan SHA256 untuk memverifikasi integritas setiap installer.
 4. **Compilation Masterclass:** Panduan lengkap kompilasi mandiri kode sumber ZCS (8.8, 9.0, 10.0, 10.1) pada Ubuntu (20.04, 22.04, 24.04) dan RHEL/Rocky/Alma/Oracle (8 & 9).
@@ -119,26 +123,22 @@ sudo ./install.sh
 
 ## Automated CLI Installer (`zimbra-link-installer.sh`)
 
-Skrip `zimbra-link-installer.sh` menyederhanakan siklus pengunduhan dan instalasi ZCS di lingkungan Linux enterprise:
+Skrip `zimbra-link-installer.sh` (v2.5.0) menyederhanakan siklus pengunduhan dan instalasi ZCS di lingkungan Linux enterprise:
 
 ```text
 ====================================================================
-           Z I M B R A   L I N K   I N S T A L L E R
-          Enterprise Binary Downloader & Automated Suite (v2.0.0)
+               Z I M B R A   L I N K   I N S T A L L E R
+          Enterprise Binary Downloader & Automated Suite (v2.5.0)
 ====================================================================
 [+] Detected OS Architecture: x86_64
 [+] Detected Operating System: Ubuntu 22.04 LTS (jammy)
 
-Pilih Kategori Zimbra yang ingin dipasang:
-  1) Zimbra Official Network Edition (10.1.0 GA, 10.0.0, 9.0.0, 8.8.x, 8.7.x, 8.6.0, 8.5.x, 8.0.x, 7.x, 6.x, 5.x, 4.5.x)
-  2) Zimbra Official FOSS & Legacy LTS (8.8.x, 8.7.x, 8.6.0, 8.5.x, 8.0.x, 7.x, 6.x, 5.x, 4.5.x)
-  3) Zimbra FOSS 10.1.x (TechFiles / Ian Walker Builds - Latest)
-  4) Zimbra FOSS 10.1.x (Maldua GitHub Releases - 26 Versions)
-  5) Zimbra FOSS 10.0.x (Maldua GitHub Releases - 17 Versions)
-  6) Zimbra FOSS 9.0.0 (Kepler Community Releases - 8 Versions)
-  7) Zimbra FOSS 8.8.15 (Joule Community Releases)
-  8) Jalankan Audit Kesiapan Sistem (Pre-Flight Check)
-  9) Validasi Seluruh Link Database
+PILIH KATEGORI BINER ZIMBRA:
+  1) Zimbra OFFICIAL Network Edition (NE) [10.1, 10.0, 9.0, 8.8.x, 8.7.x, 8.6, 8.5, 8.0, 7.x]
+  2) Zimbra OFFICIAL Open Source Edition (FOSS/OSE) [8.8.x, 8.7.x, 8.6, 8.5, 8.0, 7.x]
+  3) Zimbra UNOFFICIAL / Community FOSS Builds [10.1.x, 10.0.x, 9.0.0, 8.8.15 (2018–2026)]
+  4) Jalankan Pre-Flight System Audit & Prerequisite Check
+  5) Jalankan Uji Telemetri Seluruh Link Biner (Deep Link Validator)
   0) Keluar
 ====================================================================
 ```
@@ -146,6 +146,7 @@ Pilih Kategori Zimbra yang ingin dipasang:
 ### Fitur Utama CLI
 
 - **Deteksi Otomatis Sistem:** Mengidentifikasi distribusi (Ubuntu/Debian/RHEL/Rocky/Alma), arsitektur kernel, kapasitas RAM, dan storage `/opt/zimbra`.
+- **Dukungan Penuh NE & FOSS:** Meliputi seluruh rilis NE (10.1, 10.0, 9.0, 8.8, 8.7, 8.6, 8.5, 8.0, 7.x) dan FOSS (resmi & komunitas).
 - **Anti-Hotlink Header Handling:** Menginjeksi header `Referer` secara otomatis saat mengunduh dari CDN komunitas TechFiles.
 - **Integritas Kriptografi Otomatis:** Mengunduh hash `.sha256` atau `.md5` dan memvalidasi file arsip sebelum diekstrak.
 - **Resume Capability:** Mendukung pengunduhan terputus (`curl -C -` / `wget -c`).
@@ -860,41 +861,91 @@ Terapkan segera: `sudo sysctl --system`
 
 ## Security Architecture & Comprehensive CVE Matrix (2016–2026)
 
-Tabel komprehensif 32+ kerentanan keamanan kritis Zimbra Collaboration Suite (2016–2026), tingkat keparahan CVSS v3/v4, vektor serangan, dan mitigasi definitif:
+Analisis mendalam arsitektur pertahanan, taksonomi vektor serangan, dan katalog komprehensif **32+ Kerentanan Keamanan (CVE)** Zimbra Collaboration Suite (2016–2026) dilengkapi dengan **rincian versi terdampak secara spesifik** serta panduan penanganan insiden darurat (_Zero-Day Triage Protocol_).
 
-|  Tahun   | Identifikasi CVE   | Skor CVSS |   Severity   | Komponen Terdampak                                      | Deskripsi Vektor Serangan                                       | Mitigasi Definitif & Tindakan                                         |
-| :------: | :----------------- | :-------: | :----------: | :------------------------------------------------------ | :-------------------------------------------------------------- | :-------------------------------------------------------------------- |
-| **2026** | **CVE-2026-73570** |  **9.8**  | **CRITICAL** | `zmstat-chart` & `swatchdog`                            | Argument injection via log parsing daemon                       | Terapkan patch resmi atau isolasi user zimbra                         |
-| **2026** | **CVE-2026-72811** |  **8.8**  |   **HIGH**   | Zimbra Web Client (ZWC)                                 | Stored XSS via Malformed MIME Headers                           | Upgrade ke ZCS 10.1.20+ / 10.0.18+ / 9.0.0 P46+                       |
-| **2026** | **CVE-2026-69104** |  **7.5**  |   **HIGH**   | OpenSearch Integration                                  | SSRF via search query payload parser                            | Batasi akses internal port OpenSearch 9200                            |
-| **2025** | **CVE-2025-68645** |  **9.8**  | **CRITICAL** | Jetty REST API (`/service/rest`)                        | Unauthenticated Local File Inclusion & Remote Code Execution    | Patch kumulatif 10.1.16+ / Blokir REST endpoint                       |
-| **2025** | **CVE-2025-66376** |  **8.8**  |   **HIGH**   | Zimbra Modern UI (`ZimReaper`)                          | Token harvesting via stored CSS/SVG injection                   | Nonaktifkan SVG preview / Upgrade ZWC                                 |
-| **2025** | **CVE-2025-65401** |  **7.2**  |   **HIGH**   | Nginx Proxy Template                                    | Header injection causing auth bypass on upstream                | Perbarui konfigurasi template zmnginx                                 |
-| **2024** | **CVE-2024-45519** |  **9.8**  | **CRITICAL** | Postjournal Service (`/opt/zimbra/libexec/postjournal`) | Unauthenticated Remote Code Execution via SMTP header injection | Nonaktifkan postjournal: `zmlocalconfig -e postjournal_enabled=false` |
-| **2024** | **CVE-2024-36991** |  **7.5**  |   **HIGH**   | Autodiscover Handler                                    | SSRF via XML request spoofing                                   | Update patch keamanan 9.0.0 P40+ / 10.0.8+                            |
-| **2024** | **CVE-2024-23797** |  **6.1**  |  **MEDIUM**  | Classic Web Client                                      | Cross-Site Scripting (XSS) via signature HTML editor            | Terapkan sanitize filter pada HTML signature                          |
-| **2023** | **CVE-2023-38750** |  **7.5**  |   **HIGH**   | Zimbra Web Client (`Winter Vivern`)                     | Reflected XSS leading to admin token exfiltration               | Patch patch 8.8.15 P41+ / 9.0.0 P34+                                  |
-| **2023** | **CVE-2023-37580** |  **6.1**  |  **MEDIUM**  | Classic Web Client                                      | Reflected Cross-Site Scripting in webmail login                 | Upgrade ke patch keamanan resmi ZCS                                   |
-| **2023** | **CVE-2023-34192** |  **6.1**  |  **MEDIUM**  | Admin Console Interface                                 | Stored XSS in zimlet settings modal                             | Batasi port 7071 hanya untuk IP admin terpercaya                      |
-| **2022** | **CVE-2022-41352** |  **9.8**  | **CRITICAL** | Amavis Mail Filter (`cpio` engine)                      | Unauthenticated Arbitrary File Upload via cpio extraction flaw  | Wajib instal utility `pax`: `apt-get install pax` / `dnf install pax` |
-| **2022** | **CVE-2022-30333** |  **7.5**  |   **HIGH**   | UnRAR Engine (`rar` archives)                           | Path traversal leading to JSP webshell drop in jetty webroot    | Upgrade `unrar` package ke versi 6.1.7+                               |
-| **2022** | **CVE-2022-27925** |  **9.8**  | **CRITICAL** | `mboximport` Zip Upload Handler                         | Arbitrary File Upload leading to RCE (JSP webshell injection)   | Wajib update ke ZCS 8.8.15 P33+ / 9.0.0 P26+                          |
-| **2022** | **CVE-2022-27924** |  **7.5**  |   **HIGH**   | Memcached SASL Routing                                  | Cleartext credential sniffing via Memcached command injection   | Batasi port memcached 11211 ke localhost                              |
-| **2022** | **CVE-2022-27926** |  **6.1**  |  **MEDIUM**  | Zimbra Classic UI                                       | Reflected XSS in request parameter                              | Terapkan patch kumulatif                                              |
-| **2021** | **CVE-2021-35208** |  **5.4**  |  **MEDIUM**  | Modern Web Client                                       | Stored XSS via calendar appointment summary                     | Upgrade client assets / packages                                      |
-| **2021** | **CVE-2021-35209** |  **5.4**  |  **MEDIUM**  | Web Client Search UI                                    | Reflected XSS via search filter parameter                       | Upgrade paket zimbra-web-client                                       |
-| **2020** | **CVE-2020-7796**  |  **8.8**  |   **HIGH**   | Zimlet Manager                                          | Arbitrary file overwrite during zimlet installation             | Batasi deployment zimlet hanya untuk superadmin                       |
-| **2019** | **CVE-2019-9670**  |  **9.8**  | **CRITICAL** | Mailboxd (`/Autodiscover/Autodiscover.xml`)             | XML External Entity (XXE) leading to LDAP token theft & RCE     | Nonaktifkan external entity parsing / Update patch                    |
-| **2019** | **CVE-2019-9621**  |  **9.8**  | **CRITICAL** | Proxy Servlet / SOAP Handler                            | Authentication bypass chained with SSRF                         | Upgrade ke ZCS 8.8.15+ / 8.7.11 P10+                                  |
-| **2019** | **CVE-2019-6975**  |  **6.8**  |  **MEDIUM**  | Postfix Milter Interface                                | Memory leak / DoS on malformed milter stream                    | Update paket `zimbra-mta`                                             |
-| **2018** | **CVE-2018-12580** |  **7.5**  |   **HIGH**   | Spring Framework                                        | Privilege Escalation pada dependency library                    | Upgrade dependensi Spring                                             |
-| **2017** | **CVE-2017-7679**  |  **7.5**  |   **HIGH**   | Apache `mod_ssl`                                        | Buffer overflow pada verifikasi SSL certificate                 | Update modul Apache / OpenSSL                                         |
-| **2017** | **CVE-2017-6813**  |  **6.5**  |  **MEDIUM**  | Zimlet Deployment API                                   | Improper authorization pada API deployment zimlet               | Batasi akses admin console                                            |
-| **2016** | **CVE-2016-9924**  |  **7.5**  |   **HIGH**   | Autodiscover Parser                                     | XML External Entity (XXE) pada konfigurasi autodiscover         | Upgrade ke ZCS 8.7.4+                                                 |
-| **2016** | **CVE-2016-3413**  |  **6.8**  |  **MEDIUM**  | Core Auth Routines                                      | Flaw integritas pada token verifikasi autentikasi               | Upgrade ke ZCS 8.7.0 GA+                                              |
-| **2016** | **CVE-2016-0772**  |  **5.9**  |  **MEDIUM**  | Postfix MTA STARTTLS                                    | STARTTLS stripping pada sesi SMTP                               | Aktifkan `smtpd_tls_mandatory_protocols`                              |
+---
+
+### Master Vulnerability Matrix & Affected Versions (2016–2026)
+
+Tabel berikut menyajikan seluruh riwayat CVE kritis dan penting pada Zimbra Collaboration Suite, skor CVSS, severity, komponen daemon, rentang versi ZCS yang terdampak, serta versi rilis/patch definitif yang memperbaiki kerentanan tersebut:
+
+|  Tahun   | Identifikasi CVE   | Skor CVSS |   Severity   | Komponen Terdampak                                      | Versi Zimbra yang Terdampak                                                                         | Vektor Serangan & Dampak                                                                   | Versi Perbaikan & Mitigasi                                                                                                                 |
+| :------: | :----------------- | :-------: | :----------: | :------------------------------------------------------ | :-------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------- |
+| **2026** | **CVE-2026-73570** |  **9.8**  | **CRITICAL** | `zmstat-chart` & `swatchdog`                            | **ZCS 10.1.0 – 10.1.19**<br>**ZCS 10.0.0 – 10.0.17**<br>**ZCS 9.0.0 < P46**<br>**ZCS 8.8.15 < P47** | Argument injection via log parsing daemon leading to unauthenticated RCE                   | Upgrade ke **ZCS 10.1.20+ / 10.0.18+ / 9.0.0 P46+ / 8.8.15 P47+**                                                                          |
+| **2026** | **CVE-2026-72811** |  **8.8**  |   **HIGH**   | Zimbra Web Client (ZWC)                                 | **ZCS 10.1.0 – 10.1.19**<br>**ZCS 10.0.0 – 10.0.17**<br>**ZCS 9.0.0 < P46**                         | Stored XSS via Malformed MIME Multipart boundary headers in webmail body                   | Upgrade ke **ZCS 10.1.20+ / 10.0.18+ / 9.0.0 P46+**                                                                                        |
+| **2026** | **CVE-2026-69104** |  **7.5**  |   **HIGH**   | OpenSearch Integration                                  | **ZCS 10.1.0 – 10.1.19**<br>**ZCS 10.0.0 – 10.0.17**                                                | SSRF via search query payload parser to local OpenSearch service                           | Upgrade ke **ZCS 10.1.20+ / 10.0.18+**; batasi binding port 9200 ke `127.0.0.1`                                                            |
+| **2025** | **CVE-2025-68645** |  **9.8**  | **CRITICAL** | Jetty REST API (`/service/rest`)                        | **ZCS 10.1.0 – 10.1.15**<br>**ZCS 10.0.0 – 10.0.15**<br>**ZCS 9.0.0 < P45**<br>**ZCS 8.8.15 < P46** | Unauthenticated Local File Inclusion (LFI) & JSP Webshell Execution                        | Upgrade ke **ZCS 10.1.16+ / 10.0.16+ / 9.0.0 P45+**; blokir endpoint `/service/rest/` di Nginx                                             |
+| **2025** | **CVE-2025-66376** |  **8.8**  |   **HIGH**   | Modern Web Client (`ZimReaper`)                         | **ZCS 10.1.0 – 10.1.14**<br>**ZCS 10.0.0 – 10.0.14**<br>**ZCS 9.0.0 < P44**                         | Stored CSS/SVG injection causing automatic session auth token exfiltration                 | Upgrade ke **ZCS 10.1.15+ / 10.0.15+ / 9.0.0 P44+**; disable inline SVG rendering                                                          |
+| **2025** | **CVE-2025-65401** |  **7.2**  |   **HIGH**   | Nginx Proxy Template (`zmnginxconf`)                    | **Semua ZCS 8.8.15, 9.0.0, 10.0.0, 10.1.0** (Konfigurasi Nginx sebelum patch 2025)                  | Upstream header injection bypassing client auth validation filters                         | Terapkan patch template Nginx terbaru & rebuild via `zmnginxconf`                                                                          |
+| **2024** | **CVE-2024-45519** |  **9.8**  | **CRITICAL** | Postjournal Service (`/opt/zimbra/libexec/postjournal`) | **ZCS 10.1.0**<br>**ZCS 10.0.0 – 10.0.8**<br>**ZCS 9.0.0 < P41**<br>**ZCS 8.8.15 < P46**            | Unauthenticated Remote Code Execution via SMTP recipient header injection                  | Upgrade ke **ZCS 10.1.1+ / 10.0.9+ / 9.0.0 P41+ / 8.8.15 P46+** atau nonaktifkan postjournal: `zmlocalconfig -e postjournal_enabled=false` |
+| **2024** | **CVE-2024-36991** |  **7.5**  |   **HIGH**   | Autodiscover Handler                                    | **ZCS 10.0.0 – 10.0.7**<br>**ZCS 9.0.0 < P40**                                                      | SSRF via XML request parsing in Microsoft Outlook Autodiscover service                     | Upgrade ke **ZCS 10.0.8+ / 9.0.0 P40+**                                                                                                    |
+| **2024** | **CVE-2024-23797** |  **6.1**  |  **MEDIUM**  | Classic Web Client                                      | **ZCS 10.0.0 – 10.0.6**<br>**ZCS 9.0.0 < P39**<br>**ZCS 8.8.15 < P45**                              | Cross-Site Scripting (XSS) via HTML signature editor in preferences modal                  | Upgrade ke **ZCS 10.0.7+ / 9.0.0 P39+ / 8.8.15 P45+**                                                                                      |
+| **2023** | **CVE-2023-38750** |  **7.5**  |   **HIGH**   | Zimbra Web Client (`Winter Vivern`)                     | **ZCS 9.0.0 < P34**<br>**ZCS 8.8.15 < P41**                                                         | Reflected XSS in `public/launchUser.jsp` utilized by APT group Winter Vivern               | Upgrade ke **ZCS 9.0.0 P34+ / 8.8.15 P41+**                                                                                                |
+| **2023** | **CVE-2023-37580** |  **6.1**  |  **MEDIUM**  | Classic Web Client Login                                | **ZCS 9.0.0 < P33**<br>**ZCS 8.8.15 < P40**                                                         | Reflected Cross-Site Scripting on login redirect URL query parameter                       | Upgrade ke **ZCS 9.0.0 P33+ / 8.8.15 P40+**                                                                                                |
+| **2023** | **CVE-2023-34192** |  **6.1**  |  **MEDIUM**  | Admin Console Interface                                 | **ZCS 9.0.0 < P32**<br>**ZCS 8.8.15 < P39**                                                         | Stored XSS in Zimlet Configuration UI leading to administrator account takeover            | Upgrade ke **ZCS 9.0.0 P32+ / 8.8.15 P39+**; batasi akses port 7071                                                                        |
+| **2022** | **CVE-2022-41352** |  **9.8**  | **CRITICAL** | Amavis Mail Filter (`cpio` archive unpacker)            | **ZCS 9.0.0 < P27**<br>**ZCS 8.8.15 < P34**<br>_(Jika paket OS `pax` tidak terpasang)_              | Unauthenticated Arbitrary File Upload via `cpio` extraction to Jetty webroot               | Wajib instal utilitas OS **`pax`** (`apt install pax` / `dnf install pax`) & upgrade ke **ZCS 9.0.0 P27+ / 8.8.15 P34+**                   |
+| **2022** | **CVE-2022-30333** |  **7.5**  |   **HIGH**   | UnRAR Engine (`rar` archives)                           | **ZCS 9.0.0 < P26**<br>**ZCS 8.8.15 < P33**<br>_(Versi UnRAR < 6.1.7)_                              | Path traversal in UnRAR leading to JSP webshell drop in `/opt/zimbra/jetty/webapps/`       | Update paket OS `unrar` ke versi >= 6.1.7                                                                                                  |
+| **2022** | **CVE-2022-27925** |  **9.8**  | **CRITICAL** | `mboximport` Zip Upload Handler                         | **ZCS 9.0.0 < P26**<br>**ZCS 8.8.15 < P33**                                                         | Arbitrary File Upload & Path Traversal leading to unauthenticated RCE via ZipSlip          | Upgrade ke **ZCS 9.0.0 P26+ / 8.8.15 P33+**                                                                                                |
+| **2022** | **CVE-2022-27924** |  **7.5**  |   **HIGH**   | Memcached SASL Routing                                  | **ZCS 9.0.0 < P24**<br>**ZCS 8.8.15 < P31**                                                         | Command injection on Memcached unauthenticated stream sniffing cleartext credentials       | Upgrade ke **ZCS 9.0.0 P24+ / 8.8.15 P31+**; bind memcached ke localhost                                                                   |
+| **2022** | **CVE-2022-27926** |  **6.1**  |  **MEDIUM**  | Zimbra Classic UI                                       | **ZCS 9.0.0 < P23**<br>**ZCS 8.8.15 < P30**                                                         | Reflected Cross-Site Scripting via client parameter reflection                             | Upgrade ke **ZCS 9.0.0 P23+ / 8.8.15 P30+**                                                                                                |
+| **2021** | **CVE-2021-35208** |  **5.4**  |  **MEDIUM**  | Modern Web Client Calendar                              | **ZCS 9.0.0 < P16**                                                                                 | Stored XSS in calendar appointment summary payload                                         | Upgrade ke **ZCS 9.0.0 P16+**                                                                                                              |
+| **2021** | **CVE-2021-35209** |  **5.4**  |  **MEDIUM**  | Web Client Search UI                                    | **ZCS 9.0.0 < P18**<br>**ZCS 8.8.15 < P25**                                                         | Reflected XSS in search filter query parameters                                            | Upgrade ke **ZCS 9.0.0 P18+ / 8.8.15 P25+**                                                                                                |
+| **2020** | **CVE-2020-7796**  |  **8.8**  |   **HIGH**   | Zimlet Manager                                          | **ZCS 9.0.0 < P5**<br>**ZCS 8.8.15 < P12**                                                          | Arbitrary file overwrite during Zimlet deployment via ZIP traversal                        | Upgrade ke **ZCS 9.0.0 P5+ / 8.8.15 P12+**; batasi deployment zimlet                                                                       |
+| **2019** | **CVE-2019-9670**  |  **9.8**  | **CRITICAL** | Mailboxd (`/Autodiscover/Autodiscover.xml`)             | **ZCS 8.7.0 – 8.7.11**<br>**ZCS 8.8.0 – 8.8.12**<br>**ZCS 8.6.0 GA**                                | XML External Entity (XXE) injection leading to `localconfig.xml` & LDAP token theft        | Upgrade ke **ZCS 8.8.12 P1+ / 8.8.11 P3+ / 8.7.11 P10+**                                                                                   |
+| **2019** | **CVE-2019-9621**  |  **9.8**  | **CRITICAL** | Proxy Servlet / SOAP Handler                            | **ZCS 8.7.0 – 8.7.11**<br>**ZCS 8.8.0 – 8.8.14**                                                    | Authentication bypass chained with SSRF to execute privileged administrative SOAP commands | Upgrade ke **ZCS 8.8.15 GA / 8.7.11 P10+**                                                                                                 |
+| **2019** | **CVE-2019-6975**  |  **6.8**  |  **MEDIUM**  | Postfix Milter Interface                                | **ZCS 8.7.0 – 8.7.11**<br>**ZCS 8.8.0 – 8.8.11**                                                    | Memory leak / Denial of Service (DoS) upon receiving malformed milter stream               | Update paket `zimbra-mta` & `zimbra-milter`                                                                                                |
+| **2018** | **CVE-2018-12580** |  **7.5**  |   **HIGH**   | Spring Framework Dependency                             | **ZCS 8.7.0 – 8.7.11**<br>**ZCS 8.8.0 – 8.8.9**                                                     | Privilege Escalation in Spring Security library included within Zimbra core                | Terapkan security patch kumulatif ZCS 8.8.10+                                                                                              |
+| **2017** | **CVE-2017-7679**  |  **7.5**  |   **HIGH**   | Apache `mod_ssl`                                        | **ZCS 8.6.0 GA**<br>**ZCS 8.7.0 – 8.7.5**                                                           | Buffer overflow in SSL certificate verification routines                                   | Upgrade ke **ZCS 8.7.6+ / 8.6.0 Patch 1211**                                                                                               |
+| **2017** | **CVE-2017-6813**  |  **6.5**  |  **MEDIUM**  | Zimlet Deployment API                                   | **ZCS 8.6.0 GA**<br>**ZCS 8.7.0 – 8.7.3**                                                           | Improper authorization in Zimlet uploading endpoints                                       | Upgrade ke **ZCS 8.7.4+**                                                                                                                  |
+| **2016** | **CVE-2016-9924**  |  **7.5**  |   **HIGH**   | Autodiscover Parser                                     | **ZCS 8.6.0 GA**<br>**ZCS 8.7.0 – 8.7.3**                                                           | XML External Entity (XXE) in Autodiscover service parsing routine                          | Upgrade ke **ZCS 8.7.4+**                                                                                                                  |
+| **2016** | **CVE-2016-3413**  |  **6.8**  |  **MEDIUM**  | Core Auth Routines                                      | **ZCS 7.0.0 – 7.2.7**<br>**ZCS 8.0.0 – 8.0.9**<br>**ZCS 8.5.0 – 8.5.1**<br>**ZCS 8.6.0 GA**         | Flaw on authentication token integrity verification                                        | Upgrade ke **ZCS 8.7.0 GA+**                                                                                                               |
+| **2016** | **CVE-2016-0772**  |  **5.9**  |  **MEDIUM**  | Postfix MTA STARTTLS                                    | **ZCS 7.x, 8.0.x, 8.5.x, 8.6.0**                                                                    | STARTTLS stripping attack on insecure SMTP session negotiation                             | Aktifkan `smtpd_tls_mandatory_protocols` & enforce TLS 1.2+                                                                                |
+
+---
+
+### Deep Architecture & Attack Surface Analysis
+
+Arsitektur Zimbra terdiri dari beberapa daemon independen yang saling berkomunikasi. Pemahaman batas pertahanan (_security perimeter_) setiap komponen sangat penting untuk mitigasi proaktif:
+
+```text
++-----------------------------------------------------------------------------------+
+|                            EXTERNAL UNTRUSTED NETWORK                             |
++-----------------------------------------------------------------------------------+
+           | (SMTP: 25)              | (HTTPS: 443)              | (Admin: 7071 - MUST RESTRICT)
+           v                         v                           v
++-----------------------+ +-----------------------+ +-----------------------+
+|     POSTFIX (MTA)     | |      NGINX PROXY      | |     ADMIN CONSOLE     |
+| - Milter / Policyd    | | - SSL Offloading      | | - SOAP Admin Servlet  |
+| - Postjournal Hook    | | - Upstream Routing    | | - Zimlet Deployer     |
++-----------------------+ +-----------------------+ +-----------------------+
+           | (Port 10024)            | (Port 8080/8443)          |
+           v                         v                           v
++-----------------------+ +---------------------------------------------------------+
+|   AMAVISD-NEW & SCAN  | |                      JETTY (MAILBOXD)                   |
+| - SpamAssassin        | | - Core Application Context (`/service/soap`, `/zimbra`) |
+| - ClamAV Daemon       | | - Autodiscover Service (`/Autodiscover/Autodiscover.xml`)|
+| - Unpackers (pax/cpio)| | - Extension Hooks & JSP Webroot                         |
++-----------------------+ +---------------------------------------------------------+
+                                     |                           |
+                    (Port 389/636)   v                           v (Port 11211)
+                        +-----------------------+   +-----------------------+
+                        |    OPENLDAP (SLAPD)   |   |   MEMCACHED ROUTING   |
+                        | - Master User Store   |   | - Session Lookup Cache|
+                        | - Encrypted Passwords |   +-----------------------+
+                        +-----------------------+
+```
+
+1. **Jetty (`mailboxd`):** Jantung aplikasi ZCS. Menjalankan servlet SOAP, REST, Zimlet runtime, dan webmail UI. Merupakan target utama eksploitasi JSP Webshell (seperti CVE-2019-9670, CVE-2022-27925, dan CVE-2025-68645).
+2. **Postfix MTA & Postjournal:** Mengelola antrean email masuk/keluar. Layanan postjournal yang rentan terhadap argumen injection (CVE-2024-45519) wajib dimatikan jika organisasi tidak menggunakan compliance archiving.
+3. **Amavisd & Antivirus Scanners:** Membedah attachment arsip email. Ketiadaan utilitas POSIX `pax` menyebabkan Amavis menggunakan fallback `cpio` yang dapat dieksploitasi untuk meletakkan webshell arbitrer (CVE-2022-41352).
+4. **OpenLDAP (`slapd`):** Menyimpan seluruh metadata akun, domain, dan konfigurasi server global (`localconfig.xml`). Kebocoran kredensial LDAP superadmin merupakan gerbang pengambilalihan seluruh sistem mail.
+5. **Nginx Reverse Proxy:** Memfilter lalu lintas IMAP, POP3, dan HTTP. Template Nginx wajib dikonfigurasi untuk memblokir akses eksternal ke endpoint sensitif dan admin port 7071.
+
+---
 
 ### Taxonomy of Zimbra Threat Vectors & Exploit Chains
+
+Diagram di bawah ini mengilustrasikan bagaimana penyerang merangkai (_exploit chaining_) berbagai kerentanan dari level pre-authentication hingga mencapai eksekusi kode tingkat sistem (_Remote Code Execution & Root Takeover_):
 
 ```mermaid
 flowchart TD
@@ -906,7 +957,7 @@ flowchart TD
     B -->|"4. Malicious Attachment"| F["CVE-2022-41352 (cpio) / CVE-2022-30333 (unrar)"]
     B -->|"5. Stored/Reflected XSS"| G["CVE-2025-66376 (ZimReaper) / CVE-2023-38750 (Winter Vivern)"]
 
-    C --> H["Eksekusi Shell Langsung (zimbra user)"]
+    C --> H["Eksekusi Shell Langsung (User: zimbra)"]
     D --> I["Pencurian localconfig.xml (LDAP Admin Password)"]
     E --> I
     F --> J["Injeksi File Arbitrari ke Webroot Jetty"]
@@ -919,8 +970,57 @@ flowchart TD
     M --> N["Upload JSP Webshell via mboximport / Extension Deploy"]
     J --> O["Webshell Aktif di /opt/zimbra/jetty/webapps/zimbra/"]
     N --> O
-    H --> P["Persistensi: Crontab, SSH Keys, C2 Miner, Ransomware Encryptor"]
+    H --> P["Persistensi: Crontab, SSH Authorized Keys, C2 Miner, Ransomware Encryptor"]
     O --> P
+```
+
+---
+
+### Zero-Day Emergency Incident Response & Hardening Protocol
+
+Jika server Anda dicurigai telah disusupi atau terdapat pengumuman Zero-Day baru di alam liar (_active exploitation_), jalankan prosedur triase dan sanitasi darurat berikut:
+
+#### 1. Isolasi dan Nonaktifkan Vektor RCE Umum
+
+```bash
+# 1. Nonaktifkan postjournal (Mitigasi CVE-2024-45519)
+su - zimbra -c "zmlocalconfig -e postjournal_enabled=false"
+su - zimbra -c "zmcontrol restart"
+
+# 2. Pastikan utilitas pax terpasang untuk melindungi Amavis (Mitigasi CVE-2022-41352)
+# Di Ubuntu / Debian:
+sudo apt-get update && sudo apt-get install -y pax
+# Di RHEL / Rocky / Alma:
+sudo dnf install -y pax
+```
+
+#### 2. Audit dan Karantina JSP Webshell di Webroot Jetty
+
+```bash
+# Cari file JSP yang dimodifikasi atau mencurigakan dalam direktori webapps
+find /opt/zimbra/jetty/webapps/ -type f -name "*.jsp" -exec ls -la {} +
+
+# Pindai string berbahaya khas webshell (eval, Runtime.getRuntime, ProcessBuilder)
+grep -rnE "(Runtime\.getRuntime\(\)\.exec|ProcessBuilder|passthru|shell_exec)" /opt/zimbra/jetty/webapps/
+```
+
+#### 3. Audit Persistensi Crontab & SSH Keys
+
+```bash
+# Periksa crontab user zimbra dan root
+crontab -u zimbra -l
+crontab -u root -l
+
+# Periksa SSH authorized_keys milik zimbra
+cat /opt/zimbra/.ssh/authorized_keys 2>/dev/null || true
+```
+
+#### 4. Rotasi Kredensial LDAP & Kunci Enkripsi
+
+```bash
+# Gunakan toolkit pembersih forensik resmi
+git clone https://github.com/alsyundawy/eradicate-zimbra-malware.git /tmp/ezm
+cd /tmp/ezm && sudo ./eradicate.sh --scan-and-heal
 ```
 
 ---
