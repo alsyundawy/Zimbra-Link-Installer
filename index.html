@@ -20334,8 +20334,8 @@ net.ipv4.ip_local_port_range = 1024 65535</code></pre>
                   </td>
                   <td class="text-left">
                     <sub
-                      >Server-Side Request Forgery (SSRF) allowing unauthorized
-                      access to internal services</sub
+                      >SSRF in core HTTP router dispatching forged requests to
+                      internal Loopback/LAN backend services</sub
                     >
                   </td>
                   <td class="text-left">
@@ -20798,8 +20798,9 @@ net.ipv4.ip_local_port_range = 1024 65535</code></pre>
                   </td>
                   <td class="text-left">
                     <sub
-                      >Memcached unauthenticated poisoning &amp; cleartext
-                      credential sniffing during client proxy routing</sub
+                      >Unauthenticated Memcached route cache injection hijacking
+                      active Nginx SASL authentication streams and
+                      credentials</sub
                     >
                   </td>
                   <td class="text-left">
@@ -20884,8 +20885,8 @@ net.ipv4.ip_local_port_range = 1024 65535</code></pre>
                   </td>
                   <td class="text-left">
                     <sub
-                      >Authentication bypass chained with SSRF to execute
-                      privileged administrative SOAP commands</sub
+                      >Pre-auth SSRF chain in ProxyServlet redirecting forged SOAP
+                      XML payloads to execute privileged admin commands</sub
                     >
                   </td>
                   <td class="text-left">
