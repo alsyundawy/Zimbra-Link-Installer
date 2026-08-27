@@ -1,0 +1,3075 @@
+[
+  {
+    "text": "![Maintenance Status",
+    "url": "https://img.shields.io/badge/Maintained%3F-yes-brightgreen.svg",
+    "status": "NON_BINARY_SKIPPED",
+    "code": 200,
+    "size": 0,
+    "error": null
+  },
+  {
+    "text": "![License: MIT",
+    "url": "https://img.shields.io/badge/License-MIT-yellow.svg",
+    "status": "NON_BINARY_SKIPPED",
+    "code": 200,
+    "size": 0,
+    "error": null
+  },
+  {
+    "text": "![ZCS Versions",
+    "url": "https://img.shields.io/badge/ZCS%20Versions-7.x%20%7C%208.x%20%7C%209.x%20%7C%2010.x%20%7C%2010.1.x-blue.svg",
+    "status": "NON_BINARY_SKIPPED",
+    "code": 200,
+    "size": 0,
+    "error": null
+  },
+  {
+    "text": "![Edition",
+    "url": "https://img.shields.io/badge/Edition-Network%20%7C%20FOSS%20%7C%20Community-orange.svg",
+    "status": "NON_BINARY_SKIPPED",
+    "code": 200,
+    "size": 0,
+    "error": null
+  },
+  {
+    "text": "![Platform",
+    "url": "https://img.shields.io/badge/Platform-Ubuntu%20%7C%20Debian%20%7C%20CentOS%20%7C%20RHEL%20%7C%20Rocky%20%7C%20Alma-lightgrey.svg",
+    "status": "NON_BINARY_SKIPPED",
+    "code": 200,
+    "size": 0,
+    "error": null
+  },
+  {
+    "text": "![WhatsApp",
+    "url": "https://img.shields.io/badge/WhatsApp-Chat%20%26%20Call-25D366?style=flat&logo=whatsapp&logoColor=white",
+    "status": "NON_BINARY_SKIPPED",
+    "code": 200,
+    "size": 0,
+    "error": null
+  },
+  {
+    "text": "![Telegram",
+    "url": "https://img.shields.io/badge/Telegram-@alsyundawy-2CA5E0?style=flat&logo=telegram&logoColor=white",
+    "status": "NON_BINARY_SKIPPED",
+    "code": 200,
+    "size": 0,
+    "error": null
+  },
+  {
+    "text": "![Donate with PayPal",
+    "url": "https://img.shields.io/badge/PayPal-donate-orange",
+    "status": "NON_BINARY_SKIPPED",
+    "code": 200,
+    "size": 0,
+    "error": null
+  },
+  {
+    "text": "![Donate with Ko-fi",
+    "url": "https://img.shields.io/badge/Ko--fi-donate-ff5e5b?logo=ko-fi&logoColor=white",
+    "status": "NON_BINARY_SKIPPED",
+    "code": 200,
+    "size": 0,
+    "error": null
+  },
+  {
+    "text": "![Sponsor with GitHub",
+    "url": "https://img.shields.io/badge/GitHub-sponsor-orange",
+    "status": "NON_BINARY_SKIPPED",
+    "code": 200,
+    "size": 0,
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://files.zimbra.com/downloads/10.1.0_GA/zcs-NETWORK-10.1.0_GA_4655.UBUNTU22_64.20240819064312.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "436789775",
+    "type": "application/x-tar",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://files.zimbra.com/downloads/10.1.0_GA/zcs-NETWORK-10.1.0_GA_4655.UBUNTU22_64.20240819064312.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "92",
+    "type": "binary/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://files.zimbra.com/downloads/10.1.0_GA/zcs-NETWORK-10.1.0_GA_4655.UBUNTU22_64.20240819064312.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "124",
+    "type": "binary/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-24.04/10.1.20.p1/zcs-10.1.20_GA_4200001.UBUNTU24_64.20260820122254.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "236067105",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-24.04/10.1.20.p1/zcs-10.1.20_GA_4200001.UBUNTU24_64.20260820122254.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "88",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-24.04/10.1.20.p1/zcs-10.1.20_GA_4200001.UBUNTU24_64.20260820122254.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "120",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-22.04/10.1.20.p1/zcs-10.1.20_GA_4200001.UBUNTU22_64.20260820122323.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "236128304",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-22.04/10.1.20.p1/zcs-10.1.20_GA_4200001.UBUNTU22_64.20260820122323.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "88",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-22.04/10.1.20.p1/zcs-10.1.20_GA_4200001.UBUNTU22_64.20260820122323.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "120",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-20.04/10.1.20.p1/zcs-10.1.20_GA_4200001.UBUNTU20_64.20260820122403.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "236474346",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-20.04/10.1.20.p1/zcs-10.1.20_GA_4200001.UBUNTU20_64.20260820122403.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "88",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-20.04/10.1.20.p1/zcs-10.1.20_GA_4200001.UBUNTU20_64.20260820122403.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "120",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-18.04/10.1.20.p1/zcs-10.1.20_GA_4200001.UBUNTU18_64.20260820122233.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "236469541",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-18.04/10.1.20.p1/zcs-10.1.20_GA_4200001.UBUNTU18_64.20260820122233.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "88",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-18.04/10.1.20.p1/zcs-10.1.20_GA_4200001.UBUNTU18_64.20260820122233.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "120",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-9/10.1.20.p1/zcs-10.1.20_GA_4200001.RHEL9_64.20260820122258.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "236477341",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-9/10.1.20.p1/zcs-10.1.20_GA_4200001.RHEL9_64.20260820122258.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "85",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-9/10.1.20.p1/zcs-10.1.20_GA_4200001.RHEL9_64.20260820122258.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "117",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/10.1.20.p1/zcs-10.1.20_GA_4200001.RHEL8_64.20260820122218.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "244901565",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/10.1.20.p1/zcs-10.1.20_GA_4200001.RHEL8_64.20260820122218.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "85",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/10.1.20.p1/zcs-10.1.20_GA_4200001.RHEL8_64.20260820122218.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "117",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-24.04/10.1.18.p1/zcs-10.1.18_GA_4200001.UBUNTU24_64.20260801175919.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "236065592",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-24.04/10.1.18.p1/zcs-10.1.18_GA_4200001.UBUNTU24_64.20260801175919.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "88",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-24.04/10.1.18.p1/zcs-10.1.18_GA_4200001.UBUNTU24_64.20260801175919.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "120",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-22.04/10.1.18.p1/zcs-10.1.18_GA_4200001.UBUNTU22_64.20260801175925.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "236130454",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-22.04/10.1.18.p1/zcs-10.1.18_GA_4200001.UBUNTU22_64.20260801175925.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "88",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-22.04/10.1.18.p1/zcs-10.1.18_GA_4200001.UBUNTU22_64.20260801175925.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "120",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-20.04/10.1.18.p1/zcs-10.1.18_GA_4200001.UBUNTU20_64.20260801175919.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "236486255",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-20.04/10.1.18.p1/zcs-10.1.18_GA_4200001.UBUNTU20_64.20260801175919.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "88",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-20.04/10.1.18.p1/zcs-10.1.18_GA_4200001.UBUNTU20_64.20260801175919.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "120",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-18.04/10.1.18.p1/zcs-10.1.18_GA_4200001.UBUNTU18_64.20260801175931.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "236473173",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-18.04/10.1.18.p1/zcs-10.1.18_GA_4200001.UBUNTU18_64.20260801175931.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "88",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-18.04/10.1.18.p1/zcs-10.1.18_GA_4200001.UBUNTU18_64.20260801175931.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "120",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-9/10.1.18.p1/zcs-10.1.18_GA_4200001.RHEL9_64.20260801175956.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "236474081",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-9/10.1.18.p1/zcs-10.1.18_GA_4200001.RHEL9_64.20260801175956.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "85",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-9/10.1.18.p1/zcs-10.1.18_GA_4200001.RHEL9_64.20260801175956.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "117",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/10.1.18.p1/zcs-10.1.18_GA_4200001.RHEL8_64.20260801175920.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "244909190",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/10.1.18.p1/zcs-10.1.18_GA_4200001.RHEL8_64.20260801175920.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "85",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/10.1.18.p1/zcs-10.1.18_GA_4200001.RHEL8_64.20260801175920.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "117",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-22.04/10.1.16.p1/zcs-10.1.16_GA_4200001.UBUNTU22_64.20260310121616.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "236064450",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-22.04/10.1.16.p1/zcs-10.1.16_GA_4200001.UBUNTU22_64.20260310121616.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "88",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-22.04/10.1.16.p1/zcs-10.1.16_GA_4200001.UBUNTU22_64.20260310121616.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "120",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-20.04/10.1.16.p1/zcs-10.1.16_GA_4200001.UBUNTU20_64.20260310121555.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "236432122",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-20.04/10.1.16.p1/zcs-10.1.16_GA_4200001.UBUNTU20_64.20260310121555.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "88",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-20.04/10.1.16.p1/zcs-10.1.16_GA_4200001.UBUNTU20_64.20260310121555.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "120",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-18.04/10.1.16.p1/zcs-10.1.16_GA_4200001.UBUNTU18_64.20260310121535.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "236429525",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-18.04/10.1.16.p1/zcs-10.1.16_GA_4200001.UBUNTU18_64.20260310121535.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "88",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-18.04/10.1.16.p1/zcs-10.1.16_GA_4200001.UBUNTU18_64.20260310121535.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "120",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-9/10.1.16.p1/zcs-10.1.16_GA_4200001.RHEL9_64.20260310121522.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "236412740",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-9/10.1.16.p1/zcs-10.1.16_GA_4200001.RHEL9_64.20260310121522.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "85",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-9/10.1.16.p1/zcs-10.1.16_GA_4200001.RHEL9_64.20260310121522.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "117",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/10.1.16.p1/zcs-10.1.16_GA_4200001.RHEL8_64.20260310121612.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "244850513",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/10.1.16.p1/zcs-10.1.16_GA_4200001.RHEL8_64.20260310121612.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "85",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/10.1.16.p1/zcs-10.1.16_GA_4200001.RHEL8_64.20260310121612.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "117",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-22.04/10.1.15.p1/zcs-10.1.15_GA_4200001.UBUNTU22_64.20260110181427.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "234253814",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-22.04/10.1.15.p1/zcs-10.1.15_GA_4200001.UBUNTU22_64.20260110181427.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "88",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-22.04/10.1.15.p1/zcs-10.1.15_GA_4200001.UBUNTU22_64.20260110181427.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "120",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-20.04/10.1.15.p1/zcs-10.1.15_GA_4200001.UBUNTU20_64.20260110181356.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "234841618",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-20.04/10.1.15.p1/zcs-10.1.15_GA_4200001.UBUNTU20_64.20260110181356.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "88",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-20.04/10.1.15.p1/zcs-10.1.15_GA_4200001.UBUNTU20_64.20260110181356.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "120",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-18.04/10.1.15.p1/zcs-10.1.15_GA_4200001.UBUNTU18_64.20260110181354.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "234840131",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-18.04/10.1.15.p1/zcs-10.1.15_GA_4200001.UBUNTU18_64.20260110181354.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "88",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-18.04/10.1.15.p1/zcs-10.1.15_GA_4200001.UBUNTU18_64.20260110181354.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "120",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-9/10.1.15.p1/zcs-10.1.15_GA_4200001.RHEL9_64.20260110181427.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "234624770",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-9/10.1.15.p1/zcs-10.1.15_GA_4200001.RHEL9_64.20260110181427.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "85",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-9/10.1.15.p1/zcs-10.1.15_GA_4200001.RHEL9_64.20260110181427.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "117",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/10.1.15.p1/zcs-10.1.15_GA_4200001.RHEL8_64.20260110181408.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "242549328",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/10.1.15.p1/zcs-10.1.15_GA_4200001.RHEL8_64.20260110181408.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "85",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/10.1.15.p1/zcs-10.1.15_GA_4200001.RHEL8_64.20260110181408.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "117",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-7/10.1.15.p1/zcs-10.1.15_GA_4200001.RHEL7_64.20260123182817.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "242529378",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-7/10.1.15.p1/zcs-10.1.15_GA_4200001.RHEL7_64.20260123182817.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "85",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-7/10.1.15.p1/zcs-10.1.15_GA_4200001.RHEL7_64.20260123182817.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "117",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-22.04/10.1.10.p3/zcs-10.1.10_GA_4200003.UBUNTU22_64.20251107221239.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "223974840",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-22.04/10.1.10.p3/zcs-10.1.10_GA_4200003.UBUNTU22_64.20251107221239.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "88",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-22.04/10.1.10.p3/zcs-10.1.10_GA_4200003.UBUNTU22_64.20251107221239.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "120",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-20.04/10.1.10.p3/zcs-10.1.10_GA_4200003.UBUNTU20_64.20251107221312.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "224553316",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-20.04/10.1.10.p3/zcs-10.1.10_GA_4200003.UBUNTU20_64.20251107221312.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "88",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-20.04/10.1.10.p3/zcs-10.1.10_GA_4200003.UBUNTU20_64.20251107221312.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "120",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-18.04/10.1.10.p3/zcs-10.1.10_GA_4200003.UBUNTU18_64.20251107221301.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "224544527",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-18.04/10.1.10.p3/zcs-10.1.10_GA_4200003.UBUNTU18_64.20251107221301.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "88",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-18.04/10.1.10.p3/zcs-10.1.10_GA_4200003.UBUNTU18_64.20251107221301.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "120",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-9/10.1.10.p3/zcs-10.1.10_GA_4200003.RHEL9_64.20251107221239.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "224339343",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-9/10.1.10.p3/zcs-10.1.10_GA_4200003.RHEL9_64.20251107221239.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "85",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-9/10.1.10.p3/zcs-10.1.10_GA_4200003.RHEL9_64.20251107221239.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "117",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/10.1.10.p3/zcs-10.1.10_GA_4200003.RHEL8_64.20251107221242.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "232183309",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/10.1.10.p3/zcs-10.1.10_GA_4200003.RHEL8_64.20251107221242.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "85",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/10.1.10.p3/zcs-10.1.10_GA_4200003.RHEL8_64.20251107221242.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "117",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-22.04/10.1.9.p1/zcs-10.1.9_GA_4200001.UBUNTU22_64.20250721164603.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "223886708",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-22.04/10.1.9.p1/zcs-10.1.9_GA_4200001.UBUNTU22_64.20250721164603.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "87",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-22.04/10.1.9.p1/zcs-10.1.9_GA_4200001.UBUNTU22_64.20250721164603.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "119",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-20.04/10.1.9.p1/zcs-10.1.9_GA_4200001.UBUNTU20_64.20250721164547.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "224455652",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-20.04/10.1.9.p1/zcs-10.1.9_GA_4200001.UBUNTU20_64.20250721164547.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "87",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-20.04/10.1.9.p1/zcs-10.1.9_GA_4200001.UBUNTU20_64.20250721164547.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "119",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-18.04/10.1.9.p1/zcs-10.1.9_GA_4200001.UBUNTU18_64.20250721164608.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "224454392",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-18.04/10.1.9.p1/zcs-10.1.9_GA_4200001.UBUNTU18_64.20250721164608.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "87",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-18.04/10.1.9.p1/zcs-10.1.9_GA_4200001.UBUNTU18_64.20250721164608.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "119",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-9/10.1.9.p1/zcs-10.1.9_GA_4200001.RHEL9_64.20250721164556.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "224239978",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-9/10.1.9.p1/zcs-10.1.9_GA_4200001.RHEL9_64.20250721164556.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "84",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-9/10.1.9.p1/zcs-10.1.9_GA_4200001.RHEL9_64.20250721164556.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "116",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/10.1.9.p1/zcs-10.1.9_GA_4200001.RHEL8_64.20250721164545.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "232069549",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/10.1.9.p1/zcs-10.1.9_GA_4200001.RHEL8_64.20250721164545.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "84",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/10.1.9.p1/zcs-10.1.9_GA_4200001.RHEL8_64.20250721164545.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "116",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-7/10.1.9.p1/zcs-10.1.9_GA_4200001.RHEL7_64.20250721164619.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "232049580",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-7/10.1.9.p1/zcs-10.1.9_GA_4200001.RHEL7_64.20250721164619.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "84",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-7/10.1.9.p1/zcs-10.1.9_GA_4200001.RHEL7_64.20250721164619.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "116",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-22.04/10.1.5/zcs-10.1.5_GA_4200000.UBUNTU22_64.20250321111645.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "223857328",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-22.04/10.1.5/zcs-10.1.5_GA_4200000.UBUNTU22_64.20250321111645.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "87",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-22.04/10.1.5/zcs-10.1.5_GA_4200000.UBUNTU22_64.20250321111645.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "119",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-20.04/10.1.5/zcs-10.1.5_GA_4200000.UBUNTU20_64.20250321114339.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "224422680",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-20.04/10.1.5/zcs-10.1.5_GA_4200000.UBUNTU20_64.20250321114339.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "87",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-20.04/10.1.5/zcs-10.1.5_GA_4200000.UBUNTU20_64.20250321114339.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "119",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-18.04/10.1.5/zcs-10.1.5_GA_4200000.UBUNTU18_64.20250321114414.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "224422608",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-18.04/10.1.5/zcs-10.1.5_GA_4200000.UBUNTU18_64.20250321114414.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "87",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-18.04/10.1.5/zcs-10.1.5_GA_4200000.UBUNTU18_64.20250321114414.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "119",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-9/10.1.5/zcs-10.1.5_GA_4200000.RHEL9_64.20250321114413.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "224225972",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-9/10.1.5/zcs-10.1.5_GA_4200000.RHEL9_64.20250321114413.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "84",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-9/10.1.5/zcs-10.1.5_GA_4200000.RHEL9_64.20250321114413.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "116",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/10.1.5/zcs-10.1.5_GA_4200000.RHEL8_64.20250321114336.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "232034650",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/10.1.5/zcs-10.1.5_GA_4200000.RHEL8_64.20250321114336.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "84",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/10.1.5/zcs-10.1.5_GA_4200000.RHEL8_64.20250321114336.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "116",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-7/10.1.5/zcs-10.1.5_GA_4200000.RHEL7_64.20250321114348.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "232013607",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-7/10.1.5/zcs-10.1.5_GA_4200000.RHEL7_64.20250321114348.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "84",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-7/10.1.5/zcs-10.1.5_GA_4200000.RHEL7_64.20250321114348.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "116",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-22.04/10.1.0/zcs-10.1.0_GA_4200000.UBUNTU22_64.20240727100104.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "224352266",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-22.04/10.1.0/zcs-10.1.0_GA_4200000.UBUNTU22_64.20240727100104.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "87",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-22.04/10.1.0/zcs-10.1.0_GA_4200000.UBUNTU22_64.20240727100104.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "119",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-20.04/10.1.0/zcs-10.1.0_GA_4200000.UBUNTU20_64.20240719155625.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "224933390",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-20.04/10.1.0/zcs-10.1.0_GA_4200000.UBUNTU20_64.20240719155625.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "87",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-20.04/10.1.0/zcs-10.1.0_GA_4200000.UBUNTU20_64.20240719155625.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "119",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-18.04/10.1.0/zcs-10.1.0_GA_4200000.UBUNTU18_64.20240719155652.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "224929136",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-18.04/10.1.0/zcs-10.1.0_GA_4200000.UBUNTU18_64.20240719155652.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "87",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-18.04/10.1.0/zcs-10.1.0_GA_4200000.UBUNTU18_64.20240719155652.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "119",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-9/10.1.0/zcs-10.1.0_GA_4200000.RHEL9_64.20240924105133.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "224717223",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-9/10.1.0/zcs-10.1.0_GA_4200000.RHEL9_64.20240924105133.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "84",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-9/10.1.0/zcs-10.1.0_GA_4200000.RHEL9_64.20240924105133.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "116",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/10.1.0/zcs-10.1.0_GA_4200000.RHEL8_64.20240719155623.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "232534343",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/10.1.0/zcs-10.1.0_GA_4200000.RHEL8_64.20240719155623.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "84",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/10.1.0/zcs-10.1.0_GA_4200000.RHEL8_64.20240719155623.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "116",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-7/10.1.0/zcs-10.1.0_GA_4200000.RHEL7_64.20240719155704.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "232513530",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-7/10.1.0/zcs-10.1.0_GA_4200000.RHEL7_64.20240719155704.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "84",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-7/10.1.0/zcs-10.1.0_GA_4200000.RHEL7_64.20240719155704.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "116",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://cdn.techfiles.online/ubuntu/zcs-10.1.20_GA_0326.UBUNTU24_64.20260821120929.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "237258811",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://cdn.techfiles.online/ubuntu/zcs-10.1.20_GA_0326.UBUNTU24_64.20260821120929.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "117",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://cdn.techfiles.online/ubuntu/zcs-10.1.20_GA_0326.UBUNTU22_64.20260821115118.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "237329551",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://cdn.techfiles.online/ubuntu/zcs-10.1.20_GA_0326.UBUNTU22_64.20260821115118.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "117",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://cdn.techfiles.online/rhel/zcs-10.1.20_GA_0326.RHEL9_64.20260821135258.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "237695162",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://cdn.techfiles.online/rhel/zcs-10.1.20_GA_0326.RHEL9_64.20260821135258.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "114",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://cdn.techfiles.online/rhel/zcs-10.1.20_GA_0326.RHEL8_64.20260821135029.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "246143560",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://cdn.techfiles.online/rhel/zcs-10.1.20_GA_0326.RHEL8_64.20260821135029.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "114",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-20.04/10.0.18.p1/zcs-10.0.18_GA_4200001.UBUNTU20_64.20260116200354.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "223893295",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-20.04/10.0.18.p1/zcs-10.0.18_GA_4200001.UBUNTU20_64.20260116200354.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "88",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-20.04/10.0.18.p1/zcs-10.0.18_GA_4200001.UBUNTU20_64.20260116200354.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "120",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-18.04/10.0.18.p1/zcs-10.0.18_GA_4200001.UBUNTU18_64.20260116200405.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "223894251",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-18.04/10.0.18.p1/zcs-10.0.18_GA_4200001.UBUNTU18_64.20260116200405.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "88",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-18.04/10.0.18.p1/zcs-10.0.18_GA_4200001.UBUNTU18_64.20260116200405.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "120",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/10.0.18.p1/zcs-10.0.18_GA_4200001.RHEL8_64.20260116200332.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "231480103",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/10.0.18.p1/zcs-10.0.18_GA_4200001.RHEL8_64.20260116200332.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "85",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/10.0.18.p1/zcs-10.0.18_GA_4200001.RHEL8_64.20260116200332.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "117",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-7/10.0.18.p1/zcs-10.0.18_GA_4200001.RHEL7_64.20260123182809.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "231466115",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-7/10.0.18.p1/zcs-10.0.18_GA_4200001.RHEL7_64.20260123182809.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "85",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-7/10.0.18.p1/zcs-10.0.18_GA_4200001.RHEL7_64.20260123182809.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "117",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-20.04/10.0.16.p3/zcs-10.0.16_GA_4200003.UBUNTU20_64.20251107221237.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "223892746",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-20.04/10.0.16.p3/zcs-10.0.16_GA_4200003.UBUNTU20_64.20251107221237.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "88",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-20.04/10.0.16.p3/zcs-10.0.16_GA_4200003.UBUNTU20_64.20251107221237.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "120",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-18.04/10.0.16.p3/zcs-10.0.16_GA_4200003.UBUNTU18_64.20251107221319.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "223884155",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-18.04/10.0.16.p3/zcs-10.0.16_GA_4200003.UBUNTU18_64.20251107221319.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "88",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-18.04/10.0.16.p3/zcs-10.0.16_GA_4200003.UBUNTU18_64.20251107221319.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "120",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/10.0.16.p3/zcs-10.0.16_GA_4200003.RHEL8_64.20251107221236.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "231477972",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/10.0.16.p3/zcs-10.0.16_GA_4200003.RHEL8_64.20251107221236.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "85",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/10.0.16.p3/zcs-10.0.16_GA_4200003.RHEL8_64.20251107221236.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "117",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-20.04/10.0.15.p1/zcs-10.0.15_GA_4200001.UBUNTU20_64.20250721164554.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "223890726",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-20.04/10.0.15.p1/zcs-10.0.15_GA_4200001.UBUNTU20_64.20250721164554.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "88",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-20.04/10.0.15.p1/zcs-10.0.15_GA_4200001.UBUNTU20_64.20250721164554.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "120",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-18.04/10.0.15.p1/zcs-10.0.15_GA_4200001.UBUNTU18_64.20250721164604.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "223889679",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-18.04/10.0.15.p1/zcs-10.0.15_GA_4200001.UBUNTU18_64.20250721164604.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "88",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-18.04/10.0.15.p1/zcs-10.0.15_GA_4200001.UBUNTU18_64.20250721164604.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "120",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/10.0.15.p1/zcs-10.0.15_GA_4200001.RHEL8_64.20250721164539.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "231478701",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/10.0.15.p1/zcs-10.0.15_GA_4200001.RHEL8_64.20250721164539.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "85",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/10.0.15.p1/zcs-10.0.15_GA_4200001.RHEL8_64.20250721164539.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "117",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-7/10.0.15.p1/zcs-10.0.15_GA_4200001.RHEL7_64.20250721164617.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "231462981",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-7/10.0.15.p1/zcs-10.0.15_GA_4200001.RHEL7_64.20250721164617.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "85",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-7/10.0.15.p1/zcs-10.0.15_GA_4200001.RHEL7_64.20250721164617.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "117",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-20.04/10.0.14.p1/zcs-10.0.14_GA_4200001.UBUNTU20_64.20250721150946.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "223894283",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-20.04/10.0.14.p1/zcs-10.0.14_GA_4200001.UBUNTU20_64.20250721150946.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "88",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-20.04/10.0.14.p1/zcs-10.0.14_GA_4200001.UBUNTU20_64.20250721150946.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "120",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-18.04/10.0.14.p1/zcs-10.0.14_GA_4200001.UBUNTU18_64.20250721150945.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "223882347",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-18.04/10.0.14.p1/zcs-10.0.14_GA_4200001.UBUNTU18_64.20250721150945.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "88",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-18.04/10.0.14.p1/zcs-10.0.14_GA_4200001.UBUNTU18_64.20250721150945.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "120",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/10.0.14.p1/zcs-10.0.14_GA_4200001.RHEL8_64.20250721150915.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "231481832",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/10.0.14.p1/zcs-10.0.14_GA_4200001.RHEL8_64.20250721150915.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "85",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/10.0.14.p1/zcs-10.0.14_GA_4200001.RHEL8_64.20250721150915.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "117",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-7/10.0.14.p1/zcs-10.0.14_GA_4200001.RHEL7_64.20250721150924.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "231456256",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-7/10.0.14.p1/zcs-10.0.14_GA_4200001.RHEL7_64.20250721150924.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "85",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-7/10.0.14.p1/zcs-10.0.14_GA_4200001.RHEL7_64.20250721150924.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "117",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-20.04/10.0.13/zcs-10.0.13_GA_4200000.UBUNTU20_64.20250321114341.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "223876984",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-20.04/10.0.13/zcs-10.0.13_GA_4200000.UBUNTU20_64.20250321114341.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "88",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-20.04/10.0.13/zcs-10.0.13_GA_4200000.UBUNTU20_64.20250321114341.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "120",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-18.04/10.0.13/zcs-10.0.13_GA_4200000.UBUNTU18_64.20250321114340.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "223883596",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-18.04/10.0.13/zcs-10.0.13_GA_4200000.UBUNTU18_64.20250321114340.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "88",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-18.04/10.0.13/zcs-10.0.13_GA_4200000.UBUNTU18_64.20250321114340.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "120",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/10.0.13/zcs-10.0.13_GA_4200000.RHEL8_64.20250321114328.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "231470126",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/10.0.13/zcs-10.0.13_GA_4200000.RHEL8_64.20250321114328.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "85",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/10.0.13/zcs-10.0.13_GA_4200000.RHEL8_64.20250321114328.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "117",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-7/10.0.13/zcs-10.0.13_GA_4200000.RHEL7_64.20250321114339.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "231454558",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-7/10.0.13/zcs-10.0.13_GA_4200000.RHEL7_64.20250321114339.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "85",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-7/10.0.13/zcs-10.0.13_GA_4200000.RHEL7_64.20250321114339.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "117",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-20.04/10.0.10/zcs-10.0.10_GA_4200000.UBUNTU20_64.20241102101232.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "223899137",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-20.04/10.0.10/zcs-10.0.10_GA_4200000.UBUNTU20_64.20241102101232.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "88",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-20.04/10.0.10/zcs-10.0.10_GA_4200000.UBUNTU20_64.20241102101232.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "120",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-18.04/10.0.10/zcs-10.0.10_GA_4200000.UBUNTU18_64.20241102101229.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "223894312",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-18.04/10.0.10/zcs-10.0.10_GA_4200000.UBUNTU18_64.20241102101229.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "88",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-18.04/10.0.10/zcs-10.0.10_GA_4200000.UBUNTU18_64.20241102101229.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "120",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/10.0.10/zcs-10.0.10_GA_4200000.RHEL8_64.20241102101522.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "231487138",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/10.0.10/zcs-10.0.10_GA_4200000.RHEL8_64.20241102101522.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "85",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/10.0.10/zcs-10.0.10_GA_4200000.RHEL8_64.20241102101522.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "117",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-7/10.0.10/zcs-10.0.10_GA_4200000.RHEL7_64.20241102101504.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "231472527",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-7/10.0.10/zcs-10.0.10_GA_4200000.RHEL7_64.20241102101504.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "85",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-7/10.0.10/zcs-10.0.10_GA_4200000.RHEL7_64.20241102101504.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "117",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-20.04/10.0.8/zcs-10.0.8_GA_4200000.UBUNTU20_64.20240422174916.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "224401993",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-20.04/10.0.8/zcs-10.0.8_GA_4200000.UBUNTU20_64.20240422174916.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "87",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-20.04/10.0.8/zcs-10.0.8_GA_4200000.UBUNTU20_64.20240422174916.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "119",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-18.04/10.0.8/zcs-10.0.8_GA_4200000.UBUNTU18_64.20240422174845.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "224402684",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-18.04/10.0.8/zcs-10.0.8_GA_4200000.UBUNTU18_64.20240422174845.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "87",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-18.04/10.0.8/zcs-10.0.8_GA_4200000.UBUNTU18_64.20240422174845.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "119",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/10.0.8/zcs-10.0.8_GA_4200000.RHEL8_64.20240422174847.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "231996438",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/10.0.8/zcs-10.0.8_GA_4200000.RHEL8_64.20240422174847.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "84",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/10.0.8/zcs-10.0.8_GA_4200000.RHEL8_64.20240422174847.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "116",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-7/10.0.8/zcs-10.0.8_GA_4200000.RHEL7_64.20240422174900.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "231977179",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-7/10.0.8/zcs-10.0.8_GA_4200000.RHEL7_64.20240422174900.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "84",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-7/10.0.8/zcs-10.0.8_GA_4200000.RHEL7_64.20240422174900.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "116",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-20.04/9.0.0.p46/zcs-9.0.0_GA_4200046.UBUNTU20_64.20250725085925.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "197610385",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-20.04/9.0.0.p46/zcs-9.0.0_GA_4200046.UBUNTU20_64.20250725085925.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "86",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-20.04/9.0.0.p46/zcs-9.0.0_GA_4200046.UBUNTU20_64.20250725085925.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "118",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-18.04/9.0.0.p46/zcs-9.0.0_GA_4200046.UBUNTU18_64.20250725085947.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "197604841",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-18.04/9.0.0.p46/zcs-9.0.0_GA_4200046.UBUNTU18_64.20250725085947.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "86",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-18.04/9.0.0.p46/zcs-9.0.0_GA_4200046.UBUNTU18_64.20250725085947.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "118",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/9.0.0.p46/zcs-9.0.0_GA_4200046.RHEL8_64.20250725085939.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "205034727",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/9.0.0.p46/zcs-9.0.0_GA_4200046.RHEL8_64.20250725085939.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "83",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/9.0.0.p46/zcs-9.0.0_GA_4200046.RHEL8_64.20250725085939.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "115",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-7/9.0.0.p46/zcs-9.0.0_GA_4200046.RHEL7_64.20250725085928.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "205013352",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-7/9.0.0.p46/zcs-9.0.0_GA_4200046.RHEL7_64.20250725085928.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "83",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-7/9.0.0.p46/zcs-9.0.0_GA_4200046.RHEL7_64.20250725085928.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "115",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-20.04/9.0.0.p45/zcs-9.0.0_GA_4200045.UBUNTU20_64.20250725085941.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "197604365",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-20.04/9.0.0.p45/zcs-9.0.0_GA_4200045.UBUNTU20_64.20250725085941.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "86",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-20.04/9.0.0.p45/zcs-9.0.0_GA_4200045.UBUNTU20_64.20250725085941.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "118",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-18.04/9.0.0.p45/zcs-9.0.0_GA_4200045.UBUNTU18_64.20250725085934.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "197602448",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-18.04/9.0.0.p45/zcs-9.0.0_GA_4200045.UBUNTU18_64.20250725085934.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "86",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-18.04/9.0.0.p45/zcs-9.0.0_GA_4200045.UBUNTU18_64.20250725085934.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "118",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/9.0.0.p45/zcs-9.0.0_GA_4200045.RHEL8_64.20250725085950.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "205026230",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/9.0.0.p45/zcs-9.0.0_GA_4200045.RHEL8_64.20250725085950.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "83",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/9.0.0.p45/zcs-9.0.0_GA_4200045.RHEL8_64.20250725085950.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "115",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-7/9.0.0.p45/zcs-9.0.0_GA_4200045.RHEL7_64.20250725090007.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "205008842",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-7/9.0.0.p45/zcs-9.0.0_GA_4200045.RHEL7_64.20250725090007.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "83",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-7/9.0.0.p45/zcs-9.0.0_GA_4200045.RHEL7_64.20250725090007.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "115",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-20.04/9.0.0.p44/zcs-9.0.0_GA_4200044.UBUNTU20_64.20250321171442.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "197605743",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-20.04/9.0.0.p44/zcs-9.0.0_GA_4200044.UBUNTU20_64.20250321171442.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "86",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-20.04/9.0.0.p44/zcs-9.0.0_GA_4200044.UBUNTU20_64.20250321171442.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "118",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-18.04/9.0.0.p44/zcs-9.0.0_GA_4200044.UBUNTU18_64.20250321171411.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "197601572",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-18.04/9.0.0.p44/zcs-9.0.0_GA_4200044.UBUNTU18_64.20250321171411.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "86",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-18.04/9.0.0.p44/zcs-9.0.0_GA_4200044.UBUNTU18_64.20250321171411.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "118",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/9.0.0.p44/zcs-9.0.0_GA_4200044.RHEL8_64.20250321171408.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "205029756",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/9.0.0.p44/zcs-9.0.0_GA_4200044.RHEL8_64.20250321171408.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "83",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/9.0.0.p44/zcs-9.0.0_GA_4200044.RHEL8_64.20250321171408.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "115",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-7/9.0.0.p44/zcs-9.0.0_GA_4200044.RHEL7_64.20250321171422.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "205007357",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-7/9.0.0.p44/zcs-9.0.0_GA_4200044.RHEL7_64.20250321171422.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "83",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-7/9.0.0.p44/zcs-9.0.0_GA_4200044.RHEL7_64.20250321171422.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "115",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-20.04/9.0.0.p40/zcs-9.0.0_GA_4200040.UBUNTU20_64.20240422174848.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "198092768",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-20.04/9.0.0.p40/zcs-9.0.0_GA_4200040.UBUNTU20_64.20240422174848.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "86",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-20.04/9.0.0.p40/zcs-9.0.0_GA_4200040.UBUNTU20_64.20240422174848.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "118",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-18.04/9.0.0.p40/zcs-9.0.0_GA_4200040.UBUNTU18_64.20240422174854.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "198092141",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-18.04/9.0.0.p40/zcs-9.0.0_GA_4200040.UBUNTU18_64.20240422174854.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "86",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-18.04/9.0.0.p40/zcs-9.0.0_GA_4200040.UBUNTU18_64.20240422174854.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "118",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/9.0.0.p40/zcs-9.0.0_GA_4200040.RHEL8_64.20240422174835.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "205522641",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/9.0.0.p40/zcs-9.0.0_GA_4200040.RHEL8_64.20240422174835.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "83",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/9.0.0.p40/zcs-9.0.0_GA_4200040.RHEL8_64.20240422174835.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "115",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-7/9.0.0.p40/zcs-9.0.0_GA_4200040.RHEL7_64.20240422174914.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "205497426",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-7/9.0.0.p40/zcs-9.0.0_GA_4200040.RHEL7_64.20240422174914.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "83",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-7/9.0.0.p40/zcs-9.0.0_GA_4200040.RHEL7_64.20240422174914.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "115",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-20.04/9.0.0.p39/zcs-9.0.0_GA-9.0.0.p39-maldua_1000.UBUNTU20_64.20240321172114.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "198091193",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-20.04/9.0.0.p39/zcs-9.0.0_GA-9.0.0.p39-maldua_1000.UBUNTU20_64.20240321172114.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "100",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-20.04/9.0.0.p39/zcs-9.0.0_GA-9.0.0.p39-maldua_1000.UBUNTU20_64.20240321172114.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "132",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-18.04/9.0.0.p39/zcs-9.0.0_GA-9.0.0.p39-maldua_1000.UBUNTU18_64.20240328110303.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "198092415",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-18.04/9.0.0.p39/zcs-9.0.0_GA-9.0.0.p39-maldua_1000.UBUNTU18_64.20240328110303.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "100",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-18.04/9.0.0.p39/zcs-9.0.0_GA-9.0.0.p39-maldua_1000.UBUNTU18_64.20240328110303.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "132",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/9.0.0.p39/zcs-9.0.0_GA_9.0.0.p39_maldua_1000.RHEL8_64.20240331162400.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "205515610",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/9.0.0.p39/zcs-9.0.0_GA_9.0.0.p39_maldua_1000.RHEL8_64.20240331162400.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "97",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/9.0.0.p39/zcs-9.0.0_GA_9.0.0.p39_maldua_1000.RHEL8_64.20240331162400.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "129",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-7/9.0.0.p39/zcs-9.0.0_GA_9.0.0.p39_maldua_1000.RHEL7_64.20240331181255.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "205500086",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-7/9.0.0.p39/zcs-9.0.0_GA_9.0.0.p39_maldua_1000.RHEL7_64.20240331181255.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "97",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-7/9.0.0.p39/zcs-9.0.0_GA_9.0.0.p39_maldua_1000.RHEL7_64.20240331181255.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "129",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-20.04/8.8.15.p47/zcs-8.8.15_GA_4200047.UBUNTU20_64.20241224171756.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "197486160",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-20.04/8.8.15.p47/zcs-8.8.15_GA_4200047.UBUNTU20_64.20241224171756.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "87",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-20.04/8.8.15.p47/zcs-8.8.15_GA_4200047.UBUNTU20_64.20241224171756.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "119",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-18.04/8.8.15.p47/zcs-8.8.15_GA_4200047.UBUNTU18_64.20241224171803.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "197484019",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-18.04/8.8.15.p47/zcs-8.8.15_GA_4200047.UBUNTU18_64.20241224171803.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "87",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-18.04/8.8.15.p47/zcs-8.8.15_GA_4200047.UBUNTU18_64.20241224171803.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "119",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/8.8.15.p47/zcs-8.8.15_GA_4200047.RHEL8_64.20241224171753.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "206167558",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/8.8.15.p47/zcs-8.8.15_GA_4200047.RHEL8_64.20241224171753.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "84",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/8.8.15.p47/zcs-8.8.15_GA_4200047.RHEL8_64.20241224171753.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "116",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-7/8.8.15.p47/zcs-8.8.15_GA_4200047.RHEL7_64.20241224171847.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "206143681",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-7/8.8.15.p47/zcs-8.8.15_GA_4200047.RHEL7_64.20241224171847.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "84",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-7/8.8.15.p47/zcs-8.8.15_GA_4200047.RHEL7_64.20241224171847.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "116",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-20.04/8.8.15.p46/zcs-8.8.15_GA-8.8.15.p46-maldua_1000.UBUNTU20_64.20240322144059.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "197986753",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-20.04/8.8.15.p46/zcs-8.8.15_GA-8.8.15.p46-maldua_1000.UBUNTU20_64.20240322144059.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "102",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-20.04/8.8.15.p46/zcs-8.8.15_GA-8.8.15.p46-maldua_1000.UBUNTU20_64.20240322144059.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "134",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-18.04/8.8.15.p46/zcs-8.8.15_GA-8.8.15.p46-maldua_1000.UBUNTU18_64.20240322144044.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "197986421",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-18.04/8.8.15.p46/zcs-8.8.15_GA-8.8.15.p46-maldua_1000.UBUNTU18_64.20240322144044.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "102",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-18.04/8.8.15.p46/zcs-8.8.15_GA-8.8.15.p46-maldua_1000.UBUNTU18_64.20240322144044.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "134",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/8.8.15.p46/zcs-8.8.15_GA_8.8.15.p46_maldua_1000.RHEL8_64.20240331162319.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "206664318",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/8.8.15.p46/zcs-8.8.15_GA_8.8.15.p46_maldua_1000.RHEL8_64.20240331162319.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "99",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/8.8.15.p46/zcs-8.8.15_GA_8.8.15.p46_maldua_1000.RHEL8_64.20240331162319.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "131",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-7/8.8.15.p46/zcs-8.8.15_GA_8.8.15.p46_maldua_1000.RHEL7_64.20240331181326.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "206646736",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "MD5",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-7/8.8.15.p46/zcs-8.8.15_GA_8.8.15.p46_maldua_1000.RHEL7_64.20240331181326.tgz.md5",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "99",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "SHA256",
+    "url": "https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-7/8.8.15.p46/zcs-8.8.15_GA_8.8.15.p46_maldua_1000.RHEL7_64.20240331181326.tgz.sha256",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "131",
+    "type": "application/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://files.zimbra.com/downloads/8.8.15_GA/zcs-8.8.15_GA_4179.UBUNTU20_64.20211118033954.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "246925287",
+    "type": "application/x-tar",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://files.zimbra.com/downloads/8.8.15_GA/zcs-8.8.15_GA_3953.RHEL8_64.20200629025823.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "257596218",
+    "type": "application/x-tar",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://files.zimbra.com/downloads/8.6.0_GA/zcs-8.6.0_GA_1153.UBUNTU14_64.20141215151116.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "733882340",
+    "type": "binary/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://files.zimbra.com/downloads/8.6.0_GA/zcs-8.6.0_GA_1153.RHEL7_64.20141215151110.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "779005849",
+    "type": "binary/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Download",
+    "url": "https://files.zimbra.com/downloads/8.0.9_GA/zcs-8.0.9_GA_6191.UBUNTU12_64.20141103151539.tgz",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "888096067",
+    "type": "binary/octet-stream",
+    "error": null
+  },
+  {
+    "text": "Z2C",
+    "url": "https://github.com/alsyundawy/Z2C",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": 0,
+    "type": "text/html; charset=utf-8",
+    "error": null
+  },
+  {
+    "text": "eradicate-zimbra-malware",
+    "url": "https://github.com/alsyundawy/eradicate-zimbra-malware",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": 0,
+    "type": "text/html; charset=utf-8",
+    "error": null
+  },
+  {
+    "text": "zmbackup",
+    "url": "https://github.com/alsyundawy/zmbackup",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": 0,
+    "type": "text/html; charset=utf-8",
+    "error": null
+  },
+  {
+    "text": "Zimbra-Clean-Spam",
+    "url": "https://github.com/alsyundawy/Zimbra-Clean-Spam",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": 0,
+    "type": "text/html; charset=utf-8",
+    "error": null
+  },
+  {
+    "text": "uninstall-zimbra",
+    "url": "https://github.com/alsyundawy/uninstall-zimbra",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": 0,
+    "type": "text/html; charset=utf-8",
+    "error": null
+  },
+  {
+    "text": "+62 856-5851-5212",
+    "url": "https://wa.me/6285658515212",
+    "status": "NON_BINARY_SKIPPED",
+    "code": 200,
+    "size": 0,
+    "error": null
+  },
+  {
+    "text": "@alsyundawy",
+    "url": "https://t.me/alsyundawy",
+    "status": "NON_BINARY_SKIPPED",
+    "code": 200,
+    "size": 0,
+    "error": null
+  },
+  {
+    "text": "https://github.com/alsyundawy",
+    "url": "https://github.com/alsyundawy",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": 0,
+    "type": "text/html; charset=utf-8",
+    "error": null
+  },
+  {
+    "text": "https://alsyundawy.com",
+    "url": "https://alsyundawy.com",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": 0,
+    "type": "text/html; charset=UTF-8",
+    "error": null
+  },
+  {
+    "text": "paypal.me/alsyundawy",
+    "url": "https://www.paypal.me/alsyundawy",
+    "status": "NON_BINARY_SKIPPED",
+    "code": 200,
+    "size": 0,
+    "error": null
+  },
+  {
+    "text": "ko-fi.com/alsyundawy",
+    "url": "https://ko-fi.com/alsyundawy",
+    "status": "NON_BINARY_SKIPPED",
+    "code": 200,
+    "size": 0,
+    "error": null
+  },
+  {
+    "text": "github.com/sponsors/alsyundawy",
+    "url": "https://github.com/sponsors/alsyundawy",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": 0,
+    "type": "text/html; charset=utf-8",
+    "error": null
+  },
+  {
+    "text": "Donasi QRIS",
+    "url": "https://github.com/user-attachments/assets/a0126f28-6dde-43da-ba14-d7c9a27de0df",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "186107",
+    "type": "image/png",
+    "error": null
+  },
+  {
+    "text": "bare",
+    "url": "https://techfiles.online/zimbra/",
+    "status": "VERIFIED_ACTIVE",
+    "code": 200,
+    "size": "27157",
+    "type": "text/html",
+    "error": null
+  }
+]

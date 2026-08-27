@@ -1,0 +1,30 @@
+# Zimbra Archives and Downloads
+*.tgz
+*.tar.gz
+*.zip
+*.7z
+*.md5
+*.sha256
+*.iso
+*.img
+
+# Temporary and build artifacts
+*.tmp
+*.log
+scratch/
+__pycache__/
+*.py[cod]
+*$py.class
+.env
+.venv
+env/
+venv/
+
+# OS specific files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
