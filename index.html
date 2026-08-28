@@ -274,6 +274,44 @@
         text-decoration: none;
       }
 
+      /* Language Switcher */
+      .lang-switcher {
+        display: inline-flex;
+        align-items: center;
+        background: #161f30;
+        border: 1px solid var(--border-color);
+        border-radius: 9999px;
+        padding: 2px;
+        gap: 2px;
+        margin-left: 0.5rem;
+      }
+
+      .lang-btn {
+        background: transparent;
+        border: none;
+        color: var(--text-dim);
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        padding: 0.25rem 0.55rem;
+        border-radius: 9999px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+
+      .lang-btn:hover {
+        color: #fff;
+      }
+
+      .lang-btn.active {
+        background: var(--primary);
+        color: #0b1120;
+        box-shadow: 0 0 10px var(--primary-glow);
+      }
+
       /* Mobile Hamburger Button */
       .mobile-toggle-btn {
         display: none;
@@ -1122,6 +1160,10 @@
         <a href="https://github.com/alsyundawy/Zimbra-Link-Installer" target="_blank" rel="noopener noreferrer" class="btn-github">
           <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub Repo
         </a>
+        <div class="lang-switcher">
+          <button type="button" id="btnLangId" class="lang-btn active" title="Bahasa Indonesia"><i class="fa-solid fa-flag" aria-hidden="true"></i> ID</button>
+          <button type="button" id="btnLangEn" class="lang-btn" title="English"><i class="fa-solid fa-globe" aria-hidden="true"></i> EN</button>
+        </div>
       </nav>
     </header>
 
@@ -1768,9 +1810,9 @@
               >Interactive Bash CLI Installer (<code
                 >zimbra-link-installer.sh</code
               >
-              v2.6.1):</strong
+              v2.6.2):</strong
             >
-            Utilitas interaktif aman dengan _pre-flight system audit_ (RAM,
+            Utilitas interaktif aman bilingual (English &amp; Bahasa Indonesia) dengan _pre-flight system audit_ (RAM,
             storage, FQDN DNS, POSIX pax), penanganan sinyal _atomic cleanup
             trap_, _privilege elevation helper_ (<code>run_privileged</code>),
             dan verifikasi integritas kriptografi SHA256/MD5 otomatis.
@@ -2044,8 +2086,8 @@ sudo ./install.sh</code></pre>
           Automated CLI Installer (<code>zimbra-link-installer.sh</code>)
         </h2>
         <p class="doc-para">
-          Skrip <code>zimbra-link-installer.sh</code> (v2.6.1) menyederhanakan
-          siklus pengunduhan dan instalasi ZCS di lingkungan Linux enterprise:
+          Skrip <code>zimbra-link-installer.sh</code> (v2.6.2) menyederhanakan
+          siklus pengunduhan dan instalasi ZCS di lingkungan Linux enterprise dengan dukungan penuh dwibahasa (English &amp; Bahasa Indonesia):
         </p>
         <div class="code-card">
           <div class="code-header">
@@ -2057,18 +2099,22 @@ sudo ./install.sh</code></pre>
           </div>
           <pre><code class="language-text">====================================================================
                Z I M B R A   L I N K   I N S T A L L E R
-          Enterprise Binary Downloader &amp; Automated Suite (v2.6.1)
+          Enterprise Binary Downloader &amp; Automated Suite (v2.6.2)
 ====================================================================
-[+] Detected OS Architecture: x86_64
-[+] Detected Operating System: Ubuntu 22.04 LTS (jammy)
+  Maintained by Harry Dertin Sutisna Alsyundawy (alsyundawy@gmail.com)
+====================================================================
 
-PILIH KATEGORI BINER ZIMBRA:
+[+] Detected Architecture : x86_64
+[+] Detected Distribution : Ubuntu 22.04 LTS (ubuntu 22.04)
+
+SELECT ZIMBRA BINARY CATEGORY:
   1) Zimbra OFFICIAL Network Edition (NE) [10.1, 10.0, 9.0, 8.8.x, 8.7.x, 8.6, 8.5, 8.0, 7.x]
   2) Zimbra OFFICIAL Open Source Edition (FOSS/OSE) [8.8.x, 8.7.x, 8.6, 8.5, 8.0, 7.x]
   3) Zimbra UNOFFICIAL / Community FOSS Builds [10.1.x, 10.0.x, 9.0.0, 8.8.15 (2018–2026)]
-  4) Jalankan Pre-Flight System Audit &amp; Prerequisite Check
-  5) Jalankan Uji Telemetri Seluruh Link Biner (Deep Link Validator)
-  0) Keluar
+  4) Run Pre-Flight System Audit &amp; Prerequisite Checks
+  5) Run Telemetry Test on All Binary Links (Deep Link Validator)
+  6) Switch Language / Ganti Bahasa [Current: English]
+  0) Exit
 ====================================================================</code></pre>
         </div>
         <h3 id="fitur-utama-cli" class="heading-anchor">
@@ -22101,6 +22147,45 @@ trunk check --all</code></pre>
         document.querySelectorAll('h2[id], h3[id]').forEach(heading => {
           observer.observe(heading);
         });
+
+        // 7. Bilingual Language Switcher (ID / EN)
+        const btnLangId = document.getElementById('btnLangId');
+        const btnLangEn = document.getElementById('btnLangEn');
+
+        function setLanguage(lang) {
+          localStorage.setItem('zimbra_docs_lang', lang);
+          document.documentElement.lang = lang;
+          if (lang === 'en') {
+            btnLangEn?.classList.add('active');
+            btnLangId?.classList.remove('active');
+            document.querySelectorAll('.copy-btn').forEach(b => {
+              if (!b.innerHTML.includes('Tersalin') && !b.innerHTML.includes('Copied')) {
+                b.innerHTML = '<i class="fa-regular fa-copy"></i> Copy';
+              }
+            });
+            document.querySelectorAll('.table-filter').forEach(f => {
+              f.placeholder = 'Search version, OS, build date, or checksum in this table...';
+            });
+          } else {
+            btnLangId?.classList.add('active');
+            btnLangEn?.classList.remove('active');
+            document.querySelectorAll('.copy-btn').forEach(b => {
+              if (!b.innerHTML.includes('Tersalin') && !b.innerHTML.includes('Copied')) {
+                b.innerHTML = '<i class="fa-regular fa-copy"></i> Salin';
+              }
+            });
+            document.querySelectorAll('.table-filter').forEach(f => {
+              f.placeholder = 'Cari versi, OS, tanggal rilis, atau checksum di tabel ini...';
+            });
+          }
+        }
+
+        btnLangId?.addEventListener('click', () => setLanguage('id'));
+        btnLangEn?.addEventListener('click', () => setLanguage('en'));
+
+        // Initialize saved language
+        const savedLang = localStorage.getItem('zimbra_docs_lang') || 'id';
+        setLanguage(savedLang);
       });
     </script>
   </body>

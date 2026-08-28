@@ -1,11 +1,33 @@
-<!-- markdownlint-disable MD013 MD024 -->
+# [2.6.2] - Changelog
 
-# [2.6.1] - CHANGELOG
+<!-- markdownlint-disable MD013 MD024 -->
 
 All notable changes to the **Zimbra Link Installer & Telemetry Suite** will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+---
+
+## [2.6.2] - 2026-08-28
+
+### Added
+
+- **Comprehensive Dual-Language Architecture (Bahasa Indonesia & English)**:
+  - **CLI Suite (`zimbra-link-installer.sh`)**:
+    - Built-in internationalization engine (`tr_msg`) supporting seamless switching between English and Bahasa Indonesia.
+    - Added interactive language selector prompt upon startup (`[1] English / [2] Bahasa Indonesia`).
+    - Added command-line flags `--lang=en` and `--lang=id` (short option: `-l <lang>`) for fully automated, non-interactive execution.
+    - Added runtime language switching option directly inside the main menu (`Option 6: Switch Language / Ganti Bahasa`).
+    - Translated all CLI components including banners, pre-flight audits, menus, download logs, cryptographic verification alerts, and error diagnostics.
+  - **Web Portal (`index.html`)**:
+    - Added interactive bilingual switcher toggle buttons (`[ ID | EN ]`) in the top navigation bar with `localStorage` preference persistence.
+    - Added dynamic language-switching event handlers updating search input placeholders, copy buttons (`Salin` / `Copy`), and accessibility aria-labels.
+  - **Documentation (`README.md`, `SECURITY.md`, `DOCNOTE.md`)**:
+    - Added bilingual navigation badges (`[🇮🇩 Bahasa Indonesia]` / `[🇬🇧 English]`).
+    - Added dedicated English overview and quickstart section in `README.md`.
+    - Added complete Bahasa Indonesia version of the security policy and responsible disclosure procedure in `SECURITY.md`.
+    - Updated version matrix and lifecycle references across all documentation files.
 
 ---
 

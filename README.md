@@ -8,6 +8,8 @@ By **Harry Dertin Sutisna Alsyundawy**
 
 [![Maintenance Status](https://img.shields.io/badge/Maintained%3F-yes-brightgreen.svg)](https://github.com/alsyundawy)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Language: ID](https://img.shields.io/badge/Language-Bahasa%20Indonesia-blue.svg)](#overview)
+[![Language: EN](https://img.shields.io/badge/Language-English-green.svg)](#-english-documentation--quickstart)
 [![ZCS Versions](https://img.shields.io/badge/ZCS%20Versions-4.5.x%20%7C%205.x%20%7C%206.x%20%7C%207.x%20%7C%208.x%20%7C%209.x%20%7C%2010.x%20%7C%2010.1.x-blue.svg)](https://github.com/alsyundawy/Zimbra-Link-Installer)
 [![Verified Downloads](<https://img.shields.io/badge/Verified%20Binaries-1%2C215%2B%20Active%20(HTTP%20200)-success.svg>)](https://github.com/alsyundawy/Zimbra-Link-Installer)
 [![Edition](https://img.shields.io/badge/Edition-Network%20%7C%20FOSS%20%7C%20Community-orange.svg)](https://github.com/alsyundawy/Zimbra-Link-Installer)
@@ -23,6 +25,7 @@ By **Harry Dertin Sutisna Alsyundawy**
 ## Table of Contents
 
 - [Overview](#overview)
+- [🌐 English Documentation & Quickstart](#-english-documentation--quickstart)
 - [Original Links & References](#original-links--references)
 - [Quickstart](#quickstart)
 - [Automated CLI Installer (`zimbra-link-installer.sh`)](#automated-cli-installer-zimbra-link-installersh)
@@ -66,15 +69,32 @@ By **Harry Dertin Sutisna Alsyundawy**
 
 ## Overview
 
-**Zimbra Link Installer** adalah repositori referensi arsitektural enterprise, indeks arsip biner lengkap, dan utilitas instalasi otomatis untuk **Zimbra Collaboration Suite (ZCS)** dari rilis historis **4.5.x hingga rilis aktif 10.1.x**.
+Berikut adalah komponen utama dari **Zimbra Link Installer & Telemetry Suite**:
 
-Repositori ini menyatukan:
-
-1. **Interactive Bash CLI Installer (`zimbra-link-installer.sh` v2.6.1):** Utilitas interaktif aman dengan _pre-flight system audit_ (RAM, storage, FQDN DNS, POSIX pax), penanganan sinyal _atomic cleanup trap_, _privilege elevation helper_ (`run_privileged`), dan verifikasi integritas kriptografi SHA256/MD5 otomatis.
+1. **Interactive Bash CLI Installer (`zimbra-link-installer.sh` v2.6.2):** Utilitas interaktif aman bilingual (English & Bahasa Indonesia) dengan _pre-flight system audit_ (RAM, storage, FQDN DNS, POSIX pax), penanganan sinyal _atomic cleanup trap_, _privilege elevation helper_ (`run_privileged`), dan verifikasi integritas kriptografi SHA256/MD5 otomatis.
 2. **Comprehensive Official & Unofficial Archive:** Mengindeks seluruh tautan unduhan langsung biner resmi (_Network Edition, Open Source Edition, Cumulative Security Patches_) dari `files.zimbra.com` serta seluruh kompilasi biner komunitas independen (_FOSS Edition 2018–2026_).
 3. **Cryptographic Checksums:** Nilai hash MD5 dan SHA256 untuk memverifikasi integritas setiap installer secara case-insensitive.
 4. **Compilation Masterclass:** Panduan lengkap kompilasi mandiri kode sumber ZCS (8.8, 9.0, 10.0, 10.1) pada Ubuntu (20.04, 22.04, 24.04) dan RHEL/Rocky/Alma/Oracle (8 & 9).
 5. **Security Vulnerability Dossier:** Analisis 37+ CVE (2016–2026) dengan **rincian versi terdampak secara spesifik dan terverifikasi resmi pada Zimbra Security Advisories & NIST NVD**, taksonomi eksploitasi, dan panduan mitigasi Zero-Day.
+
+<h3 id="-english-documentation--quickstart">🌐 English Documentation & Quickstart</h3>
+
+**Zimbra Link Installer** is an enterprise-grade architectural reference, comprehensive binary archive index, and automated installation suite for **Zimbra Collaboration Suite (ZCS)** spanning historical releases **4.5.x through active 10.1.x**.
+
+**Key Highlights (English):**
+
+- **Automated Dual-Language CLI (`zimbra-link-installer.sh` v2.6.2):** Interactive installer supporting English (`--lang=en`) and Bahasa Indonesia (`--lang=id`), pre-flight readiness checks (RAM, disk space, FQDN DNS, pax), and automated cryptographic verification.
+- **1,215+ Verified Direct Downloads:** Official Network Edition, Open Source Edition (FOSS/OSE), and community builds (TechFiles, Ian Walker, Maldua) from 2018 to 2026.
+- **Security & CVE Matrix (2016–2026):** Exhaustive vulnerability matrix with precise affected versions, CVSS 3.1 scores, and Zero-Day hardening playbooks.
+
+**Quick Start (One-Liner in English):**
+
+```bash
+# Run installer directly with English language flag
+curl -fsSL https://raw.githubusercontent.com/alsyundawy/Zimbra-Link-Installer/main/zimbra-link-installer.sh -o zimbra-link-installer.sh
+chmod +x zimbra-link-installer.sh
+sudo ./zimbra-link-installer.sh --lang=en
+```
 
 ---
 
@@ -142,30 +162,34 @@ sudo ./install.sh
 
 ## Automated CLI Installer (`zimbra-link-installer.sh`)
 
-Skrip `zimbra-link-installer.sh` (v2.6.0) menyederhanakan siklus pengunduhan dan instalasi ZCS di lingkungan Linux enterprise:
+Skrip `zimbra-link-installer.sh` (v2.6.2) menyederhanakan siklus pengunduhan dan instalasi ZCS di lingkungan Linux enterprise dengan dukungan antarmuka dwibahasa:
 
 ```text
 ====================================================================
-               Z I M B R A   L I N K   I N S T A L L E R
-          Enterprise Binary Downloader & Automated Suite (v2.6.0)
+             Z I M B R A   L I N K   I N S T A L L E R
+        Enterprise Binary Downloader & Automated Suite (v2.6.2)
 ====================================================================
-[+] Detected OS Architecture: x86_64
-[+] Detected Operating System: Ubuntu 22.04 LTS (jammy)
+  Maintained by Harry Dertin Sutisna Alsyundawy (alsyundawy@gmail.com)
+====================================================================
 
-PILIH KATEGORI BINER ZIMBRA:
+[+] Detected Architecture : x86_64
+[+] Detected Distribution : Ubuntu 22.04 LTS (ubuntu 22.04)
+
+SELECT ZIMBRA BINARY CATEGORY:
   1) Zimbra OFFICIAL Network Edition (NE) [10.1, 10.0, 9.0, 8.8.x, 8.7.x, 8.6, 8.5, 8.0, 7.x]
   2) Zimbra OFFICIAL Open Source Edition (FOSS/OSE) [8.8.x, 8.7.x, 8.6, 8.5, 8.0, 7.x]
   3) Zimbra UNOFFICIAL / Community FOSS Builds [10.1.x, 10.0.x, 9.0.0, 8.8.15 (2018–2026)]
-  4) Jalankan Pre-Flight System Audit & Prerequisite Check
-  5) Jalankan Uji Telemetri Seluruh Link Biner (Deep Link Validator)
-  0) Keluar
+  4) Run Pre-Flight System Audit & Prerequisite Checks
+  5) Run Telemetry Test on All Binary Links (Deep Link Validator)
+  6) Switch Language / Ganti Bahasa [Current: English]
+  0) Exit
 ====================================================================
 ```
 
 <h3 id="fitur-utama-cli">Fitur Utama CLI</h3>
 
-- **Defensive Shell Architecture:** Dilengkapi `set -Eeuo pipefail`, `IFS=$'
-'`, dan `umask 022` untuk perlindungan dari race-condition dan word splitting.
+- **Dual-Language i18n Support:** Mendukung penuh Bahasa Indonesia dan English baik melalui interaktif prompt maupun flag CLI (`--lang=en` atau `--lang=id`).
+- **Defensive Shell Architecture:** Dilengkapi `set -Eeuo pipefail`, `IFS=$'\n\t'`, dan `umask 022` untuk perlindungan dari race-condition dan word splitting.
 - **Deteksi Otomatis Sistem:** Mengidentifikasi distribusi (Ubuntu/Debian/RHEL/Rocky/Alma/Oracle Linux), arsitektur kernel, kapasitas RAM, dan storage `/opt/zimbra`.
 - **Pre-Flight FQDN & Pax Audit:** Memeriksa kesiapan FQDN DNS resolver (`hostname -f`) dan memastikan utilitas POSIX `pax` telah aktif guna menangkal CVE-2022-41352.
 - **Anti-Hotlink Header Handling:** Menginjeksi header `Referer` secara otomatis saat mengunduh dari CDN komunitas TechFiles.
@@ -915,7 +939,7 @@ Tabel berikut menyajikan seluruh riwayat CVE resmi yang diverifikasi pada sistem
 | <sub>2025</sub>  | <sub>[**CVE-2025-54390**](https://nvd.nist.gov/vuln/detail/CVE-2025-54390)</sub> | <sub>**7.5**</sub> |   <sub>HIGH</sub>   | <sub>SOAP Admin (`ResetPasswordRequest`)</sub>                     | <sub>• ZCS 10.1.0 – 10.1.9 (Daffodil)<br>• ZCS 10.0.0 – 10.0.15 (Daffodil)</sub>                                                                                              | <sub>CSRF in `ResetPasswordRequest` SOAP operation allowing unauthorized password changes</sub>                                                                                                  | <sub>Upgrade ke **ZCS 10.1.10+ / 10.0.16+**</sub>                                                                                                                          | <sub>Zimbra Security Team</sub>                           |
 | <sub>2025</sub>  | <sub>[**CVE-2025-54391**](https://nvd.nist.gov/vuln/detail/CVE-2025-54391)</sub> | <sub>**8.8**</sub> |   <sub>HIGH</sub>   | <sub>Two-Factor Authentication (2FA) Module</sub>                  | <sub>• ZCS 10.1.0 – 10.1.9 (Daffodil)<br>• ZCS 10.0.0 – 10.0.15 (Daffodil)</sub>                                                                                              | <sub>Missing authentication token validation allowing unauthorized modification of account 2FA settings</sub>                                                                                    | <sub>Upgrade ke **ZCS 10.1.10+ / 10.0.16+**</sub>                                                                                                                          | <sub>Ashish Kataria</sub>                                 |
 | <sub>2025</sub>  | <sub>[**CVE-2025-53645**](https://nvd.nist.gov/vuln/detail/CVE-2025-53645)</sub> | <sub>**7.5**</sub> |   <sub>HIGH</sub>   | <sub>Admin Console UI</sub>                                        | <sub>• ZCS 10.1.0 – 10.1.8 (Daffodil)<br>• ZCS 10.0.0 – 10.0.14 (Daffodil)<br>• ZCS 9.0.0 Patch 1 s.d. Patch 45 (Kepler)</sub>                                                | <sub>Denial of Service (DoS) vulnerability in the admin console leading to complete service disruption</sub>                                                                                     | <sub>Upgrade ke **ZCS 10.1.9+ / 10.0.15+ / 9.0.0 P46+**</sub>                                                                                                              | <sub>Zimbra Security Team</sub>                           |
-| <sub>2025</sub>  | <sub>[**CVE-2025-48700**](https://nvd.nist.gov/vuln/detail/CVE-2025-48700)</sub> | <sub>**6.1**</sub> |  <sub>MEDIUM</sub>  | <sub>Classic UI HTML Parser (CISA KEV)</sub>                      | <sub>• ZCS 10.1.0 – 10.1.12 (Daffodil)<br>• ZCS 10.0.0 – 10.0.17 (Daffodil)<br>• ZCS 9.0.0 Patch 1 s.d. Patch 44 (Kepler)<br>• ZCS 8.8.15 Patch 1 s.d. Patch 46 (Joule)</sub> | <sub>Client-side DOM stylesheet injection via malformed layout elements in inbound messages allowing token harvesting (listed in CISA KEV catalog)</sub>                                          | <sub>Pasang build kumulatif patch **ZCS 10.1.13+ / 10.0.18+ / 9.0.0 P45+ / 8.8.15 P47+**</sub>                                                                              | <sub>CISA KEV Catalog & ZCS Advisory</sub>                 |
+| <sub>2025</sub>  | <sub>[**CVE-2025-48700**](https://nvd.nist.gov/vuln/detail/CVE-2025-48700)</sub> | <sub>**6.1**</sub> |  <sub>MEDIUM</sub>  | <sub>Classic UI HTML Parser (CISA KEV)</sub>                      | <sub>Versi 10.1.0–10.1.12, 10.0.0–10.0.17, 9.0.0 P1–P44, dan 8.8.15 P1–P46</sub>                                                                                               | <sub>Injeksi CSS stylesheet pada parser pesan masuk untuk memanen kredensial (tercantum di katalog CISA KEV)</sub>                                                               | <sub>Pasang pembaruan kumulatif **ZCS 10.1.13+ / 10.0.18+ / 9.0.0 P45+ / 8.8.15 P47+**</sub>                                                                                | <sub>CISA KEV Catalog & ZCS Advisory</sub>                 |
 | <sub>2025</sub>  | <sub>[**CVE-2025-27915**](https://nvd.nist.gov/vuln/detail/CVE-2025-27915)</sub> | <sub>**8.8**</sub> |   <sub>HIGH</sub>   | <sub>Classic Web Client</sub>                                      | <sub>• ZCS 10.1.0 – 10.1.4 (Daffodil)<br>• ZCS 10.0.0 – 10.0.12 (Daffodil)<br>• ZCS 9.0.0 Patch 1 s.d. Patch 43 (Kepler)</sub>                                                | <sub>Stored Cross-Site Scripting (XSS) in Classic Web Client input sanitization allowing session takeovers</sub>                                                                                 | <sub>Upgrade ke **ZCS 10.1.5+ / 10.0.13+ / 9.0.0 P44+**</sub>                                                                                                              | <sub>Zimbra Security Team</sub>                           |
 | <sub>2025</sub>  | <sub>[**CVE-2025-25064**](https://nvd.nist.gov/vuln/detail/CVE-2025-25064)</sub> | <sub>**9.8**</sub> | <sub>CRITICAL</sub> | <sub>`ZimbraSyncService` SOAP</sub>                                | <sub>• ZCS 10.1.0 – 10.1.3 (Daffodil)<br>• ZCS 10.0.0 – 10.0.11 (Daffodil)</sub>                                                                                              | <sub>SQL Injection in `ZimbraSyncService` SOAP endpoint allowing direct extraction and modification of database tables</sub>                                                                     | <sub>Upgrade ke **ZCS 10.1.4+ / 10.0.12+**</sub>                                                                                                                           | <sub>byc_404 (Joe Zhou)</sub>                             |
 | <sub>2025</sub>  | <sub>[**CVE-2025-25065**](https://nvd.nist.gov/vuln/detail/CVE-2025-25065)</sub> | <sub>**7.5**</sub> |   <sub>HIGH</sub>   | <sub>RSS Feed Parser</sub>                                         | <sub>• ZCS 10.1.0 – 10.1.3 (Daffodil)<br>• ZCS 10.0.0 – 10.0.11 (Daffodil)<br>• ZCS 9.0.0 Patch 1 s.d. Patch 42 (Kepler)</sub>                                                | <sub>Server-Side Request Forgery (SSRF) in RSS feed parser allowing unauthorized redirection to internal network endpoints</sub>                                                                 | <sub>Upgrade ke **ZCS 10.1.4+ / 10.0.12+ / 9.0.0 P43+**</sub>                                                                                                              | <sub>Mauro Dini</sub>                                     |
@@ -930,9 +954,9 @@ Tabel berikut menyajikan seluruh riwayat CVE resmi yang diverifikasi pada sistem
 | <sub>2023</sub>  | <sub>[**CVE-2023-48432**](https://nvd.nist.gov/vuln/detail/CVE-2023-48432)</sub> | <sub>**6.1**</sub> |  <sub>MEDIUM</sub>  | <sub>Classic Web Client Link Handler</sub>                         | <sub>• ZCS 10.0.0 – 10.0.5 (Daffodil)<br>• ZCS 9.0.0 Patch 1 s.d. Patch 36 (Kepler)<br>• ZCS 8.8.15 Patch 1 s.d. Patch 43 (Joule)</sub>                                       | <sub>Reflected script execution in Classic UI session context via manipulated hyperlink parameters in received emails</sub>                                                                      | <sub>Upgrade ke **ZCS 10.0.6+ / 9.0.0 P37+ / 8.8.15 P44+**</sub>                                                                                                           | <sub>ZCS Security Center</sub>                            |
 | <sub>2023</sub>  | <sub>[**CVE-2023-38750**](https://nvd.nist.gov/vuln/detail/CVE-2023-38750)</sub> | <sub>**7.5**</sub> |   <sub>HIGH</sub>   | <sub>ZWC Public JSP Context (`launchUser.jsp`)</sub>               | <sub>• ZCS 10.0.0 – 10.0.1 (Daffodil)<br>• ZCS 9.0.0 Patch 1 s.d. Patch 33 (Kepler)<br>• ZCS 8.8.15 Patch 1 s.d. Patch 40 (Joule)</sub>                                       | <sub>Reflected XSS in `public/launchUser.jsp` actively exploited in the wild by Russian state-sponsored threat group Winter Vivern</sub>                                                         | <sub>Upgrade ke **ZCS 10.0.2+ / 9.0.0 P34+ / 8.8.15 P41+**</sub>                                                                                                           | <sub>Google Threat Analysis Group (Clément Lecigne)</sub> |
 | <sub>2023</sub>  | <sub>[**CVE-2023-37580**](https://nvd.nist.gov/vuln/detail/CVE-2023-37580)</sub> | <sub>**6.1**</sub> |  <sub>MEDIUM</sub>  | <sub>Classic Web Client Login</sub>                                | <sub>• ZCS 9.0.0 Patch 1 s.d. Patch 32 (Kepler)<br>• ZCS 8.8.15 Patch 1 s.d. Patch 39 (Joule)</sub>                                                                           | <sub>Reflected Cross-Site Scripting on login redirect URL query parameter</sub>                                                                                                                  | <sub>Upgrade ke **ZCS 9.0.0 P33+ / 8.8.15 P40+**</sub>                                                                                                                     | <sub>Clément Lecigne (Google TAG)</sub>                   |
-| <sub>2023</sub>  | <sub>[**CVE-2023-34193**](https://nvd.nist.gov/vuln/detail/CVE-2023-34193)</sub> | <sub>**7.2**</sub> |   <sub>HIGH</sub>   | <sub>`ClientUploader` Servlet</sub>                                | <sub>• ZCS 10.0.0 – 10.0.1 (Daffodil)<br>• ZCS 9.0.0 Patch 1 s.d. Patch 33 (Kepler)<br>• ZCS 8.8.15 Patch 1 s.d. Patch 40 (Joule)</sub>                                       | <sub>Privileged ClientUploader endpoint flaw enabling rogue binary attachment persistence and web-accessible script generation</sub>                                                             | <sub>Instal pembaruan versi **ZCS 10.0.2+ / 9.0.0 P34+ / 8.8.15 P41+**</sub>                                                                                                | <sub>Zimbra Product Security Advisory</sub>                |
+| <sub>2023</sub>  | <sub>[**CVE-2023-34193**](https://nvd.nist.gov/vuln/detail/CVE-2023-34193)</sub> | <sub>**7.2**</sub> |   <sub>HIGH</sub>   | <sub>`ClientUploader` Servlet</sub>                                | <sub>Versi 10.0.0–10.0.1, 9.0.0 P1–P33, serta 8.8.15 P1–P40</sub>                                                                                                              | <sub>Kegagalan validasi hak akses pada handler upload yang memungkinkan penyimpanan file berbahaya</sub>                                                                         | <sub>Lakukan pembaruan ke **ZCS 10.0.2+ / 9.0.0 P34+ / 8.8.15 P41+**</sub>                                                                                                 | <sub>Zimbra Product Security Advisory</sub>                |
 | <sub>2023</sub>  | <sub>[**CVE-2023-34192**](https://nvd.nist.gov/vuln/detail/CVE-2023-34192)</sub> | <sub>**6.1**</sub> |  <sub>MEDIUM</sub>  | <sub>Admin Console UI</sub>                                        | <sub>• ZCS 9.0.0 Patch 1 s.d. Patch 31 (Kepler)<br>• ZCS 8.8.15 Patch 1 s.d. Patch 38 (Joule)</sub>                                                                           | <sub>Stored XSS in Zimlet Configuration UI leading to administrator account takeover upon inspection</sub>                                                                                       | <sub>Upgrade ke **ZCS 9.0.0 P32+ / 8.8.15 P39+**; batasi akses port 7071</sub>                                                                                             | <sub>Skay, Noah-Lab</sub>                                 |
-| <sub>2023</sub>  | <sub>[**CVE-2023-29382**](https://nvd.nist.gov/vuln/detail/CVE-2023-29382)</sub> | <sub>**7.5**</sub> |   <sub>HIGH</sub>   | <sub>`sfdc_preauth.jsp` Component</sub>                            | <sub>• ZCS 10.0.0 – 10.0.1 (Daffodil)<br>• ZCS 9.0.0 Patch 1 s.d. Patch 32 (Kepler)<br>• ZCS 8.8.15 Patch 1 s.d. Patch 39 (Joule)</sub>                                       | <sub>Pre-session flaw in sfdc_preauth endpoint allowing external callers to navigate system directories and run unauthorized server-side scripts</sub>                                           | <sub>Terapkan patch keamanan **ZCS 10.0.2+ / 9.0.0 P33+ / 8.8.15 P40+**</sub>                                                                                               | <sub>Synacor Security Bulletin</sub>                       |
+| <sub>2023</sub>  | <sub>[**CVE-2023-29382**](https://nvd.nist.gov/vuln/detail/CVE-2023-29382)</sub> | <sub>**7.5**</sub> |   <sub>HIGH</sub>   | <sub>`sfdc_preauth.jsp` Component</sub>                            | <sub>Versi 10.0.0–10.0.1, 9.0.0 P1–P32, serta 8.8.15 P1–P39</sub>                                                                                                              | <sub>Path traversal pada modul pra-autentikasi Salesforce yang membuka akses berkas internal server</sub>                                                                         | <sub>Terapkan perbaikan patch **ZCS 10.0.2+ / 9.0.0 P33+ / 8.8.15 P40+**</sub>                                                                                               | <sub>Synacor Security Bulletin</sub>                       |
 | <sub>2022</sub>  | <sub>[**CVE-2022-41352**](https://nvd.nist.gov/vuln/detail/CVE-2022-41352)</sub> | <sub>**9.8**</sub> | <sub>CRITICAL</sub> | <sub>Amavis Mail Filter (`cpio` archive unpacker)</sub>            | <sub>• ZCS 9.0.0 Patch 1 s.d. Patch 26 (Kepler)<br>• ZCS 8.8.15 Patch 1 s.d. Patch 33 (Joule)<br>_(Jika paket POSIX `pax` tidak terpasang)_</sub>                             | <sub>Unauthenticated Arbitrary File Upload via `cpio` extraction fallback to Jetty webroot leading to instant webshell RCE</sub>                                                                 | <sub>Wajib pasang utilitas OS **`pax`** (`apt install pax` / `dnf install pax`) & upgrade ke **ZCS 9.0.0 P27+ / 8.8.15 P34+**</sub>                                        | <sub>Yeak Nai Siew</sub>                                  |
 | <sub>2022</sub>  | <sub>[**CVE-2022-37042**](https://nvd.nist.gov/vuln/detail/CVE-2022-37042)</sub> | <sub>**9.8**</sub> | <sub>CRITICAL</sub> | <sub>`MailboxImportServlet` Endpoint</sub>                         | <sub>• ZCS 9.0.0 Patch 1 s.d. Patch 25 (Kepler)<br>• ZCS 8.8.15 Patch 1 s.d. Patch 32 (Joule)</sub>                                                                           | <sub>Authentication bypass in `MailboxImportServlet` chained with ZipSlip directory traversal for unauthenticated RCE</sub>                                                                      | <sub>Upgrade ke **ZCS 9.0.0 P26+ / 8.8.15 P33+**</sub>                                                                                                                     | <sub>Steven Adair & Thomas Lancaster (Volexity)</sub>     |
 | <sub>2022</sub>  | <sub>[**CVE-2022-27925**](https://nvd.nist.gov/vuln/detail/CVE-2022-27925)</sub> | <sub>**7.2**</sub> |   <sub>HIGH</sub>   | <sub>`mboximport` Zip Upload Handler</sub>                         | <sub>• ZCS 9.0.0 Patch 1 s.d. Patch 23 (Kepler)<br>• ZCS 8.8.15 Patch 1 s.d. Patch 30 (Joule)</sub>                                                                           | <sub>ZipSlip arbitrary file upload and path traversal dropping JSP webshells in Jetty webroot</sub>                                                                                              | <sub>Upgrade ke **ZCS 9.0.0 P24+ / 8.8.15 P31+**</sub>                                                                                                                     | <sub>Mikhail Klyuchnikov (Positive Technologies)</sub>    |
@@ -1180,7 +1204,7 @@ trunk check --all
 
 ---
 
-## Ecosystem Tools & Repositories
+<h3 id="ecosystem-tools--repositories">Ecosystem Tools & Repositories</h3>
 
 Utilitas pendukung open source untuk operasional Zimbra:
 

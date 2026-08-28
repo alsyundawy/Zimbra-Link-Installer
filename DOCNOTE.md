@@ -6,7 +6,7 @@
 
 **Enterprise Binary Downloader, Checksum Verifier, Interactive CLI & Automated Installer (ZCS 4.5.x – 10.1.x)**<br>
 **Maintainer:** Harry Dertin Sutisna Alsyundawy (`alsyundawy@gmail.com`)<br>
-**Current Version:** `v2.6.1`<br>
+**Current Version:** `v2.6.2`<br>
 **License:** MIT License<br>
 **Last Updated:** 2026-08-28
 
@@ -24,23 +24,27 @@ Skrip `zimbra-link-installer.sh` dirancang dengan standar enterprise yang menera
    - `IFS=$'\n\t'`: Mengamankan pemisahan kata (*word splitting*) pada perulangan array dan pembacaan berkas.
    - `umask 022`: Memastikan berkas biner dan direktori kerja tidak memiliki izin tulis publik (*world-writable*).
 
-2. **Privilege Abstraction Layer (`run_privileged`):**
+2. **Internationalization (i18n) Engine (`tr_msg` & `--lang` Flag):**
+   - Mesin penerjemah terintegrasi yang mendukung **Bahasa Indonesia** dan **English**.
+   - Otomatis menyediakan pemilih bahasa interaktif saat startup, opsi CLI `--lang=en` / `--lang=id` untuk mode automasi/skrip nir-interaktif, serta opsi ganti bahasa (*runtime language switcher*) langsung di menu utama.
+
+3. **Privilege Abstraction Layer (`run_privileged`):**
    - Mendeteksi privilege sesi aktif melalui `id -u`.
    - Jika dijalankan sebagai user reguler non-root, perintah instalasi sistem atau manajemen paket secara otomatis didelegasikan melalui `sudo`.
    - Menjamin portabilitas pada container minimalis (Docker, LXC, Podman) yang berjalan sebagai root murni tanpa utilitas `sudo` terpasang.
 
-3. **Signal Trapping & Atomic Cleanup (`trap cleanup EXIT INT TERM HUP`):**
+4. **Signal Trapping & Atomic Cleanup (`trap cleanup EXIT INT TERM HUP`):**
    - Menangkap interupsi sinyal interaktif pengguna (`Ctrl+C` / `SIGINT`), pemutusan koneksi SSH (`SIGHUP`), dan terminasi proses (`SIGTERM`, `EXIT`).
    - Membersihkan berkas sementara (`/tmp/zcs_*`) secara atomik tanpa merusak arsip instalasi resmi yang telah selesai diunduh pada `${WORK_DIR}`.
 
-4. **Cryptographic Checksum Sanitization & Matching:**
+5. **Cryptographic Checksum Sanitization & Matching:**
    - Mengekstrak pola string hash murni (32 karakter untuk MD5, 64 karakter untuk SHA-256) menggunakan regex alfanumerik (`grep -oE '[a-fA-F0-9]{32|64}'`).
    - Melakukan komparasi hash secara **case-insensitive** (`${expected_hash,,} == ${actual_hash,,}`) guna menghindari kegagalan verifikasi akibat perbedaan kapitalisasi karakter heksadesimal antar penyedia mirror.
 
-5. **WAF & Community CDN Referer Bypass:**
-   - Menyertakan header HTTP `Referer: https://techfiles.online/` dan User-Agent enterprise `Zimbra-Link-Installer/2.6.1` guna mencegah pemblokiran Cloudflare WAF pada mirror biner komunitas (Ian Walker Builds).
+6. **WAF & Community CDN Referer Bypass:**
+   - Menyertakan header HTTP `Referer: https://techfiles.online/` dan User-Agent enterprise `Zimbra-Link-Installer/2.6.2` guna mencegah pemblokiran Cloudflare WAF pada mirror biner komunitas (Ian Walker Builds).
 
-6. **Directory State Preservation:**
+7. **Directory State Preservation:**
    - Menyimpan variabel `$original_pwd` sebelum berpindah ke working directory `${WORK_DIR}`, dan mengembalikannya ke posisi awal saat skrip selesai untuk menjaga konsistensi state shell pemanggil.
 
 ---
@@ -71,10 +75,10 @@ Sebelum proses pengunduhan dan instalasi biner ZCS dijalankan, modul audit melak
 
 ### 4. Struktur CLI Menu & Alur Eksekusi Skrip
 
-Skrip `zimbra-link-installer.sh` mengimplementasikan arsitektur menu bertingkat yang intuitif:
+Skrip `zimbra-link-installer.sh` mengimplementasikan arsitektur menu bertingkat yang intuitif dan dwibahasa:
 
 ```text
-[Main Menu]
+[Main Menu / Menu Utama]
   ├── 1) Zimbra Network Edition (Official Synacor Releases)
   │      ├── ZCS NE 10.1.x (Ubuntu 22.04 / 20.04, RHEL 9 / 8)
   │      ├── ZCS NE 10.0.x (Ubuntu 20.04 / 18.04, RHEL 8)
@@ -90,8 +94,10 @@ Skrip `zimbra-link-installer.sh` mengimplementasikan arsitektur menu bertingkat 
   │      ├── ZCS 10.0.x Community FOSS (Ubuntu 20.04 / 22.04, RHEL 8 / 9)
   │      ├── ZCS 9.0.0 Community FOSS (Ubuntu 20.04 / 18.04, RHEL 8 / 7)
   │      └── ZCS 8.8.15 Community Rebuilds (Ubuntu 20.04, RHEL 8)
-  ├── 4) Pre-Flight System Audit & Prerequisite Check
-  └── 5) Deep Link Telemetry & Health Validator
+  ├── 4) Pre-Flight System Audit & Prerequisite Checks
+  ├── 5) Deep Link Telemetry & Health Validator
+  ├── 6) Switch Language / Ganti Bahasa [Current: English / ID]
+  └── 0) Exit / Keluar
 ```
 
 ---
@@ -112,6 +118,7 @@ Utilitas `scripts/deep_link_validator.py` merupakan modul telemetri asynchronous
 
 Aplikasi web standalone `index.html` dibangun dengan teknologi web modern tanpa dependensi berat (*zero external framework*) yang sepenuhnya responsif dari layar VGA (640x480) hingga monitor 2K (2560x1440):
 
+- **Bilingual Interface Switcher:** Dilengkapi tombol toggle dwibahasa interaktif `[ ID | EN ]` pada navbar dengan persistensi `localStorage` untuk memfasilitasi pengguna global dan lokal.
 - **Interactive Architecture Visualizer:** Mengintegrasikan pustaka Mermaid.js untuk merender diagram topologi dan alur kerja instalasi Zimbra secara dinamis dengan tema gelap (*dark theme*) berkontras tinggi.
 - **Debounced Real-Time Client-Side Search:** Fitur pencarian instan dengan proteksi *debouncing* (120ms) untuk menyaring 1,215+ tautan biner dan matriks CVE secara efisien tanpa *layout thrashing*.
 - **Responsive Mobile Navigation & Offcanvas Drawer:** Dilengkapi tombol menu hamburger dan *slide-in offcanvas drawer* dengan *backdrop blur* serta navigasi keyboard (*ESC key & focus trapping*).
@@ -120,10 +127,11 @@ Aplikasi web standalone `index.html` dibangun dengan teknologi web modern tanpa 
 
 ---
 
-### 7. Matriks Evolusi & Riwayat Versi (v2.0.0 – v2.6.1)
+### 7. Matriks Evolusi & Riwayat Versi (v2.0.0 – v2.6.2)
 
 | Versi | Tanggal Rilis | Fokus Perubahan Utama |
 | :---: | :---: | :--- |
+| **`v2.6.2`** | 2026-08-28 | Implementasi penuh arsitektur dwibahasa (Bahasa Indonesia & English) lintas platform: mesin i18n interaktif pada CLI (`zimbra-link-installer.sh` dengan flag `--lang=en`/`--lang=id` dan runtime switch), tombol pengalih bahasa pada navbar web portal (`index.html`), navigasi dwibahasa pada `README.md` dan `SECURITY.md`. |
 | **`v2.6.1`** | 2026-08-28 | Sinkronisasi Deep Research rilis biner & CVE terbaru (2023–2026): penambahan CVE-2025-48700 (CISA KEV), CVE-2024-45516, CVE-2023-48432, CVE-2023-34193, CVE-2023-29382 ke Master Vulnerability Matrix (total 37+ CVE), peremajaan kebijakan `SECURITY.md` enterprise, dan verifikasi telemetri 1,215 link aktif secara menyeluruh. |
 | **`v2.6.0`** | 2026-08-27 | Enterprise Security Hardening (`set -Eeuo pipefail`, cleanup traps, privilege abstraction, regex checksum sanitization, FQDN audit), standalone web portal (`index.html`) responsif (VGA s.d. 2K) dengan diagram Mermaid & WCAG AA accessibility, verifikasi NVD CVE terkonfirmasi resmi, dan micro-typography formatting. |
 | **`v2.5.0`** | 2026-08-27 | Implementasi arsitektur CLI submenu bertingkat (NE 7-10.1, Official FOSS 7-8.8, Community FOSS 8.8-10.1), penyusunan Master Vulnerability Matrix 32+ CVE (2016–2026), dan Zero-Day Emergency Hardening Playbook. |

@@ -23,11 +23,24 @@ readonly BOLD='\033[1m'
 readonly NC='\033[0m'
 
 # Global Configuration & Defaults
-readonly SCRIPT_VERSION="2.6.1"
+readonly SCRIPT_VERSION="2.6.2"
 WORK_DIR="${HOME}/zimbra_install_cache"
 readonly DEFAULT_REFERER="https://techfiles.online/"
 readonly USER_AGENT="Mozilla/5.0 (X11; Linux x86_64) Zimbra-Link-Installer/${SCRIPT_VERSION}"
 TEMP_DIR=""
+APP_LANG="${ZIMBRA_INSTALLER_LANG:-en}"
+CLI_LANG_SET=0
+
+# Helper for bilingual translations
+tr_msg() {
+	local en_msg="$1"
+	local id_msg="$2"
+	if [[ ${APP_LANG} == "id" ]]; then
+		echo "${id_msg}"
+	else
+		echo "${en_msg}"
+	fi
+}
 
 # ==============================================================================
 # LOGGING & OUTPUT FORMATTERS
@@ -69,7 +82,7 @@ run_privileged() {
 	elif command -v sudo >/dev/null 2>&1; then
 		sudo "$@"
 	else
-		log_error "Perintah memerlukan hak akses root, namun 'sudo' tidak tersedia di sistem."
+		log_error "$(tr_msg "This command requires root privileges, but 'sudo' is not installed." "Perintah memerlukan hak akses root, namun 'sudo' tidak tersedia di sistem.")"
 		return 1
 	fi
 }
@@ -92,12 +105,58 @@ BANNER_EOF
 }
 
 # ==============================================================================
+# LANGUAGE SELECTION & HELP
+# ==============================================================================
+show_help() {
+	cat <<HELP_EOF
+Zimbra Link Installer & Telemetry Suite (v${SCRIPT_VERSION})
+Author: Harry Dertin Sutisna Alsyundawy
+
+Usage: $0 [OPTIONS]
+
+Options:
+  -l, --lang <en|id>   Set language (en = English [Default], id = Bahasa Indonesia)
+  -w, --workdir <dir>  Set custom binary download directory (default: ~/zimbra_install_cache)
+  -h, --help           Display this help message and exit
+  -v, --version        Display script version and exit
+
+Examples:
+  $0 --lang=en
+  $0 --lang=id
+HELP_EOF
+}
+
+select_language() {
+	if ((CLI_LANG_SET == 1)); then
+		return
+	fi
+	if [[ -t 0 ]]; then
+		printf "%b%b" "${CYAN}" "${BOLD}"
+		printf "  ====================================================================\n"
+		printf "       LANGUAGE SELECTION / PILIHAN BAHASA (ZCS Suite v%s)\n" "${SCRIPT_VERSION}"
+		printf "  ====================================================================\n%b" "${NC}"
+		printf "    1) English (Default)\n"
+		printf "    2) Bahasa Indonesia\n\n"
+		read -rp "  Select Language / Pilih Bahasa [1/2] (Default: 1): " lang_in
+		case "${lang_in}" in
+		2|[iI][dD])
+			APP_LANG="id"
+			;;
+		*)
+			APP_LANG="en"
+			;;
+		esac
+		CLI_LANG_SET=1
+	fi
+}
+
+# ==============================================================================
 # OS & ENVIRONMENT DETECTION
 # ==============================================================================
 detect_os() {
 	ARCH=$(uname -m)
 	if [[ ${ARCH} != "x86_64" ]]; then
-		log_error "Arsitektur '${ARCH}' tidak didukung oleh biner standar Zimbra (wajib x86_64)."
+		log_error "$(tr_msg "Architecture '${ARCH}' is not supported by standard Zimbra binaries (x86_64 required)." "Arsitektur '${ARCH}' tidak didukung oleh biner standar Zimbra (wajib x86_64).")"
 		exit 1
 	fi
 
@@ -108,19 +167,20 @@ detect_os() {
 		OS_VER="${VERSION_ID:-unknown}"
 		OS_NAME="${PRETTY_NAME:-Linux}"
 	else
-		log_error "Tidak dapat mendeteksi distribusi Linux (/etc/os-release tidak ditemukan)."
+		log_error "$(tr_msg "Unable to detect Linux distribution (/etc/os-release not found)." "Tidak dapat mendeteksi distribusi Linux (/etc/os-release tidak ditemukan).")"
 		exit 1
 	fi
 
-	log_success "Detected Architecture : ${ARCH}"
-	log_success "Detected Distribution : ${OS_NAME} (${OS_ID} ${OS_VER})"
+	log_success "$(tr_msg "Detected Architecture" "Arsitektur Terdeteksi") : ${ARCH}"
+	log_success "$(tr_msg "Detected Distribution" "Distribusi Terdeteksi") : ${OS_NAME} (${OS_ID} ${OS_VER})"
 }
+
 
 # ==============================================================================
 # PRE-FLIGHT SYSTEM AUDIT & PREREQUISITES
 # ==============================================================================
 preflight_check() {
-	printf "\n%b--- [1/3] Memeriksa Kesiapan Sistem (Pre-Flight Checks) ---%b\n" "${BOLD}" "${NC}"
+	printf "\n%b--- [1/3] %s ---%b\n" "${BOLD}" "$(tr_msg "System Readiness Audit (Pre-Flight Checks)" "Memeriksa Kesiapan Sistem (Pre-Flight Checks)")" "${NC}"
 
 	# 1. RAM Check
 	if [[ -f /proc/meminfo ]]; then
@@ -128,9 +188,9 @@ preflight_check() {
 		total_ram_kb=$(grep -m1 MemTotal /proc/meminfo | awk '{print $2}')
 		local total_ram_gb=$((total_ram_kb / 1024 / 1024))
 		if ((total_ram_gb < 8)); then
-			log_warn "RAM Terdeteksi: ${total_ram_gb} GB (Zimbra merekomendasikan minimal 8 GB RAM, ideal 16+ GB)."
+			log_warn "$(tr_msg "Detected RAM: ${total_ram_gb} GB (Zimbra recommends minimum 8 GB RAM, ideally 16+ GB)." "RAM Terdeteksi: ${total_ram_gb} GB (Zimbra merekomendasikan minimal 8 GB RAM, ideal 16+ GB).")"
 		else
-			log_success "RAM Terdeteksi: ${total_ram_gb} GB (Memenuhi syarat kapasitas minimum)."
+			log_success "$(tr_msg "Detected RAM: ${total_ram_gb} GB (Meets minimum capacity requirement)." "RAM Terdeteksi: ${total_ram_gb} GB (Memenuhi syarat kapasitas minimum).")"
 		fi
 	fi
 
@@ -138,9 +198,9 @@ preflight_check() {
 	local free_disk_gb
 	free_disk_gb=$(df -BG /opt 2>/dev/null | awk 'NR==2 {print $4}' | tr -d 'G' || df -BG / | awk 'NR==2 {print $4}' | tr -d 'G')
 	if [[ -n ${free_disk_gb} ]] && ((free_disk_gb < 30)); then
-		log_warn "Ruang Disk Kosong di /opt: ${free_disk_gb} GB (Direkomendasikan minimal 50 GB kosong untuk /opt/zimbra)."
+		log_warn "$(tr_msg "Free Disk Space on /opt: ${free_disk_gb} GB (Minimum 50 GB free recommended for /opt/zimbra)." "Ruang Disk Kosong di /opt: ${free_disk_gb} GB (Direkomendasikan minimal 50 GB kosong untuk /opt/zimbra).")"
 	else
-		log_success "Ruang Disk Kosong di /opt: ${free_disk_gb} GB (Cukup untuk instalasi paket & database ZCS)."
+		log_success "$(tr_msg "Free Disk Space on /opt: ${free_disk_gb} GB (Sufficient for ZCS installation & database)." "Ruang Disk Kosong di /opt: ${free_disk_gb} GB (Cukup untuk instalasi paket & database ZCS).")"
 	fi
 
 	# 3. Hostname & FQDN DNS Resolution Check
@@ -148,10 +208,10 @@ preflight_check() {
 	current_hostname=$(hostname -s 2>/dev/null || echo "")
 	current_fqdn=$(hostname -f 2>/dev/null || echo "")
 	if [[ -z ${current_fqdn} || ${current_hostname} == "${current_fqdn}" ]]; then
-		log_warn "Sistem belum memiliki Fully Qualified Domain Name (FQDN) yang valid: '${current_fqdn}'."
-		log_warn "Zimbra mewajibkan FQDN (contoh: mail.domainanda.com) pada /etc/hosts sebelum instalasi."
+		log_warn "$(tr_msg "System does not have a valid Fully Qualified Domain Name (FQDN): '${current_fqdn}'." "Sistem belum memiliki Fully Qualified Domain Name (FQDN) yang valid: '${current_fqdn}'.")"
+		log_warn "$(tr_msg "Zimbra requires a valid FQDN (e.g., mail.yourdomain.com) configured in /etc/hosts before installation." "Zimbra mewajibkan FQDN (contoh: mail.domainanda.com) pada /etc/hosts sebelum instalasi.")"
 	else
-		log_success "FQDN Sistem: ${current_fqdn} (Terdeteksi valid)."
+		log_success "$(tr_msg "System FQDN: ${current_fqdn} (Valid FQDN detected)." "FQDN Sistem: ${current_fqdn} (Terdeteksi valid).")"
 	fi
 
 	# 4. Mandatory OS Packages Validation
@@ -165,14 +225,14 @@ preflight_check() {
 			fi
 		done
 		if [[ ${#missing_pkgs[@]} -gt 0 ]]; then
-			log_warn "Paket dependensi wajib belum terpasang: ${missing_pkgs[*]}"
-			read -rp "Pasang dependensi pendukung sekarang via apt-get? [Y/n]: " do_install
+			log_warn "$(tr_msg "Required dependency packages are missing: ${missing_pkgs[*]}" "Paket dependensi wajib belum terpasang: ${missing_pkgs[*]}")"
+			read -rp "$(tr_msg "Install required dependencies now via apt-get? [Y/n]: " "Pasang dependensi pendukung sekarang via apt-get? [Y/n]: ")" do_install
 			if [[ ${do_install:-Y} =~ ^[Yy]$ ]]; then
 				run_privileged apt-get update && run_privileged apt-get install -y "${missing_pkgs[@]}"
-				log_success "Seluruh dependensi apt berhasil dipasang."
+				log_success "$(tr_msg "All apt dependencies installed successfully." "Seluruh dependensi apt berhasil dipasang.")"
 			fi
 		else
-			log_success "Seluruh dependensi sistem wajib (pax, sysstat, net-tools, curl) telah aktif."
+			log_success "$(tr_msg "All required system dependencies (pax, sysstat, net-tools, curl) are active." "Seluruh dependensi sistem wajib (pax, sysstat, net-tools, curl) telah aktif.")"
 		fi
 	elif [[ ${OS_ID} =~ ^(rhel|rocky|almalinux|centos|ol)$ ]]; then
 		for pkg in "${required_tools[@]}"; do
@@ -181,18 +241,18 @@ preflight_check() {
 			fi
 		done
 		if [[ ${#missing_pkgs[@]} -gt 0 ]]; then
-			log_warn "Paket dependensi wajib belum terpasang: ${missing_pkgs[*]}"
-			read -rp "Pasang dependensi pendukung sekarang via dnf/yum? [Y/n]: " do_install
+			log_warn "$(tr_msg "Required dependency packages are missing: ${missing_pkgs[*]}" "Paket dependensi wajib belum terpasang: ${missing_pkgs[*]}")"
+			read -rp "$(tr_msg "Install required dependencies now via dnf/yum? [Y/n]: " "Pasang dependensi pendukung sekarang via dnf/yum? [Y/n]: ")" do_install
 			if [[ ${do_install:-Y} =~ ^[Yy]$ ]]; then
 				if command -v dnf >/dev/null 2>&1; then
 					run_privileged dnf install -y "${missing_pkgs[@]}"
 				else
 					run_privileged yum install -y "${missing_pkgs[@]}"
 				fi
-				log_success "Seluruh dependensi rpm berhasil dipasang."
+				log_success "$(tr_msg "All rpm dependencies installed successfully." "Seluruh dependensi rpm berhasil dipasang.")"
 			fi
 		else
-			log_success "Seluruh dependensi sistem wajib telah aktif."
+			log_success "$(tr_msg "All required system dependencies are active." "Seluruh dependensi sistem wajib telah aktif.")"
 		fi
 	fi
 }
@@ -213,9 +273,9 @@ download_and_verify() {
 	local file_name
 	file_name=$(basename "${tgz_url}")
 
-	printf "\n%b--- [2/3] Mengunduh Biner Zimbra Enterprise ---%b\n" "${BOLD}" "${NC}"
-	log_info "Target Berkas : ${file_name}"
-	log_info "Sumber URL    : ${tgz_url}"
+	printf "\n%b--- [2/3] %s ---%b\n" "${BOLD}" "$(tr_msg "Downloading Zimbra Enterprise Binary" "Mengunduh Biner Zimbra Enterprise")" "${NC}"
+	log_info "$(tr_msg "Target File : ${file_name}" "Target Berkas : ${file_name}")"
+	log_info "$(tr_msg "Source URL  : ${tgz_url}" "Sumber URL    : ${tgz_url}")"
 
 	local curl_opts=("-L" "-C" "-" "--progress-bar" "-A" "${USER_AGENT}" "-o" "${file_name}")
 	if [[ ${is_referer_req} == "true" ]]; then
@@ -223,22 +283,22 @@ download_and_verify() {
 	fi
 
 	if [[ -f ${file_name} ]]; then
-		log_warn "Berkas ${file_name} sudah ada di ${WORK_DIR}. Memeriksa resume unduhan..."
+		log_warn "$(tr_msg "File ${file_name} already exists in ${WORK_DIR}. Checking resume capability..." "Berkas ${file_name} sudah ada di ${WORK_DIR}. Memeriksa resume unduhan...")"
 	fi
 
 	if ! curl "${curl_opts[@]}" "${tgz_url}"; then
-		log_error "Pengunduhan gagal untuk URL: ${tgz_url}"
+		log_error "$(tr_msg "Download failed for URL: ${tgz_url}" "Pengunduhan gagal untuk URL: ${tgz_url}")"
 		cd "${original_pwd}"
 		return 1
 	fi
-	log_success "Pengunduhan biner selesai: ${file_name}"
+	log_success "$(tr_msg "Binary download complete: ${file_name}" "Pengunduhan biner selesai: ${file_name}")"
 
 	# Checksum Verification
 	if [[ -n ${checksum_url} ]]; then
-		printf "\n%b--- [3/3] Verifikasi Integritas Kriptografi ---%b\n" "${BOLD}" "${NC}"
+		printf "\n%b--- [3/3] %s ---%b\n" "${BOLD}" "$(tr_msg "Cryptographic Integrity Verification" "Verifikasi Integritas Kriptografi")" "${NC}"
 		local chk_file
 		chk_file=$(basename "${checksum_url}")
-		log_info "Mengunduh berkas checksum: ${chk_file}"
+		log_info "$(tr_msg "Downloading checksum file: ${chk_file}" "Mengunduh berkas checksum: ${chk_file}")"
 
 		local chk_opts=("-sL" "-A" "${USER_AGENT}" "-o" "${chk_file}")
 		if [[ ${is_referer_req} == "true" ]]; then
@@ -246,7 +306,7 @@ download_and_verify() {
 		fi
 
 		if ! curl "${chk_opts[@]}" "${checksum_url}"; then
-			log_warn "Gagal mengunduh berkas checksum (${chk_file}). Melewati verifikasi otomatis."
+			log_warn "$(tr_msg "Failed to download checksum file (${chk_file}). Skipping automated verification." "Gagal mengunduh berkas checksum (${chk_file}). Melewati verifikasi otomatis.")"
 		else
 			if [[ ${chk_file} == *.sha256 ]]; then
 				local raw_chk_content expected_hash actual_hash
@@ -256,9 +316,9 @@ download_and_verify() {
 				log_info "Expected SHA256 : ${expected_hash}"
 				log_info "Actual   SHA256 : ${actual_hash}"
 				if [[ ${expected_hash,,} == "${actual_hash,,}" ]]; then
-					log_success "VERIFIKASI SHA256 VALID: Integritas biner terjamin 100%!"
+					log_success "$(tr_msg "SHA256 VERIFICATION VALID: Binary integrity 100% verified!" "VERIFIKASI SHA256 VALID: Integritas biner terjamin!")"
 				else
-					log_error "HASH MISMATCH: Berkas rusak atau korup saat diunduh!"
+					log_error "$(tr_msg "HASH MISMATCH: Binary corrupted during download!" "HASH MISMATCH: Berkas rusak atau korup saat diunduh!")"
 					cd "${original_pwd}"
 					return 1
 				fi
@@ -270,9 +330,9 @@ download_and_verify() {
 				log_info "Expected MD5 : ${expected_hash}"
 				log_info "Actual   MD5 : ${actual_hash}"
 				if [[ ${expected_hash,,} == "${actual_hash,,}" ]]; then
-					log_success "VERIFIKASI MD5 VALID: Integritas biner terjamin 100%!"
+					log_success "$(tr_msg "MD5 VERIFICATION VALID: Binary integrity 100% verified!" "VERIFIKASI MD5 VALID: Integritas biner terjamin!")"
 				else
-					log_error "MD5 MISMATCH: Berkas rusak atau korup!"
+					log_error "$(tr_msg "MD5 MISMATCH: Binary file corrupted!" "MD5 MISMATCH: Berkas rusak atau korup!")"
 					cd "${original_pwd}"
 					return 1
 				fi
@@ -281,23 +341,23 @@ download_and_verify() {
 	fi
 
 	printf "\n"
-	read -rp "Apakah Anda ingin mengekstrak arsip dan memulai instalasi ZCS sekarang? [y/N]: " do_run_install
+	read -rp "$(tr_msg "Do you want to extract archive and start ZCS installation now? [y/N]: " "Apakah Anda ingin mengekstrak arsip dan memulai instalasi ZCS sekarang? [y/N]: ")" do_run_install
 	if [[ ${do_run_install:-N} =~ ^[Yy]$ ]]; then
-		log_info "Mengekstrak ${file_name}..."
+		log_info "$(tr_msg "Extracting ${file_name}..." "Mengekstrak ${file_name}...")"
 		tar -xzvf "${file_name}"
 		local extracted_dir
 		extracted_dir="${file_name%.tgz}"
 		if [[ -d ${extracted_dir} ]]; then
 			cd "${extracted_dir}"
-			log_success "Berpindah ke direktori: $(pwd)"
-			log_info "Menjalankan ./install.sh dengan hak akses istimewa..."
+			log_success "$(tr_msg "Changed directory to: $(pwd)" "Berpindah ke direktori: $(pwd)")"
+			log_info "$(tr_msg "Executing ./install.sh with elevated privileges..." "Menjalankan ./install.sh dengan hak akses istimewa...")"
 			run_privileged ./install.sh
 		else
-			log_warn "Direktori ekstraksi kustom terdeteksi. Silakan periksa direktori: ${WORK_DIR}"
+			log_warn "$(tr_msg "Custom extraction directory detected. Please inspect: ${WORK_DIR}" "Direktori ekstraksi kustom terdeteksi. Silakan periksa direktori: ${WORK_DIR}")"
 		fi
 	else
-		log_info "Biner tersimpan di: ${WORK_DIR}/${file_name}"
-		log_info "Untuk mengeksekusi instalasi secara manual nanti:"
+		log_info "$(tr_msg "Binary archive saved at: ${WORK_DIR}/${file_name}" "Biner tersimpan di: ${WORK_DIR}/${file_name}")"
+		log_info "$(tr_msg "To execute installation manually later:" "Untuk mengeksekusi instalasi secara manual nanti:")"
 		printf "  cd %s\n" "${WORK_DIR}"
 		printf "  tar -xzvf %s\n" "${file_name}"
 		printf "  cd %s && sudo ./install.sh\n\n" "${file_name%.tgz}"
@@ -305,6 +365,7 @@ download_and_verify() {
 
 	cd "${original_pwd}"
 }
+
 
 # ==============================================================================
 # MENU 1: OFFICIAL NETWORK EDITION (NE)
@@ -319,15 +380,15 @@ menu_official_ne() {
 		printf "  5) ZCS NE 8.8.11 / 8.8.9 / 8.8.8 / 8.8.7 GA (RHEL 6/7, Ubuntu 14/16)\n"
 		printf "  6) ZCS NE 8.7.1 GA / 8.7.0 GA (Ubuntu 16/14/12, RHEL 7/6)\n"
 		printf "  7) ZCS NE 8.6.0 GA / 8.5.1 / 8.5.0 / 8.0.9 / 7.2.7 GA (Legacy Official)\n"
-		printf "  0) Kembali ke Menu Utama\n"
-		read -rp "Pilih Versi NE [0-7]: " ne_choice
+		printf "  0) %s\n" "$(tr_msg "Back to Main Menu" "Kembali ke Menu Utama")"
+		read -rp "$(tr_msg "Select NE Version [0-7]: " "Pilih Versi NE [0-7]: ")" ne_choice
 
 		case "${ne_choice}" in
 		1)
 			printf "\n%b[ZCS NE 10.1.0 GA]%b\n" "${CYAN}" "${NC}"
 			printf "  1) Ubuntu 22.04 LTS (x86_64)\n"
 			printf "  2) RHEL / Rocky / Alma 9 (x86_64)\n"
-			read -rp "Pilih OS: " os_c
+			read -rp "$(tr_msg "Select Target OS: " "Pilih OS: ")" os_c
 			if [[ ${os_c} == "1" ]]; then
 				download_and_verify \
 					"https://files.zimbra.com/downloads/10.1.0_GA/zcs-NETWORK-10.1.0_GA_4655.UBUNTU22_64.20240819064312.tgz" \
@@ -343,7 +404,7 @@ menu_official_ne() {
 			printf "  1) Ubuntu 20.04 LTS (x86_64)\n"
 			printf "  2) Ubuntu 18.04 LTS (x86_64)\n"
 			printf "  3) RHEL 7 / CentOS 7 (x86_64)\n"
-			read -rp "Pilih OS: " os_c
+			read -rp "$(tr_msg "Select Target OS: " "Pilih OS: ")" os_c
 			if [[ ${os_c} == "1" ]]; then
 				download_and_verify \
 					"https://files.zimbra.com/downloads/10.0.0_GA/zcs-NETWORK-10.0.0_GA_4518.UBUNTU20_64.20230301065514.tgz" \
@@ -364,7 +425,7 @@ menu_official_ne() {
 			printf "  2) Ubuntu 18.04 LTS (x86_64)\n"
 			printf "  3) RHEL 8 / Rocky 8 (x86_64)\n"
 			printf "  4) RHEL 7 / CentOS 7 (x86_64)\n"
-			read -rp "Pilih OS: " os_c
+			read -rp "$(tr_msg "Select Target OS: " "Pilih OS: ")" os_c
 			if [[ ${os_c} == "1" ]]; then
 				download_and_verify \
 					"https://files.zimbra.com/downloads/9.0.0_GA/zcs-NETWORK-9.0.0_GA_3954.UBUNTU20_64.20200629025823.tgz" \
@@ -389,7 +450,7 @@ menu_official_ne() {
 			printf "  2) Ubuntu 18.04 LTS (Build 3869)\n"
 			printf "  3) RHEL 8 / Rocky 8 (Build 3953)\n"
 			printf "  4) RHEL 7 / CentOS 7 (Build 3869)\n"
-			read -rp "Pilih OS: " os_c
+			read -rp "$(tr_msg "Select Target OS: " "Pilih OS: ")" os_c
 			if [[ ${os_c} == "1" ]]; then
 				download_and_verify \
 					"https://files.zimbra.com/downloads/8.8.15_GA/zcs-NETWORK-8.8.15_GA_3953.UBUNTU20_64.20200629025823.tgz" \
@@ -414,7 +475,7 @@ menu_official_ne() {
 			printf "  2) NE 8.8.11 GA (RHEL 7 / CentOS 7)\n"
 			printf "  3) NE 8.8.9 GA (Ubuntu 16.04)\n"
 			printf "  4) NE 8.8.9 GA (RHEL 7)\n"
-			read -rp "Pilih Versi: " os_c
+			read -rp "$(tr_msg "Select Target Version: " "Pilih Versi: ")" os_c
 			if [[ ${os_c} == "1" ]]; then
 				download_and_verify \
 					"https://files.zimbra.com/downloads/8.8.11_GA/zcs-NETWORK-8.8.11_GA_3737.UBUNTU16_64.20181207111719.tgz" \
@@ -441,7 +502,7 @@ menu_official_ne() {
 			printf "  4) NE 8.7.1 GA (RHEL 6 / CentOS 6)\n"
 			printf "  5) NE 8.7.0 GA (Ubuntu 16.04 LTS)\n"
 			printf "  6) NE 8.7.0 GA (RHEL 7)\n"
-			read -rp "Pilih Versi: " os_c
+			read -rp "$(tr_msg "Select Target Version: " "Pilih Versi: ")" os_c
 			if [[ ${os_c} == "1" ]]; then
 				download_and_verify \
 					"https://files.zimbra.com/downloads/8.7.1_GA/zcs-NETWORK-8.7.1_GA_1670.UBUNTU16_64.20161025045209.tgz" \
@@ -475,7 +536,7 @@ menu_official_ne() {
 			printf "  3) NE 8.5.1 GA (Ubuntu 14.04 LTS)\n"
 			printf "  4) NE 8.0.9 GA (Ubuntu 12.04 LTS)\n"
 			printf "  5) NE 7.2.7 GA (Ubuntu 10.04 LTS)\n"
-			read -rp "Pilih Versi: " os_c
+			read -rp "$(tr_msg "Select Target Version: " "Pilih Versi: ")" os_c
 			if [[ ${os_c} == "1" ]]; then
 				download_and_verify \
 					"https://files.zimbra.com/downloads/8.6.0_GA/zcs-NETWORK-8.6.0_GA_1153.UBUNTU14_64.20141215151218.tgz" \
@@ -502,13 +563,14 @@ menu_official_ne() {
 			return
 			;;
 		*)
-			log_error "Pilihan tidak valid."
+			log_error "$(tr_msg "Invalid choice." "Pilihan tidak valid.")"
 			;;
 		esac
 	done
 }
 
-# ==============================================================================
+
+## ==============================================================================
 # MENU 2: OFFICIAL OPEN SOURCE EDITION (FOSS / OSE)
 # ==============================================================================
 menu_official_foss() {
@@ -518,8 +580,8 @@ menu_official_foss() {
 		printf "  2) ZCS FOSS 8.8.11 / 8.8.9 / 8.8.8 / 8.8.7 GA (Ubuntu 16/14, RHEL 7/6)\n"
 		printf "  3) ZCS FOSS 8.7.1 GA / 8.7.0 GA (Ubuntu 16/14/12, RHEL 7/6)\n"
 		printf "  4) ZCS FOSS 8.6.0 GA / 8.5.1 / 8.5.0 / 8.0.9 / 7.2.7 GA (Legacy Official)\n"
-		printf "  0) Kembali ke Menu Utama\n"
-		read -rp "Pilih Versi FOSS [0-4]: " foss_choice
+		printf "  0) %s\n" "$(tr_msg "Back to Main Menu" "Kembali ke Menu Utama")"
+		read -rp "$(tr_msg "Select FOSS Version [0-4]: " "Pilih Versi FOSS [0-4]: ")" foss_choice
 
 		case "${foss_choice}" in
 		1)
@@ -528,7 +590,7 @@ menu_official_foss() {
 			printf "  2) Ubuntu 18.04 LTS (Build 3869)\n"
 			printf "  3) RHEL 8 / Rocky 8 (Build 3953)\n"
 			printf "  4) RHEL 7 / CentOS 7 (Build 3869)\n"
-			read -rp "Pilih OS: " os_c
+			read -rp "$(tr_msg "Select Target OS: " "Pilih OS: ")" os_c
 			if [[ ${os_c} == "1" ]]; then
 				download_and_verify \
 					"https://files.zimbra.com/downloads/8.8.15_GA/zcs-8.8.15_GA_4179.UBUNTU20_64.20211118033954.tgz" \
@@ -555,7 +617,7 @@ menu_official_foss() {
 			printf "  4) FOSS 8.8.9 GA (RHEL 7 / CentOS 7)\n"
 			printf "  5) FOSS 8.8.8 GA (Ubuntu 16.04 LTS)\n"
 			printf "  6) FOSS 8.8.7 GA (Ubuntu 16.04 LTS)\n"
-			read -rp "Pilih Versi: " os_c
+			read -rp "$(tr_msg "Select Target Version: " "Pilih Versi: ")" os_c
 			if [[ ${os_c} == "1" ]]; then
 				download_and_verify \
 					"https://files.zimbra.com/downloads/8.8.11_GA/zcs-8.8.11_GA_3737.UBUNTU16_64.20181207111719.tgz" \
@@ -590,7 +652,7 @@ menu_official_foss() {
 			printf "  4) FOSS 8.7.1 GA (RHEL 6 / CentOS 6)\n"
 			printf "  5) FOSS 8.7.0 GA (Ubuntu 16.04 LTS)\n"
 			printf "  6) FOSS 8.7.0 GA (RHEL 7)\n"
-			read -rp "Pilih Versi: " os_c
+			read -rp "$(tr_msg "Select Target Version: " "Pilih Versi: ")" os_c
 			if [[ ${os_c} == "1" ]]; then
 				download_and_verify \
 					"https://files.zimbra.com/downloads/8.7.1_GA/zcs-8.7.1_GA_1670.UBUNTU16_64.20161025045114.tgz" \
@@ -614,7 +676,7 @@ menu_official_foss() {
 			elif [[ ${os_c} == "6" ]]; then
 				download_and_verify \
 					"https://files.zimbra.com/downloads/8.7.0_GA/zcs-8.7.0_GA_1659.RHEL7_64.20160628202714.tgz" \
-					"https://files.zimbra.com/downloads/8.7.0_GA/zcs-8.7.0_GA_1659.RHEL7_64.20160628202714.tgz.sha256" "false"
+					"https://files.zimbra.com/downloads/8.7.0_GA/zcs-8.7.0_GA_1659.RHEL7_64.202714.tgz.sha256" "false"
 			fi
 			;;
 		4)
@@ -624,7 +686,7 @@ menu_official_foss() {
 			printf "  3) FOSS 8.5.1 GA (Ubuntu 14.04 LTS)\n"
 			printf "  4) FOSS 8.0.9 GA (Ubuntu 12.04 LTS)\n"
 			printf "  5) FOSS 7.2.7 GA (Ubuntu 10.04 LTS)\n"
-			read -rp "Pilih Versi: " os_c
+			read -rp "$(tr_msg "Select Target Version: " "Pilih Versi: ")" os_c
 			if [[ ${os_c} == "1" ]]; then
 				download_and_verify \
 					"https://files.zimbra.com/downloads/8.6.0_GA/zcs-8.6.0_GA_1153.UBUNTU14_64.20141215151116.tgz" \
@@ -651,7 +713,7 @@ menu_official_foss() {
 			return
 			;;
 		*)
-			log_error "Pilihan tidak valid."
+			log_error "$(tr_msg "Invalid choice." "Pilihan tidak valid.")"
 			;;
 		esac
 	done
@@ -668,8 +730,8 @@ menu_community_foss() {
 		printf "  3) ZCS FOSS 10.0.x Series (Maldua Builds - 17 Versions)\n"
 		printf "  4) ZCS FOSS 9.0.0.x Kepler (Maldua Builds - 8 Versions)\n"
 		printf "  5) ZCS FOSS 8.8.15.x Joule (Maldua Builds - 8.8.15.p47 / p46)\n"
-		printf "  0) Kembali ke Menu Utama\n"
-		read -rp "Pilih Kategori Komunitas [0-5]: " comm_choice
+		printf "  0) %s\n" "$(tr_msg "Back to Main Menu" "Kembali ke Menu Utama")"
+		read -rp "$(tr_msg "Select Community Category [0-5]: " "Pilih Kategori Komunitas [0-5]: ")" comm_choice
 
 		case "${comm_choice}" in
 		1)
@@ -678,7 +740,7 @@ menu_community_foss() {
 			printf "  2) Ubuntu 22.04 LTS (Jammy Jellyfish)\n"
 			printf "  3) RHEL 9 / Rocky 9 / Alma 9 / Oracle 9\n"
 			printf "  4) RHEL 8 / Rocky 8 / Alma 8 / Oracle 8\n"
-			read -rp "Pilih OS: " os_c
+			read -rp "$(tr_msg "Select Target OS: " "Pilih OS: ")" os_c
 			if [[ ${os_c} == "1" ]]; then
 				download_and_verify \
 					"https://cdn.techfiles.online/ubuntu/zcs-10.1.20_GA_0326.UBUNTU24_64.20260821120929.tgz" \
@@ -704,7 +766,7 @@ menu_community_foss() {
 			printf "  3) Ubuntu 20.04 LTS\n"
 			printf "  4) RHEL 9 / Rocky 9 / Alma 9\n"
 			printf "  5) RHEL 8 / Rocky 8 / Alma 8\n"
-			read -rp "Pilih OS: " os_c
+			read -rp "$(tr_msg "Select Target OS: " "Pilih OS: ")" os_c
 			if [[ ${os_c} == "1" ]]; then
 				download_and_verify \
 					"https://github.com/maldua/zimbra-foss/releases/download/10.1.20.p1-ubuntu-24.04/zcs-10.1.20_GA_0326.UBUNTU24_64.20260821120929.tgz" \
@@ -732,7 +794,7 @@ menu_community_foss() {
 			printf "  1) Ubuntu 22.04 LTS\n"
 			printf "  2) Ubuntu 20.04 LTS\n"
 			printf "  3) RHEL 8 / Rocky 8\n"
-			read -rp "Pilih OS: " os_c
+			read -rp "$(tr_msg "Select Target OS: " "Pilih OS: ")" os_c
 			if [[ ${os_c} == "1" ]]; then
 				download_and_verify \
 					"https://github.com/maldua/zimbra-foss/releases/download/10.0.18.p1-ubuntu-22.04/zcs-10.0.18_GA_0326.UBUNTU22_64.20260821115118.tgz" \
@@ -752,7 +814,7 @@ menu_community_foss() {
 			printf "  1) Ubuntu 20.04 LTS\n"
 			printf "  2) RHEL 8 / Rocky 8\n"
 			printf "  3) RHEL 7 / CentOS 7\n"
-			read -rp "Pilih OS: " os_c
+			read -rp "$(tr_msg "Select Target OS: " "Pilih OS: ")" os_c
 			if [[ ${os_c} == "1" ]]; then
 				download_and_verify \
 					"https://github.com/maldua/zimbra-foss/releases/download/9.0.0.p46-ubuntu-20.04/zcs-9.0.0_GA_0326.UBUNTU20_64.20260821124614.tgz" \
@@ -773,7 +835,7 @@ menu_community_foss() {
 			printf "  2) Ubuntu 18.04 LTS\n"
 			printf "  3) RHEL 8 / Rocky 8\n"
 			printf "  4) RHEL 7 / CentOS 7\n"
-			read -rp "Pilih OS: " os_c
+			read -rp "$(tr_msg "Select Target OS: " "Pilih OS: ")" os_c
 			if [[ ${os_c} == "1" ]]; then
 				download_and_verify \
 					"https://github.com/maldua/zimbra-foss/releases/download/8.8.15.p47-ubuntu-20.04/zcs-8.8.15_GA_0326.UBUNTU20_64.20240821124614.tgz" \
@@ -796,7 +858,7 @@ menu_community_foss() {
 			return
 			;;
 		*)
-			log_error "Pilihan tidak valid."
+			log_error "$(tr_msg "Invalid choice." "Pilihan tidak valid.")"
 			;;
 		esac
 	done
@@ -806,18 +868,20 @@ menu_community_foss() {
 # MAIN INTERACTIVE LOOP
 # ==============================================================================
 main_menu() {
+	select_language
 	while true; do
 		banner
 		detect_os
-		printf "\n%bPILIH KATEGORI BINER ZIMBRA:%b\n" "${BOLD}" "${NC}"
-		printf "  1) Zimbra OFFICIAL Network Edition (NE) [10.1, 10.0, 9.0, 8.8.x, 8.7.x, 8.6, 8.5, 8.0, 7.x]\n"
-		printf "  2) Zimbra OFFICIAL Open Source Edition (FOSS/OSE) [8.8.x, 8.7.x, 8.6, 8.5, 8.0, 7.x]\n"
-		printf "  3) Zimbra UNOFFICIAL / Community FOSS Builds [10.1.x, 10.0.x, 9.0.0, 8.8.15 (2018–2026)]\n"
-		printf "  4) Jalankan Pre-Flight System Audit & Prerequisite Check\n"
-		printf "  5) Jalankan Uji Telemetri Seluruh Link Biner (Deep Link Validator)\n"
-		printf "  0) Keluar\n"
+		printf "\n%b%s%b\n" "${BOLD}" "$(tr_msg "SELECT ZIMBRA BINARY CATEGORY:" "PILIH KATEGORI BINER ZIMBRA:")" "${NC}"
+		printf "  1) %s\n" "$(tr_msg "Zimbra OFFICIAL Network Edition (NE) [10.1, 10.0, 9.0, 8.8.x, 8.7.x, 8.6, 8.5, 8.0, 7.x]" "Zimbra OFFICIAL Network Edition (NE) [10.1, 10.0, 9.0, 8.8.x, 8.7.x, 8.6, 8.5, 8.0, 7.x]")"
+		printf "  2) %s\n" "$(tr_msg "Zimbra OFFICIAL Open Source Edition (FOSS/OSE) [8.8.x, 8.7.x, 8.6, 8.5, 8.0, 7.x]" "Zimbra OFFICIAL Open Source Edition (FOSS/OSE) [8.8.x, 8.7.x, 8.6, 8.5, 8.0, 7.x]")"
+		printf "  3) %s\n" "$(tr_msg "Zimbra UNOFFICIAL / Community FOSS Builds [10.1.x, 10.0.x, 9.0.0, 8.8.15 (2018–2026)]" "Zimbra UNOFFICIAL / Community FOSS Builds [10.1.x, 10.0.x, 9.0.0, 8.8.15 (2018–2026)]")"
+		printf "  4) %s\n" "$(tr_msg "Run Pre-Flight System Audit & Prerequisite Checks" "Jalankan Pre-Flight System Audit & Prerequisite Check")"
+		printf "  5) %s\n" "$(tr_msg "Run Telemetry Test on All Binary Links (Deep Link Validator)" "Jalankan Uji Telemetri Seluruh Link Biner (Deep Link Validator)")"
+		printf "  6) %s\n" "$(tr_msg "Switch Language / Ganti Bahasa [Current: English]" "Ganti Bahasa / Switch Language [Saat Ini: Bahasa Indonesia]")"
+		printf "  0) %s\n" "$(tr_msg "Exit" "Keluar")"
 		printf "====================================================================\n"
-		read -rp "Masukkan Pilihan Anda [0-5]: " main_choice
+		read -rp "$(tr_msg "Enter Your Choice [0-6]: " "Masukkan Pilihan Anda [0-6]: ")" main_choice
 
 		case "${main_choice}" in
 		1) menu_official_ne ;;
@@ -825,29 +889,85 @@ main_menu() {
 		3) menu_community_foss ;;
 		4)
 			preflight_check
-			read -rp "Tekan Enter untuk kembali ke menu..."
+			read -rp "$(tr_msg "Press Enter to return to menu..." "Tekan Enter untuk kembali ke menu...")"
 			;;
 		5)
 			if command -v python3 >/dev/null 2>&1 && [[ -f scripts/deep_link_validator.py ]]; then
 				python3 scripts/deep_link_validator.py
 			else
-				log_warn "Python3 atau skrip validator (scripts/deep_link_validator.py) tidak ditemukan."
+				log_warn "$(tr_msg "Python3 or validator script (scripts/deep_link_validator.py) not found." "Python3 atau skrip validator (scripts/deep_link_validator.py) tidak ditemukan.")"
 			fi
-			read -rp "Tekan Enter untuk kembali ke menu..."
+			read -rp "$(tr_msg "Press Enter to return to menu..." "Tekan Enter untuk kembali ke menu...")"
+			;;
+		6)
+			if [[ ${APP_LANG} == "id" ]]; then
+				APP_LANG="en"
+				log_success "Language switched to English."
+			else
+				APP_LANG="id"
+				log_success "Bahasa berhasil diubah ke Bahasa Indonesia."
+			fi
+			sleep 1
 			;;
 		0)
-			printf "\nTerima kasih telah menggunakan Zimbra Link Installer!\n"
+			printf "\n%s\n" "$(tr_msg "Thank you for using Zimbra Link Installer!" "Terima kasih telah menggunakan Zimbra Link Installer!")"
 			exit 0
 			;;
 		*)
-			log_error "Pilihan tidak valid."
+			log_error "$(tr_msg "Invalid choice." "Pilihan tidak valid.")"
 			sleep 1
 			;;
 		esac
 	done
 }
 
-# Entrypoint
+# ==============================================================================
+# CLI ARGUMENT PARSER & ENTRYPOINT
+# ==============================================================================
+parse_args() {
+	while [[ $# -gt 0 ]]; do
+		case "$1" in
+		-l|--lang)
+			if [[ -n ${2:-} ]]; then
+				APP_LANG="$2"
+				CLI_LANG_SET=1
+				shift 2
+			else
+				shift
+			fi
+			;;
+		--lang=*)
+			APP_LANG="${1#*=}"
+			CLI_LANG_SET=1
+			shift
+			;;
+		-w|--workdir)
+			if [[ -n ${2:-} ]]; then
+				WORK_DIR="$2"
+				shift 2
+			else
+				shift
+			fi
+			;;
+		--workdir=*)
+			WORK_DIR="${1#*=}"
+			shift
+			;;
+		-h|--help)
+			show_help
+			exit 0
+			;;
+		-v|--version)
+			echo "Zimbra Link Installer v${SCRIPT_VERSION}"
+			exit 0
+			;;
+		*)
+			shift
+			;;
+		esac
+	done
+}
 if [[ ${BASH_SOURCE[0]} == "${0}" ]]; then
-	main_menu "$@"
+	parse_args "$@"
+	main_menu
 fi
