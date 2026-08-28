@@ -6,9 +6,9 @@
 
 **Enterprise Binary Downloader, Checksum Verifier, Interactive CLI & Automated Installer (ZCS 4.5.x – 10.1.x)**<br>
 **Maintainer:** Harry Dertin Sutisna Alsyundawy (`alsyundawy@gmail.com`)<br>
-**Current Version:** `v2.6.0`<br>
+**Current Version:** `v2.6.1`<br>
 **License:** MIT License<br>
-**Last Updated:** 2026-08-27
+**Last Updated:** 2026-08-28
 
 ---
 
@@ -38,7 +38,7 @@ Skrip `zimbra-link-installer.sh` dirancang dengan standar enterprise yang menera
    - Melakukan komparasi hash secara **case-insensitive** (`${expected_hash,,} == ${actual_hash,,}`) guna menghindari kegagalan verifikasi akibat perbedaan kapitalisasi karakter heksadesimal antar penyedia mirror.
 
 5. **WAF & Community CDN Referer Bypass:**
-   - Menyertakan header HTTP `Referer: https://techfiles.online/` dan User-Agent enterprise `Zimbra-Link-Installer/2.6.0` guna mencegah pemblokiran Cloudflare WAF pada mirror biner komunitas (Ian Walker Builds).
+   - Menyertakan header HTTP `Referer: https://techfiles.online/` dan User-Agent enterprise `Zimbra-Link-Installer/2.6.1` guna mencegah pemblokiran Cloudflare WAF pada mirror biner komunitas (Ian Walker Builds).
 
 6. **Directory State Preservation:**
    - Menyimpan variabel `$original_pwd` sebelum berpindah ke working directory `${WORK_DIR}`, dan mengembalikannya ke posisi awal saat skrip selesai untuk menjaga konsistensi state shell pemanggil.
@@ -120,10 +120,11 @@ Aplikasi web standalone `index.html` dibangun dengan teknologi web modern tanpa 
 
 ---
 
-### 7. Matriks Evolusi & Riwayat Versi (v2.0.0 – v2.6.0)
+### 7. Matriks Evolusi & Riwayat Versi (v2.0.0 – v2.6.1)
 
 | Versi | Tanggal Rilis | Fokus Perubahan Utama |
 | :---: | :---: | :--- |
+| **`v2.6.1`** | 2026-08-28 | Sinkronisasi Deep Research rilis biner & CVE terbaru (2023–2026): penambahan CVE-2025-48700 (CISA KEV), CVE-2024-45516, CVE-2023-48432, CVE-2023-34193, CVE-2023-29382 ke Master Vulnerability Matrix (total 37+ CVE), peremajaan kebijakan `SECURITY.md` enterprise, dan verifikasi telemetri 1,215 link aktif secara menyeluruh. |
 | **`v2.6.0`** | 2026-08-27 | Enterprise Security Hardening (`set -Eeuo pipefail`, cleanup traps, privilege abstraction, regex checksum sanitization, FQDN audit), standalone web portal (`index.html`) responsif (VGA s.d. 2K) dengan diagram Mermaid & WCAG AA accessibility, verifikasi NVD CVE terkonfirmasi resmi, dan micro-typography formatting. |
 | **`v2.5.0`** | 2026-08-27 | Implementasi arsitektur CLI submenu bertingkat (NE 7-10.1, Official FOSS 7-8.8, Community FOSS 8.8-10.1), penyusunan Master Vulnerability Matrix 32+ CVE (2016–2026), dan Zero-Day Emergency Hardening Playbook. |
 | **`v2.4.0`** | 2026-08-27 | Sinkronisasi penuh dengan Zimbra Releases Wiki (`wiki.zimbra.com/wiki/Zimbra_Releases`), menambahkan cabang legacy ZCS 4.5.x s.d. 10.1.x, total link terverifikasi mencapai 1,215+. |

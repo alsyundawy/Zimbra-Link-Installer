@@ -16,7 +16,7 @@ with open(README_FILE, "r") as f:
 
 # Extract all URLs
 urls = re.findall(r'https?://[^\s\>\)\"]+', content)
-cleaned_urls = list(set([u.rstrip(".,;`')") for u in urls]))
+cleaned_urls = list({u.rstrip(".,;`')") for u in urls})
 
 print(f"Total extracted links from README.md: {len(urls)}")
 print(f"Total unique URLs to validate: {len(cleaned_urls)}")

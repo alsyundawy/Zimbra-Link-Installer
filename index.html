@@ -81,7 +81,7 @@
           "inLanguage": "id-ID",
           "mainEntityOfPage": "https://alsyundawy.github.io/Zimbra-Link-Installer/",
           "datePublished": "2024-01-01T00:00:00+07:00",
-          "dateModified": "2026-08-27T00:00:00+07:00",
+          "dateModified": "2026-08-28T00:00:00+07:00",
           "author": {
             "@type": "Person",
             "name": "Harry Dertin Sutisna Alsyundawy",
@@ -1768,7 +1768,7 @@
               >Interactive Bash CLI Installer (<code
                 >zimbra-link-installer.sh</code
               >
-              v2.6.0):</strong
+              v2.6.1):</strong
             >
             Utilitas interaktif aman dengan _pre-flight system audit_ (RAM,
             storage, FQDN DNS, POSIX pax), penanganan sinyal _atomic cleanup
@@ -2044,7 +2044,7 @@ sudo ./install.sh</code></pre>
           Automated CLI Installer (<code>zimbra-link-installer.sh</code>)
         </h2>
         <p class="doc-para">
-          Skrip <code>zimbra-link-installer.sh</code> (v2.6.0) menyederhanakan
+          Skrip <code>zimbra-link-installer.sh</code> (v2.6.1) menyederhanakan
           siklus pengunduhan dan instalasi ZCS di lingkungan Linux enterprise:
         </p>
         <div class="code-card">
@@ -2057,7 +2057,7 @@ sudo ./install.sh</code></pre>
           </div>
           <pre><code class="language-text">====================================================================
                Z I M B R A   L I N K   I N S T A L L E R
-          Enterprise Binary Downloader &amp; Automated Suite (v2.6.0)
+          Enterprise Binary Downloader &amp; Automated Suite (v2.6.1)
 ====================================================================
 [+] Detected OS Architecture: x86_64
 [+] Detected Operating System: Ubuntu 22.04 LTS (jammy)
@@ -20112,6 +20112,48 @@ net.ipv4.ip_local_port_range = 1024 65535</code></pre>
                   <td class="text-left">
                     <sub
                       ><a
+                        href="https://nvd.nist.gov/vuln/detail/CVE-2025-48700"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        ><strong>CVE-2025-48700</strong></a
+                      ></sub
+                    >
+                  </td>
+                  <td class="text-center">
+                    <sub><strong>6.1</strong></sub>
+                  </td>
+                  <td class="text-center"><sub>MEDIUM</sub></td>
+                  <td class="text-left"><sub>Classic UI HTML Parser (CISA KEV)</sub></td>
+                  <td class="text-left">
+                    <sub
+                      >• ZCS 10.1.0 – 10.1.12 (Daffodil)<br>• ZCS 10.0.0 –
+                      10.0.17 (Daffodil)<br>• ZCS 9.0.0 Patch 1 s.d. Patch 44
+                      (Kepler)<br>• ZCS 8.8.15 Patch 1 s.d. Patch 46
+                      (Joule)</sub
+                    >
+                  </td>
+                  <td class="text-left">
+                    <sub
+                      >Client-side DOM stylesheet injection via malformed layout
+                      elements in inbound messages allowing token harvesting
+                      (listed in CISA KEV catalog)</sub
+                    >
+                  </td>
+                  <td class="text-left">
+                    <sub
+                      >Pasang build kumulatif patch
+                      <strong
+                        >ZCS 10.1.13+ / 10.0.18+ / 9.0.0 P45+ / 8.8.15 P47+</strong
+                      ></sub
+                    >
+                  </td>
+                  <td class="text-left"><sub>CISA KEV Catalog &amp; ZCS Advisory</sub></td>
+                </tr>
+                <tr>
+                  <td class="text-center"><sub>2025</sub></td>
+                  <td class="text-left">
+                    <sub
+                      ><a
                         href="https://nvd.nist.gov/vuln/detail/CVE-2025-27915"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -20353,6 +20395,44 @@ net.ipv4.ip_local_port_range = 1024 65535</code></pre>
                   <td class="text-left">
                     <sub
                       ><a
+                        href="https://nvd.nist.gov/vuln/detail/CVE-2024-45516"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        ><strong>CVE-2024-45516</strong></a
+                      ></sub
+                    >
+                  </td>
+                  <td class="text-center">
+                    <sub><strong>6.1</strong></sub>
+                  </td>
+                  <td class="text-center"><sub>MEDIUM</sub></td>
+                  <td class="text-left"><sub>Classic UI Image Tag Parser</sub></td>
+                  <td class="text-left">
+                    <sub
+                      >• ZCS 10.0.0 – 10.0.11 (Daffodil)<br>• ZCS 9.0.0 Patch 1
+                      s.d. Patch 42 (Kepler)<br>• ZCS 8.8.15 Patch 1 s.d.
+                      Patch 46 (Joule)</sub
+                    >
+                  </td>
+                  <td class="text-left">
+                    <sub
+                      >Persistent XSS execution triggered by malformed image
+                      attributes in message contents during user viewing</sub
+                    >
+                  </td>
+                  <td class="text-left">
+                    <sub
+                      >Upgrade ke
+                      <strong>ZCS 10.0.12+ / 9.0.0 P43+ / 8.8.15 P47+</strong></sub
+                    >
+                  </td>
+                  <td class="text-left"><sub>ZCS Security Center</sub></td>
+                </tr>
+                <tr>
+                  <td class="text-center"><sub>2024</sub></td>
+                  <td class="text-left">
+                    <sub
+                      ><a
                         href="https://nvd.nist.gov/vuln/detail/CVE-2024-33535"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -20520,6 +20600,45 @@ net.ipv4.ip_local_port_range = 1024 65535</code></pre>
                   <td class="text-left">
                     <sub
                       ><a
+                        href="https://nvd.nist.gov/vuln/detail/CVE-2023-48432"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        ><strong>CVE-2023-48432</strong></a
+                      ></sub
+                    >
+                  </td>
+                  <td class="text-center">
+                    <sub><strong>6.1</strong></sub>
+                  </td>
+                  <td class="text-center"><sub>MEDIUM</sub></td>
+                  <td class="text-left"><sub>Classic Web Client Link Handler</sub></td>
+                  <td class="text-left">
+                    <sub
+                      >• ZCS 10.0.0 – 10.0.5 (Daffodil)<br>• ZCS 9.0.0 Patch 1
+                      s.d. Patch 36 (Kepler)<br>• ZCS 8.8.15 Patch 1 s.d.
+                      Patch 43 (Joule)</sub
+                    >
+                  </td>
+                  <td class="text-left">
+                    <sub
+                      >Reflected script execution in Classic UI session context
+                      via manipulated hyperlink parameters in received
+                      emails</sub
+                    >
+                  </td>
+                  <td class="text-left">
+                    <sub
+                      >Upgrade ke
+                      <strong>ZCS 10.0.6+ / 9.0.0 P37+ / 8.8.15 P44+</strong></sub
+                    >
+                  </td>
+                  <td class="text-left"><sub>ZCS Security Center</sub></td>
+                </tr>
+                <tr>
+                  <td class="text-center"><sub>2023</sub></td>
+                  <td class="text-left">
+                    <sub
+                      ><a
                         href="https://nvd.nist.gov/vuln/detail/CVE-2023-38750"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -20607,6 +20726,47 @@ net.ipv4.ip_local_port_range = 1024 65535</code></pre>
                   <td class="text-left">
                     <sub
                       ><a
+                        href="https://nvd.nist.gov/vuln/detail/CVE-2023-34193"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        ><strong>CVE-2023-34193</strong></a
+                      ></sub
+                    >
+                  </td>
+                  <td class="text-center">
+                    <sub><strong>7.2</strong></sub>
+                  </td>
+                  <td class="text-center"><sub>HIGH</sub></td>
+                  <td class="text-left"><sub><code>ClientUploader</code> Servlet</sub></td>
+                  <td class="text-left">
+                    <sub
+                      >• ZCS 10.0.0 – 10.0.1 (Daffodil)<br>• ZCS 9.0.0 Patch 1
+                      s.d. Patch 33 (Kepler)<br>• ZCS 8.8.15 Patch 1 s.d.
+                      Patch 40 (Joule)</sub
+                    >
+                  </td>
+                  <td class="text-left">
+                    <sub
+                      >Privileged ClientUploader endpoint flaw enabling rogue
+                      binary attachment persistence and web-accessible script
+                      generation</sub
+                    >
+                  </td>
+                  <td class="text-left">
+                    <sub
+                      >Instal pembaruan versi
+                      <strong
+                        >ZCS 10.0.2+ / 9.0.0 P34+ / 8.8.15 P41+</strong
+                      ></sub
+                    >
+                  </td>
+                  <td class="text-left"><sub>Zimbra Product Security Advisory</sub></td>
+                </tr>
+                <tr>
+                  <td class="text-center"><sub>2023</sub></td>
+                  <td class="text-left">
+                    <sub
+                      ><a
                         href="https://nvd.nist.gov/vuln/detail/CVE-2023-34192"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -20638,6 +20798,47 @@ net.ipv4.ip_local_port_range = 1024 65535</code></pre>
                     >
                   </td>
                   <td class="text-left"><sub>Skay, Noah-Lab</sub></td>
+                </tr>
+                <tr>
+                  <td class="text-center"><sub>2023</sub></td>
+                  <td class="text-left">
+                    <sub
+                      ><a
+                        href="https://nvd.nist.gov/vuln/detail/CVE-2023-29382"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        ><strong>CVE-2023-29382</strong></a
+                      ></sub
+                    >
+                  </td>
+                  <td class="text-center">
+                    <sub><strong>7.5</strong></sub>
+                  </td>
+                  <td class="text-center"><sub>HIGH</sub></td>
+                  <td class="text-left"><sub><code>sfdc_preauth.jsp</code> Component</sub></td>
+                  <td class="text-left">
+                    <sub
+                      >• ZCS 10.0.0 – 10.0.1 (Daffodil)<br>• ZCS 9.0.0 Patch 1
+                      s.d. Patch 32 (Kepler)<br>• ZCS 8.8.15 Patch 1 s.d.
+                      Patch 39 (Joule)</sub
+                    >
+                  </td>
+                  <td class="text-left">
+                    <sub
+                      >Pre-session flaw in sfdc_preauth endpoint allowing
+                      external callers to navigate system directories and run
+                      unauthorized server-side scripts</sub
+                    >
+                  </td>
+                  <td class="text-left">
+                    <sub
+                      >Terapkan patch keamanan
+                      <strong
+                        >ZCS 10.0.2+ / 9.0.0 P33+ / 8.8.15 P40+</strong
+                      ></sub
+                    >
+                  </td>
+                  <td class="text-left"><sub>Synacor Security Bulletin</sub></td>
                 </tr>
                 <tr>
                   <td class="text-center"><sub>2022</sub></td>

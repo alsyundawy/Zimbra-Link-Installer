@@ -1,11 +1,33 @@
 <!-- markdownlint-disable MD013 MD024 -->
 
-# CHANGELOG
+# [2.6.1] - CHANGELOG
 
 All notable changes to the **Zimbra Link Installer & Telemetry Suite** will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+---
+
+## [2.6.1] - 2026-08-28
+
+### Added
+
+- **Deep Security Research & Vulnerability Expansion**:
+  - Integrated 5 newly verified Zimbra security advisories into the Master Vulnerability Matrix in `README.md` and `index.html` (totaling **37+ CVEs** spanning 2016–2026):
+    - `CVE-2025-48700` (CVSS 6.1 MEDIUM - CISA KEV actively exploited, stored XSS in Classic UI via CSS `@import` / malformed tags).
+    - `CVE-2024-45516` (CVSS 6.1 MEDIUM, stored XSS in Classic UI via malformed `<img>` tags).
+    - `CVE-2023-48432` (CVSS 6.1 MEDIUM, reflected XSS in Classic Web Client via email link).
+    - `CVE-2023-34193` (CVSS 7.2 HIGH, authenticated arbitrary file upload in `ClientUploader` servlet).
+    - `CVE-2023-29382` (CVSS 7.5 HIGH, pre-auth arbitrary code execution / LFI in `sfdc_preauth.jsp`).
+- **Comprehensive Lifecycle Policy (`SECURITY.md`)**:
+  - Replaced generic policy with enterprise Zimbra Collaboration Suite Lifecycle Matrix detailing active support (ZCS 10.1 Daffodil) vs End-of-Life branches (ZCS 10.0 EOL 2025, ZCS 9.0 EOL 2024, ZCS 8.8.15 EOL 2023).
+  - Outlined vulnerability disclosure reporting standards, response SLA, and third-party security verification process.
+
+### Changed
+
+- Updated version counters and metadata to `v2.6.1` across `README.md`, `DOCNOTE.md`, `index.html`, and `zimbra-link-installer.sh`.
+- Re-verified all 1,215 binary and checksum URLs with automated telemetry validation (`scripts/deep_link_validator.py`), confirming all target download links actively accessible with zero broken links.
 
 ---
 

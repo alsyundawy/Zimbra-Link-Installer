@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # ==============================================================================
-# ZIMBRA LINK INSTALLER & TELEMETRY SUITE (v2.6.0)
+# ZIMBRA LINK INSTALLER & TELEMETRY SUITE (v2.6.1)
 # Enterprise Binary Downloader, Checksum Verifier & Automated Installer
 # Supports Official NE (7-10.1), Official FOSS (7-8.8), and Community FOSS (8.8-10.1)
 #
@@ -23,7 +23,7 @@ readonly BOLD='\033[1m'
 readonly NC='\033[0m'
 
 # Global Configuration & Defaults
-readonly SCRIPT_VERSION="2.6.0"
+readonly SCRIPT_VERSION="2.6.1"
 WORK_DIR="${HOME}/zimbra_install_cache"
 readonly DEFAULT_REFERER="https://techfiles.online/"
 readonly USER_AGENT="Mozilla/5.0 (X11; Linux x86_64) Zimbra-Link-Installer/${SCRIPT_VERSION}"
