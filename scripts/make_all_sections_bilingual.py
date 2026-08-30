@@ -144,7 +144,7 @@ sudo ./zimbra-link-installer.sh</code></pre>
         <ul class="doc-list">
           <li>
             <strong>Deteksi Otomatis Sistem:</strong> Mengidentifikasi
-            distribusi (Ubuntu/Debian/RHEL/Rocky/Alma/Oracle Linux), arsitektur
+            distribusi (Ubuntu/RHEL/Rocky/Alma/Oracle Linux), arsitektur
             kernel, kapasitas RAM, dan storage <code>/opt/zimbra</code>.
           </li>
           <li>
@@ -178,7 +178,7 @@ sudo ./zimbra-link-installer.sh</code></pre>
               <strong>Defensive Shell Architecture:</strong> Dilengkapi <code>set -Eeuo pipefail</code>, <code>IFS=$'\n\t'</code>, dan <code>umask 022</code> untuk perlindungan maksimal dari race-condition dan word splitting.
             </li>
             <li>
-              <strong>Deteksi Otomatis Sistem:</strong> Mengidentifikasi distribusi (Ubuntu/Debian/RHEL/Rocky/Alma/Oracle Linux), arsitektur kernel (x86_64), kapasitas RAM, dan storage <code>/opt/zimbra</code>.
+              <strong>Deteksi Otomatis Sistem:</strong> Mengidentifikasi distribusi (Ubuntu/RHEL/Rocky/Alma/Oracle Linux), arsitektur kernel (x86_64), kapasitas RAM, dan storage <code>/opt/zimbra</code>.
             </li>
             <li>
               <strong>Pre-Flight FQDN &amp; Pax Audit:</strong> Memeriksa kesiapan FQDN DNS resolver (<code>hostname -f</code>) dan memastikan utilitas POSIX <code>pax</code> aktif guna menangkal CVE-2022-41352.
@@ -200,7 +200,7 @@ sudo ./zimbra-link-installer.sh</code></pre>
               <strong>Defensive Shell Architecture:</strong> Engineered with <code>set -Eeuo pipefail</code>, <code>IFS=$'\n\t'</code>, and <code>umask 022</code> for robust protection against race conditions and word splitting.
             </li>
             <li>
-              <strong>Automated OS &amp; Hardware Detection:</strong> Auto-identifies distribution (Ubuntu/Debian/RHEL/Rocky/Alma/Oracle Linux), kernel architecture (x86_64), RAM capacity, and <code>/opt/zimbra</code> storage space.
+              <strong>Automated OS &amp; Hardware Detection:</strong> Auto-identifies distribution (Ubuntu/RHEL/Rocky/Alma/Oracle Linux), kernel architecture (x86_64), RAM capacity, and <code>/opt/zimbra</code> storage space.
             </li>
             <li>
               <strong>Pre-Flight FQDN &amp; Pax Audit:</strong> Validates FQDN DNS resolution (<code>hostname -f</code>) and verifies POSIX <code>pax</code> utility availability to mitigate CVE-2022-41352.

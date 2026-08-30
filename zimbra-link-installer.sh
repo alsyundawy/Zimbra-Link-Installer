@@ -218,7 +218,7 @@ preflight_check() {
 	local missing_pkgs=()
 	local required_tools=(wget curl tar pax sysstat net-tools)
 
-	if [[ ${OS_ID} =~ ^(ubuntu|debian)$ ]]; then
+	if [[ ${OS_ID} =~ ^(ubuntu)$ ]]; then
 		for pkg in "${required_tools[@]}"; do
 			if ! dpkg -s "${pkg}" >/dev/null 2>&1; then
 				missing_pkgs+=("${pkg}")

@@ -65,7 +65,6 @@ Sebelum proses pengunduhan dan instalasi biner ZCS dijalankan, modul audit melak
 | <small>Distribusi Host</small>         | <small>Versi OS</small>                                               |    <small>Arsitektur</small>     |  <small>Status Dukungan</small>  |
 | :------------------------------------- | :-------------------------------------------------------------------- | :------------------------------: | :------------------------------: |
 | <small>**Ubuntu Server**</small>       | <small>24.04, 22.04, 20.04, 18.04, 16.04, 14.04, 12.04, 10.04</small> |     <small>`x86_64`</small>      |     <small>✅ Penuh</small>      |
-| <small>**Debian GNU/Linux**</small>    | <small>12 (Bookworm), 11 (Bullseye), 10, 8, 7, 5, 4.0</small>         |     <small>`x86_64`</small>      |     <small>✅ Penuh</small>      |
 | <small>**RHEL / Rocky / Alma**</small> | <small>9.x, 8.x, 7.x, 6.x, 5.x, 4.x</small>                           |     <small>`x86_64`</small>      |     <small>✅ Penuh</small>      |
 | <small>**Oracle Linux (OL)**</small>   | <small>9.x, 8.x, 7.x, 6.x</small>                                     |     <small>`x86_64`</small>      |     <small>✅ Penuh</small>      |
 | <small>**SUSE Linux / SLES**</small>   | <small>SLES 12, SLES 11, SLES 10, openSUSE</small>                    |     <small>`x86_64`</small>      |  <small>✅ Arsip Resmi</small>   |
@@ -137,7 +136,7 @@ Aplikasi web standalone `index.html` dibangun dengan teknologi web modern tanpa 
 | **`v2.6.0`** | 2026-08-27 | Enterprise Security Hardening (`set -Eeuo pipefail`, cleanup traps, privilege abstraction, regex checksum sanitization, FQDN audit), standalone web portal (`index.html`) responsif (VGA s.d. 2K) dengan diagram Mermaid & WCAG AA accessibility, verifikasi NVD CVE terkonfirmasi resmi, dan micro-typography formatting. |
 | **`v2.5.0`** | 2026-08-27 | Implementasi arsitektur CLI submenu bertingkat (NE 7-10.1, Official FOSS 7-8.8, Community FOSS 8.8-10.1), penyusunan Master Vulnerability Matrix 32+ CVE (2016–2026), dan Zero-Day Emergency Hardening Playbook. |
 | **`v2.4.0`** | 2026-08-27 | Sinkronisasi penuh dengan Zimbra Releases Wiki (`wiki.zimbra.com/wiki/Zimbra_Releases`), menambahkan cabang legacy ZCS 4.5.x s.d. 10.1.x, total link terverifikasi mencapai 1,215+. |
-| **`v2.3.0`** | 2026-08-27 | Penggabungan 235 rilis resmi dari `alsyundawy/zimbra_bits` dan arsip download langsung dari `martbrooks/zimbra_direct_downloads` (Debian 4-8, RHEL 4-7, SLES 10-12, Fedora, Mac OS X), total link 1,183+. |
+| **`v2.3.0`** | 2026-08-27 | Penggabungan 235 rilis resmi dari `alsyundawy/zimbra_bits` dan arsip download langsung dari `martbrooks/zimbra_direct_downloads` (Ubuntu, RHEL 4-7, SLES 10-12, Fedora, Mac OS X), total link 1,183+. |
 | **`v2.2.0`** | 2026-08-27 | Ekspansi arsip resmi Synacor `files.zimbra.com` untuk Network Edition & FOSS (ZCS 7.x s.d. 10.1.x) dan arsip patch, total link mencapai 945+. |
 | **`v2.1.0`** | 2026-08-27 | Penambahan 53+ rilis komunitas Zimbra FOSS (ZCS 8.8.15, 9.0.0, 10.0.x, 10.1.x) dari `maldua/zimbra-foss` dan `techfiles.online` CDN untuk Ubuntu 18.04–24.04 dan RHEL 8–9 (741+ link). |
 | **`v2.0.0`** | 2026-08-27 | Rilis perdana repositori Zimbra Link Installer & Telemetry Suite, skrip CLI `zimbra-link-installer.sh`, modul Python `deep_link_validator.py`, verifikasi checksum otomatis SHA-256/MD5. |

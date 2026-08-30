@@ -163,7 +163,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Merged 235 official release entries from `alsyundawy/zimbra_bits`.
   - Incorporated direct download links and MD5/SHA checksum tables from `martbrooks/zimbra_direct_downloads`.
   - Expanded OS coverage to legacy enterprise platforms:
-    - Debian GNU/Linux 4.0 (*Etch*), 5.0 (*Lenny*), 6.0 (*Squeeze*), 7.0 (*Wheezy*), 8.0 (*Jessie*)
     - RHEL / CentOS 4.x, 5.x, 6.x, 7.x
     - SUSE Linux Enterprise Server (SLES) 10, 11, 12 and openSUSE
     - Fedora Core 4/5, Fedora 7/11/13

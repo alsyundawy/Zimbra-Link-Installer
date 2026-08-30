@@ -9,7 +9,7 @@
     <meta name="title" content="Zimbra Link Installer — Binary Archive &amp; CVE Matrix">
     <meta name="description" content="Enterprise Direct Binary Downloads, Official &amp; Unofficial Community Builds, Cryptographic Checksums, Security Advisories, and Automated CLI Installer (ZCS 4.5.x – 10.1.x)">
     <meta name="author" content="Harry Dertin Sutisna Alsyundawy">
-    <meta name="keywords" content="Zimbra, ZCS, Zimbra Link Installer, Zimbra Download, Zimbra FOSS, Zimbra Network Edition, CVE Matrix, Zimbra Security, Zero-Day Mitigation, Linux, Ubuntu, Debian, RHEL, Rocky Linux, AlmaLinux">
+    <meta name="keywords" content="Zimbra, ZCS, Zimbra Link Installer, Zimbra Download, Zimbra FOSS, Zimbra Network Edition, CVE Matrix, Zimbra Security, Zero-Day Mitigation, Linux, Ubuntu, RHEL, Rocky Linux, AlmaLinux">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="color-scheme" content="dark">
 
@@ -58,7 +58,7 @@
           "@type": "SoftwareApplication",
           "@id": "https://alsyundawy.github.io/Zimbra-Link-Installer/#software",
           "name": "Zimbra Link Installer",
-          "operatingSystem": "Linux (Ubuntu, Debian, RHEL, Rocky Linux, AlmaLinux, CentOS, SLES, Fedora, Oracle Linux)",
+          "operatingSystem": "Linux (Ubuntu, RHEL, Rocky Linux, AlmaLinux, CentOS, SLES, Fedora, Oracle Linux)",
           "applicationCategory": "DeveloperApplication, DevOps, SecurityApplication",
           "offers": {
             "@type": "Offer",
@@ -1464,7 +1464,7 @@
             target="_blank"
             rel="noopener noreferrer"
             ><img
-              src="https://img.shields.io/badge/Platform-Ubuntu%20%7C%20Debian%20%7C%20CentOS%20%7C%20RHEL%20%7C%20Rocky%20%7C%20Alma-lightgrey.svg"
+              src="https://img.shields.io/badge/Platform-Ubuntu%20%7C%20CentOS%20%7C%20RHEL%20%7C%20Rocky%20%7C%20Alma-lightgrey.svg"
               alt="Platform"
               class="badge-img"></a>
         </p>
@@ -2172,7 +2172,7 @@ SELECT ZIMBRA BINARY CATEGORY:
               <strong>Defensive Shell Architecture:</strong> Dilengkapi <code>set -Eeuo pipefail</code>, <code>IFS=$'\n\t'</code>, dan <code>umask 022</code> untuk perlindungan maksimal dari race-condition dan word splitting.
             </li>
             <li>
-              <strong>Deteksi Otomatis Sistem:</strong> Mengidentifikasi distribusi (Ubuntu/Debian/RHEL/Rocky/Alma/Oracle Linux), arsitektur kernel (x86_64), kapasitas RAM, dan storage <code>/opt/zimbra</code>.
+              <strong>Deteksi Otomatis Sistem:</strong> Mengidentifikasi distribusi (Ubuntu/RHEL/Rocky/Alma/Oracle Linux), arsitektur kernel (x86_64), kapasitas RAM, dan storage <code>/opt/zimbra</code>.
             </li>
             <li>
               <strong>Pre-Flight FQDN &amp; Pax Audit:</strong> Memeriksa kesiapan FQDN DNS resolver (<code>hostname -f</code>) dan memastikan utilitas POSIX <code>pax</code> aktif guna menangkal CVE-2022-41352.
@@ -2194,7 +2194,7 @@ SELECT ZIMBRA BINARY CATEGORY:
               <strong>Defensive Shell Architecture:</strong> Engineered with <code>set -Eeuo pipefail</code>, <code>IFS=$'\n\t'</code>, and <code>umask 022</code> for robust protection against race conditions and word splitting.
             </li>
             <li>
-              <strong>Automated OS &amp; Hardware Detection:</strong> Auto-identifies distribution (Ubuntu/Debian/RHEL/Rocky/Alma/Oracle Linux), kernel architecture (x86_64), RAM capacity, and <code>/opt/zimbra</code> storage space.
+              <strong>Automated OS &amp; Hardware Detection:</strong> Auto-identifies distribution (Ubuntu/RHEL/Rocky/Alma/Oracle Linux), kernel architecture (x86_64), RAM capacity, and <code>/opt/zimbra</code> storage space.
             </li>
             <li>
               <strong>Pre-Flight FQDN &amp; Pax Audit:</strong> Validates FQDN DNS resolution (<code>hostname -f</code>) and verifies POSIX <code>pax</code> utility availability to mitigate CVE-2022-41352.
@@ -9327,66 +9327,6 @@ SELECT ZIMBRA BINARY CATEGORY:
                 </tr>
                 <tr>
                   <td class="text-left">
-                    <sub><code>7.2.7 GA</code></sub>
-                  </td>
-                  <td class="text-center">
-                    <sub><strong>FOSS</strong></sub>
-                  </td>
-                  <td class="text-left"><sub>Debian 5 (64-bit)</sub></td>
-                  <td class="text-center">
-                    <sub
-                      ><a
-                        href="https://files.zimbra.com/downloads/7.2.7_GA/zcs-7.2.7_GA_2942.DEBIAN5_64.20140314185950.tgz"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        >Download</a
-                      ></sub
-                    >
-                  </td>
-                  <td class="text-center">
-                    <sub
-                      ><a
-                        href="https://files.zimbra.com/downloads/7.2.7_GA/zcs-7.2.7_GA_2942.DEBIAN5_64.20140314185950.tgz.md5"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        >MD5</a
-                      ></sub
-                    >
-                  </td>
-                  <td class="text-center"><sub>-</sub></td>
-                </tr>
-                <tr>
-                  <td class="text-left">
-                    <sub><code>7.2.7 GA</code></sub>
-                  </td>
-                  <td class="text-center">
-                    <sub><strong>FOSS</strong></sub>
-                  </td>
-                  <td class="text-left"><sub>Debian 5 (32-bit)</sub></td>
-                  <td class="text-center">
-                    <sub
-                      ><a
-                        href="https://files.zimbra.com/downloads/7.2.7_GA/zcs-7.2.7_GA_2942.DEBIAN5.20140314185953.tgz"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        >Download</a
-                      ></sub
-                    >
-                  </td>
-                  <td class="text-center">
-                    <sub
-                      ><a
-                        href="https://files.zimbra.com/downloads/7.2.7_GA/zcs-7.2.7_GA_2942.DEBIAN5.20140314185953.tgz.md5"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        >MD5</a
-                      ></sub
-                    >
-                  </td>
-                  <td class="text-center"><sub>-</sub></td>
-                </tr>
-                <tr>
-                  <td class="text-left">
                     <sub><code>7.2.0 GA</code></sub>
                   </td>
                   <td class="text-center">
@@ -9583,27 +9523,6 @@ SELECT ZIMBRA BINARY CATEGORY:
               <tbody>
                 <tr>
                   <td class="text-left">
-                    <sub><code>5.0.9 GA</code></sub>
-                  </td>
-                  <td class="text-center">
-                    <sub><strong>FOSS</strong></sub>
-                  </td>
-                  <td class="text-left"><sub>Debian 4.0</sub></td>
-                  <td class="text-center">
-                    <sub
-                      ><a
-                        href="https://files.zimbra.com/downloads/5.0.9_GA/zcs-5.0.9_GA_2533.DEBIAN4.0.20080815215219.tgz"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        >Download</a
-                      ></sub
-                    >
-                  </td>
-                  <td class="text-center"><sub>-</sub></td>
-                  <td class="text-center"><sub>-</sub></td>
-                </tr>
-                <tr>
-                  <td class="text-left">
                     <sub><code>5.0.6 GA</code></sub>
                   </td>
                   <td class="text-center">
@@ -9681,27 +9600,6 @@ SELECT ZIMBRA BINARY CATEGORY:
                     <sub
                       ><a
                         href="https://files.zimbra.com/downloads/5.0.2_GA/zcs-5.0.2_GA_1975.F7.20080130225918.tgz"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        >Download</a
-                      ></sub
-                    >
-                  </td>
-                  <td class="text-center"><sub>-</sub></td>
-                  <td class="text-center"><sub>-</sub></td>
-                </tr>
-                <tr>
-                  <td class="text-left">
-                    <sub><code>5.0.2 GA</code></sub>
-                  </td>
-                  <td class="text-center">
-                    <sub><strong>FOSS</strong></sub>
-                  </td>
-                  <td class="text-left"><sub>Debian 4.0</sub></td>
-                  <td class="text-center">
-                    <sub
-                      ><a
-                        href="https://files.zimbra.com/downloads/5.0.2_GA/zcs-5.0.2_GA_1975.DEBIAN4.0.20080130234700.tgz"
                         target="_blank"
                         rel="noopener noreferrer"
                         >Download</a
@@ -9966,27 +9864,6 @@ SELECT ZIMBRA BINARY CATEGORY:
                     <sub
                       ><a
                         href="https://files.zimbra.com/downloads/5.0.0_GA/zcs-5.0.0_GA_1869.F7.20071218205447.tgz"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        >Download</a
-                      ></sub
-                    >
-                  </td>
-                  <td class="text-center"><sub>-</sub></td>
-                  <td class="text-center"><sub>-</sub></td>
-                </tr>
-                <tr>
-                  <td class="text-left">
-                    <sub><code>5.0.0 GA</code></sub>
-                  </td>
-                  <td class="text-center">
-                    <sub><strong>FOSS</strong></sub>
-                  </td>
-                  <td class="text-left"><sub>Debian 4.0</sub></td>
-                  <td class="text-center">
-                    <sub
-                      ><a
-                        href="https://files.zimbra.com/downloads/5.0.0_GA/zcs-5.0.0_GA_1869.DEBIAN4.0.20071218200820.tgz"
                         target="_blank"
                         rel="noopener noreferrer"
                         >Download</a
@@ -21549,7 +21426,7 @@ su - zimbra -c &quot;zmlocalconfig -e postjournal_enabled=false&quot;
 su - zimbra -c &quot;zmcontrol restart&quot;
 
 # 2. Pastikan utilitas pax terpasang untuk melindungi Amavis (Mitigasi CVE-2022-41352)
-# Di Ubuntu / Debian:
+# Di Ubuntu:
 sudo apt-get update &amp;&amp; sudo apt-get install -y pax
 # Di RHEL / Rocky / Alma:
 sudo dnf install -y pax</code></pre>
@@ -21785,7 +21662,7 @@ rsync -avz --delete -e "ssh -p 2222" /opt/zimbra/backup/ backupuser@backup-serve
         </div>
         <div class="code-card">
           <div class="code-header">
-            <span class="code-lang-tag"><i class="fa-solid fa-terminal"></i> BASH (UFW Hardening Script - Ubuntu/Debian)</span>
+            <span class="code-lang-tag"><i class="fa-solid fa-terminal"></i> BASH (UFW Hardening Script - Ubuntu)</span>
             <button type="button" class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Salin</button>
           </div>
           <pre><code class="language-bash"># Reset dan Atur Kebijakan Dasar Firewall

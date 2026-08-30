@@ -182,7 +182,7 @@ rsync -avz --delete -e "ssh -p 2222" /opt/zimbra/backup/ backupuser@backup-serve
         </div>
         <div class="code-card">
           <div class="code-header">
-            <span class="code-lang-tag"><i class="fa-solid fa-terminal"></i> BASH (UFW Hardening Script - Ubuntu/Debian)</span>
+            <span class="code-lang-tag"><i class="fa-solid fa-terminal"></i> BASH (UFW Hardening Script - Ubuntu)</span>
             <button type="button" class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Salin</button>
           </div>
           <pre><code class="language-bash"># Reset dan Atur Kebijakan Dasar Firewall

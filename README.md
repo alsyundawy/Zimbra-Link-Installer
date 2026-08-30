@@ -13,7 +13,7 @@ By **Harry Dertin Sutisna Alsyundawy**
 [![ZCS Versions](https://img.shields.io/badge/ZCS%20Versions-4.5.x%20%7C%205.x%20%7C%206.x%20%7C%207.x%20%7C%208.x%20%7C%209.x%20%7C%2010.x%20%7C%2010.1.x-blue.svg)](https://github.com/alsyundawy/Zimbra-Link-Installer)
 [![Verified Downloads](https://img.shields.io/badge/Verified%20Binaries-1%2C215%2B%20Active%20(HTTP%20200)-success.svg)](https://github.com/alsyundawy/Zimbra-Link-Installer)
 [![Edition](https://img.shields.io/badge/Edition-Network%20%7C%20FOSS%20%7C%20Community-orange.svg)](https://github.com/alsyundawy/Zimbra-Link-Installer)
-[![Platform](https://img.shields.io/badge/Platform-Ubuntu%20%7C%20Debian%20%7C%20CentOS%20%7C%20RHEL%20%7C%20Rocky%20%7C%20Alma-lightgrey.svg)](https://github.com/alsyundawy)
+[![Platform](https://img.shields.io/badge/Platform-Ubuntu%20%7C%20CentOS%20%7C%20RHEL%20%7C%20Rocky%20%7C%20Alma-lightgrey.svg)](https://github.com/alsyundawy)
 [![WhatsApp](https://img.shields.io/badge/WhatsApp-Chat%20%26%20Call-25D366?style=flat&logo=whatsapp&logoColor=white)](https://wa.me/6285658515212)
 [![Telegram](https://img.shields.io/badge/Telegram-@alsyundawy-2CA5E0?style=flat&logo=telegram&logoColor=white)](https://t.me/alsyundawy)
 [![Donate with PayPal](https://img.shields.io/badge/PayPal-donate-orange)](https://www.paypal.me/alsyundawy)
@@ -190,7 +190,7 @@ SELECT ZIMBRA BINARY CATEGORY:
 
 - **Dual-Language i18n Support:** Mendukung penuh Bahasa Indonesia dan English baik melalui interaktif prompt maupun flag CLI (`--lang=en` atau `--lang=id`).
 - **Defensive Shell Architecture:** Dilengkapi `set -Eeuo pipefail`, `IFS=$'\n\t'`, dan `umask 022` untuk perlindungan dari race-condition dan word splitting.
-- **Deteksi Otomatis Sistem:** Mengidentifikasi distribusi (Ubuntu/Debian/RHEL/Rocky/Alma/Oracle Linux), arsitektur kernel, kapasitas RAM, dan storage `/opt/zimbra`.
+- **Deteksi Otomatis Sistem:** Mengidentifikasi distribusi (Ubuntu/RHEL/Rocky/Alma/Oracle Linux), arsitektur kernel, kapasitas RAM, dan storage `/opt/zimbra`.
 - **Pre-Flight FQDN & Pax Audit:** Memeriksa kesiapan FQDN DNS resolver (`hostname -f`) dan memastikan utilitas POSIX `pax` telah aktif guna menangkal CVE-2022-41352.
 - **Anti-Hotlink Header Handling:** Menginjeksi header `Referer` secara otomatis saat mengunduh dari CDN komunitas TechFiles.
 - **Integritas Kriptografi Otomatis:** Mengunduh hash `.sha256` atau `.md5` dan memvalidasi file arsip secara case-insensitive sebelum diekstrak.
@@ -483,8 +483,6 @@ Setiap tautan unduhan dalam repositori ini telah diuji secara berkala dengan skr
 | <sub>`7.2.7 GA`</sub> | <sub>**FOSS**</sub> | <sub>Fedora 13</sub>                  |       <sub>[Download](https://files.zimbra.com/downloads/7.2.7_GA/zcs-7.2.7_GA_2942.F13_64.20140314185944.tgz)</sub>        |       <sub>[MD5](https://files.zimbra.com/downloads/7.2.7_GA/zcs-7.2.7_GA_2942.F13_64.20140314185944.tgz.md5)</sub>        |   <sub>-</sub>    |
 | <sub>`7.2.7 GA`</sub> | <sub>**FOSS**</sub> | <sub>Fedora 11 (64-bit)</sub>         |       <sub>[Download](https://files.zimbra.com/downloads/7.2.7_GA/zcs-7.2.7_GA_2942.F11_64.20140314185933.tgz)</sub>        |       <sub>[MD5](https://files.zimbra.com/downloads/7.2.7_GA/zcs-7.2.7_GA_2942.F11_64.20140314185933.tgz.md5)</sub>        |   <sub>-</sub>    |
 | <sub>`7.2.7 GA`</sub> | <sub>**FOSS**</sub> | <sub>Fedora 11 (32-bit)</sub>         |         <sub>[Download](https://files.zimbra.com/downloads/7.2.7_GA/zcs-7.2.7_GA_2942.F11.20140314190046.tgz)</sub>         |         <sub>[MD5](https://files.zimbra.com/downloads/7.2.7_GA/zcs-7.2.7_GA_2942.F11.20140314190046.tgz.md5)</sub>         |   <sub>-</sub>    |
-| <sub>`7.2.7 GA`</sub> | <sub>**FOSS**</sub> | <sub>Debian 5 (64-bit)</sub>          |     <sub>[Download](https://files.zimbra.com/downloads/7.2.7_GA/zcs-7.2.7_GA_2942.DEBIAN5_64.20140314185950.tgz)</sub>      |     <sub>[MD5](https://files.zimbra.com/downloads/7.2.7_GA/zcs-7.2.7_GA_2942.DEBIAN5_64.20140314185950.tgz.md5)</sub>      |   <sub>-</sub>    |
-| <sub>`7.2.7 GA`</sub> | <sub>**FOSS**</sub> | <sub>Debian 5 (32-bit)</sub>          |       <sub>[Download](https://files.zimbra.com/downloads/7.2.7_GA/zcs-7.2.7_GA_2942.DEBIAN5.20140314185953.tgz)</sub>       |       <sub>[MD5](https://files.zimbra.com/downloads/7.2.7_GA/zcs-7.2.7_GA_2942.DEBIAN5.20140314185953.tgz.md5)</sub>       |   <sub>-</sub>    |
 | <sub>`7.2.0 GA`</sub> | <sub>**FOSS**</sub> | <sub>Ubuntu 10.04</sub>               |     <sub>[Download](https://files.zimbra.com/downloads/7.2.0_GA/zcs-7.2.0_GA_2669.UBUNTU10_64.20120410002303.tgz)</sub>     |                                                        <sub>-</sub>                                                        |   <sub>-</sub>    |
 | <sub>`7.1.3 GA`</sub> | <sub>**FOSS**</sub> | <sub>Ubuntu 8.04 (32-bit)</sub>       |       <sub>[Download](https://files.zimbra.com/downloads/7.1.3_GA/zcs-7.1.3_GA_3346.UBUNTU8.20110928134533.tgz)</sub>       |                                                        <sub>-</sub>                                                        |   <sub>-</sub>    |
 | <sub>`7.0.1 GA`</sub> | <sub>**FOSS**</sub> | <sub>Ubuntu 8.04 (64-bit)</sub>       |     <sub>[Download](https://files.zimbra.com/downloads/7.0.1_GA/zcs-7.0.1_GA_3105.UBUNTU8_64.20110304205531.tgz)</sub>      |                                                        <sub>-</sub>                                                        |   <sub>-</sub>    |
@@ -501,12 +499,10 @@ Setiap tautan unduhan dalam repositori ini telah diuji secara berkala dengan skr
 
 | <sub>Version</sub>     |  <sub>Edition</sub>  | <sub>OS / Platform</sub>              |                                                 <sub>Binary (.tgz)</sub>                                                 | <sub>MD5</sub> | <sub>SHA256</sub> |
 | :--------------------- | :------------------: | :------------------------------------ | :----------------------------------------------------------------------------------------------------------------------: | :------------: | :---------------: |
-| <sub>`5.0.9 GA`</sub>  | <sub>**FOSS**</sub>  | <sub>Debian 4.0</sub>                 |    <sub>[Download](https://files.zimbra.com/downloads/5.0.9_GA/zcs-5.0.9_GA_2533.DEBIAN4.0.20080815215219.tgz)</sub>     |  <sub>-</sub>  |   <sub>-</sub>    |
 | <sub>`5.0.6 GA`</sub>  |  <sub>**NE**</sub>   | <sub>RHEL 5 / CentOS 5 (64-bit)</sub> | <sub>[Download](https://files.zimbra.com/downloads/5.0.6_GA/zcs-NETWORK-5.0.6_GA_2313.RHEL5_64.20080522105815.tgz)</sub> |  <sub>-</sub>  |   <sub>-</sub>    |
 | <sub>`5.0.6 GA`</sub>  | <sub>**FOSS**</sub>  | <sub>Ubuntu 6.06</sub>                |     <sub>[Download](https://files.zimbra.com/downloads/5.0.6_GA/zcs-5.0.6_GA_2313.UBUNTU6.20080522130240.tgz)</sub>      |  <sub>-</sub>  |   <sub>-</sub>    |
 | <sub>`5.0.2 GA`</sub>  | <sub>**FOSS**</sub>  | <sub>RHEL 5 / CentOS 5 (32-bit)</sub> |      <sub>[Download](https://files.zimbra.com/downloads/5.0.2_GA/zcs-5.0.2_GA_1975.RHEL5.20080130221917.tgz)</sub>       |  <sub>-</sub>  |   <sub>-</sub>    |
 | <sub>`5.0.2 GA`</sub>  | <sub>**FOSS**</sub>  | <sub>Fedora 7</sub>                   |        <sub>[Download](https://files.zimbra.com/downloads/5.0.2_GA/zcs-5.0.2_GA_1975.F7.20080130225918.tgz)</sub>        |  <sub>-</sub>  |   <sub>-</sub>    |
-| <sub>`5.0.2 GA`</sub>  | <sub>**FOSS**</sub>  | <sub>Debian 4.0</sub>                 |    <sub>[Download](https://files.zimbra.com/downloads/5.0.2_GA/zcs-5.0.2_GA_1975.DEBIAN4.0.20080130234700.tgz)</sub>     |  <sub>-</sub>  |   <sub>-</sub>    |
 | <sub>`5.0.1 GA`</sub>  | <sub>**FOSS**</sub>  | <sub>RHEL 5 / CentOS 5 (64-bit)</sub> |     <sub>[Download](https://files.zimbra.com/downloads/5.0.1_GA/zcs-5.0.1_GA_1902.RHEL5_64.20080109205909.tgz)</sub>     |  <sub>-</sub>  |   <sub>-</sub>    |
 | <sub>`5.0.1 GA`</sub>  | <sub>**FOSS**</sub>  | <sub>RHEL 5 / CentOS 5 (32-bit)</sub> |      <sub>[Download](https://files.zimbra.com/downloads/5.0.1_GA/zcs-5.0.1_GA_1902.RHEL5.20080109200629.tgz)</sub>       |  <sub>-</sub>  |   <sub>-</sub>    |
 | <sub>`5.0.10 GA`</sub> | <sub>**Patch**</sub> | <sub>Linux x86_64</sub>               |               <sub>[Download](https://files.zimbra.com/downloads/5.0.10_GA/portal/ZCS5010_patch.tgz)</sub>               |  <sub>-</sub>  |   <sub>-</sub>    |
@@ -519,7 +515,6 @@ Setiap tautan unduhan dalam repositori ini telah diuji secara berkala dengan skr
 | <sub>`5.0.0 GA`</sub>  | <sub>**FOSS**</sub>  | <sub>RHEL 4 / CentOS 4 (64-bit)</sub> |     <sub>[Download](https://files.zimbra.com/downloads/5.0.0_GA/zcs-5.0.0_GA_1869.RHEL4_64.20071218185942.tgz)</sub>     |  <sub>-</sub>  |   <sub>-</sub>    |
 | <sub>`5.0.0 GA`</sub>  | <sub>**FOSS**</sub>  | <sub>RHEL 4 / CentOS 4 (32-bit)</sub> |      <sub>[Download](https://files.zimbra.com/downloads/5.0.0_GA/zcs-5.0.0_GA_1869.RHEL4.20071218182359.tgz)</sub>       |  <sub>-</sub>  |   <sub>-</sub>    |
 | <sub>`5.0.0 GA`</sub>  | <sub>**FOSS**</sub>  | <sub>Fedora 7</sub>                   |        <sub>[Download](https://files.zimbra.com/downloads/5.0.0_GA/zcs-5.0.0_GA_1869.F7.20071218205447.tgz)</sub>        |  <sub>-</sub>  |   <sub>-</sub>    |
-| <sub>`5.0.0 GA`</sub>  | <sub>**FOSS**</sub>  | <sub>Debian 4.0</sub>                 |    <sub>[Download](https://files.zimbra.com/downloads/5.0.0_GA/zcs-5.0.0_GA_1869.DEBIAN4.0.20071218200820.tgz)</sub>     |  <sub>-</sub>  |   <sub>-</sub>    |
 
 <h3 id="zcs-45x-historical-archive-4510-ga-down-to-455-ga">ZCS 4.5.x Historical Archive (4.5.10 GA down to 4.5.5 GA)</h3>
 
@@ -1053,7 +1048,7 @@ su - zimbra -c "zmlocalconfig -e postjournal_enabled=false"
 su - zimbra -c "zmcontrol restart"
 
 # 2. Pastikan utilitas pax terpasang untuk melindungi Amavis (Mitigasi CVE-2022-41352)
-# Di Ubuntu / Debian:
+# Di Ubuntu:
 sudo apt-get update && sudo apt-get install -y pax
 # Di RHEL / Rocky / Alma:
 sudo dnf install -y pax

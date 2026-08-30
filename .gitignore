@@ -30,3 +30,4 @@ ehthumbs.db
 # IDE and editor settings
 .vscode/
 .idea/
+.kilo/
