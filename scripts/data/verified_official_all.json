@@ -3058,5 +3058,119 @@
     "status": "Direct Active (files.zimbra.com)",
     "link": "https://files.zimbra.com/downloads/zimbra-video-server/0.11.2/videoserver-u18.tgz.sha256",
     "type": "DIRECT_ACTIVE"
+  },
+  {
+    "url": "https://files.zimbra.com/downloads/10.0.0_GA/zcs-NETWORK-10.0.0_GA_4518.RHEL7_64.20230301065514.tgz.sha256",
+    "status": "Direct Active (files.zimbra.com)",
+    "link": "https://files.zimbra.com/downloads/10.0.0_GA/zcs-NETWORK-10.0.0_GA_4518.RHEL7_64.20230301065514.tgz.sha256",
+    "type": "DIRECT_ACTIVE"
+  },
+  {
+    "url": "https://files.zimbra.com/downloads/10.0.0_GA/zcs-NETWORK-10.0.0_GA_4518.RHEL8_64.20230301065514.tgz",
+    "status": "Direct Active (files.zimbra.com)",
+    "link": "https://files.zimbra.com/downloads/10.0.0_GA/zcs-NETWORK-10.0.0_GA_4518.RHEL8_64.20230301065514.tgz",
+    "type": "DIRECT_ACTIVE"
+  },
+  {
+    "url": "https://files.zimbra.com/downloads/10.0.0_GA/zcs-NETWORK-10.0.0_GA_4518.RHEL8_64.20230301065514.tgz.sha256",
+    "status": "Direct Active (files.zimbra.com)",
+    "link": "https://files.zimbra.com/downloads/10.0.0_GA/zcs-NETWORK-10.0.0_GA_4518.RHEL8_64.20230301065514.tgz.sha256",
+    "type": "DIRECT_ACTIVE"
+  },
+  {
+    "url": "https://files.zimbra.com/downloads/10.0.0_GA/zcs-NETWORK-10.0.0_GA_4518.UBUNTU20_64.20230301065514.tgz.sha256",
+    "status": "Direct Active (files.zimbra.com)",
+    "link": "https://files.zimbra.com/downloads/10.0.0_GA/zcs-NETWORK-10.0.0_GA_4518.UBUNTU20_64.20230301065514.tgz.sha256",
+    "type": "DIRECT_ACTIVE"
+  },
+  {
+    "url": "https://files.zimbra.com/downloads/10.1.0_GA/zcs-NETWORK-10.1.0_GA_4633.RHEL7_64.20240610085557.tgz",
+    "status": "Direct Active (files.zimbra.com)",
+    "link": "https://files.zimbra.com/downloads/10.1.0_GA/zcs-NETWORK-10.1.0_GA_4633.RHEL7_64.20240610085557.tgz",
+    "type": "DIRECT_ACTIVE"
+  },
+  {
+    "url": "https://files.zimbra.com/downloads/10.1.0_GA/zcs-NETWORK-10.1.0_GA_4633.RHEL8_64.20240610085557.tgz",
+    "status": "Direct Active (files.zimbra.com)",
+    "link": "https://files.zimbra.com/downloads/10.1.0_GA/zcs-NETWORK-10.1.0_GA_4633.RHEL8_64.20240610085557.tgz",
+    "type": "DIRECT_ACTIVE"
+  },
+  {
+    "url": "https://files.zimbra.com/downloads/10.1.0_GA/zcs-NETWORK-10.1.0_GA_4633.RHEL8_64.20240610085557.tgz.md5",
+    "status": "Direct Active (files.zimbra.com)",
+    "link": "https://files.zimbra.com/downloads/10.1.0_GA/zcs-NETWORK-10.1.0_GA_4633.RHEL8_64.20240610085557.tgz.md5",
+    "type": "DIRECT_ACTIVE"
+  },
+  {
+    "url": "https://files.zimbra.com/downloads/10.1.0_GA/zcs-NETWORK-10.1.0_GA_4633.RHEL8_64.20240610085557.tgz.sha256",
+    "status": "Direct Active (files.zimbra.com)",
+    "link": "https://files.zimbra.com/downloads/10.1.0_GA/zcs-NETWORK-10.1.0_GA_4633.RHEL8_64.20240610085557.tgz.sha256",
+    "type": "DIRECT_ACTIVE"
+  },
+  {
+    "url": "https://files.zimbra.com/downloads/10.1.0_GA/zcs-NETWORK-10.1.0_GA_4633.UBUNTU18_64.20240610085557.tgz",
+    "status": "Direct Active (files.zimbra.com)",
+    "link": "https://files.zimbra.com/downloads/10.1.0_GA/zcs-NETWORK-10.1.0_GA_4633.UBUNTU18_64.20240610085557.tgz",
+    "type": "DIRECT_ACTIVE"
+  },
+  {
+    "url": "https://files.zimbra.com/downloads/10.1.0_GA/zcs-NETWORK-10.1.0_GA_4633.UBUNTU20_64.20240610085557.tgz",
+    "status": "Direct Active (files.zimbra.com)",
+    "link": "https://files.zimbra.com/downloads/10.1.0_GA/zcs-NETWORK-10.1.0_GA_4633.UBUNTU20_64.20240610085557.tgz",
+    "type": "DIRECT_ACTIVE"
+  },
+  {
+    "url": "https://files.zimbra.com/downloads/10.1.0_GA/zcs-NETWORK-10.1.0_GA_4876.UBUNTU24_64.20260428124223.tgz",
+    "status": "Direct Active (files.zimbra.com)",
+    "link": "https://files.zimbra.com/downloads/10.1.0_GA/zcs-NETWORK-10.1.0_GA_4876.UBUNTU24_64.20260428124223.tgz",
+    "type": "DIRECT_ACTIVE"
+  },
+  {
+    "url": "https://files.zimbra.com/downloads/10.1.0_GA/zcs-NETWORK-10.1.0_GA_4876.UBUNTU24_64.20260428124223.tgz.md5",
+    "status": "Direct Active (files.zimbra.com)",
+    "link": "https://files.zimbra.com/downloads/10.1.0_GA/zcs-NETWORK-10.1.0_GA_4876.UBUNTU24_64.20260428124223.tgz.md5",
+    "type": "DIRECT_ACTIVE"
+  },
+  {
+    "url": "https://files.zimbra.com/downloads/10.1.0_GA/zcs-NETWORK-10.1.0_GA_4876.UBUNTU24_64.20260428124223.tgz.sha256",
+    "status": "Direct Active (files.zimbra.com)",
+    "link": "https://files.zimbra.com/downloads/10.1.0_GA/zcs-NETWORK-10.1.0_GA_4876.UBUNTU24_64.20260428124223.tgz.sha256",
+    "type": "DIRECT_ACTIVE"
+  },
+  {
+    "url": "https://files.zimbra.com/downloads/9.0.0_GA/zcs-NETWORK-9.0.0_GA_3924.RHEL7_64.20200331010312.tgz.sha256",
+    "status": "Direct Active (files.zimbra.com)",
+    "link": "https://files.zimbra.com/downloads/9.0.0_GA/zcs-NETWORK-9.0.0_GA_3924.RHEL7_64.20200331010312.tgz.sha256",
+    "type": "DIRECT_ACTIVE"
+  },
+  {
+    "url": "https://files.zimbra.com/downloads/9.0.0_GA/zcs-NETWORK-9.0.0_GA_3924.UBUNTU14_64.20200331010312.tgz",
+    "status": "Direct Active (files.zimbra.com)",
+    "link": "https://files.zimbra.com/downloads/9.0.0_GA/zcs-NETWORK-9.0.0_GA_3924.UBUNTU14_64.20200331010312.tgz",
+    "type": "DIRECT_ACTIVE"
+  },
+  {
+    "url": "https://files.zimbra.com/downloads/9.0.0_GA/zcs-NETWORK-9.0.0_GA_3924.UBUNTU16_64.20200331010312.tgz",
+    "status": "Direct Active (files.zimbra.com)",
+    "link": "https://files.zimbra.com/downloads/9.0.0_GA/zcs-NETWORK-9.0.0_GA_3924.UBUNTU16_64.20200331010312.tgz",
+    "type": "DIRECT_ACTIVE"
+  },
+  {
+    "url": "https://files.zimbra.com/downloads/9.0.0_GA/zcs-NETWORK-9.0.0_GA_3924.UBUNTU18_64.20200331010312.tgz",
+    "status": "Direct Active (files.zimbra.com)",
+    "link": "https://files.zimbra.com/downloads/9.0.0_GA/zcs-NETWORK-9.0.0_GA_3924.UBUNTU18_64.20200331010312.tgz",
+    "type": "DIRECT_ACTIVE"
+  },
+  {
+    "url": "https://files.zimbra.com/downloads/9.0.0_GA/zcs-NETWORK-9.0.0_GA_4178.UBUNTU20_64.20211112031526.tgz.md5",
+    "status": "Direct Active (files.zimbra.com)",
+    "link": "https://files.zimbra.com/downloads/9.0.0_GA/zcs-NETWORK-9.0.0_GA_4178.UBUNTU20_64.20211112031526.tgz.md5",
+    "type": "DIRECT_ACTIVE"
+  },
+  {
+    "url": "https://files.zimbra.com/downloads/9.0.0_GA/zcs-NETWORK-9.0.0_GA_4325.RHEL8_64.20220629074359.tgz.md5",
+    "status": "Direct Active (files.zimbra.com)",
+    "link": "https://files.zimbra.com/downloads/9.0.0_GA/zcs-NETWORK-9.0.0_GA_4325.RHEL8_64.20220629074359.tgz.md5",
+    "type": "DIRECT_ACTIVE"
   }
 ]

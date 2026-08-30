@@ -1,4 +1,4 @@
-# [2.6.2] - Changelog
+# [2.6.3] - Changelog
 
 <!-- markdownlint-disable MD013 MD024 -->
 
@@ -6,6 +6,32 @@ All notable changes to the **Zimbra Link Installer & Telemetry Suite** will be d
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+---
+
+## [2.6.3] - 2026-08-30
+
+### Added
+
+- **Official Zimbra Network Edition (NE 10.1, 10.0, 9.0, 8.8.15) Link Re-Verification**:
+  - Live scraped and validated 100% of official Zimbra NE direct binary download links, `.md5`, and `.sha256` checksums directly from `files.zimbra.com` (confirmed HTTP 200 OK across Ubuntu 18/20/22/24 and RHEL 7/8/9).
+  - Updated dataset files `scripts/data/all_historical_verified.json` (291 entries) and `scripts/data/verified_official_all.json` (529 entries).
+  - Updated `zimbra-link-installer.sh`, `README.md`, and `index.html` (Tables 132, 134, 136).
+- **Enterprise Deep Research & Architecture Expansion (`index.html`)**:
+  - **Enterprise DNS Architecture (Unbound, BIND9, dnsdist & RBL)**: Added production configuration guides for dedicated local recursive DNS caching via Unbound (`127.0.0.1:53`), DNS threat sinkholing via BIND9 RPZ, query rate-limiting via dnsdist, and Postfix multi-tier DNSBL/RBL integration (Spamhaus ZEN, Barracuda, SpamCop) to eliminate DNS rate-limiting and MX timeout failures.
+  - **Enterprise Hot Backup & Disaster Recovery (`zmbackup`)**: Added comprehensive REST API streaming hot backup architectures, multi-threaded worker pipelines, differential/incremental backup strategies, and single-mailbox/full disaster recovery workflows based on `alsyundawy/zmbackup`.
+  - **Firewall, Network & Defense-in-Depth Hardening**: Added production UFW and iptables port isolation rules (restricting Admin Console ports 7071/9071 to management subnets/VPN, and binding internal IPC daemons to loopback), coupled with Fail2Ban jails for Mailboxd, Postfix SASL, and Nginx authentication brute-force protection.
+  - **Cross-OS Zero-Data-Loss Migration Masterclass**: Expanded end-to-end migration methodology for migrating legacy CentOS 7 / RHEL 7 / Ubuntu 18 to modern Ubuntu 22.04 / 24.04 LTS and Rocky Linux 9 using pure mailbox streaming tools (`alsyundawy/Z2C` & `alsyundawy/Zimbra2Zimbra-Migration-Tool`).
+  - **Malware, Spam, Ransomware & Webshell Forensic Protocol**: Detailed automated JSP webshell scanning, crontab persistence inspection, SSH authorized_keys audits, and permission healing using `alsyundawy/eradicate-zimbra-malware`.
+- **Comprehensive Bilingual (ID/EN) i18n Engine**:
+  - Implemented instant CSS visibility-driven bilingual architecture (`html[lang="id"]` / `html[lang="en"]`) combined with dynamic JavaScript translation dictionary (`i18nDict`).
+  - Synchronized translations across all UI components: top navigation, sidebar, hero headers, section titles, explanatory paragraphs, step-by-step guides, RFC 2119 operational best practices, search filter placeholders, and copy buttons.
+  - Added preference persistence in `localStorage` with smooth zero-layout-shift language switching.
+
+### Changed
+
+- Updated version identifier to `v2.6.3` across all repository files (`zimbra-link-installer.sh`, `index.html`, `README.md`, `DOCNOTE.md`, `SECURITY.md`, and `CHANGELOG.md`).
+- Passed HTML5 strict validation and `htmlhint` with zero errors and zero warnings.
 
 ---
 

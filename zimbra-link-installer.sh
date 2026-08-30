@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # ==============================================================================
-# ZIMBRA LINK INSTALLER & TELEMETRY SUITE (v2.6.1)
+# ZIMBRA LINK INSTALLER & TELEMETRY SUITE (v2.6.3)
 # Enterprise Binary Downloader, Checksum Verifier & Automated Installer
 # Supports Official NE (7-10.1), Official FOSS (7-8.8), and Community FOSS (8.8-10.1)
 #
@@ -23,7 +23,7 @@ readonly BOLD='\033[1m'
 readonly NC='\033[0m'
 
 # Global Configuration & Defaults
-readonly SCRIPT_VERSION="2.6.2"
+readonly SCRIPT_VERSION="2.6.3"
 WORK_DIR="${HOME}/zimbra_install_cache"
 readonly DEFAULT_REFERER="https://techfiles.online/"
 readonly USER_AGENT="Mozilla/5.0 (X11; Linux x86_64) Zimbra-Link-Installer/${SCRIPT_VERSION}"
@@ -367,16 +367,16 @@ download_and_verify() {
 }
 
 
-# ==============================================================================
+## ==============================================================================
 # MENU 1: OFFICIAL NETWORK EDITION (NE)
 # ==============================================================================
 menu_official_ne() {
 	while true; do
 		printf "\n%b=== OFFICIAL ZIMBRA NETWORK EDITION (files.zimbra.com) ===%b\n" "${BOLD}" "${NC}"
-		printf "  1) ZCS NE 10.1.0 GA (Ubuntu 22.04 LTS / RHEL 9)\n"
-		printf "  2) ZCS NE 10.0.0 GA (Ubuntu 20.04 / Ubuntu 18.04 / RHEL 7)\n"
-		printf "  3) ZCS NE 9.0.0 GA (Ubuntu 20.04 / Ubuntu 18.04 / RHEL 8 / RHEL 7)\n"
-		printf "  4) ZCS NE 8.8.15 GA (Ubuntu 20.04 / Ubuntu 18.04 / RHEL 8 / RHEL 7)\n"
+		printf "  1) ZCS NE 10.1.0 GA (Ubuntu 24.04 / 22.04 / 20.04 / 18.04, RHEL 9 / 8 / 7)\n"
+		printf "  2) ZCS NE 10.0.0 GA (Ubuntu 20.04 / 18.04, RHEL 8 / 7)\n"
+		printf "  3) ZCS NE 9.0.0 GA (Ubuntu 20.04 / 18.04 / 16.04 / 14.04, RHEL 8 / 7 / 6)\n"
+		printf "  4) ZCS NE 8.8.15 GA (Ubuntu 20.04 / 18.04 / 14.04, RHEL 8 / 7 / 6)\n"
 		printf "  5) ZCS NE 8.8.11 / 8.8.9 / 8.8.8 / 8.8.7 GA (RHEL 6/7, Ubuntu 14/16)\n"
 		printf "  6) ZCS NE 8.7.1 GA / 8.7.0 GA (Ubuntu 16/14/12, RHEL 7/6)\n"
 		printf "  7) ZCS NE 8.6.0 GA / 8.5.1 / 8.5.0 / 8.0.9 / 7.2.7 GA (Legacy Official)\n"
@@ -385,89 +385,178 @@ menu_official_ne() {
 
 		case "${ne_choice}" in
 		1)
-			printf "\n%b[ZCS NE 10.1.0 GA]%b\n" "${CYAN}" "${NC}"
-			printf "  1) Ubuntu 22.04 LTS (x86_64)\n"
-			printf "  2) RHEL / Rocky / Alma 9 (x86_64)\n"
-			read -rp "$(tr_msg "Select Target OS: " "Pilih OS: ")" os_c
-			if [[ ${os_c} == "1" ]]; then
+			printf "\n%b[ZCS NE 10.1.0 GA (Daffodil)]%b\n" "${CYAN}" "${NC}"
+			printf "  1) Ubuntu 24.04 LTS (x86_64)\n"
+			printf "  2) Ubuntu 22.04 LTS (x86_64)\n"
+			printf "  3) Ubuntu 20.04 LTS (x86_64)\n"
+			printf "  4) Ubuntu 18.04 LTS (x86_64)\n"
+			printf "  5) RHEL / Rocky / Alma / Oracle 9 (x86_64)\n"
+			printf "  6) RHEL / Rocky / Alma / Oracle 8 (x86_64)\n"
+			printf "  7) RHEL 7 / CentOS 7 (x86_64) [DEPRECATED]\n"
+			read -rp "$(tr_msg "Select Target OS [1-7]: " "Pilih OS [1-7]: ")" os_c
+			case "${os_c}" in
+			1)
+				download_and_verify \
+					"https://files.zimbra.com/downloads/10.1.0_GA/zcs-NETWORK-10.1.0_GA_4876.UBUNTU24_64.20260428124223.tgz" \
+					"https://files.zimbra.com/downloads/10.1.0_GA/zcs-NETWORK-10.1.0_GA_4876.UBUNTU24_64.20260428124223.tgz.sha256" "false"
+				;;
+			2)
 				download_and_verify \
 					"https://files.zimbra.com/downloads/10.1.0_GA/zcs-NETWORK-10.1.0_GA_4655.UBUNTU22_64.20240819064312.tgz" \
 					"https://files.zimbra.com/downloads/10.1.0_GA/zcs-NETWORK-10.1.0_GA_4655.UBUNTU22_64.20240819064312.tgz.sha256" "false"
-			elif [[ ${os_c} == "2" ]]; then
+				;;
+			3)
+				download_and_verify \
+					"https://files.zimbra.com/downloads/10.1.0_GA/zcs-NETWORK-10.1.0_GA_4633.UBUNTU20_64.20240610085557.tgz" \
+					"https://files.zimbra.com/downloads/10.1.0_GA/zcs-NETWORK-10.1.0_GA_4633.UBUNTU20_64.20240610085557.tgz.sha256" "false"
+				;;
+			4)
+				download_and_verify \
+					"https://files.zimbra.com/downloads/10.1.0_GA/zcs-NETWORK-10.1.0_GA_4633.UBUNTU18_64.20240610085557.tgz" \
+					"https://files.zimbra.com/downloads/10.1.0_GA/zcs-NETWORK-10.1.0_GA_4633.UBUNTU18_64.20240610085557.tgz.sha256" "false"
+				;;
+			5)
 				download_and_verify \
 					"https://files.zimbra.com/downloads/10.1.0_GA/zcs-NETWORK-10.1.0_GA_4688.RHEL9_64.20240911074203.tgz" \
 					"https://files.zimbra.com/downloads/10.1.0_GA/zcs-NETWORK-10.1.0_GA_4688.RHEL9_64.20240911074203.tgz.sha256" "false"
-			fi
+				;;
+			6)
+				download_and_verify \
+					"https://files.zimbra.com/downloads/10.1.0_GA/zcs-NETWORK-10.1.0_GA_4633.RHEL8_64.20240610085557.tgz" \
+					"https://files.zimbra.com/downloads/10.1.0_GA/zcs-NETWORK-10.1.0_GA_4633.RHEL8_64.20240610085557.tgz.sha256" "false"
+				;;
+			7)
+				download_and_verify \
+					"https://files.zimbra.com/downloads/10.1.0_GA/zcs-NETWORK-10.1.0_GA_4633.RHEL7_64.20240610085557.tgz" \
+					"https://files.zimbra.com/downloads/10.1.0_GA/zcs-NETWORK-10.1.0_GA_4633.RHEL7_64.20240610085557.tgz.sha256" "false"
+				;;
+			esac
 			;;
 		2)
-			printf "\n%b[ZCS NE 10.0.0 GA]%b\n" "${CYAN}" "${NC}"
+			printf "\n%b[ZCS NE 10.0.0 GA (Daffodil)]%b\n" "${CYAN}" "${NC}"
 			printf "  1) Ubuntu 20.04 LTS (x86_64)\n"
 			printf "  2) Ubuntu 18.04 LTS (x86_64)\n"
-			printf "  3) RHEL 7 / CentOS 7 (x86_64)\n"
-			read -rp "$(tr_msg "Select Target OS: " "Pilih OS: ")" os_c
-			if [[ ${os_c} == "1" ]]; then
+			printf "  3) RHEL / Rocky / Alma / Oracle 8 (x86_64)\n"
+			printf "  4) RHEL 7 / CentOS 7 (x86_64) [DEPRECATED]\n"
+			read -rp "$(tr_msg "Select Target OS [1-4]: " "Pilih OS [1-4]: ")" os_c
+			case "${os_c}" in
+			1)
 				download_and_verify \
 					"https://files.zimbra.com/downloads/10.0.0_GA/zcs-NETWORK-10.0.0_GA_4518.UBUNTU20_64.20230301065514.tgz" \
-					"https://files.zimbra.com/downloads/10.0.0_GA/zcs-NETWORK-10.0.0_GA_4518.UBUNTU20_64.20230301065514.tgz.md5" "false"
-			elif [[ ${os_c} == "2" ]]; then
+					"https://files.zimbra.com/downloads/10.0.0_GA/zcs-NETWORK-10.0.0_GA_4518.UBUNTU20_64.20230301065514.tgz.sha256" "false"
+				;;
+			2)
 				download_and_verify \
 					"https://files.zimbra.com/downloads/10.0.0_GA/zcs-NETWORK-10.0.0_GA_4518.UBUNTU18_64.20230301065514.tgz" \
 					"https://files.zimbra.com/downloads/10.0.0_GA/zcs-NETWORK-10.0.0_GA_4518.UBUNTU18_64.20230301065514.tgz.sha256" "false"
-			elif [[ ${os_c} == "3" ]]; then
+				;;
+			3)
+				download_and_verify \
+					"https://files.zimbra.com/downloads/10.0.0_GA/zcs-NETWORK-10.0.0_GA_4518.RHEL8_64.20230301065514.tgz" \
+					"https://files.zimbra.com/downloads/10.0.0_GA/zcs-NETWORK-10.0.0_GA_4518.RHEL8_64.20230301065514.tgz.sha256" "false"
+				;;
+			4)
 				download_and_verify \
 					"https://files.zimbra.com/downloads/10.0.0_GA/zcs-NETWORK-10.0.0_GA_4518.RHEL7_64.20230301065514.tgz" \
-					"https://files.zimbra.com/downloads/10.0.0_GA/zcs-NETWORK-10.0.0_GA_4518.RHEL7_64.20230301065514.tgz.md5" "false"
-			fi
+					"https://files.zimbra.com/downloads/10.0.0_GA/zcs-NETWORK-10.0.0_GA_4518.RHEL7_64.20230301065514.tgz.sha256" "false"
+				;;
+			esac
 			;;
 		3)
-			printf "\n%b[ZCS NE 9.0.0 GA Kepler]%b\n" "${CYAN}" "${NC}"
-			printf "  1) Ubuntu 20.04 LTS (x86_64)\n"
-			printf "  2) Ubuntu 18.04 LTS (x86_64)\n"
-			printf "  3) RHEL 8 / Rocky 8 (x86_64)\n"
-			printf "  4) RHEL 7 / CentOS 7 (x86_64)\n"
-			read -rp "$(tr_msg "Select Target OS: " "Pilih OS: ")" os_c
-			if [[ ${os_c} == "1" ]]; then
+			printf "\n%b[ZCS NE 9.0.0 GA (Kepler)]%b\n" "${CYAN}" "${NC}"
+			printf "  1) Ubuntu 20.04 LTS (Build 4178, x86_64)\n"
+			printf "  2) Ubuntu 18.04 LTS (Build 3924, x86_64)\n"
+			printf "  3) Ubuntu 16.04 LTS (Build 3924, x86_64)\n"
+			printf "  4) Ubuntu 14.04 LTS (Build 3924, x86_64) [DEPRECATED]\n"
+			printf "  5) RHEL 8 / CentOS 8 / Oracle 8 (Build 3954, x86_64)\n"
+			printf "  6) Rocky Linux 8 (Build 4325, x86_64)\n"
+			printf "  7) RHEL 7 / CentOS 7 (Build 3924, x86_64) [DEPRECATED]\n"
+			printf "  8) RHEL 6 / CentOS 6 (Build 3924, x86_64)\n"
+			read -rp "$(tr_msg "Select Target OS [1-8]: " "Pilih OS [1-8]: ")" os_c
+			case "${os_c}" in
+			1)
 				download_and_verify \
-					"https://files.zimbra.com/downloads/9.0.0_GA/zcs-NETWORK-9.0.0_GA_3954.UBUNTU20_64.20200629025823.tgz" \
-					"https://files.zimbra.com/downloads/9.0.0_GA/zcs-NETWORK-9.0.0_GA_3954.UBUNTU20_64.20200629025823.tgz.sha256" "false"
-			elif [[ ${os_c} == "2" ]]; then
+					"https://files.zimbra.com/downloads/9.0.0_GA/zcs-NETWORK-9.0.0_GA_4178.UBUNTU20_64.20211112031526.tgz" \
+					"https://files.zimbra.com/downloads/9.0.0_GA/zcs-NETWORK-9.0.0_GA_4178.UBUNTU20_64.20211112031526.tgz.sha256" "false"
+				;;
+			2)
 				download_and_verify \
-					"https://files.zimbra.com/downloads/9.0.0_GA/zcs-NETWORK-9.0.0_GA_3924.UBUNTU18_64.20200408143213.tgz" \
-					"https://files.zimbra.com/downloads/9.0.0_GA/zcs-NETWORK-9.0.0_GA_3924.UBUNTU18_64.20200408143213.tgz.sha256" "false"
-			elif [[ ${os_c} == "3" ]]; then
+					"https://files.zimbra.com/downloads/9.0.0_GA/zcs-NETWORK-9.0.0_GA_3924.UBUNTU18_64.20200331010312.tgz" \
+					"https://files.zimbra.com/downloads/9.0.0_GA/zcs-NETWORK-9.0.0_GA_3924.UBUNTU18_64.20200331010312.tgz.sha256" "false"
+				;;
+			3)
 				download_and_verify \
-					"https://files.zimbra.com/downloads/9.0.0_GA/zcs-NETWORK-9.0.0_GA_3954.RHEL8_64.20200629025823.tgz" \
-					"https://files.zimbra.com/downloads/9.0.0_GA/zcs-NETWORK-9.0.0_GA_3954.RHEL8_64.20200629025823.tgz.sha256" "false"
-			elif [[ ${os_c} == "4" ]]; then
+					"https://files.zimbra.com/downloads/9.0.0_GA/zcs-NETWORK-9.0.0_GA_3924.UBUNTU16_64.20200331010312.tgz" \
+					"https://files.zimbra.com/downloads/9.0.0_GA/zcs-NETWORK-9.0.0_GA_3924.UBUNTU16_64.20200331010312.tgz.sha256" "false"
+				;;
+			4)
 				download_and_verify \
-					"https://files.zimbra.com/downloads/9.0.0_GA/zcs-NETWORK-9.0.0_GA_3924.RHEL7_64.20200408143213.tgz" \
-					"https://files.zimbra.com/downloads/9.0.0_GA/zcs-NETWORK-9.0.0_GA_3924.RHEL7_64.20200408143213.tgz.sha256" "false"
-			fi
+					"https://files.zimbra.com/downloads/9.0.0_GA/zcs-NETWORK-9.0.0_GA_3924.UBUNTU14_64.20200331010312.tgz" \
+					"https://files.zimbra.com/downloads/9.0.0_GA/zcs-NETWORK-9.0.0_GA_3924.UBUNTU14_64.20200331010312.tgz.sha256" "false"
+				;;
+			5)
+				download_and_verify \
+					"https://files.zimbra.com/downloads/9.0.0_GA/zcs-NETWORK-9.0.0_GA_3954.RHEL8_64.20200629045300.tgz" \
+					"https://files.zimbra.com/downloads/9.0.0_GA/zcs-NETWORK-9.0.0_GA_3954.RHEL8_64.20200629045300.tgz.sha256" "false"
+				;;
+			6)
+				download_and_verify \
+					"https://files.zimbra.com/downloads/9.0.0_GA/zcs-NETWORK-9.0.0_GA_4325.RHEL8_64.20220629074359.tgz" \
+					"https://files.zimbra.com/downloads/9.0.0_GA/zcs-NETWORK-9.0.0_GA_4325.RHEL8_64.20220629074359.tgz.sha256" "false"
+				;;
+			7)
+				download_and_verify \
+					"https://files.zimbra.com/downloads/9.0.0_GA/zcs-NETWORK-9.0.0_GA_3924.RHEL7_64.20200331010312.tgz" \
+					"https://files.zimbra.com/downloads/9.0.0_GA/zcs-NETWORK-9.0.0_GA_3924.RHEL7_64.20200331010312.tgz.sha256" "false"
+				;;
+			8)
+				download_and_verify \
+					"https://files.zimbra.com/downloads/9.0.0_GA/zcs-NETWORK-9.0.0_GA_3924.RHEL6_64.20200331010312.tgz" \
+					"https://files.zimbra.com/downloads/9.0.0_GA/zcs-NETWORK-9.0.0_GA_3924.RHEL6_64.20200331010312.tgz.sha256" "false"
+				;;
+			esac
 			;;
 		4)
 			printf "\n%b[ZCS NE 8.8.15 GA Joule]%b\n" "${CYAN}" "${NC}"
-			printf "  1) Ubuntu 20.04 LTS (Build 3953)\n"
+			printf "  1) Ubuntu 20.04 LTS (Build 4177)\n"
 			printf "  2) Ubuntu 18.04 LTS (Build 3869)\n"
-			printf "  3) RHEL 8 / Rocky 8 (Build 3953)\n"
-			printf "  4) RHEL 7 / CentOS 7 (Build 3869)\n"
-			read -rp "$(tr_msg "Select Target OS: " "Pilih OS: ")" os_c
-			if [[ ${os_c} == "1" ]]; then
+			printf "  3) Ubuntu 14.04 LTS (Build 3869)\n"
+			printf "  4) RHEL 8 / Rocky 8 (Build 3953)\n"
+			printf "  5) RHEL 7 / CentOS 7 (Build 3869)\n"
+			printf "  6) RHEL 6 / CentOS 6 (Build 3869)\n"
+			read -rp "$(tr_msg "Select Target OS [1-6]: " "Pilih OS [1-6]: ")" os_c
+			case "${os_c}" in
+			1)
 				download_and_verify \
-					"https://files.zimbra.com/downloads/8.8.15_GA/zcs-NETWORK-8.8.15_GA_3953.UBUNTU20_64.20200629025823.tgz" \
-					"https://files.zimbra.com/downloads/8.8.15_GA/zcs-NETWORK-8.8.15_GA_3953.UBUNTU20_64.20200629025823.tgz.sha256" "false"
-			elif [[ ${os_c} == "2" ]]; then
+					"https://files.zimbra.com/downloads/8.8.15_GA/zcs-NETWORK-8.8.15_GA_4177.UBUNTU20_64.20211112014220.tgz" \
+					"https://files.zimbra.com/downloads/8.8.15_GA/zcs-NETWORK-8.8.15_GA_4177.UBUNTU20_64.20211112014220.tgz.sha256" "false"
+				;;
+			2)
 				download_and_verify \
 					"https://files.zimbra.com/downloads/8.8.15_GA/zcs-NETWORK-8.8.15_GA_3869.UBUNTU18_64.20190918004220.tgz" \
 					"https://files.zimbra.com/downloads/8.8.15_GA/zcs-NETWORK-8.8.15_GA_3869.UBUNTU18_64.20190918004220.tgz.sha256" "false"
-			elif [[ ${os_c} == "3" ]]; then
+				;;
+			3)
+				download_and_verify \
+					"https://files.zimbra.com/downloads/8.8.15_GA/zcs-NETWORK-8.8.15_GA_3869.UBUNTU14_64.20190918004220.tgz" \
+					"https://files.zimbra.com/downloads/8.8.15_GA/zcs-NETWORK-8.8.15_GA_3869.UBUNTU14_64.20190918004220.tgz.sha256" "false"
+				;;
+			4)
 				download_and_verify \
 					"https://files.zimbra.com/downloads/8.8.15_GA/zcs-NETWORK-8.8.15_GA_3953.RHEL8_64.20200629025823.tgz" \
 					"https://files.zimbra.com/downloads/8.8.15_GA/zcs-NETWORK-8.8.15_GA_3953.RHEL8_64.20200629025823.tgz.sha256" "false"
-			elif [[ ${os_c} == "4" ]]; then
+				;;
+			5)
 				download_and_verify \
 					"https://files.zimbra.com/downloads/8.8.15_GA/zcs-NETWORK-8.8.15_GA_3869.RHEL7_64.20190918004220.tgz" \
 					"https://files.zimbra.com/downloads/8.8.15_GA/zcs-NETWORK-8.8.15_GA_3869.RHEL7_64.20190918004220.tgz.sha256" "false"
-			fi
+				;;
+			6)
+				download_and_verify \
+					"https://files.zimbra.com/downloads/8.8.15_GA/zcs-NETWORK-8.8.15_GA_3869.RHEL6_64.20190918004220.tgz" \
+					"https://files.zimbra.com/downloads/8.8.15_GA/zcs-NETWORK-8.8.15_GA_3869.RHEL6_64.20190918004220.tgz.sha256" "false"
+				;;
+			esac
 			;;
 		5)
 			printf "\n%b[ZCS NE 8.8.11 / 8.8.9 / 8.8.8 / 8.8.7 GA]%b\n" "${CYAN}" "${NC}"
@@ -598,15 +687,15 @@ menu_official_foss() {
 			elif [[ ${os_c} == "2" ]]; then
 				download_and_verify \
 					"https://files.zimbra.com/downloads/8.8.15_GA/zcs-8.8.15_GA_3869.UBUNTU18_64.20190918004220.tgz" \
-					"" "false"
+					"https://files.zimbra.com/downloads/8.8.15_GA/zcs-8.8.15_GA_3869.UBUNTU18_64.20190918004220.tgz.sha256" "false"
 			elif [[ ${os_c} == "3" ]]; then
 				download_and_verify \
 					"https://files.zimbra.com/downloads/8.8.15_GA/zcs-8.8.15_GA_3953.RHEL8_64.20200629025823.tgz" \
-					"" "false"
+					"https://files.zimbra.com/downloads/8.8.15_GA/zcs-8.8.15_GA_3953.RHEL8_64.20200629025823.tgz.sha256" "false"
 			elif [[ ${os_c} == "4" ]]; then
 				download_and_verify \
 					"https://files.zimbra.com/downloads/8.8.15_GA/zcs-8.8.15_GA_3869.RHEL7_64.20190918004220.tgz" \
-					"" "false"
+					"https://files.zimbra.com/downloads/8.8.15_GA/zcs-8.8.15_GA_3869.RHEL7_64.20190918004220.tgz.sha256" "false"
 			fi
 			;;
 		2)
@@ -676,7 +765,7 @@ menu_official_foss() {
 			elif [[ ${os_c} == "6" ]]; then
 				download_and_verify \
 					"https://files.zimbra.com/downloads/8.7.0_GA/zcs-8.7.0_GA_1659.RHEL7_64.20160628202714.tgz" \
-					"https://files.zimbra.com/downloads/8.7.0_GA/zcs-8.7.0_GA_1659.RHEL7_64.202714.tgz.sha256" "false"
+					"https://files.zimbra.com/downloads/8.7.0_GA/zcs-8.7.0_GA_1659.RHEL7_64.20160628202714.tgz.sha256" "false"
 			fi
 			;;
 		4)
@@ -764,70 +853,102 @@ menu_community_foss() {
 			printf "  1) Ubuntu 24.04 LTS\n"
 			printf "  2) Ubuntu 22.04 LTS\n"
 			printf "  3) Ubuntu 20.04 LTS\n"
-			printf "  4) RHEL 9 / Rocky 9 / Alma 9\n"
-			printf "  5) RHEL 8 / Rocky 8 / Alma 8\n"
-			read -rp "$(tr_msg "Select Target OS: " "Pilih OS: ")" os_c
-			if [[ ${os_c} == "1" ]]; then
+			printf "  4) Ubuntu 18.04 LTS\n"
+			printf "  5) RHEL 9 / Rocky 9 / Alma 9\n"
+			printf "  6) RHEL 8 / Rocky 8 / Alma 8\n"
+			read -rp "$(tr_msg "Select Target OS [1-6]: " "Pilih OS [1-6]: ")" os_c
+			case "${os_c}" in
+			1)
 				download_and_verify \
-					"https://github.com/maldua/zimbra-foss/releases/download/10.1.20.p1-ubuntu-24.04/zcs-10.1.20_GA_0326.UBUNTU24_64.20260821120929.tgz" \
-					"https://github.com/maldua/zimbra-foss/releases/download/10.1.20.p1-ubuntu-24.04/zcs-10.1.20_GA_0326.UBUNTU24_64.20260821120929.tgz.sha256" "false"
-			elif [[ ${os_c} == "2" ]]; then
+					"https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-24.04/10.1.20.p1/zcs-10.1.20_GA_4200001.UBUNTU24_64.20260820122254.tgz" \
+					"https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-24.04/10.1.20.p1/zcs-10.1.20_GA_4200001.UBUNTU24_64.20260820122254.tgz.sha256" "false"
+				;;
+			2)
 				download_and_verify \
-					"https://github.com/maldua/zimbra-foss/releases/download/10.1.20.p1-ubuntu-22.04/zcs-10.1.20_GA_0326.UBUNTU22_64.20260821115118.tgz" \
-					"https://github.com/maldua/zimbra-foss/releases/download/10.1.20.p1-ubuntu-22.04/zcs-10.1.20_GA_0326.UBUNTU22_64.20260821115118.tgz.sha256" "false"
-			elif [[ ${os_c} == "3" ]]; then
+					"https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-22.04/10.1.20.p1/zcs-10.1.20_GA_4200001.UBUNTU22_64.20260820122323.tgz" \
+					"https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-22.04/10.1.20.p1/zcs-10.1.20_GA_4200001.UBUNTU22_64.20260820122323.tgz.sha256" "false"
+				;;
+			3)
 				download_and_verify \
-					"https://github.com/maldua/zimbra-foss/releases/download/10.1.20.p1-ubuntu-20.04/zcs-10.1.20_GA_0326.UBUNTU20_64.20260821124614.tgz" \
-					"https://github.com/maldua/zimbra-foss/releases/download/10.1.20.p1-ubuntu-20.04/zcs-10.1.20_GA_0326.UBUNTU20_64.20260821124614.tgz.sha256" "false"
-			elif [[ ${os_c} == "4" ]]; then
+					"https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-20.04/10.1.20.p1/zcs-10.1.20_GA_4200001.UBUNTU20_64.20260820122403.tgz" \
+					"https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-20.04/10.1.20.p1/zcs-10.1.20_GA_4200001.UBUNTU20_64.20260820122403.tgz.sha256" "false"
+				;;
+			4)
 				download_and_verify \
-					"https://github.com/maldua/zimbra-foss/releases/download/10.1.20.p1-rhel-9/zcs-10.1.20_GA_0326.RHEL9_64.20260821135258.tgz" \
-					"https://github.com/maldua/zimbra-foss/releases/download/10.1.20.p1-rhel-9/zcs-10.1.20_GA_0326.RHEL9_64.20260821135258.tgz.sha256" "false"
-			elif [[ ${os_c} == "5" ]]; then
+					"https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-18.04/10.1.20.p1/zcs-10.1.20_GA_4200001.UBUNTU18_64.20260820122233.tgz" \
+					"https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-18.04/10.1.20.p1/zcs-10.1.20_GA_4200001.UBUNTU18_64.20260820122233.tgz.sha256" "false"
+				;;
+			5)
 				download_and_verify \
-					"https://github.com/maldua/zimbra-foss/releases/download/10.1.20.p1-rhel-8/zcs-10.1.20_GA_0326.RHEL8_64.20260821135029.tgz" \
-					"https://github.com/maldua/zimbra-foss/releases/download/10.1.20.p1-rhel-8/zcs-10.1.20_GA_0326.RHEL8_64.20260821135029.tgz.sha256" "false"
-			fi
+					"https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-9/10.1.20.p1/zcs-10.1.20_GA_4200001.RHEL9_64.20260820122258.tgz" \
+					"https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-9/10.1.20.p1/zcs-10.1.20_GA_4200001.RHEL9_64.20260820122258.tgz.sha256" "false"
+				;;
+			6)
+				download_and_verify \
+					"https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/10.1.20.p1/zcs-10.1.20_GA_4200001.RHEL8_64.20260820122218.tgz" \
+					"https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/10.1.20.p1/zcs-10.1.20_GA_4200001.RHEL8_64.20260820122218.tgz.sha256" "false"
+				;;
+			esac
 			;;
 		3)
 			printf "\n%b[ZCS FOSS 10.0.18.p1 Maldua Builds]%b\n" "${CYAN}" "${NC}"
-			printf "  1) Ubuntu 22.04 LTS\n"
-			printf "  2) Ubuntu 20.04 LTS\n"
+			printf "  1) Ubuntu 20.04 LTS\n"
+			printf "  2) Ubuntu 18.04 LTS\n"
 			printf "  3) RHEL 8 / Rocky 8\n"
-			read -rp "$(tr_msg "Select Target OS: " "Pilih OS: ")" os_c
-			if [[ ${os_c} == "1" ]]; then
+			printf "  4) RHEL 7 / CentOS 7\n"
+			read -rp "$(tr_msg "Select Target OS [1-4]: " "Pilih OS [1-4]: ")" os_c
+			case "${os_c}" in
+			1)
 				download_and_verify \
-					"https://github.com/maldua/zimbra-foss/releases/download/10.0.18.p1-ubuntu-22.04/zcs-10.0.18_GA_0326.UBUNTU22_64.20260821115118.tgz" \
-					"https://github.com/maldua/zimbra-foss/releases/download/10.0.18.p1-ubuntu-22.04/zcs-10.0.18_GA_0326.UBUNTU22_64.20260821115118.tgz.sha256" "false"
-			elif [[ ${os_c} == "2" ]]; then
+					"https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-20.04/10.0.18.p1/zcs-10.0.18_GA_4200001.UBUNTU20_64.20260116200354.tgz" \
+					"https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-20.04/10.0.18.p1/zcs-10.0.18_GA_4200001.UBUNTU20_64.20260116200354.tgz.sha256" "false"
+				;;
+			2)
 				download_and_verify \
-					"https://github.com/maldua/zimbra-foss/releases/download/10.0.18.p1-ubuntu-20.04/zcs-10.0.18_GA_0326.UBUNTU20_64.20260821124614.tgz" \
-					"https://github.com/maldua/zimbra-foss/releases/download/10.0.18.p1-ubuntu-20.04/zcs-10.0.18_GA_0326.UBUNTU20_64.20260821124614.tgz.sha256" "false"
-			elif [[ ${os_c} == "3" ]]; then
+					"https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-18.04/10.0.18.p1/zcs-10.0.18_GA_4200001.UBUNTU18_64.20260116200405.tgz" \
+					"https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-18.04/10.0.18.p1/zcs-10.0.18_GA_4200001.UBUNTU18_64.20260116200405.tgz.sha256" "false"
+				;;
+			3)
 				download_and_verify \
-					"https://github.com/maldua/zimbra-foss/releases/download/10.0.18.p1-rhel-8/zcs-10.0.18_GA_0326.RHEL8_64.20260821135029.tgz" \
-					"https://github.com/maldua/zimbra-foss/releases/download/10.0.18.p1-rhel-8/zcs-10.0.18_GA_0326.RHEL8_64.20260821135029.tgz.sha256" "false"
-			fi
+					"https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/10.0.18.p1/zcs-10.0.18_GA_4200001.RHEL8_64.20260116200332.tgz" \
+					"https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/10.0.18.p1/zcs-10.0.18_GA_4200001.RHEL8_64.20260116200332.tgz.sha256" "false"
+				;;
+			4)
+				download_and_verify \
+					"https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-7/10.0.18.p1/zcs-10.0.18_GA_4200001.RHEL7_64.20260123182809.tgz" \
+					"https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-7/10.0.18.p1/zcs-10.0.18_GA_4200001.RHEL7_64.20260123182809.tgz.sha256" "false"
+				;;
+			esac
 			;;
 		4)
 			printf "\n%b[ZCS FOSS 9.0.0.p46 Kepler Builds]%b\n" "${CYAN}" "${NC}"
 			printf "  1) Ubuntu 20.04 LTS\n"
-			printf "  2) RHEL 8 / Rocky 8\n"
-			printf "  3) RHEL 7 / CentOS 7\n"
-			read -rp "$(tr_msg "Select Target OS: " "Pilih OS: ")" os_c
-			if [[ ${os_c} == "1" ]]; then
+			printf "  2) Ubuntu 18.04 LTS\n"
+			printf "  3) RHEL 8 / Rocky 8\n"
+			printf "  4) RHEL 7 / CentOS 7\n"
+			read -rp "$(tr_msg "Select Target OS [1-4]: " "Pilih OS [1-4]: ")" os_c
+			case "${os_c}" in
+			1)
 				download_and_verify \
-					"https://github.com/maldua/zimbra-foss/releases/download/9.0.0.p46-ubuntu-20.04/zcs-9.0.0_GA_0326.UBUNTU20_64.20260821124614.tgz" \
-					"https://github.com/maldua/zimbra-foss/releases/download/9.0.0.p46-ubuntu-20.04/zcs-9.0.0_GA_0326.UBUNTU20_64.20260821124614.tgz.sha256" "false"
-			elif [[ ${os_c} == "2" ]]; then
+					"https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-20.04/9.0.0.p46/zcs-9.0.0_GA_4200046.UBUNTU20_64.20250725085925.tgz" \
+					"https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-20.04/9.0.0.p46/zcs-9.0.0_GA_4200046.UBUNTU20_64.20250725085925.tgz.sha256" "false"
+				;;
+			2)
 				download_and_verify \
-					"https://github.com/maldua/zimbra-foss/releases/download/9.0.0.p46-rhel-8/zcs-9.0.0_GA_0326.RHEL8_64.20260821135029.tgz" \
-					"https://github.com/maldua/zimbra-foss/releases/download/9.0.0.p46-rhel-8/zcs-9.0.0_GA_0326.RHEL8_64.20260821135029.tgz.sha256" "false"
-			elif [[ ${os_c} == "3" ]]; then
+					"https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-18.04/9.0.0.p46/zcs-9.0.0_GA_4200046.UBUNTU18_64.20250725085947.tgz" \
+					"https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-18.04/9.0.0.p46/zcs-9.0.0_GA_4200046.UBUNTU18_64.20250725085947.tgz.sha256" "false"
+				;;
+			3)
 				download_and_verify \
-					"https://github.com/maldua/zimbra-foss/releases/download/9.0.0.p46-rhel-7/zcs-9.0.0_GA_0326.RHEL7_64.20260821135029.tgz" \
-					"https://github.com/maldua/zimbra-foss/releases/download/9.0.0.p46-rhel-7/zcs-9.0.0_GA_0326.RHEL7_64.20260821135029.tgz.sha256" "false"
-			fi
+					"https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/9.0.0.p46/zcs-9.0.0_GA_4200046.RHEL8_64.20250725085939.tgz" \
+					"https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/9.0.0.p46/zcs-9.0.0_GA_4200046.RHEL8_64.20250725085939.tgz.sha256" "false"
+				;;
+			4)
+				download_and_verify \
+					"https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-7/9.0.0.p46/zcs-9.0.0_GA_4200046.RHEL7_64.20250725085928.tgz" \
+					"https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-7/9.0.0.p46/zcs-9.0.0_GA_4200046.RHEL7_64.20250725085928.tgz.sha256" "false"
+				;;
+			esac
 			;;
 		5)
 			printf "\n%b[ZCS FOSS 8.8.15.p47 Joule Builds]%b\n" "${CYAN}" "${NC}"
@@ -835,24 +956,29 @@ menu_community_foss() {
 			printf "  2) Ubuntu 18.04 LTS\n"
 			printf "  3) RHEL 8 / Rocky 8\n"
 			printf "  4) RHEL 7 / CentOS 7\n"
-			read -rp "$(tr_msg "Select Target OS: " "Pilih OS: ")" os_c
-			if [[ ${os_c} == "1" ]]; then
+			read -rp "$(tr_msg "Select Target OS [1-4]: " "Pilih OS [1-4]: ")" os_c
+			case "${os_c}" in
+			1)
 				download_and_verify \
-					"https://github.com/maldua/zimbra-foss/releases/download/8.8.15.p47-ubuntu-20.04/zcs-8.8.15_GA_0326.UBUNTU20_64.20240821124614.tgz" \
-					"https://github.com/maldua/zimbra-foss/releases/download/8.8.15.p47-ubuntu-20.04/zcs-8.8.15_GA_0326.UBUNTU20_64.20240821124614.tgz.sha256" "false"
-			elif [[ ${os_c} == "2" ]]; then
+					"https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-20.04/8.8.15.p47/zcs-8.8.15_GA_4200047.UBUNTU20_64.20241224171756.tgz" \
+					"https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-20.04/8.8.15.p47/zcs-8.8.15_GA_4200047.UBUNTU20_64.20241224171756.tgz.sha256" "false"
+				;;
+			2)
 				download_and_verify \
-					"https://github.com/maldua/zimbra-foss/releases/download/8.8.15.p47-ubuntu-18.04/zcs-8.8.15_GA_0326.UBUNTU18_64.20240821124614.tgz" \
-					"https://github.com/maldua/zimbra-foss/releases/download/8.8.15.p47-ubuntu-18.04/zcs-8.8.15_GA_0326.UBUNTU18_64.20240821124614.tgz.sha256" "false"
-			elif [[ ${os_c} == "3" ]]; then
+					"https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-18.04/8.8.15.p47/zcs-8.8.15_GA_4200047.UBUNTU18_64.20241224171803.tgz" \
+					"https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-ubuntu-18.04/8.8.15.p47/zcs-8.8.15_GA_4200047.UBUNTU18_64.20241224171803.tgz.sha256" "false"
+				;;
+			3)
 				download_and_verify \
-					"https://github.com/maldua/zimbra-foss/releases/download/8.8.15.p47-rhel-8/zcs-8.8.15_GA_0326.RHEL8_64.20240821135029.tgz" \
-					"https://github.com/maldua/zimbra-foss/releases/download/8.8.15.p47-rhel-8/zcs-8.8.15_GA_0326.RHEL8_64.20240821135029.tgz.sha256" "false"
-			elif [[ ${os_c} == "4" ]]; then
+					"https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/8.8.15.p47/zcs-8.8.15_GA_4200047.RHEL8_64.20241224171753.tgz" \
+					"https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-8/8.8.15.p47/zcs-8.8.15_GA_4200047.RHEL8_64.20241224171753.tgz.sha256" "false"
+				;;
+			4)
 				download_and_verify \
-					"https://github.com/maldua/zimbra-foss/releases/download/8.8.15.p47-rhel-7/zcs-8.8.15_GA_0326.RHEL7_64.20240821135029.tgz" \
-					"https://github.com/maldua/zimbra-foss/releases/download/8.8.15.p47-rhel-7/zcs-8.8.15_GA_0326.RHEL7_64.20240821135029.tgz.sha256" "false"
-			fi
+					"https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-7/8.8.15.p47/zcs-8.8.15_GA_4200047.RHEL7_64.20241224171847.tgz" \
+					"https://github.com/maldua/zimbra-foss/releases/download/zimbra-foss-build-rhel-7/8.8.15.p47/zcs-8.8.15_GA_4200047.RHEL7_64.20241224171847.tgz.sha256" "false"
+				;;
+			esac
 			;;
 		0)
 			return

@@ -6,9 +6,9 @@
 
 **Enterprise Binary Downloader, Checksum Verifier, Interactive CLI & Automated Installer (ZCS 4.5.x – 10.1.x)**<br>
 **Maintainer:** Harry Dertin Sutisna Alsyundawy (`alsyundawy@gmail.com`)<br>
-**Current Version:** `v2.6.2`<br>
+**Current Version:** `v2.6.3`<br>
 **License:** MIT License<br>
-**Last Updated:** 2026-08-28
+**Last Updated:** 2026-08-30
 
 ---
 
@@ -42,7 +42,7 @@ Skrip `zimbra-link-installer.sh` dirancang dengan standar enterprise yang menera
    - Melakukan komparasi hash secara **case-insensitive** (`${expected_hash,,} == ${actual_hash,,}`) guna menghindari kegagalan verifikasi akibat perbedaan kapitalisasi karakter heksadesimal antar penyedia mirror.
 
 6. **WAF & Community CDN Referer Bypass:**
-   - Menyertakan header HTTP `Referer: https://techfiles.online/` dan User-Agent enterprise `Zimbra-Link-Installer/2.6.2` guna mencegah pemblokiran Cloudflare WAF pada mirror biner komunitas (Ian Walker Builds).
+   - Menyertakan header HTTP `Referer: https://techfiles.online/` dan User-Agent enterprise `Zimbra-Link-Installer/2.6.3` guna mencegah pemblokiran Cloudflare WAF pada mirror biner komunitas (Ian Walker Builds).
 
 7. **Directory State Preservation:**
    - Menyimpan variabel `$original_pwd` sebelum berpindah ke working directory `${WORK_DIR}`, dan mengembalikannya ke posisi awal saat skrip selesai untuk menjaga konsistensi state shell pemanggil.
@@ -127,10 +127,11 @@ Aplikasi web standalone `index.html` dibangun dengan teknologi web modern tanpa 
 
 ---
 
-### 7. Matriks Evolusi & Riwayat Versi (v2.0.0 – v2.6.2)
+### 7. Matriks Evolusi & Riwayat Versi (v2.0.0 – v2.6.3)
 
 | Versi | Tanggal Rilis | Fokus Perubahan Utama |
 | :---: | :---: | :--- |
+| **`v2.6.3`** | 2026-08-30 | Deep Research & Enterprise Knowledge Expansion: Validasi seluruh 21 varian biner dan checksum link resmi Zimbra NE (10.1, 10.0, 9.0, 8.8.15) via `files.zimbra.com`, implementasi menyeluruh sistem dual bahasa (ID/EN) pada `index.html` dengan CSS visibility engine + JS dictionary, penambahan arsitektur DNS lokal Unbound/BIND9/dnsdist/RBL, Hot Backup REST streaming suite (`zmbackup`), pengerasan firewall UFW/iptables/Fail2Ban, serta panduan migrasi lintas-OS (CentOS ke Ubuntu/Rocky via Z2C/Z2Z). |
 | **`v2.6.2`** | 2026-08-28 | Implementasi penuh arsitektur dwibahasa (Bahasa Indonesia & English) lintas platform: mesin i18n interaktif pada CLI (`zimbra-link-installer.sh` dengan flag `--lang=en`/`--lang=id` dan runtime switch), tombol pengalih bahasa pada navbar web portal (`index.html`), navigasi dwibahasa pada `README.md` dan `SECURITY.md`. |
 | **`v2.6.1`** | 2026-08-28 | Sinkronisasi Deep Research rilis biner & CVE terbaru (2023–2026): penambahan CVE-2025-48700 (CISA KEV), CVE-2024-45516, CVE-2023-48432, CVE-2023-34193, CVE-2023-29382 ke Master Vulnerability Matrix (total 37+ CVE), peremajaan kebijakan `SECURITY.md` enterprise, dan verifikasi telemetri 1,215 link aktif secara menyeluruh. |
 | **`v2.6.0`** | 2026-08-27 | Enterprise Security Hardening (`set -Eeuo pipefail`, cleanup traps, privilege abstraction, regex checksum sanitization, FQDN audit), standalone web portal (`index.html`) responsif (VGA s.d. 2K) dengan diagram Mermaid & WCAG AA accessibility, verifikasi NVD CVE terkonfirmasi resmi, dan micro-typography formatting. |

@@ -46,7 +46,7 @@
           "@id": "https://alsyundawy.github.io/Zimbra-Link-Installer/#website",
           "url": "https://alsyundawy.github.io/Zimbra-Link-Installer/",
           "name": "Zimbra Link Installer",
-          "description": "Enterprise Direct Binary Downloads, Official & Unofficial Community Builds, and CVE Security Matrix for Zimbra Collaboration Suite.",
+          "description": "Enterprise Direct Binary Downloads, Official &amp; Unofficial Community Builds, and CVE Security Matrix for Zimbra Collaboration Suite.",
           "inLanguage": "id-ID",
           "publisher": {
             "@type": "Person",
@@ -76,7 +76,7 @@
         {
           "@type": "TechArticle",
           "@id": "https://alsyundawy.github.io/Zimbra-Link-Installer/#article",
-          "headline": "Zimbra Link Installer — Binary Archive & CVE Matrix",
+          "headline": "Zimbra Link Installer — Binary Archive &amp; CVE Matrix",
           "description": "Comprehensive enterprise repository, binary archive, cryptographic checksum database, and CVE security advisory matrix for Zimbra Collaboration Suite (ZCS 4.5.x – 10.1.x).",
           "inLanguage": "id-ID",
           "mainEntityOfPage": "https://alsyundawy.github.io/Zimbra-Link-Installer/",
@@ -92,7 +92,7 @@
     }
     </script>
 
-    <!-- Google Fonts & FontAwesome -->
+    <!-- Google Fonts &amp; FontAwesome -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
     <link
@@ -103,6 +103,14 @@
     <!-- Prism.js Syntax Highlighting -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" integrity="sha512-vswe+cgvic/XBoF1OcM/TeJ2FW0OofqAVdCZiEYkd6dwGXthvkSFWOoGGJgS2CW70VK5dQM5Oh+7ne47s74VTg==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <style>
+      /* Multi-Language Visibility Engine (ID / EN) */
+      html[lang="id"] .lang-en {
+        display: none !important;
+      }
+      html[lang="en"] .lang-id {
+        display: none !important;
+      }
+
       :root {
         --bg-body: #0a0f1d;
         --bg-card: #111827;
@@ -446,7 +454,7 @@
         min-width: 0;
       }
 
-      /* Typography & Headings */
+      /* Typography &amp; Headings */
       h1,
       h2,
       h3,
@@ -684,7 +692,7 @@
         border: 1px solid #334155;
       }
 
-      /* Tables & Micro-Typography */
+      /* Tables &amp; Micro-Typography */
       .table-container {
         margin: 1.5rem 0;
         background: var(--bg-card);
@@ -1345,9 +1353,29 @@
             >
           </li>
           <li class="sidebar-item">
+            <a href="#enterprise-dns-architecture" class="sidebar-link"
+              ><i class="fa-solid fa-network-wired"></i> DNS &amp; Unbound</a
+            >
+          </li>
+          <li class="sidebar-item">
+            <a href="#enterprise-hot-backup-and-disaster-recovery" class="sidebar-link"
+              ><i class="fa-solid fa-hard-drive"></i> Hot Backup (zmbackup)</a
+            >
+          </li>
+          <li class="sidebar-item">
+            <a href="#firewall-network-and-host-hardening" class="sidebar-link"
+              ><i class="fa-solid fa-shield-halved"></i> Firewall &amp; UFW</a
+            >
+          </li>
+          <li class="sidebar-item">
             <a href="#operational-best-practices-rfc-2119" class="sidebar-link"
               ><i class="fa-solid fa-book-bookmark"></i> RFC 2119 Best
               Practices</a
+            >
+          </li>
+          <li class="sidebar-item">
+            <a href="#strategic-migration--upgrade-methodology" class="sidebar-link"
+              ><i class="fa-solid fa-arrow-right-arrow-left"></i> Migration &amp; Z2C</a
             >
           </li>
           <li class="sidebar-item">
@@ -1794,62 +1822,75 @@
         </ul>
         <hr class="divider">
         <h2 id="overview" class="heading-anchor">
-          <a href="#overview" class="anchor-link">#</a> Overview
+          <a href="#overview" class="anchor-link">#</a> <span class="lang-id">Ringkasan Eksekutif &amp; Arsitektur</span><span class="lang-en">Executive Summary &amp; Architecture</span>
         </h2>
-        <p class="doc-para">
-          <strong>Zimbra Link Installer</strong> adalah repositori referensi
-          arsitektural enterprise, indeks arsip biner lengkap, dan utilitas
-          instalasi otomatis untuk
-          <strong>Zimbra Collaboration Suite (ZCS)</strong> dari rilis historis
-          <strong>4.5.x hingga rilis aktif 10.1.x</strong>.
-        </p>
-        <p class="doc-para">Repositori ini menyatukan:</p>
-        <ol class="doc-list">
-          <li>
-            <strong
-              >Interactive Bash CLI Installer (<code
-                >zimbra-link-installer.sh</code
-              >
-              v2.6.2):</strong
-            >
-            Utilitas interaktif aman bilingual (English &amp; Bahasa Indonesia) dengan _pre-flight system audit_ (RAM,
-            storage, FQDN DNS, POSIX pax), penanganan sinyal _atomic cleanup
-            trap_, _privilege elevation helper_ (<code>run_privileged</code>),
-            dan verifikasi integritas kriptografi SHA256/MD5 otomatis.
-          </li>
-          <li>
-            <strong>Comprehensive Official &amp; Unofficial Archive:</strong>
-            Mengindeks seluruh tautan unduhan langsung biner resmi (_Network
-            Edition, Open Source Edition, Cumulative Security Patches_) dari
-            <code>files.zimbra.com</code> serta seluruh kompilasi biner
-            komunitas independen (_FOSS Edition 2018–2026_).
-          </li>
-          <li>
-            <strong>Cryptographic Checksums:</strong> Nilai hash MD5 dan SHA256
-            untuk memverifikasi integritas setiap installer secara
-            case-insensitive.
-          </li>
-          <li>
-            <strong>Compilation Masterclass:</strong> Panduan lengkap kompilasi
-            mandiri kode sumber ZCS (8.8, 9.0, 10.0, 10.1) pada Ubuntu (20.04,
-            22.04, 24.04) dan RHEL/Rocky/Alma/Oracle (8 &amp; 9).
-          </li>
-          <li>
-            <strong>Security Vulnerability Dossier:</strong> Analisis 32+ CVE
-            (2016–2026) dengan
-            <strong
-              >rincian versi terdampak secara spesifik dan terverifikasi resmi
-              pada Zimbra Security Advisories &amp; NIST NVD</strong
-            >, taksonomi eksploitasi, dan panduan mitigasi Zero-Day.
-          </li>
-        </ol>
+        <div class="lang-id">
+          <p class="doc-para">
+            <strong>Zimbra Link Installer</strong> adalah repositori referensi
+            arsitektural enterprise, indeks arsip biner lengkap, dan utilitas
+            instalasi otomatis untuk
+            <strong>Zimbra Collaboration Suite (ZCS)</strong> dari rilis historis
+            <strong>4.5.x hingga rilis aktif 10.1.x</strong>.
+          </p>
+          <p class="doc-para">Repositori ini menyatukan:</p>
+          <ol class="doc-list">
+            <li>
+              <strong>Interactive Bash CLI Installer (<code>zimbra-link-installer.sh</code> v2.6.3):</strong>
+              Utilitas interaktif aman bilingual (English &amp; Bahasa Indonesia) dengan <em>pre-flight system audit</em> (RAM,
+              storage, FQDN DNS, POSIX pax), penanganan sinyal <em>atomic cleanup trap</em>, <em>privilege elevation helper</em> (<code>run_privileged</code>),
+              dan verifikasi integritas kriptografi SHA256/MD5 otomatis.
+            </li>
+            <li>
+              <strong>Comprehensive Official &amp; Unofficial Archive:</strong>
+              Mengindeks seluruh tautan unduhan langsung biner resmi (<em>Network Edition, Open Source Edition, Cumulative Security Patches</em>) dari
+              <code>files.zimbra.com</code> serta seluruh kompilasi biner komunitas independen (<em>FOSS Edition 2018–2026</em>).
+            </li>
+            <li>
+              <strong>Cryptographic Checksums:</strong> Nilai hash MD5 dan SHA256 untuk memverifikasi integritas setiap installer secara case-insensitive.
+            </li>
+            <li>
+              <strong>Compilation Masterclass:</strong> Panduan lengkap kompilasi mandiri kode sumber ZCS (8.8, 9.0, 10.0, 10.1) pada Ubuntu (20.04, 22.04, 24.04) dan RHEL/Rocky/Alma/Oracle (8 &amp; 9).
+            </li>
+            <li>
+              <strong>Security Vulnerability Dossier:</strong> Analisis 32+ CVE (2016–2026) dengan <strong>rincian versi terdampak secara spesifik dan terverifikasi resmi pada Zimbra Security Advisories &amp; NIST NVD</strong>, taksonomi eksploitasi, dan panduan mitigasi Zero-Day.
+            </li>
+          </ol>
+        </div>
+        <div class="lang-en">
+          <p class="doc-para">
+            <strong>Zimbra Link Installer</strong> is an enterprise architectural reference repository, comprehensive binary archive index, and automated installation utility for <strong>Zimbra Collaboration Suite (ZCS)</strong> spanning historical releases from <strong>4.5.x up to active 10.1.x</strong>.
+          </p>
+          <p class="doc-para">This repository unifies:</p>
+          <ol class="doc-list">
+            <li>
+              <strong>Interactive Bash CLI Installer (<code>zimbra-link-installer.sh</code> v2.6.3):</strong>
+              A secure, bilingual (English &amp; Bahasa Indonesia) interactive utility with pre-flight system audits (RAM, storage, FQDN DNS, POSIX pax), atomic cleanup trap signal handling, privilege elevation helper (<code>run_privileged</code>), and automatic SHA256/MD5 cryptographic integrity verification.
+            </li>
+            <li>
+              <strong>Comprehensive Official &amp; Unofficial Archive:</strong>
+              Indexes all official direct binary download links (<em>Network Edition, Open Source Edition, Cumulative Security Patches</em>) from <code>files.zimbra.com</code> as well as independent community binary builds (<em>FOSS Edition 2018–2026</em>).
+            </li>
+            <li>
+              <strong>Cryptographic Checksums:</strong> Complete MD5 and SHA256 hash values to verify the authenticity and cryptographic integrity of each installer.
+            </li>
+            <li>
+              <strong>Compilation Masterclass:</strong> Comprehensive guide for independently compiling ZCS source code (8.8, 9.0, 10.0, 10.1) on Ubuntu (20.04, 22.04, 24.04) and RHEL/Rocky/Alma/Oracle (8 &amp; 9).
+            </li>
+            <li>
+              <strong>Security Vulnerability Dossier:</strong> In-depth analysis of 32+ CVEs (2016–2026) with official affected version matrices verified against Zimbra Security Advisories &amp; NIST NVD, exploit taxonomy, and zero-day emergency response protocols.
+            </li>
+          </ol>
+        </div>
         <hr class="divider">
         <h2 id="original-links--references" class="heading-anchor">
           <a href="#original-links--references" class="anchor-link">#</a>
           Original Links &amp; References
         </h2>
-        <p class="doc-para">
+        <p class="doc-para lang-id">
           Tautan resmi portal Zimbra Synacor, dokumentasi wiki, repository build system, dan rujukan biner komunitas (Unofficial FOSS / OSE):
+        </p>
+        <p class="doc-para lang-en">
+          Official Zimbra Synacor portals, wiki documentation, build system repositories, and community binary references (Unofficial FOSS / OSE):
         </p>
 
         <h3 id="portal-resmi--dokumentasi-zimbra-synacor" class="heading-anchor">
@@ -2085,9 +2126,12 @@ sudo ./install.sh</code></pre>
           >
           Automated CLI Installer (<code>zimbra-link-installer.sh</code>)
         </h2>
-        <p class="doc-para">
-          Skrip <code>zimbra-link-installer.sh</code> (v2.6.2) menyederhanakan
+        <p class="doc-para lang-id">
+          Skrip <code>zimbra-link-installer.sh</code> (v2.6.3) menyederhanakan
           siklus pengunduhan dan instalasi ZCS di lingkungan Linux enterprise dengan dukungan penuh dwibahasa (English &amp; Bahasa Indonesia):
+        </p>
+        <p class="doc-para lang-en">
+          The <code>zimbra-link-installer.sh</code> script (v2.6.3) streamlines the download, integrity verification, and installation lifecycle of ZCS in enterprise Linux environments with full bilingual support (English &amp; Bahasa Indonesia):
         </p>
         <div class="code-card">
           <div class="code-header">
@@ -2099,7 +2143,7 @@ sudo ./install.sh</code></pre>
           </div>
           <pre><code class="language-text">====================================================================
                Z I M B R A   L I N K   I N S T A L L E R
-          Enterprise Binary Downloader &amp; Automated Suite (v2.6.2)
+          Enterprise Binary Downloader &amp; Automated Suite (v2.6.3)
 ====================================================================
   Maintained by Harry Dertin Sutisna Alsyundawy (alsyundawy@gmail.com)
 ====================================================================
@@ -2118,75 +2162,81 @@ SELECT ZIMBRA BINARY CATEGORY:
 ====================================================================</code></pre>
         </div>
         <h3 id="fitur-utama-cli" class="heading-anchor">
-          <a href="#fitur-utama-cli" class="anchor-link">#</a> Fitur Utama CLI
+          <a href="#fitur-utama-cli" class="anchor-link">#</a> <span class="lang-id">Fitur Utama CLI</span><span class="lang-en">CLI Key Features</span>
         </h3>
-        <ul class="doc-list">
-          <li>
-            <strong>Defensive Shell Architecture:</strong> Dilengkapi
-            <code>set -Eeuo pipefail</code>, `IFS=$'
-          </li>
-        </ul>
-        <p class="doc-para">
-          '<code>, dan </code>umask 022` untuk perlindungan dari race-condition
-          dan word splitting.
-        </p>
-        <ul class="doc-list">
-          <li>
-            <strong>Deteksi Otomatis Sistem:</strong> Mengidentifikasi
-            distribusi (Ubuntu/Debian/RHEL/Rocky/Alma/Oracle Linux), arsitektur
-            kernel, kapasitas RAM, dan storage <code>/opt/zimbra</code>.
-          </li>
-          <li>
-            <strong>Pre-Flight FQDN &amp; Pax Audit:</strong> Memeriksa kesiapan
-            FQDN DNS resolver (<code>hostname -f</code>) dan memastikan utilitas
-            POSIX <code>pax</code> telah aktif guna menangkal CVE-2022-41352.
-          </li>
-          <li>
-            <strong>Anti-Hotlink Header Handling:</strong> Menginjeksi header
-            <code>Referer</code> secara otomatis saat mengunduh dari CDN
-            komunitas TechFiles.
-          </li>
-          <li>
-            <strong>Integritas Kriptografi Otomatis:</strong> Mengunduh hash
-            <code>.sha256</code> atau <code>.md5</code> dan memvalidasi file
-            arsip secara case-insensitive sebelum diekstrak.
-          </li>
-          <li>
-            <strong>Atomic Cleanup:</strong> Menangkap sinyal <code>EXIT</code>,
-            <code>INT</code>, <code>TERM</code>, <code>HUP</code> untuk
-            pembersihan aman direktori temporer.
-          </li>
-        </ul>
+        <div class="lang-id">
+          <ul class="doc-list">
+            <li>
+              <strong>Defensive Shell Architecture:</strong> Dilengkapi <code>set -Eeuo pipefail</code>, <code>IFS=$'\n\t'</code>, dan <code>umask 022</code> untuk perlindungan maksimal dari race-condition dan word splitting.
+            </li>
+            <li>
+              <strong>Deteksi Otomatis Sistem:</strong> Mengidentifikasi distribusi (Ubuntu/Debian/RHEL/Rocky/Alma/Oracle Linux), arsitektur kernel (x86_64), kapasitas RAM, dan storage <code>/opt/zimbra</code>.
+            </li>
+            <li>
+              <strong>Pre-Flight FQDN &amp; Pax Audit:</strong> Memeriksa kesiapan FQDN DNS resolver (<code>hostname -f</code>) dan memastikan utilitas POSIX <code>pax</code> aktif guna menangkal CVE-2022-41352.
+            </li>
+            <li>
+              <strong>Anti-Hotlink Header Handling:</strong> Menginjeksi header <code>Referer</code> secara otomatis saat mengunduh dari CDN komunitas TechFiles.
+            </li>
+            <li>
+              <strong>Integritas Kriptografi Otomatis:</strong> Mengunduh hash <code>.sha256</code> atau <code>.md5</code> dan memvalidasi integritas file arsip secara case-insensitive sebelum diekstrak.
+            </li>
+            <li>
+              <strong>Atomic Cleanup:</strong> Menangkap sinyal <code>EXIT</code>, <code>INT</code>, <code>TERM</code>, <code>HUP</code> untuk pembersihan aman direktori temporer.
+            </li>
+          </ul>
+        </div>
+        <div class="lang-en">
+          <ul class="doc-list">
+            <li>
+              <strong>Defensive Shell Architecture:</strong> Engineered with <code>set -Eeuo pipefail</code>, <code>IFS=$'\n\t'</code>, and <code>umask 022</code> for robust protection against race conditions and word splitting.
+            </li>
+            <li>
+              <strong>Automated OS &amp; Hardware Detection:</strong> Auto-identifies distribution (Ubuntu/Debian/RHEL/Rocky/Alma/Oracle Linux), kernel architecture (x86_64), RAM capacity, and <code>/opt/zimbra</code> storage space.
+            </li>
+            <li>
+              <strong>Pre-Flight FQDN &amp; Pax Audit:</strong> Validates FQDN DNS resolution (<code>hostname -f</code>) and verifies POSIX <code>pax</code> utility availability to mitigate CVE-2022-41352.
+            </li>
+            <li>
+              <strong>Anti-Hotlink Header Handling:</strong> Automatically injects required <code>Referer</code> headers when fetching from TechFiles community CDN mirrors.
+            </li>
+            <li>
+              <strong>Automated Cryptographic Integrity:</strong> Downloads matching <code>.sha256</code> or <code>.md5</code> checksums and validates archive integrity case-insensitively before extraction.
+            </li>
+            <li>
+              <strong>Atomic Cleanup Trap:</strong> Captures <code>EXIT</code>, <code>INT</code>, <code>TERM</code>, <code>HUP</code> signals to ensure deterministic removal of temporary working files.
+            </li>
+          </ul>
+        </div>
         <hr class="divider">
         <h2 id="dependencies" class="heading-anchor">
-          <a href="#dependencies" class="anchor-link">#</a> Dependencies
+          <a href="#dependencies" class="anchor-link">#</a> <span class="lang-id">Dependensi &amp; Persyaratan Sistem</span><span class="lang-en">System Dependencies &amp; Prerequisites</span>
         </h2>
-        <p class="doc-para">
-          Sebelum instalasi atau kompilasi ZCS, pastikan dependensi sistem
-          berikut telah terpenuhi:
+        <p class="doc-para lang-id">
+          Sebelum instalasi atau kompilasi ZCS, pastikan dependensi sistem berikut telah terpenuhi:
+        </p>
+        <p class="doc-para lang-en">
+          Ensure the following system prerequisites and dependencies are satisfied prior to ZCS installation or compilation:
         </p>
         <h3 id="sec-1-kebutuhan-runtime-minimum" class="heading-anchor">
-          <a href="#sec-1-kebutuhan-runtime-minimum" class="anchor-link">#</a> 1.
-          Kebutuhan Runtime Minimum
+          <a href="#sec-1-kebutuhan-runtime-minimum" class="anchor-link">#</a> <span class="lang-id">1. Kebutuhan Runtime Minimum</span><span class="lang-en">1. Minimum Runtime Requirements</span>
         </h3>
-        <ul class="doc-list">
-          <li>
-            <strong>Arsitektur:</strong> <code>x86_64</code> (64-bit Linux).
-          </li>
-          <li>
-            <strong>Memori RAM:</strong> Minimal 8 GB RAM (Direkomendasikan
-            16–32 GB untuk server produksi aktif).
-          </li>
-          <li>
-            <strong>Disk Space:</strong> Minimal 50 GB ruang kosong pada
-            direktori <code>/opt/zimbra</code>.
-          </li>
-          <li>
-            <strong>Utilitas Wajib:</strong> <code>pax</code>,
-            <code>net-tools</code>, <code>sysstat</code>, <code>libaio1</code>,
-            <code>perl</code>, <code>cron</code>.
-          </li>
-        </ul>
+        <div class="lang-id">
+          <ul class="doc-list">
+            <li><strong>Arsitektur:</strong> <code>x86_64</code> (64-bit Linux).</li>
+            <li><strong>Memori RAM:</strong> Minimal 8 GB RAM (Direkomendasikan 16–32 GB untuk server produksi aktif).</li>
+            <li><strong>Disk Space:</strong> Minimal 50 GB ruang kosong pada direktori <code>/opt/zimbra</code>.</li>
+            <li><strong>Utilitas Wajib:</strong> <code>pax</code>, <code>net-tools</code>, <code>sysstat</code>, <code>libaio1</code>, <code>perl</code>, <code>cron</code>.</li>
+          </ul>
+        </div>
+        <div class="lang-en">
+          <ul class="doc-list">
+            <li><strong>Architecture:</strong> <code>x86_64</code> (64-bit Linux).</li>
+            <li><strong>Memory (RAM):</strong> Minimum 8 GB RAM (16–32 GB recommended for active production deployments).</li>
+            <li><strong>Storage (Disk Space):</strong> Minimum 50 GB free space dedicated to <code>/opt/zimbra</code>.</li>
+            <li><strong>Mandatory Utilities:</strong> <code>pax</code>, <code>net-tools</code>, <code>sysstat</code>, <code>libaio1</code>, <code>perl</code>, <code>cron</code>.</li>
+          </ul>
+        </div>
         <h3
           id="sec-2-kebutuhan-toolchain-kompilasi-build-environment"
           class="heading-anchor"
@@ -2196,61 +2246,63 @@ SELECT ZIMBRA BINARY CATEGORY:
             class="anchor-link"
             >#</a
           >
-          2. Kebutuhan Toolchain Kompilasi (Build Environment)
+          <span class="lang-id">2. Kebutuhan Toolchain Kompilasi (Build Environment)</span><span class="lang-en">2. Compilation Toolchain Requirements (Build Environment)</span>
         </h3>
-        <ul class="doc-list">
-          <li>
-            <strong>Java Development Kit:</strong> OpenJDK 11 / OpenJDK 17
-            (<code>openjdk-11-jdk</code>, <code>openjdk-17-jdk</code>).
-          </li>
-          <li>
-            <strong>Build Automations:</strong> Apache Ant (<code>ant</code>,
-            <code>ant-optional</code>), Apache Maven (<code>mvn</code>).
-          </li>
-          <li>
-            <strong>C/C++ Native Toolchain:</strong> <code>gcc</code>,
-            <code>g++</code>, <code>make</code>, <code>cmake</code>,
-            <code>libtool</code>, <code>autoconf</code>, <code>automake</code>,
-            <code>pkg-config</code>, <code>libcppunit-dev</code>.
-          </li>
-          <li>
-            <strong>Scripting &amp; Engine:</strong> Perl modules
-            (<code>XML::Simple</code>, <code>Data::UUID</code>,
-            <code>File::Slurp</code>, <code>JSON</code>, <code>YAML</code>),
-            Ruby, Node.js, NPM.
-          </li>
-        </ul>
+        <div class="lang-id">
+          <ul class="doc-list">
+            <li><strong>Java Development Kit:</strong> OpenJDK 11 / OpenJDK 17 (<code>openjdk-11-jdk</code>, <code>openjdk-17-jdk</code>).</li>
+            <li><strong>Build Automations:</strong> Apache Ant (<code>ant</code>, <code>ant-optional</code>), Apache Maven (<code>mvn</code>).</li>
+            <li><strong>C/C++ Native Toolchain:</strong> <code>gcc</code>, <code>g++</code>, <code>make</code>, <code>cmake</code>, <code>libtool</code>, <code>autoconf</code>, <code>automake</code>, <code>pkg-config</code>, <code>libcppunit-dev</code>.</li>
+            <li><strong>Scripting &amp; Engine:</strong> Perl modules (<code>XML::Simple</code>, <code>Data::UUID</code>, <code>File::Slurp</code>, <code>JSON</code>, <code>YAML</code>), Ruby, Node.js, NPM.</li>
+          </ul>
+        </div>
+        <div class="lang-en">
+          <ul class="doc-list">
+            <li><strong>Java Development Kit:</strong> OpenJDK 11 / OpenJDK 17 (<code>openjdk-11-jdk</code>, <code>openjdk-17-jdk</code>).</li>
+            <li><strong>Build Automation:</strong> Apache Ant (<code>ant</code>, <code>ant-optional</code>), Apache Maven (<code>mvn</code>).</li>
+            <li><strong>C/C++ Native Toolchain:</strong> <code>gcc</code>, <code>g++</code>, <code>make</code>, <code>cmake</code>, <code>libtool</code>, <code>autoconf</code>, <code>automake</code>, <code>pkg-config</code>, <code>libcppunit-dev</code>.</li>
+            <li><strong>Scripting &amp; Runtimes:</strong> Perl modules (<code>XML::Simple</code>, <code>Data::UUID</code>, <code>File::Slurp</code>, <code>JSON</code>, <code>YAML</code>), Ruby, Node.js, NPM.</li>
+          </ul>
+        </div>
         <hr class="divider">
         <h2 id="download-verification-status--legend" class="heading-anchor">
           <a href="#download-verification-status--legend" class="anchor-link"
             >#</a
           >
-          Download Verification Status &amp; Legend
+          <span class="lang-id">Status Verifikasi Unduhan &amp; Legenda</span><span class="lang-en">Download Verification Status &amp; Legend</span>
         </h2>
-        <p class="doc-para">
-          Setiap tautan unduhan dalam repositori ini telah diuji secara berkala
-          dengan skrip telemetri HTTP. Berikut arti label status yang
-          disematkan:
-        </p>
-        <ul class="doc-list">
-          <li>
-            🟢 <strong><code>[Active Direct]</code></strong> — Tautan langsung
-            aktif pada server resmi <code>files.zimbra.com</code> atau GitHub
-            CDN (HTTP 200 OK). Dapat diunduh secara instan tanpa header khusus.
-          </li>
-          <li>
-            🟡 <strong><code>[Referer Req]</code></strong> — Tautan aktif pada
-            mirror CDN TechFiles.online. <strong>Wajib</strong> menyertakan
-            header referer <code>Referer: https://techfiles.online/</code> saat
-            diunduh via CLI / automation script.
-          </li>
-          <li>
-            🔴 <strong><code>[Need Mirror / Portal Only]</code></strong> — File
-            biner telah diarsipkan oleh upstream vendor atau memerlukan akun
-            berbayar Synacor Portal. Disarankan melakukan kompilasi mandiri via
-            <code>zm-build</code> atau menggunakan rilis komunitas yang setara.
-          </li>
-        </ul>
+        <div class="lang-id">
+          <p class="doc-para">
+            Setiap tautan unduhan dalam repositori ini telah diuji secara berkala dengan skrip telemetri HTTP. Berikut arti label status yang disematkan:
+          </p>
+          <ul class="doc-list">
+            <li>
+              🟢 <strong><code>[Active Direct]</code></strong> — Tautan langsung aktif pada server resmi <code>files.zimbra.com</code> atau GitHub CDN (HTTP 200 OK). Dapat diunduh secara instan tanpa header khusus.
+            </li>
+            <li>
+              🟡 <strong><code>[Referer Req]</code></strong> — Tautan aktif pada mirror CDN TechFiles.online. <strong>Wajib</strong> menyertakan header referer <code>Referer: https://techfiles.online/</code> saat diunduh via CLI / automation script.
+            </li>
+            <li>
+              🔴 <strong><code>[Need Mirror / Portal Only]</code></strong> — File biner telah diarsipkan oleh upstream vendor atau memerlukan akun berbayar Synacor Portal. Disarankan melakukan kompilasi mandiri via <code>zm-build</code> atau menggunakan rilis komunitas yang setara.
+            </li>
+          </ul>
+        </div>
+        <div class="lang-en">
+          <p class="doc-para">
+            Every download link in this repository is continuously tested with automated HTTP telemetry suites. The status badges are defined as follows:
+          </p>
+          <ul class="doc-list">
+            <li>
+              🟢 <strong><code>[Active Direct]</code></strong> — Active direct link on official <code>files.zimbra.com</code> servers or GitHub CDN (HTTP 200 OK). Downloads instantly without special headers.
+            </li>
+            <li>
+              🟡 <strong><code>[Referer Req]</code></strong> — Active link on TechFiles.online CDN mirror. <strong>Requires</strong> the HTTP referer header <code>Referer: https://techfiles.online/</code> when fetched via CLI or automated scripts.
+            </li>
+            <li>
+              🔴 <strong><code>[Need Mirror / Portal Only]</code></strong> — Binary archived by upstream vendor or requires Synacor portal authentication. Community builds or self-compilation via <code>zm-build</code> is recommended.
+            </li>
+          </ul>
+        </div>
         <hr class="divider">
         <h2
           id="official-zimbra-release-archive-45x--101x"
@@ -2318,6 +2370,45 @@ SELECT ZIMBRA BINARY CATEGORY:
                   <td class="text-center">
                     <sub><strong>NE</strong></sub>
                   </td>
+                  <td class="text-left"><sub>Ubuntu 24.04</sub></td>
+                  <td class="text-center">
+                    <sub
+                      ><a
+                        href="https://files.zimbra.com/downloads/10.1.0_GA/zcs-NETWORK-10.1.0_GA_4876.UBUNTU24_64.20260428124223.tgz"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >Download</a
+                      ></sub
+                    >
+                  </td>
+                  <td class="text-center">
+                    <sub
+                      ><a
+                        href="https://files.zimbra.com/downloads/10.1.0_GA/zcs-NETWORK-10.1.0_GA_4876.UBUNTU24_64.20260428124223.tgz.md5"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >MD5</a
+                      ></sub
+                    >
+                  </td>
+                  <td class="text-center">
+                    <sub
+                      ><a
+                        href="https://files.zimbra.com/downloads/10.1.0_GA/zcs-NETWORK-10.1.0_GA_4876.UBUNTU24_64.20260428124223.tgz.sha256"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >SHA256</a
+                      ></sub
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td class="text-left">
+                    <sub><code>10.1.0 GA</code></sub>
+                  </td>
+                  <td class="text-center">
+                    <sub><strong>NE</strong></sub>
+                  </td>
                   <td class="text-left"><sub>Ubuntu 22.04</sub></td>
                   <td class="text-center">
                     <sub
@@ -2358,7 +2449,16 @@ SELECT ZIMBRA BINARY CATEGORY:
                     <sub><strong>NE</strong></sub>
                   </td>
                   <td class="text-left"><sub>Ubuntu 20.04</sub></td>
-                  <td class="text-center"><sub>-</sub></td>
+                  <td class="text-center">
+                    <sub
+                      ><a
+                        href="https://files.zimbra.com/downloads/10.1.0_GA/zcs-NETWORK-10.1.0_GA_4633.UBUNTU20_64.20240610085557.tgz"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >Download</a
+                      ></sub
+                    >
+                  </td>
                   <td class="text-center">
                     <sub
                       ><a
@@ -2388,7 +2488,16 @@ SELECT ZIMBRA BINARY CATEGORY:
                     <sub><strong>NE</strong></sub>
                   </td>
                   <td class="text-left"><sub>Ubuntu 18.04</sub></td>
-                  <td class="text-center"><sub>-</sub></td>
+                  <td class="text-center">
+                    <sub
+                      ><a
+                        href="https://files.zimbra.com/downloads/10.1.0_GA/zcs-NETWORK-10.1.0_GA_4633.UBUNTU18_64.20240610085557.tgz"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >Download</a
+                      ></sub
+                    >
+                  </td>
                   <td class="text-center">
                     <sub
                       ><a
@@ -2403,36 +2512,6 @@ SELECT ZIMBRA BINARY CATEGORY:
                     <sub
                       ><a
                         href="https://files.zimbra.com/downloads/10.1.0_GA/zcs-NETWORK-10.1.0_GA_4633.UBUNTU18_64.20240610085557.tgz.sha256"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        >SHA256</a
-                      ></sub
-                    >
-                  </td>
-                </tr>
-                <tr>
-                  <td class="text-left">
-                    <sub><code>10.1.0 GA</code></sub>
-                  </td>
-                  <td class="text-center">
-                    <sub><strong>NE</strong></sub>
-                  </td>
-                  <td class="text-left"><sub>RHEL 7 / CentOS 7</sub></td>
-                  <td class="text-center"><sub>-</sub></td>
-                  <td class="text-center">
-                    <sub
-                      ><a
-                        href="https://files.zimbra.com/downloads/10.1.0_GA/zcs-NETWORK-10.1.0_GA_4633.RHEL7_64.20240610085557.tgz.md5"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        >MD5</a
-                      ></sub
-                    >
-                  </td>
-                  <td class="text-center">
-                    <sub
-                      ><a
-                        href="https://files.zimbra.com/downloads/10.1.0_GA/zcs-NETWORK-10.1.0_GA_4633.RHEL7_64.20240610085557.tgz.sha256"
                         target="_blank"
                         rel="noopener noreferrer"
                         >SHA256</a
@@ -2472,6 +2551,84 @@ SELECT ZIMBRA BINARY CATEGORY:
                     <sub
                       ><a
                         href="https://files.zimbra.com/downloads/10.1.0_GA/zcs-NETWORK-10.1.0_GA_4688.RHEL9_64.20240911074203.tgz.sha256"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >SHA256</a
+                      ></sub
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td class="text-left">
+                    <sub><code>10.1.0 GA</code></sub>
+                  </td>
+                  <td class="text-center">
+                    <sub><strong>NE</strong></sub>
+                  </td>
+                  <td class="text-left"><sub>RHEL / Rocky / Alma 8</sub></td>
+                  <td class="text-center">
+                    <sub
+                      ><a
+                        href="https://files.zimbra.com/downloads/10.1.0_GA/zcs-NETWORK-10.1.0_GA_4633.RHEL8_64.20240610085557.tgz"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >Download</a
+                      ></sub
+                    >
+                  </td>
+                  <td class="text-center">
+                    <sub
+                      ><a
+                        href="https://files.zimbra.com/downloads/10.1.0_GA/zcs-NETWORK-10.1.0_GA_4633.RHEL8_64.20240610085557.tgz.md5"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >MD5</a
+                      ></sub
+                    >
+                  </td>
+                  <td class="text-center">
+                    <sub
+                      ><a
+                        href="https://files.zimbra.com/downloads/10.1.0_GA/zcs-NETWORK-10.1.0_GA_4633.RHEL8_64.20240610085557.tgz.sha256"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >SHA256</a
+                      ></sub
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td class="text-left">
+                    <sub><code>10.1.0 GA</code></sub>
+                  </td>
+                  <td class="text-center">
+                    <sub><strong>NE</strong></sub>
+                  </td>
+                  <td class="text-left"><sub>RHEL 7 / CentOS 7</sub></td>
+                  <td class="text-center">
+                    <sub
+                      ><a
+                        href="https://files.zimbra.com/downloads/10.1.0_GA/zcs-NETWORK-10.1.0_GA_4633.RHEL7_64.20240610085557.tgz"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >Download</a
+                      ></sub
+                    >
+                  </td>
+                  <td class="text-center">
+                    <sub
+                      ><a
+                        href="https://files.zimbra.com/downloads/10.1.0_GA/zcs-NETWORK-10.1.0_GA_4633.RHEL7_64.20240610085557.tgz.md5"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >MD5</a
+                      ></sub
+                    >
+                  </td>
+                  <td class="text-center">
+                    <sub
+                      ><a
+                        href="https://files.zimbra.com/downloads/10.1.0_GA/zcs-NETWORK-10.1.0_GA_4633.RHEL7_64.20240610085557.tgz.sha256"
                         target="_blank"
                         rel="noopener noreferrer"
                         >SHA256</a
@@ -2561,7 +2718,16 @@ SELECT ZIMBRA BINARY CATEGORY:
                       ></sub
                     >
                   </td>
-                  <td class="text-center"><sub>-</sub></td>
+                  <td class="text-center">
+                    <sub
+                      ><a
+                        href="https://files.zimbra.com/downloads/10.0.0_GA/zcs-NETWORK-10.0.0_GA_4518.UBUNTU20_64.20230301065514.tgz.sha256"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >SHA256</a
+                      ></sub
+                    >
+                  </td>
                 </tr>
                 <tr>
                   <td class="text-left">
@@ -2609,6 +2775,45 @@ SELECT ZIMBRA BINARY CATEGORY:
                   <td class="text-center">
                     <sub><strong>NE</strong></sub>
                   </td>
+                  <td class="text-left"><sub>RHEL / Rocky / Alma 8</sub></td>
+                  <td class="text-center">
+                    <sub
+                      ><a
+                        href="https://files.zimbra.com/downloads/10.0.0_GA/zcs-NETWORK-10.0.0_GA_4518.RHEL8_64.20230301065514.tgz"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >Download</a
+                      ></sub
+                    >
+                  </td>
+                  <td class="text-center">
+                    <sub
+                      ><a
+                        href="https://files.zimbra.com/downloads/10.0.0_GA/zcs-NETWORK-10.0.0_GA_4518.RHEL8_64.20230301065514.tgz.md5"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >MD5</a
+                      ></sub
+                    >
+                  </td>
+                  <td class="text-center">
+                    <sub
+                      ><a
+                        href="https://files.zimbra.com/downloads/10.0.0_GA/zcs-NETWORK-10.0.0_GA_4518.RHEL8_64.20230301065514.tgz.sha256"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >SHA256</a
+                      ></sub
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td class="text-left">
+                    <sub><code>10.0.0 GA</code></sub>
+                  </td>
+                  <td class="text-center">
+                    <sub><strong>NE</strong></sub>
+                  </td>
                   <td class="text-left"><sub>RHEL 7 / CentOS 7</sub></td>
                   <td class="text-center">
                     <sub
@@ -2630,28 +2835,16 @@ SELECT ZIMBRA BINARY CATEGORY:
                       ></sub
                     >
                   </td>
-                  <td class="text-center"><sub>-</sub></td>
-                </tr>
-                <tr>
-                  <td class="text-left">
-                    <sub><code>10.0.0 GA</code></sub>
-                  </td>
-                  <td class="text-center">
-                    <sub><strong>NE</strong></sub>
-                  </td>
-                  <td class="text-left"><sub>RHEL / Rocky / Alma 8</sub></td>
-                  <td class="text-center"><sub>-</sub></td>
                   <td class="text-center">
                     <sub
                       ><a
-                        href="https://files.zimbra.com/downloads/10.0.0_GA/zcs-NETWORK-10.0.0_GA_4518.RHEL8_64.20230301065514.tgz.md5"
+                        href="https://files.zimbra.com/downloads/10.0.0_GA/zcs-NETWORK-10.0.0_GA_4518.RHEL7_64.20230301065514.tgz.sha256"
                         target="_blank"
                         rel="noopener noreferrer"
-                        >MD5</a
+                        >SHA256</a
                       ></sub
                     >
                   </td>
-                  <td class="text-center"><sub>-</sub></td>
                 </tr>
               </tbody>
             </table>
@@ -2704,7 +2897,16 @@ SELECT ZIMBRA BINARY CATEGORY:
                       ></sub
                     >
                   </td>
-                  <td class="text-center"><sub>-</sub></td>
+                  <td class="text-center">
+                    <sub
+                      ><a
+                        href="https://files.zimbra.com/downloads/9.0.0_GA/zcs-NETWORK-9.0.0_GA_4178.UBUNTU20_64.20211112031526.tgz.md5"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >MD5</a
+                      ></sub
+                    >
+                  </td>
                   <td class="text-center">
                     <sub
                       ><a
@@ -2724,7 +2926,16 @@ SELECT ZIMBRA BINARY CATEGORY:
                     <sub><strong>NE</strong></sub>
                   </td>
                   <td class="text-left"><sub>Ubuntu 18.04</sub></td>
-                  <td class="text-center"><sub>-</sub></td>
+                  <td class="text-center">
+                    <sub
+                      ><a
+                        href="https://files.zimbra.com/downloads/9.0.0_GA/zcs-NETWORK-9.0.0_GA_3924.UBUNTU18_64.20200331010312.tgz"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >Download</a
+                      ></sub
+                    >
+                  </td>
                   <td class="text-center">
                     <sub
                       ><a
@@ -2754,7 +2965,16 @@ SELECT ZIMBRA BINARY CATEGORY:
                     <sub><strong>NE</strong></sub>
                   </td>
                   <td class="text-left"><sub>Ubuntu 16.04</sub></td>
-                  <td class="text-center"><sub>-</sub></td>
+                  <td class="text-center">
+                    <sub
+                      ><a
+                        href="https://files.zimbra.com/downloads/9.0.0_GA/zcs-NETWORK-9.0.0_GA_3924.UBUNTU16_64.20200331010312.tgz"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >Download</a
+                      ></sub
+                    >
+                  </td>
                   <td class="text-center">
                     <sub
                       ><a
@@ -2784,7 +3004,16 @@ SELECT ZIMBRA BINARY CATEGORY:
                     <sub><strong>NE</strong></sub>
                   </td>
                   <td class="text-left"><sub>Ubuntu 14.04</sub></td>
-                  <td class="text-center"><sub>-</sub></td>
+                  <td class="text-center">
+                    <sub
+                      ><a
+                        href="https://files.zimbra.com/downloads/9.0.0_GA/zcs-NETWORK-9.0.0_GA_3924.UBUNTU14_64.20200331010312.tgz"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >Download</a
+                      ></sub
+                    >
+                  </td>
                   <td class="text-center">
                     <sub
                       ><a
@@ -2799,75 +3028,6 @@ SELECT ZIMBRA BINARY CATEGORY:
                     <sub
                       ><a
                         href="https://files.zimbra.com/downloads/9.0.0_GA/zcs-NETWORK-9.0.0_GA_3924.UBUNTU14_64.20200331010312.tgz.sha256"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        >SHA256</a
-                      ></sub
-                    >
-                  </td>
-                </tr>
-                <tr>
-                  <td class="text-left">
-                    <sub><code>9.0.0 GA</code></sub>
-                  </td>
-                  <td class="text-center">
-                    <sub><strong>NE</strong></sub>
-                  </td>
-                  <td class="text-left"><sub>RHEL 7 / CentOS 7</sub></td>
-                  <td class="text-center">
-                    <sub
-                      ><a
-                        href="https://files.zimbra.com/downloads/9.0.0_GA/zcs-NETWORK-9.0.0_GA_3924.RHEL7_64.20200331010312.tgz"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        >Download</a
-                      ></sub
-                    >
-                  </td>
-                  <td class="text-center">
-                    <sub
-                      ><a
-                        href="https://files.zimbra.com/downloads/9.0.0_GA/zcs-NETWORK-9.0.0_GA_3924.RHEL7_64.20200331010312.tgz.md5"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        >MD5</a
-                      ></sub
-                    >
-                  </td>
-                  <td class="text-center"><sub>-</sub></td>
-                </tr>
-                <tr>
-                  <td class="text-left">
-                    <sub><code>9.0.0 GA</code></sub>
-                  </td>
-                  <td class="text-center">
-                    <sub><strong>NE</strong></sub>
-                  </td>
-                  <td class="text-left"><sub>RHEL 6 / CentOS 6</sub></td>
-                  <td class="text-center">
-                    <sub
-                      ><a
-                        href="https://files.zimbra.com/downloads/9.0.0_GA/zcs-NETWORK-9.0.0_GA_3924.RHEL6_64.20200331010312.tgz"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        >Download</a
-                      ></sub
-                    >
-                  </td>
-                  <td class="text-center">
-                    <sub
-                      ><a
-                        href="https://files.zimbra.com/downloads/9.0.0_GA/zcs-NETWORK-9.0.0_GA_3924.RHEL6_64.20200331010312.tgz.md5"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        >MD5</a
-                      ></sub
-                    >
-                  </td>
-                  <td class="text-center">
-                    <sub
-                      ><a
-                        href="https://files.zimbra.com/downloads/9.0.0_GA/zcs-NETWORK-9.0.0_GA_3924.RHEL6_64.20200331010312.tgz.sha256"
                         target="_blank"
                         rel="noopener noreferrer"
                         >SHA256</a
@@ -2932,11 +3092,98 @@ SELECT ZIMBRA BINARY CATEGORY:
                       ></sub
                     >
                   </td>
-                  <td class="text-center"><sub>-</sub></td>
+                  <td class="text-center">
+                    <sub
+                      ><a
+                        href="https://files.zimbra.com/downloads/9.0.0_GA/zcs-NETWORK-9.0.0_GA_4325.RHEL8_64.20220629074359.tgz.md5"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >MD5</a
+                      ></sub
+                    >
+                  </td>
                   <td class="text-center">
                     <sub
                       ><a
                         href="https://files.zimbra.com/downloads/9.0.0_GA/zcs-NETWORK-9.0.0_GA_4325.RHEL8_64.20220629074359.tgz.sha256"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >SHA256</a
+                      ></sub
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td class="text-left">
+                    <sub><code>9.0.0 GA</code></sub>
+                  </td>
+                  <td class="text-center">
+                    <sub><strong>NE</strong></sub>
+                  </td>
+                  <td class="text-left"><sub>RHEL 7 / CentOS 7</sub></td>
+                  <td class="text-center">
+                    <sub
+                      ><a
+                        href="https://files.zimbra.com/downloads/9.0.0_GA/zcs-NETWORK-9.0.0_GA_3924.RHEL7_64.20200331010312.tgz"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >Download</a
+                      ></sub
+                    >
+                  </td>
+                  <td class="text-center">
+                    <sub
+                      ><a
+                        href="https://files.zimbra.com/downloads/9.0.0_GA/zcs-NETWORK-9.0.0_GA_3924.RHEL7_64.20200331010312.tgz.md5"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >MD5</a
+                      ></sub
+                    >
+                  </td>
+                  <td class="text-center">
+                    <sub
+                      ><a
+                        href="https://files.zimbra.com/downloads/9.0.0_GA/zcs-NETWORK-9.0.0_GA_3924.RHEL7_64.20200331010312.tgz.sha256"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >SHA256</a
+                      ></sub
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td class="text-left">
+                    <sub><code>9.0.0 GA</code></sub>
+                  </td>
+                  <td class="text-center">
+                    <sub><strong>NE</strong></sub>
+                  </td>
+                  <td class="text-left"><sub>RHEL 6 / CentOS 6</sub></td>
+                  <td class="text-center">
+                    <sub
+                      ><a
+                        href="https://files.zimbra.com/downloads/9.0.0_GA/zcs-NETWORK-9.0.0_GA_3924.RHEL6_64.20200331010312.tgz"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >Download</a
+                      ></sub
+                    >
+                  </td>
+                  <td class="text-center">
+                    <sub
+                      ><a
+                        href="https://files.zimbra.com/downloads/9.0.0_GA/zcs-NETWORK-9.0.0_GA_3924.RHEL6_64.20200331010312.tgz.md5"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >MD5</a
+                      ></sub
+                    >
+                  </td>
+                  <td class="text-center">
+                    <sub
+                      ><a
+                        href="https://files.zimbra.com/downloads/9.0.0_GA/zcs-NETWORK-9.0.0_GA_3924.RHEL6_64.20200331010312.tgz.sha256"
                         target="_blank"
                         rel="noopener noreferrer"
                         >SHA256</a
@@ -18897,11 +19144,13 @@ SELECT ZIMBRA BINARY CATEGORY:
           >
           Build Systems &amp; Source Compilation Guide
         </h2>
-        <p class="doc-para">
-          Panduan kompilasi mandiri kode sumber resmi (_official upstream source
-          code_) menggunakan framework <code>zm-build</code> pada
-          <strong>Ubuntu 20.04–24.04 LTS</strong> dan
-          <strong>RHEL / Rocky / AlmaLinux 8–9</strong>.
+        <p class="doc-para lang-id">
+          Panduan kompilasi mandiri kode sumber resmi (<em>official upstream source code</em>) menggunakan framework <code>zm-build</code> pada
+          <strong>Ubuntu 20.04–24.04 LTS</strong> dan <strong>RHEL / Rocky / AlmaLinux 8–9</strong>.
+        </p>
+        <p class="doc-para lang-en">
+          Comprehensive guide for independently building official upstream source code using the <code>zm-build</code> framework on
+          <strong>Ubuntu 20.04–24.04 LTS</strong> and <strong>RHEL / Rocky / AlmaLinux 8–9</strong>.
         </p>
         <h3 id="os--zcs-build-compatibility-matrix" class="heading-anchor">
           <a href="#os--zcs-build-compatibility-matrix" class="anchor-link"
@@ -19118,11 +19367,13 @@ SELECT ZIMBRA BINARY CATEGORY:
         </ul>
         <hr class="divider">
         <h2 id="configuration" class="heading-anchor">
-          <a href="#configuration" class="anchor-link">#</a> Configuration
+          <a href="#configuration" class="anchor-link">#</a> <span class="lang-id">Konfigurasi &amp; Optimasi Sistem</span><span class="lang-en">System Configuration &amp; OS Tuning</span>
         </h2>
-        <p class="doc-para">
-          Konfigurasi optimal sistem operasi host sebelum menjalankan instalasi
-          Zimbra:
+        <p class="doc-para lang-id">
+          Konfigurasi optimal sistem operasi host sebelum menjalankan instalasi Zimbra:
+        </p>
+        <p class="doc-para lang-en">
+          Recommended host operating system tuning parameters before executing Zimbra installation:
         </p>
         <h3
           id="sec-1-file-descriptor--security-limits-etcsecuritylimitsconf"
@@ -19198,28 +19449,18 @@ net.ipv4.ip_local_port_range = 1024 65535</code></pre>
             class="anchor-link"
             >#</a
           >
-          Security Architecture &amp; Comprehensive CVE Matrix (2016–2026)
+          <span class="lang-id">Arsitektur Keamanan &amp; Matriks Lengkap CVE (2016–2026)</span><span class="lang-en">Security Architecture &amp; Comprehensive CVE Matrix (2016–2026)</span>
         </h2>
-        <p class="doc-para">
-          Analisis mendalam arsitektur pertahanan, taksonomi vektor serangan,
-          dan katalog komprehensif
-          <strong>Kerentanan Keamanan (CVE)</strong> Zimbra Collaboration Suite
-          (2016–2026) yang
-          <strong
-            >100% tervalidasi resmi pada
-            <a
-              href="https://wiki.zimbra.com/wiki/Zimbra_Security_Advisories"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Zimbra Security Advisories</a
-            >
-            &amp; NIST NVD</strong
-          >. Dilengkapi dengan
-          <strong
-            >rincian versi terdampak secara spesifik dan tidak terpotong</strong
-          >, skor CVSS, severity, reporter/peneliti keamanan, serta panduan
-          penanganan insiden darurat (_Zero-Day Triage Protocol_).
-        </p>
+        <div class="lang-id">
+          <p class="doc-para">
+            Analisis mendalam arsitektur pertahanan, taksonomi vektor serangan, dan katalog komprehensif <strong>Kerentanan Keamanan (CVE)</strong> Zimbra Collaboration Suite (2016–2026) yang <strong>100% tervalidasi resmi pada <a href="https://wiki.zimbra.com/wiki/Zimbra_Security_Advisories" target="_blank" rel="noopener noreferrer">Zimbra Security Advisories</a> &amp; NIST NVD</strong>. Dilengkapi dengan <strong>rincian versi terdampak secara spesifik dan tidak terpotong</strong>, skor CVSS, severity, reporter/peneliti keamanan, serta panduan penanganan insiden darurat (<em>Zero-Day Triage Protocol</em>).
+          </p>
+        </div>
+        <div class="lang-en">
+          <p class="doc-para">
+            In-depth defensive architecture analysis, attack vector taxonomies, and comprehensive <strong>Common Vulnerabilities and Exposures (CVE)</strong> catalog for Zimbra Collaboration Suite (2016–2026), <strong>100% verified against <a href="https://wiki.zimbra.com/wiki/Zimbra_Security_Advisories" target="_blank" rel="noopener noreferrer">Zimbra Security Advisories</a> &amp; NIST NVD</strong>. Features complete affected version breakdowns, CVSS metrics, threat classifications, security researcher credits, and an emergency Zero-Day incident response protocol.
+          </p>
+        </div>
         <hr class="divider">
         <h3
           id="master-vulnerability-matrix--affected-versions-20162026"
@@ -19230,11 +19471,13 @@ net.ipv4.ip_local_port_range = 1024 65535</code></pre>
             class="anchor-link"
             >#</a
           >
-          Master Vulnerability Matrix &amp; Affected Versions (2016–2026)
+          <span class="lang-id">Matriks Kerentanan Utama &amp; Versi Terdampak Resmi (2016–2026)</span><span class="lang-en">Master Vulnerability Matrix &amp; Affected Versions (2016–2026)</span>
         </h3>
-        <p class="doc-para">
-          Tabel berikut menyajikan seluruh riwayat CVE resmi yang diverifikasi
-          pada sistem Zimbra Collaboration Suite:
+        <p class="doc-para lang-id">
+          Tabel berikut menyajikan seluruh riwayat CVE resmi yang diverifikasi pada sistem Zimbra Collaboration Suite:
+        </p>
+        <p class="doc-para lang-en">
+          The following matrix catalogues verified official CVE records for Zimbra Collaboration Suite across all historical and current releases:
         </p>
         <div class="table-container">
           <div class="table-search-bar">
@@ -21157,12 +21400,13 @@ net.ipv4.ip_local_port_range = 1024 65535</code></pre>
             class="anchor-link"
             >#</a
           >
-          Deep Architecture &amp; Attack Surface Analysis
+          <span class="lang-id">Analisis Mendalam Arsitektur &amp; Permukaan Serangan</span><span class="lang-en">Deep Architecture &amp; Attack Surface Analysis</span>
         </h3>
-        <p class="doc-para">
-          Arsitektur Zimbra terdiri dari beberapa daemon independen yang saling
-          berkomunikasi. Pemahaman batas pertahanan (_security perimeter_)
-          setiap komponen sangat penting untuk mitigasi proaktif:
+        <p class="doc-para lang-id">
+          Arsitektur Zimbra terdiri dari beberapa daemon independen yang saling berkomunikasi. Pemahaman batas pertahanan (<em>security perimeter</em>) setiap komponen sangat penting untuk mitigasi proaktif:
+        </p>
+        <p class="doc-para lang-en">
+          ZCS architecture comprises multiple decoupled daemons operating across dedicated network boundaries. Understanding the security perimeter of each daemon is essential for proactive threat mitigation:
         </p>
         <div class="code-card">
           <div class="code-header">
@@ -21198,37 +21442,44 @@ net.ipv4.ip_local_port_range = 1024 65535</code></pre>
                         | - Encrypted Passwords |   +-----------------------+
                         +-----------------------+</code></pre>
         </div>
-        <ol class="doc-list">
-          <li>
-            <strong>Jetty (<code>mailboxd</code>):</strong> Jantung aplikasi
-            ZCS. Menjalankan servlet SOAP, REST, Zimlet runtime, dan webmail UI.
-            Merupakan target utama eksploitasi JSP Webshell (seperti
-            CVE-2019-9670, CVE-2022-27925, dan CVE-2025-68645).
-          </li>
-          <li>
-            <strong>Postfix MTA &amp; Postjournal:</strong> Mengelola antrean email
-            masuk/keluar. Layanan postjournal yang rentan terhadap argumen
-            injection (CVE-2024-45519) wajib dimatikan jika organisasi tidak
-            menggunakan compliance archiving.
-          </li>
-          <li>
-            <strong>Amavisd &amp; Antivirus Scanners:</strong> Membedah attachment
-            arsip email. Ketiadaan utilitas POSIX <code>pax</code> menyebabkan
-            Amavis menggunakan fallback <code>cpio</code> yang dapat
-            dieksploitasi untuk meletakkan webshell arbitrer (CVE-2022-41352).
-          </li>
-          <li>
-            <strong>OpenLDAP (<code>slapd</code>):</strong> Menyimpan seluruh
-            metadata akun, domain, dan konfigurasi server global
-            (<code>localconfig.xml</code>). Kebocoran kredensial LDAP superadmin
-            merupakan gerbang pengambilalihan seluruh sistem mail.
-          </li>
-          <li>
-            <strong>Nginx Reverse Proxy:</strong> Memfilter lalu lintas IMAP,
-            POP3, dan HTTP. Template Nginx wajib dikonfigurasi untuk memblokir
-            akses eksternal ke endpoint sensitif dan admin port 7071.
-          </li>
-        </ol>
+        <div class="lang-id">
+          <ol class="doc-list">
+            <li>
+              <strong>Jetty (<code>mailboxd</code>):</strong> Jantung aplikasi ZCS. Menjalankan servlet SOAP, REST, Zimlet runtime, dan webmail UI. Merupakan target utama eksploitasi JSP Webshell (seperti CVE-2019-9670, CVE-2022-27925, dan CVE-2025-68645).
+            </li>
+            <li>
+              <strong>Postfix MTA &amp; Postjournal:</strong> Mengelola antrean email masuk/keluar. Layanan postjournal yang rentan terhadap command injection (CVE-2024-45519) wajib dimatikan jika organisasi tidak menggunakan compliance archiving.
+            </li>
+            <li>
+              <strong>Amavisd &amp; Antivirus Scanners:</strong> Membedah attachment arsip email. Ketiadaan utilitas POSIX <code>pax</code> menyebabkan Amavis menggunakan fallback <code>cpio</code> yang dapat dieksploitasi untuk meletakkan webshell arbitrer (CVE-2022-41352).
+            </li>
+            <li>
+              <strong>OpenLDAP (<code>slapd</code>):</strong> Menyimpan seluruh metadata akun, domain, dan konfigurasi server global (<code>localconfig.xml</code>). Kebocoran kredensial LDAP superadmin merupakan gerbang pengambilalihan seluruh sistem mail.
+            </li>
+            <li>
+              <strong>Nginx Reverse Proxy:</strong> Memfilter lalu lintas IMAP, POP3, dan HTTP. Template Nginx wajib dikonfigurasi untuk memblokir akses eksternal ke endpoint sensitif dan admin console port 7071.
+            </li>
+          </ol>
+        </div>
+        <div class="lang-en">
+          <ol class="doc-list">
+            <li>
+              <strong>Jetty (<code>mailboxd</code>):</strong> Core application context executing SOAP/REST servlets, Zimlet runtimes, and user webmail. Primary target for JSP webshell injections (CVE-2019-9670, CVE-2022-27925, CVE-2025-68645).
+            </li>
+            <li>
+              <strong>Postfix MTA &amp; Postjournal:</strong> Ingress/egress mail routing daemon. Postjournal component (vulnerable to CVE-2024-45519 command injection) must be disabled unless compliance journaling is strictly required.
+            </li>
+            <li>
+              <strong>Amavisd &amp; Antivirus Scanners:</strong> Unpacks and analyzes inbound message attachments. Missing POSIX <code>pax</code> triggers Amavis fallback to vulnerable <code>cpio</code> handlers (CVE-2022-41352).
+            </li>
+            <li>
+              <strong>OpenLDAP (<code>slapd</code>):</strong> Master directory containing account objects, domain trees, and <code>localconfig.xml</code> credentials. Root LDAP credential leakage enables complete infrastructure takeover.
+            </li>
+            <li>
+              <strong>Nginx Reverse Proxy:</strong> Frontline proxy for IMAP, POP3, and HTTPS. Must be configured to restrict external reachability to sensitive servlets and admin port 7071.
+            </li>
+          </ol>
+        </div>
         <hr class="divider">
         <h3
           id="taxonomy-of-zimbra-threat-vectors--exploit-chains"
@@ -21264,12 +21515,13 @@ net.ipv4.ip_local_port_range = 1024 65535</code></pre>
             class="anchor-link"
             >#</a
           >
-          Zero-Day Emergency Incident Response &amp; Hardening Protocol
+          <span class="lang-id">Protokol Tanggap Darurat Insiden Zero-Day &amp; Hardening</span><span class="lang-en">Zero-Day Emergency Incident Response &amp; Hardening Protocol</span>
         </h3>
-        <p class="doc-para">
-          Jika server Anda dicurigai telah disusupi atau terdapat pengumuman
-          Zero-Day baru di alam liar (_active exploitation_), jalankan prosedur
-          triase dan sanitasi darurat berikut:
+        <p class="doc-para lang-id">
+          Jika server Anda dicurigai telah disusupi atau terdapat pengumuman Zero-Day baru di alam liar (<em>active exploitation</em>), jalankan prosedur triase dan sanitasi darurat berikut:
+        </p>
+        <p class="doc-para lang-en">
+          If compromise is suspected or an unpatched Zero-Day vulnerability is actively exploited in the wild, execute the following emergency containment and triage procedure:
         </p>
         <h4
           id="sec-1-isolasi-dan-nonaktifkan-vektor-rce-umum"
@@ -21370,6 +21622,222 @@ git clone https://github.com/alsyundawy/eradicate-zimbra-malware.git /tmp/ezm
 cd /tmp/ezm &amp;&amp; sudo ./eradicate.sh --scan-and-heal</code></pre>
         </div>
         <hr class="divider">
+        <hr class="divider">
+        <h2 id="enterprise-dns-architecture" class="heading-anchor">
+          <a href="#enterprise-dns-architecture" class="anchor-link">#</a>
+          <span class="lang-id">Arsitektur DNS Enterprise (Unbound, BIND9, dnsdist &amp; RBL)</span>
+          <span class="lang-en">Enterprise DNS Architecture (Unbound, BIND9, dnsdist &amp; RBL)</span>
+        </h2>
+        <div class="lang-id">
+          <p class="doc-para">
+            DNS adalah fondasi paling kritis dalam ekosistem Zimbra Mail Server. Menggunakan DNS publik bersama (seperti <code>8.8.8.8</code> atau <code>1.1.1.1</code>) <strong>sangat tidak disarankan</strong> pada lingkungan produksi karena memicu pemblokiran kuota kueri (<em>rate-limiting</em>) oleh penyedia DNSBL/RBL (seperti Spamhaus ZEN yang mengembalikan kode <code>127.255.255.254</code> atau HTTP 403), mengakibatkan kegagalan resolusi MX, timeout antrean email, dan kebocoran spam masif.
+          </p>
+        </div>
+        <div class="lang-en">
+          <p class="doc-para">
+            DNS is the foundational bedrock of enterprise mail infrastructure. Relying on shared public resolvers (such as <code>8.8.8.8</code> or <code>1.1.1.1</code>) is <strong>strictly discouraged</strong> in production deployments because it triggers query rate-limiting and access denial from major DNSBL/RBL providers (such as Spamhaus ZEN returning <code>127.255.255.254</code> or HTTP 403), causing MX timeouts, false-negative spam filtering, and delivery delays.
+          </p>
+        </div>
+
+        <h3 id="sec-unbound-local-recursive-resolver" class="heading-anchor">
+          <a href="#sec-unbound-local-recursive-resolver" class="anchor-link">#</a>
+          <span class="lang-id">1. Konfigurasi Caching Recursive Resolver Lokal (Unbound)</span>
+          <span class="lang-en">1. Local Caching Recursive Resolver Configuration (Unbound)</span>
+        </h3>
+        <div class="lang-id">
+          <p class="doc-para">
+            Pasang <strong>Unbound</strong> pada alamat loopback <code>127.0.0.1:53</code> untuk melayani seluruh kueri DNS lokal server Zimbra secara independen langsung ke root DNS hints:
+          </p>
+        </div>
+        <div class="lang-en">
+          <p class="doc-para">
+            Deploy <strong>Unbound</strong> on loopback interface <code>127.0.0.1:53</code> to handle recursive DNS queries directly from upstream root hints with prefetching and DNSSEC validation:
+          </p>
+        </div>
+        <div class="code-card">
+          <div class="code-header">
+            <span class="code-lang-tag"><i class="fa-solid fa-terminal"></i> CONF (/etc/unbound/unbound.conf.d/zimbra-resolver.conf)</span>
+            <button type="button" class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Salin</button>
+          </div>
+          <pre><code class="language-ini">server:
+    interface: 127.0.0.1
+    port: 53
+    do-ip4: yes
+    do-ip6: no
+    do-udp: yes
+    do-tcp: yes
+
+    # Access control
+    access-control: 127.0.0.0/8 allow
+
+    # Caching and Performance Tuning
+    num-threads: 2
+    msg-cache-slabs: 4
+    rrset-cache-slabs: 4
+    infra-cache-slabs: 4
+    key-cache-slabs: 4
+    msg-cache-size: 64m
+    rrset-cache-size: 128m
+    outgoing-range: 8192
+    num-queries-per-thread: 4096
+
+    # Prefetching and Resilience
+    prefetch: yes
+    prefetch-key: yes
+    serve-expired: yes
+    serve-expired-ttl: 86400
+
+    # Privacy and Hardening
+    hide-identity: yes
+    hide-version: yes
+    harden-glue: yes
+    harden-dnssec-stripped: yes
+    use-caps-for-id: no
+
+    # DNSSEC Root Anchor
+    auto-trust-anchor-file: "/var/lib/unbound/root.key"</code></pre>
+        </div>
+
+        <h3 id="sec-postfix-rbl-dnsbl-hardening" class="heading-anchor">
+          <a href="#sec-postfix-rbl-dnsbl-hardening" class="anchor-link">#</a>
+          <span class="lang-id">2. Integrasi Multi-Tier RBL / DNSBL pada Postfix MTA</span>
+          <span class="lang-en">2. Multi-Tier RBL / DNSBL Integration on Postfix MTA</span>
+        </h3>
+        <div class="lang-id">
+          <p class="doc-para">
+            Konfigurasikan pembatasan penerimaan MTA (<code>zimbraMtaRestriction</code>) untuk menolak spam pada tahap koneksi SMTP (<em>pre-data reject</em>) guna menghemat sumber daya CPU ClamAV dan Amavisd:
+          </p>
+        </div>
+        <div class="lang-en">
+          <p class="doc-para">
+            Configure Postfix <code>zimbraMtaRestriction</code> parameters to reject abusive hosts at early SMTP connection handshake (<em>pre-data reject</em>), preserving ClamAV and Amavisd CPU cycles:
+          </p>
+        </div>
+        <div class="code-card">
+          <div class="code-header">
+            <span class="code-lang-tag"><i class="fa-solid fa-terminal"></i> BASH</span>
+            <button type="button" class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Salin</button>
+          </div>
+          <pre><code class="language-bash"># Terapkan RBL resmi melalui utilitas zmprov (sebagai user zimbra)
+su - zimbra -c "zmprov mcf -- +zimbraMtaRestriction 'reject_rbl_client zen.spamhaus.org'"
+su - zimbra -c "zmprov mcf -- +zimbraMtaRestriction 'reject_rbl_client b.barracudacentral.org'"
+su - zimbra -c "zmprov mcf -- +zimbraMtaRestriction 'reject_rbl_client bl.spamcop.net'"
+su - zimbra -c "zmprov mcf -- +zimbraMtaRestriction 'reject_rhsbl_client dbl.spamhaus.org'"
+su - zimbra -c "zmprov mcf -- +zimbraMtaRestriction 'reject_rhsbl_sender dbl.spamhaus.org'"
+su - zimbra -c "zmmtactl restart"</code></pre>
+        </div>
+
+        <hr class="divider">
+        <h2 id="enterprise-hot-backup-and-disaster-recovery" class="heading-anchor">
+          <a href="#enterprise-hot-backup-and-disaster-recovery" class="anchor-link">#</a>
+          <span class="lang-id">Cadangan Panas &amp; Pemulihan Bencana Enterprise (zmbackup)</span>
+          <span class="lang-en">Enterprise Hot Backup &amp; Disaster Recovery (zmbackup)</span>
+        </h2>
+        <div class="lang-id">
+          <p class="doc-para">
+            Suite cadangan <strong><a href="https://github.com/alsyundawy/zmbackup" target="_blank" rel="noopener noreferrer">zmbackup</a></strong> menyediakan arsitektur <em>zero-downtime hot backup</em> melalui antarmuka REST API streaming tanpa perlu mematikan layanan Zimbra, mendukung cadangan penuh (<em>full</em>), diferensial/inkremental, serta ekspor metadata LDAP dan database MariaDB:
+          </p>
+        </div>
+        <div class="lang-en">
+          <p class="doc-para">
+            The <strong><a href="https://github.com/alsyundawy/zmbackup" target="_blank" rel="noopener noreferrer">zmbackup</a></strong> disaster recovery engine provides <em>zero-downtime hot backup</em> capabilities via high-throughput REST API streaming without interrupting production mailflow, featuring full/differential backups, multi-threaded worker pools, and automated LDAP/database metadata exports:
+          </p>
+        </div>
+        <div class="code-card">
+          <div class="code-header">
+            <span class="code-lang-tag"><i class="fa-solid fa-terminal"></i> BASH</span>
+            <button type="button" class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Salin</button>
+          </div>
+          <pre><code class="language-bash"># 1. Instalasi dan Setup zmbackup Suite
+git clone https://github.com/alsyundawy/zmbackup.git /opt/zmbackup
+cd /opt/zmbackup &amp;&amp; sudo chmod +x zmbackup
+
+# 2. Jalankan Hot Full Backup Seluruh Akun Mailbox
+sudo ./zmbackup -f -a all
+
+# 3. Jalankan Differential Backup Harian (Hanya email &amp; data yang berubah)
+sudo ./zmbackup -d -a all
+
+# 4. Pemulihan Akun Tunggal (Single Account Restore)
+sudo ./zmbackup -r -a user@domainanda.com -f 2026-08-30_12-00-00
+
+# 5. Replikasi Terenkripsi ke Storage Cloud / Remote Backup Server
+rsync -avz --delete -e "ssh -p 2222" /opt/zimbra/backup/ backupuser@backup-server.local:/storage/zimbra-backups/</code></pre>
+        </div>
+
+        <hr class="divider">
+        <h2 id="firewall-network-and-host-hardening" class="heading-anchor">
+          <a href="#firewall-network-and-host-hardening" class="anchor-link">#</a>
+          <span class="lang-id">Firewall, Jaringan &amp; Pengerasan Host (UFW, iptables &amp; Fail2Ban)</span>
+          <span class="lang-en">Firewall, Network &amp; Host Hardening (UFW, iptables &amp; Fail2Ban)</span>
+        </h2>
+        <div class="lang-id">
+          <p class="doc-para">
+            Isolasi port yang ketat merupakan garis pertahanan terdepan untuk mencegah akses liar ke konsol admin dan daemon internal:
+          </p>
+        </div>
+        <div class="lang-en">
+          <p class="doc-para">
+            Strict port segmentation and defensive firewall rules represent the frontline barrier protecting administrative consoles and internal IPC daemons from untrusted external traffic:
+          </p>
+        </div>
+        <div class="code-card">
+          <div class="code-header">
+            <span class="code-lang-tag"><i class="fa-solid fa-terminal"></i> BASH (UFW Hardening Script - Ubuntu/Debian)</span>
+            <button type="button" class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Salin</button>
+          </div>
+          <pre><code class="language-bash"># Reset dan Atur Kebijakan Dasar Firewall
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+
+# Port Layanan Publik Terbuka
+sudo ufw allow 25/tcp comment "SMTP Ingress"
+sudo ufw allow 80/tcp comment "HTTP Webmail Redirect"
+sudo ufw allow 443/tcp comment "HTTPS Webmail &amp; ActiveSync"
+sudo ufw allow 465/tcp comment "SMTPS Secure Submission"
+sudo ufw allow 587/tcp comment "SMTP Submission (Auth)"
+sudo ufw allow 993/tcp comment "IMAPS Secure"
+sudo ufw allow 995/tcp comment "POP3S Secure"
+
+# Port Administrasi Khusus (HANYA izinkan dari subnet manajemen / VPN terpercaya)
+# Ganti 192.168.100.0/24 dengan IP Subnet VPN / Bastion Anda
+sudo ufw allow from 192.168.100.0/24 to any port 7071 proto tcp comment "Admin Console (Restricted)"
+sudo ufw allow from 192.168.100.0/24 to any port 9071 proto tcp comment "Admin SOAP (Restricted)"
+sudo ufw allow from 192.168.100.0/24 to any port 22 proto tcp comment "SSH Management (Restricted)"
+
+# Aktifkan Firewall
+sudo ufw enable &amp;&amp; sudo ufw status verbose</code></pre>
+        </div>
+
+        <h3 id="sec-fail2ban-bruteforce-defense" class="heading-anchor">
+          <a href="#sec-fail2ban-bruteforce-defense" class="anchor-link">#</a>
+          <span class="lang-id">Konfigurasi Fail2Ban untuk Perlindungan Autentikasi ZCS</span>
+          <span class="lang-en">Fail2Ban Jail Configuration for ZCS Authentication Defense</span>
+        </h3>
+        <div class="code-card">
+          <div class="code-header">
+            <span class="code-lang-tag"><i class="fa-solid fa-terminal"></i> CONF (/etc/fail2ban/jail.d/zimbra.local)</span>
+            <button type="button" class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Salin</button>
+          </div>
+          <pre><code class="language-ini">[zimbra-webmail]
+enabled  = true
+port     = http,https
+filter   = zimbra-webmail
+logpath  = /opt/zimbra/log/mailbox.log
+maxretry = 5
+findtime = 600
+bantime  = 86400
+
+[zimbra-postfix]
+enabled  = true
+port     = 25,465,587
+filter   = postfix[mode=auth]
+logpath  = /var/log/mail.log
+maxretry = 5
+findtime = 600
+bantime  = 86400</code></pre>
+        </div>
+        <hr class="divider">
         <h2 id="operational-best-practices-rfc-2119" class="heading-anchor">
           <a href="#operational-best-practices-rfc-2119" class="anchor-link"
             >#</a
@@ -21385,7 +21853,7 @@ cd /tmp/ezm &amp;&amp; sudo ./eradicate.sh --scan-and-heal</code></pre>
           <div class="rfc-card must">
             <div class="rfc-card-header">
               <div class="rfc-card-title">
-                <i class="fa-solid fa-circle-exclamation text-danger"></i> 1. MUST / REQUIRED (Wajib Mutlak)
+                <i class="fa-solid fa-circle-exclamation text-danger"></i> <span class="lang-id">1. MUST / REQUIRED (Wajib Mutlak)</span><span class="lang-en">1. MUST / REQUIRED (Mandatory Baseline)</span>
               </div>
               <span class="rfc-badge"><i class="fa-solid fa-shield-halved"></i> Absolute Requirement</span>
             </div>
@@ -21395,7 +21863,8 @@ cd /tmp/ezm &amp;&amp; sudo ./eradicate.sh --scan-and-heal</code></pre>
                   <i class="fa-solid fa-box-archive text-danger"></i> MUST Install POSIX <code>pax</code> Utility
                 </div>
                 <p class="rfc-item-desc">
-                  Host OS <strong>wajib</strong> memiliki paket <code>pax</code> terinstal (<code>apt-get install -y pax</code> / <code>dnf install -y pax</code>). Amavisd menggunakan utilitas ini untuk dekompresi arsip email; ketiadaannya memicu <em>fallback</em> ke <code>cpio</code> yang rentan terhadap eksekusi kode arbitrer jarak jauh (RCE) (<a href="https://nvd.nist.gov/vuln/detail/CVE-2022-41352" target="_blank" rel="noopener noreferrer"><strong>CVE-2022-41352</strong></a>).
+                  <span class="lang-id">Host OS <strong>wajib</strong> memiliki paket <code>pax</code> terinstal (<code>apt-get install -y pax</code> / <code>dnf install -y pax</code>). Amavisd menggunakan utilitas ini untuk dekompresi arsip email; ketiadaannya memicu <em>fallback</em> ke <code>cpio</code> yang rentan terhadap eksekusi kode arbitrer jarak jauh (RCE) (<a href="https://nvd.nist.gov/vuln/detail/CVE-2022-41352" target="_blank" rel="noopener noreferrer"><strong>CVE-2022-41352</strong></a>).</span>
+                  <span class="lang-en">The host OS <strong>MUST</strong> have the <code>pax</code> package installed (<code>apt-get install -y pax</code> / <code>dnf install -y pax</code>). Amavisd relies on this utility for archive decompression; its absence triggers an unauthenticated RCE fallback via vulnerable <code>cpio</code> unpackers (<a href="https://nvd.nist.gov/vuln/detail/CVE-2022-41352" target="_blank" rel="noopener noreferrer"><strong>CVE-2022-41352</strong></a>).</span>
                 </p>
               </div>
               <div class="rfc-item">
@@ -21403,7 +21872,8 @@ cd /tmp/ezm &amp;&amp; sudo ./eradicate.sh --scan-and-heal</code></pre>
                   <i class="fa-solid fa-lock text-danger"></i> MUST Isolate Admin Port (<code>7071</code> / <code>9071</code>)
                 </div>
                 <p class="rfc-item-desc">
-                  Port administrasi ZCS (<code>7071</code> untuk Admin Web Console &amp; SOAP Admin Servlet) <strong>wajib diisolasi</strong> dari internet publik (<code>0.0.0.0/0</code>) dan hanya boleh diakses melalui VPN korporat terenkripsi, IP bastion/manajemen khusus, atau SSH tunneling lokal (<code>127.0.0.1</code>).
+                  <span class="lang-id">Port administrasi ZCS (<code>7071</code> untuk Admin Web Console &amp; SOAP Admin Servlet) <strong>wajib diisolasi</strong> dari internet publik (<code>0.0.0.0/0</code>) dan hanya boleh diakses melalui VPN korporat terenkripsi, IP bastion/manajemen khusus, atau SSH tunneling lokal (<code>127.0.0.1</code>).</span>
+                  <span class="lang-en">ZCS administration ports (<code>7071</code> for Admin Web Console &amp; SOAP Admin Servlets) <strong>MUST</strong> be isolated from public WAN reachability (<code>0.0.0.0/0</code>) and restricted exclusively to corporate VPNs, dedicated bastion hosts, or local SSH tunnels (<code>127.0.0.1</code>).</span>
                 </p>
               </div>
               <div class="rfc-item">
@@ -21411,7 +21881,8 @@ cd /tmp/ezm &amp;&amp; sudo ./eradicate.sh --scan-and-heal</code></pre>
                   <i class="fa-solid fa-ban text-danger"></i> MUST Disable Postjournal When Not in Use
                 </div>
                 <p class="rfc-item-desc">
-                  Bagi sistem yang tidak menggunakan audit compliance journaling eksternal, layanan postjournal <strong>wajib dinonaktifkan</strong> untuk menutup celah RCE unauthenticated recipient injection (<a href="https://nvd.nist.gov/vuln/detail/CVE-2024-45519" target="_blank" rel="noopener noreferrer"><strong>CVE-2024-45519</strong></a>):
+                  <span class="lang-id">Bagi sistem yang tidak menggunakan audit compliance journaling eksternal, layanan postjournal <strong>wajib dinonaktifkan</strong> untuk menutup celah RCE unauthenticated recipient injection (<a href="https://nvd.nist.gov/vuln/detail/CVE-2024-45519" target="_blank" rel="noopener noreferrer"><strong>CVE-2024-45519</strong></a>):</span>
+                  <span class="lang-en">For environments not utilizing external compliance archiving, the postjournal service <strong>MUST</strong> be disabled to eliminate unauthenticated command injection attack surfaces (<a href="https://nvd.nist.gov/vuln/detail/CVE-2024-45519" target="_blank" rel="noopener noreferrer"><strong>CVE-2024-45519</strong></a>):</span>
                 </p>
                 <div class="code-card rfc-code-card">
                   <div class="code-header">
@@ -21426,7 +21897,8 @@ cd /tmp/ezm &amp;&amp; sudo ./eradicate.sh --scan-and-heal</code></pre>
                   <i class="fa-solid fa-network-wired text-danger"></i> MUST Bind Internal Daemons to Loopback (<code>127.0.0.1</code>)
                 </div>
                 <p class="rfc-item-desc">
-                  Layanan internal seperti Memcached (<code>port 11211</code>), MySQL (<code>port 7306</code>), dan LDAP replica <strong>wajib di-bind</strong> hanya pada interface loopback lokal guna mencegah eksploitasi route cache poisoning (<a href="https://nvd.nist.gov/vuln/detail/CVE-2022-27924" target="_blank" rel="noopener noreferrer"><strong>CVE-2022-27924</strong></a>) dan ekstraksi basis data langsung.
+                  <span class="lang-id">Layanan internal seperti Memcached (<code>port 11211</code>), MySQL (<code>port 7306</code>), dan LDAP replica <strong>wajib di-bind</strong> hanya pada interface loopback lokal guna mencegah eksploitasi route cache poisoning (<a href="https://nvd.nist.gov/vuln/detail/CVE-2022-27924" target="_blank" rel="noopener noreferrer"><strong>CVE-2022-27924</strong></a>) dan ekstraksi basis data langsung.</span>
+                  <span class="lang-en">Internal daemons including Memcached (<code>port 11211</code>), MySQL (<code>port 7306</code>), and LDAP replica listeners <strong>MUST</strong> bind strictly to the loopback interface (<code>127.0.0.1</code>) to prevent cache poisoning attacks (<a href="https://nvd.nist.gov/vuln/detail/CVE-2022-27924" target="_blank" rel="noopener noreferrer"><strong>CVE-2022-27924</strong></a>) and direct unauthorized database probing.</span>
                 </p>
               </div>
               <div class="rfc-item">
@@ -21434,7 +21906,8 @@ cd /tmp/ezm &amp;&amp; sudo ./eradicate.sh --scan-and-heal</code></pre>
                   <i class="fa-solid fa-key text-danger"></i> MUST Enforce Cryptographic Checksum Validation
                 </div>
                 <p class="rfc-item-desc">
-                  Setiap arsip rilis biner ZCS yang diunduh dari repositori mirror <strong>wajib diverifikasi</strong> menggunakan hash kriptografis <code>SHA256</code> atau <code>MD5</code> resmi sebelum diekstraksi ke direktori sistem.
+                  <span class="lang-id">Setiap arsip rilis biner ZCS yang diunduh dari repositori mirror <strong>wajib diverifikasi</strong> menggunakan hash kriptografis <code>SHA256</code> atau <code>MD5</code> resmi sebelum diekstraksi ke direktori sistem.</span>
+                  <span class="lang-en">All ZCS release binary packages retrieved from remote mirrors <strong>MUST</strong> undergo cryptographic integrity verification via official <code>SHA256</code> or <code>MD5</code> checksum digests before unpacking.</span>
                 </p>
               </div>
             </div>
@@ -21444,7 +21917,7 @@ cd /tmp/ezm &amp;&amp; sudo ./eradicate.sh --scan-and-heal</code></pre>
           <div class="rfc-card must-not">
             <div class="rfc-card-header">
               <div class="rfc-card-title">
-                <i class="fa-solid fa-circle-xmark text-danger"></i> 2. MUST NOT / SHALL NOT (Dilarang Keras)
+                <i class="fa-solid fa-circle-xmark text-danger"></i> <span class="lang-id">2. MUST NOT / SHALL NOT (Dilarang Keras)</span><span class="lang-en">2. MUST NOT / SHALL NOT (Strictly Prohibited)</span>
               </div>
               <span class="rfc-badge"><i class="fa-solid fa-hand"></i> Strictly Prohibited</span>
             </div>
@@ -21454,7 +21927,8 @@ cd /tmp/ezm &amp;&amp; sudo ./eradicate.sh --scan-and-heal</code></pre>
                   <i class="fa-solid fa-globe text-danger"></i> MUST NOT Expose Admin Console to Public WAN
                 </div>
                 <p class="rfc-item-desc">
-                  Dilarang memetakan port <code>7071</code> atau direktori <code>/zimbraAdmin</code> secara langsung ke alamat IP publik, karena merupakan sasaran utama pemindaian otomatis botnet, CSRF, dan kerentanan Zimlet UI (<a href="https://nvd.nist.gov/vuln/detail/CVE-2023-34192" target="_blank" rel="noopener noreferrer"><strong>CVE-2023-34192</strong></a>, <a href="https://nvd.nist.gov/vuln/detail/CVE-2024-33535" target="_blank" rel="noopener noreferrer"><strong>CVE-2024-33535</strong></a>).
+                  <span class="lang-id">Dilarang memetakan port <code>7071</code> atau direktori <code>/zimbraAdmin</code> secara langsung ke alamat IP publik, karena merupakan sasaran utama pemindaian otomatis botnet, CSRF, dan kerentanan Zimlet UI (<a href="https://nvd.nist.gov/vuln/detail/CVE-2023-34192" target="_blank" rel="noopener noreferrer"><strong>CVE-2023-34192</strong></a>, <a href="https://nvd.nist.gov/vuln/detail/CVE-2024-33535" target="_blank" rel="noopener noreferrer"><strong>CVE-2024-33535</strong></a>).</span>
+                  <span class="lang-en">Administrators <strong>MUST NOT</strong> expose port <code>7071</code> or the <code>/zimbraAdmin</code> webroot directly to public WAN subnets due to automated botnet scanning, CSRF vectors, and Zimlet UI vulnerabilities (<a href="https://nvd.nist.gov/vuln/detail/CVE-2023-34192" target="_blank" rel="noopener noreferrer"><strong>CVE-2023-34192</strong></a>, <a href="https://nvd.nist.gov/vuln/detail/CVE-2024-33535" target="_blank" rel="noopener noreferrer"><strong>CVE-2024-33535</strong></a>).</span>
                 </p>
               </div>
               <div class="rfc-item">
@@ -21462,7 +21936,8 @@ cd /tmp/ezm &amp;&amp; sudo ./eradicate.sh --scan-and-heal</code></pre>
                   <i class="fa-solid fa-user-shield text-danger"></i> MUST NOT Run Core Zimbra Processes as <code>root</code>
                 </div>
                 <p class="rfc-item-desc">
-                  Dilarang menjalankan daemon aplikasi (<code>mailboxd</code>, <code>slapd</code>, <code>postfix</code>, <code>amavisd</code>, <code>nginx</code>) langsung di bawah hak pengguna <code>root</code>. Seluruh tugas pemeliharaan harian wajib didelegasikan ke user sistem unprivileged <code>zimbra</code>.
+                  <span class="lang-id">Dilarang menjalankan daemon aplikasi (<code>mailboxd</code>, <code>slapd</code>, <code>postfix</code>, <code>amavisd</code>, <code>nginx</code>) langsung di bawah hak pengguna <code>root</code>. Seluruh tugas pemeliharaan harian wajib didelegasikan ke user sistem unprivileged <code>zimbra</code>.</span>
+                  <span class="lang-en">Application daemons (<code>mailboxd</code>, <code>slapd</code>, <code>postfix</code>, <code>amavisd</code>, <code>nginx</code>) <strong>MUST NOT</strong> execute directly with <code>root</code> user privileges. All routine operations must remain constrained under the unprivileged <code>zimbra</code> service account.</span>
                 </p>
               </div>
               <div class="rfc-item">
@@ -21470,7 +21945,8 @@ cd /tmp/ezm &amp;&amp; sudo ./eradicate.sh --scan-and-heal</code></pre>
                   <i class="fa-solid fa-clock-rotate-left text-danger"></i> MUST NOT Defer Cumulative Security Patches
                 </div>
                 <p class="rfc-item-desc">
-                  Dilarang menunda penerapan Patch / Security Advisory resmi melebihi 14 hari kalender sejak tanggal pengumuman rilis oleh tim keamanan Zimbra / Synacor.
+                  <span class="lang-id">Dilarang menunda penerapan Patch / Security Advisory resmi melebihi 14 hari kalender sejak tanggal pengumuman rilis oleh tim keamanan Zimbra / Synacor.</span>
+                  <span class="lang-en">Security teams <strong>MUST NOT</strong> defer the application of critical Zimbra security patches or cumulative updates beyond 14 calendar days from official vendor disclosure.</span>
                 </p>
               </div>
               <div class="rfc-item">
@@ -21478,7 +21954,8 @@ cd /tmp/ezm &amp;&amp; sudo ./eradicate.sh --scan-and-heal</code></pre>
                   <i class="fa-solid fa-triangle-exclamation text-danger"></i> MUST NOT Enable Deprecated Protocols &amp; Weak Ciphers
                 </div>
                 <p class="rfc-item-desc">
-                  Dilarang mengaktifkan protokol usang SSLv2, SSLv3, TLSv1.0, TLSv1.1 serta cipher lemah (RC4, 3DES, CBC, EXPORT) pada Mail Proxy Nginx maupun Postfix MTA.
+                  <span class="lang-id">Dilarang mengaktifkan protokol usang SSLv2, SSLv3, TLSv1.0, TLSv1.1 serta cipher lemah (RC4, 3DES, CBC, EXPORT) pada Mail Proxy Nginx maupun Postfix MTA.</span>
+                  <span class="lang-en">Configurations <strong>MUST NOT</strong> enable deprecated cryptographic protocols (SSLv2, SSLv3, TLSv1.0, TLSv1.1) or insecure ciphers (RC4, 3DES, CBC, EXPORT) on Nginx reverse proxy or Postfix MTA.</span>
                 </p>
               </div>
             </div>
@@ -21488,7 +21965,7 @@ cd /tmp/ezm &amp;&amp; sudo ./eradicate.sh --scan-and-heal</code></pre>
           <div class="rfc-card should">
             <div class="rfc-card-header">
               <div class="rfc-card-title">
-                <i class="fa-solid fa-triangle-exclamation text-warning"></i> 3. SHOULD / RECOMMENDED (Sangat Disarankan)
+                <i class="fa-solid fa-triangle-exclamation text-warning"></i> <span class="lang-id">3. SHOULD / RECOMMENDED (Sangat Disarankan)</span><span class="lang-en">3. SHOULD / RECOMMENDED (Strongly Recommended)</span>
               </div>
               <span class="rfc-badge"><i class="fa-solid fa-thumbs-up"></i> Best Practice</span>
             </div>
@@ -21498,7 +21975,8 @@ cd /tmp/ezm &amp;&amp; sudo ./eradicate.sh --scan-and-heal</code></pre>
                   <i class="fa-solid fa-bolt text-warning"></i> SHOULD Deploy Dedicated Local Caching DNS Resolver
                 </div>
                 <p class="rfc-item-desc">
-                  Sangat disarankan memasang <strong>Unbound</strong> atau BIND9 pada <code>127.0.0.1</code> sebagai recursive resolver lokal. Hal ini secara signifikan memangkas latensi lookup SpamAssassin / DNSBL serta mencegah kegagalan resolusi MX timeout akibat <em>public DNS rate-limiting</em>.
+                  <span class="lang-id">Sangat disarankan memasang <strong>Unbound</strong> atau BIND9 pada <code>127.0.0.1</code> sebagai recursive resolver lokal. Hal ini secara signifikan memangkas latensi lookup SpamAssassin / DNSBL serta mencegah kegagalan resolusi MX timeout akibat <em>public DNS rate-limiting</em>.</span>
+                  <span class="lang-en">Deploying <strong>Unbound</strong> or BIND9 on <code>127.0.0.1</code> as a local recursive caching resolver is <strong>STRONGLY RECOMMENDED</strong>. This drastically mitigates DNSBL lookup latencies and prevents MX query dropouts caused by public DNS rate limits.</span>
                 </p>
               </div>
               <div class="rfc-item">
@@ -21506,7 +21984,8 @@ cd /tmp/ezm &amp;&amp; sudo ./eradicate.sh --scan-and-heal</code></pre>
                   <i class="fa-solid fa-envelope-circle-check text-warning"></i> SHOULD Enforce Strict DMARC Policy (<code>p=reject</code>)
                 </div>
                 <p class="rfc-item-desc">
-                  Domain pengirim email harus menerapkan catatan DMARC dengan kebijakan penolakan tegas (<code>p=reject</code>), penyelarasan SPF <code>strict</code> (<code>aspf=s</code>), DKIM <code>strict</code> (<code>adkim=s</code>), serta mengonfigurasi pelaporan agregat harian (<code>rua=mailto:dmarc-rua@domain.com</code>).
+                  <span class="lang-id">Domain pengirim email harus menerapkan catatan DMARC dengan kebijakan penolakan tegas (<code>p=reject</code>), penyelarasan SPF <code>strict</code> (<code>aspf=s</code>), DKIM <code>strict</code> (<code>adkim=s</code>), serta mengonfigurasi pelaporan agregat harian (<code>rua=mailto:dmarc-rua@domain.com</code>).</span>
+                  <span class="lang-en">Sending domains <strong>SHOULD</strong> publish strict DMARC enforcement policies (<code>p=reject</code>), strict SPF alignment (<code>aspf=s</code>), strict DKIM alignment (<code>adkim=s</code>), and aggregate reporting URIs (<code>rua=mailto:dmarc-rua@domain.com</code>).</span>
                 </p>
               </div>
               <div class="rfc-item">
@@ -21514,7 +21993,8 @@ cd /tmp/ezm &amp;&amp; sudo ./eradicate.sh --scan-and-heal</code></pre>
                   <i class="fa-solid fa-shield-virus text-warning"></i> SHOULD Implement Dynamic Brute-Force Defense (Fail2Ban)
                 </div>
                 <p class="rfc-item-desc">
-                  Konfigurasikan Fail2Ban dengan filter regex khusus pada <code>/opt/zimbra/log/mailbox.log</code> dan <code>/var/log/mail.log</code> untuk mendeteksi serta memblokir otomatis alamat IP penyerang pada port Webmail, SMTP Submission (587), dan IMAPS (993).
+                  <span class="lang-id">Konfigurasikan Fail2Ban dengan filter regex khusus pada <code>/opt/zimbra/log/mailbox.log</code> dan <code>/var/log/mail.log</code> untuk mendeteksi serta memblokir otomatis alamat IP penyerang pada port Webmail, SMTP Submission (587), dan IMAPS (993).</span>
+                  <span class="lang-en">Systems <strong>SHOULD</strong> deploy Fail2Ban with tailored regex filters parsing <code>/opt/zimbra/log/mailbox.log</code> and <code>/var/log/mail.log</code> to automatically ban abusive IPs across Webmail, Submission (587), and IMAPS (993).</span>
                 </p>
               </div>
               <div class="rfc-item">
@@ -21522,7 +22002,8 @@ cd /tmp/ezm &amp;&amp; sudo ./eradicate.sh --scan-and-heal</code></pre>
                   <i class="fa-solid fa-mobile-screen-button text-warning"></i> SHOULD Mandate Multi-Factor Authentication (2FA / TOTP)
                 </div>
                 <p class="rfc-item-desc">
-                  Wajibkan autentikasi dua faktor berbasis waktu (RFC 6238 TOTP) bagi seluruh akun berhak istimewa (<em>Global Administrator</em>, <em>Delegated Admin</em>) dan disarankan untuk seluruh akun mailbox pengguna.
+                  <span class="lang-id">Wajibkan autentikasi dua faktor berbasis waktu (RFC 6238 TOTP) bagi seluruh akun berhak istimewa (<em>Global Administrator</em>, <em>Delegated Admin</em>) dan disarankan untuk seluruh akun mailbox pengguna.</span>
+                  <span class="lang-en">Multi-factor authentication (RFC 6238 TOTP) <strong>SHOULD</strong> be strictly mandated for all administrative roles and strongly encouraged for all standard mailbox users.</span>
                 </p>
               </div>
               <div class="rfc-item">
@@ -21530,7 +22011,8 @@ cd /tmp/ezm &amp;&amp; sudo ./eradicate.sh --scan-and-heal</code></pre>
                   <i class="fa-solid fa-gauge-high text-warning"></i> SHOULD Implement CBPolicyD Rate-Limiting
                 </div>
                 <p class="rfc-item-desc">
-                  Aktifkan modul Cluebringer (CBPolicyD) untuk membatasi kuota pengiriman email keluar per jam/per akun (misal maks. 100-200 email/jam/user) guna mencegah domain masuk daftar hitam (<em>blacklist</em>) jika terdapat akun pengguna yang terkompromi.
+                  <span class="lang-id">Aktifkan modul Cluebringer (CBPolicyD) untuk membatasi kuota pengiriman email keluar per jam/per akun (misal maks. 100-200 email/jam/user) guna mencegah domain masuk daftar hitam (<em>blacklist</em>) jika terdapat akun pengguna yang terkompromi.</span>
+                  <span class="lang-en">Deploying Cluebringer (CBPolicyD) egress rate-limiting per account (e.g., 100-200 messages/hour) <strong>SHOULD</strong> be implemented to prevent IP reputation tarnishing from compromised user credentials.</span>
                 </p>
               </div>
             </div>
@@ -21540,7 +22022,7 @@ cd /tmp/ezm &amp;&amp; sudo ./eradicate.sh --scan-and-heal</code></pre>
           <div class="rfc-card should-not">
             <div class="rfc-card-header">
               <div class="rfc-card-title">
-                <i class="fa-solid fa-circle-pause text-orange"></i> 4. SHOULD NOT / NOT RECOMMENDED (Sebaiknya Dihindari)
+                <i class="fa-solid fa-circle-pause text-orange"></i> <span class="lang-id">4. SHOULD NOT / NOT RECOMMENDED (Sebaiknya Dihindari)</span><span class="lang-en">4. SHOULD NOT / NOT RECOMMENDED (Discouraged)</span>
               </div>
               <span class="rfc-badge"><i class="fa-solid fa-triangle-exclamation"></i> Discouraged</span>
             </div>
@@ -21550,7 +22032,8 @@ cd /tmp/ezm &amp;&amp; sudo ./eradicate.sh --scan-and-heal</code></pre>
                   <i class="fa-solid fa-display text-orange"></i> SHOULD NOT Rely Solely on Web Interface for Configuration
                 </div>
                 <p class="rfc-item-desc">
-                  Hindari melakukan perubahan parameter arsitektur kritis hanya melalui antarmuka grafis Webmail/Admin UI; prioritaskan penggunaan CLI resmi (<code>zmprov</code>, <code>zmlocalconfig</code>, <code>zmcontrol</code>) yang dapat terdokumentasi dan terrekam dalam audit log.
+                  <span class="lang-id">Hindari melakukan perubahan parameter arsitektur kritis hanya melalui antarmuka grafis Webmail/Admin UI; prioritaskan penggunaan CLI resmi (<code>zmprov</code>, <code>zmlocalconfig</code>, <code>zmcontrol</code>) yang dapat terdokumentasi dan terrekam dalam audit log.</span>
+                  <span class="lang-en">Operators <strong>SHOULD NOT</strong> make core architectural adjustments exclusively through the Admin UI; audited CLI operations (<code>zmprov</code>, <code>zmlocalconfig</code>, <code>zmcontrol</code>) provide reliable configuration traceability.</span>
                 </p>
               </div>
               <div class="rfc-item">
@@ -21558,7 +22041,8 @@ cd /tmp/ezm &amp;&amp; sudo ./eradicate.sh --scan-and-heal</code></pre>
                   <i class="fa-solid fa-hard-drive text-orange"></i> SHOULD NOT Retain Unencrypted Backups on Same Storage Node
                 </div>
                 <p class="rfc-item-desc">
-                  Hindari menyimpan berkas cadangan mailbox hanya pada volume lokal atau storage server yang sama tanpa replikasi terenkripsi ke lokasi fisik / cloud terpisah (<em>off-site disaster recovery</em>).
+                  <span class="lang-id">Hindari menyimpan berkas cadangan mailbox hanya pada volume lokal atau storage server yang sama tanpa replikasi terenkripsi ke lokasi fisik / cloud terpisah (<em>off-site disaster recovery</em>).</span>
+                  <span class="lang-en">Organizations <strong>SHOULD NOT</strong> store unencrypted backup snapshots solely on the local server volume without off-site, immutable cloud replication.</span>
                 </p>
               </div>
               <div class="rfc-item">
@@ -21566,7 +22050,8 @@ cd /tmp/ezm &amp;&amp; sudo ./eradicate.sh --scan-and-heal</code></pre>
                   <i class="fa-solid fa-certificate text-orange"></i> SHOULD NOT Use Self-Signed Certificates in Production
                 </div>
                 <p class="rfc-item-desc">
-                  Hindari membiarkan sertifikat SSL/TLS bawaan (<em>self-signed</em>) terpasang pada lingkungan produksi publik; selalu gunakan sertifikat valid terpercaya publik (Let's Encrypt / Commercial CA).
+                  <span class="lang-id">Hindari membiarkan sertifikat SSL/TLS bawaan (<em>self-signed</em>) terpasang pada lingkungan produksi publik; selalu gunakan sertifikat valid terpercaya publik (Let's Encrypt / Commercial CA).</span>
+                  <span class="lang-en">Public deployments <strong>SHOULD NOT</strong> maintain default self-signed SSL/TLS certificates; valid certificates signed by trusted public Certificate Authorities (Let's Encrypt / Commercial CA) are essential.</span>
                 </p>
               </div>
             </div>
@@ -21576,7 +22061,7 @@ cd /tmp/ezm &amp;&amp; sudo ./eradicate.sh --scan-and-heal</code></pre>
           <div class="rfc-card may">
             <div class="rfc-card-header">
               <div class="rfc-card-title">
-                <i class="fa-solid fa-circle-check text-success"></i> 5. MAY / OPTIONAL (Pilihan Tambahan)
+                <i class="fa-solid fa-circle-check text-success"></i> <span class="lang-id">5. MAY / OPTIONAL (Pilihan Tambahan)</span><span class="lang-en">5. MAY / OPTIONAL (Discretionary Enhancements)</span>
               </div>
               <span class="rfc-badge"><i class="fa-solid fa-sliders"></i> Discretionary</span>
             </div>
@@ -21586,7 +22071,8 @@ cd /tmp/ezm &amp;&amp; sudo ./eradicate.sh --scan-and-heal</code></pre>
                   <i class="fa-solid fa-chart-line text-success"></i> MAY Integrate Centralized SIEM / Syslog Forwarding
                 </div>
                 <p class="rfc-item-desc">
-                  Administrator dapat memforward log audit ZCS (<code>/opt/zimbra/log/audit.log</code>, <code>mailbox.log</code>, <code>nginx.access.log</code>) ke platform SIEM terpusat (Wazuh, Elastic SIEM, Graylog, Splunk) via rsyslog TLS terenkripsi.
+                  <span class="lang-id">Administrator dapat memforward log audit ZCS (<code>/opt/zimbra/log/audit.log</code>, <code>mailbox.log</code>, <code>nginx.access.log</code>) ke platform SIEM terpusat (Wazuh, Elastic SIEM, Graylog, Splunk) via rsyslog TLS terenkripsi.</span>
+                  <span class="lang-en">Administrators <strong>MAY</strong> forward ZCS security audit logs (<code>/opt/zimbra/log/audit.log</code>, <code>mailbox.log</code>, <code>nginx.access.log</code>) to centralized SIEM platforms (Wazuh, Elastic, Graylog, Splunk) over TLS-encrypted rsyslog pipelines.</span>
                 </p>
               </div>
               <div class="rfc-item">
@@ -21594,7 +22080,8 @@ cd /tmp/ezm &amp;&amp; sudo ./eradicate.sh --scan-and-heal</code></pre>
                   <i class="fa-solid fa-earth-americas text-success"></i> MAY Implement GeoIP Ingress Filtering on Reverse Proxy
                 </div>
                 <p class="rfc-item-desc">
-                  Dapat menerapkan modul Nginx GeoIP2 untuk membatasi atau menolak akses autentikasi Webmail dari wilayah geografis di luar jangkauan operasional bisnis.
+                  <span class="lang-id">Dapat menerapkan modul Nginx GeoIP2 untuk membatasi atau menolak akses autentikasi Webmail dari wilayah geografis di luar jangkauan operasional bisnis.</span>
+                  <span class="lang-en">Infrastructure teams <strong>MAY</strong> leverage Nginx GeoIP2 modules to restrict webmail authentication attempts originating from untrusted geographic territories outside normal operational zones.</span>
                 </p>
               </div>
               <div class="rfc-item">
@@ -21602,7 +22089,8 @@ cd /tmp/ezm &amp;&amp; sudo ./eradicate.sh --scan-and-heal</code></pre>
                   <i class="fa-solid fa-wand-magic-sparkles text-success"></i> MAY Deploy Automated Forensic &amp; Webshell Scanners
                 </div>
                 <p class="rfc-item-desc">
-                  Dapat menjadwalkan pemeriksaan berkala berkas sistem dan webroot Jetty menggunakan toolkit pemulihan insiden seperti <a href="https://github.com/alsyundawy/eradicate-zimbra-malware" target="_blank" rel="noopener noreferrer"><strong>eradicate-zimbra-malware</strong></a>.
+                  <span class="lang-id">Dapat menjadwalkan pemeriksaan berkala berkas sistem dan webroot Jetty menggunakan toolkit pemulihan insiden seperti <a href="https://github.com/alsyundawy/eradicate-zimbra-malware" target="_blank" rel="noopener noreferrer"><strong>eradicate-zimbra-malware</strong></a>.</span>
+                  <span class="lang-en">Security teams <strong>MAY</strong> schedule periodic forensic integrity audits on Jetty webroots using automated incident response suites such as <a href="https://github.com/alsyundawy/eradicate-zimbra-malware" target="_blank" rel="noopener noreferrer"><strong>eradicate-zimbra-malware</strong></a>.</span>
                 </p>
               </div>
             </div>
@@ -21618,71 +22106,61 @@ cd /tmp/ezm &amp;&amp; sudo ./eradicate.sh --scan-and-heal</code></pre>
             class="anchor-link"
             >#</a
           >
-          Strategic Migration &amp; Upgrade Methodology
+          <span class="lang-id">Metodologi Migrasi Strategis &amp; Upgrade</span><span class="lang-en">Strategic Migration &amp; Upgrade Methodology</span>
         </h2>
-        <p class="doc-para">Panduan migrasi dan upgrade sistem ZCS:</p>
-        <ol class="doc-list">
-          <li>
-            <strong
-              >Metode Rekomendasi: Clean Install &amp; Zero-Contamination
-              Migration</strong
-            >
-          </li>
-        </ol>
-        <ul class="doc-list">
-          <li>
-            Bangun instance server baru menggunakan Ubuntu 22.04 LTS / 24.04 LTS
-            atau Rocky Linux 9.
-          </li>
-          <li>
-            Pasang ZCS 10.1.x (Network Edition atau Maldua FOSS 10.1.20+).
-          </li>
-          <li>
-            Migrasikan seluruh domain, akun, alias, distribution list, dan isi
-            mailbox menggunakan utilitas migrasi mailbox murni seperti
-            <strong
-              ><a
-                href="https://github.com/alsyundawy/Z2C"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Z2C</a
-              ></strong
-            >.
-          </li>
-        </ul>
-        <ol class="doc-list">
-          <li><strong>Metode Alternatif: Rolling In-Place Upgrade</strong></li>
-        </ol>
-        <ul class="doc-list">
-          <li>
-            Jalankan audit sanitasi total sistem menggunakan toolkit IR
-            <strong
-              ><a
-                href="https://github.com/alsyundawy/eradicate-zimbra-malware"
-                target="_blank"
-                rel="noopener noreferrer"
-                >eradicate-zimbra-malware</a
-              ></strong
-            >.
-          </li>
-          <li>Buat backup penuh di luar server.</li>
-          <li>
-            Upgrade bertahap: <code>ZCS 8.8.15 P46</code> ➔
-            <code>ZCS 9.0.0 P41</code> ➔ <code>ZCS 10.1.x</code>.
-          </li>
-          <li>
-            Jalankan
-            <code>/opt/zimbra/libexec/zmfixperms --extended</code>
-            pasca-upgrade.
-          </li>
-        </ul>
+        <div class="lang-id">
+          <p class="doc-para">Panduan migrasi dan upgrade sistem ZCS:</p>
+          <ol class="doc-list">
+            <li>
+              <strong>Metode Rekomendasi: Clean Install &amp; Zero-Contamination Migration</strong>
+            </li>
+          </ol>
+          <ul class="doc-list">
+            <li>Bangun instance server baru menggunakan Ubuntu 22.04 LTS / 24.04 LTS atau Rocky Linux 9.</li>
+            <li>Pasang ZCS 10.1.x (Network Edition atau Maldua FOSS 10.1.20+).</li>
+            <li>Migrasikan seluruh domain, akun, alias, distribution list, dan isi mailbox menggunakan utilitas migrasi mailbox murni seperti <strong><a href="https://github.com/alsyundawy/Z2C" target="_blank" rel="noopener noreferrer">Z2C</a></strong>.</li>
+          </ul>
+          <ol class="doc-list">
+            <li><strong>Metode Alternatif: Rolling In-Place Upgrade</strong></li>
+          </ol>
+          <ul class="doc-list">
+            <li>Jalankan audit sanitasi total sistem menggunakan toolkit IR <strong><a href="https://github.com/alsyundawy/eradicate-zimbra-malware" target="_blank" rel="noopener noreferrer">eradicate-zimbra-malware</a></strong>.</li>
+            <li>Buat backup penuh di luar server (off-site backup).</li>
+            <li>Upgrade bertahap: <code>ZCS 8.8.15 P46</code> ➔ <code>ZCS 9.0.0 P41</code> ➔ <code>ZCS 10.1.x</code>.</li>
+            <li>Jalankan <code>/opt/zimbra/libexec/zmfixperms --extended</code> pasca-upgrade.</li>
+          </ul>
+        </div>
+        <div class="lang-en">
+          <p class="doc-para">Comprehensive ZCS migration and upgrade architecture:</p>
+          <ol class="doc-list">
+            <li>
+              <strong>Recommended Strategy: Clean Install &amp; Zero-Contamination Migration</strong>
+            </li>
+          </ol>
+          <ul class="doc-list">
+            <li>Provision a clean target server instance running Ubuntu 22.04 / 24.04 LTS or Rocky Linux 9.</li>
+            <li>Install fresh ZCS 10.1.x (Network Edition or Maldua FOSS 10.1.20+).</li>
+            <li>Migrate all domains, accounts, aliases, distribution lists, and mailbox contents via pure mailbox migration engines such as <strong><a href="https://github.com/alsyundawy/Z2C" target="_blank" rel="noopener noreferrer">Z2C</a></strong>.</li>
+          </ul>
+          <ol class="doc-list">
+            <li><strong>Alternative Strategy: Rolling In-Place Upgrade</strong></li>
+          </ol>
+          <ul class="doc-list">
+            <li>Execute an exhaustive system sanitation audit with the incident response suite <strong><a href="https://github.com/alsyundawy/eradicate-zimbra-malware" target="_blank" rel="noopener noreferrer">eradicate-zimbra-malware</a></strong>.</li>
+            <li>Take complete offline server snapshots and off-site cold backups.</li>
+            <li>Upgrade iteratively: <code>ZCS 8.8.15 P46</code> ➔ <code>ZCS 9.0.0 P41</code> ➔ <code>ZCS 10.1.x</code>.</li>
+            <li>Execute <code>/opt/zimbra/libexec/zmfixperms --extended</code> following upgrade completion.</li>
+          </ul>
+        </div>
         <hr class="divider">
         <h2 id="running-tests" class="heading-anchor">
-          <a href="#running-tests" class="anchor-link">#</a> Running Tests
+          <a href="#running-tests" class="anchor-link">#</a> <span class="lang-id">Menjalankan Pengujian &amp; Verifikasi Otomatis</span><span class="lang-en">Running Automated Tests &amp; Checksum Verification</span>
         </h2>
-        <p class="doc-para">
-          Untuk memverifikasi ketersediaan seluruh link mirror, integritas
-          biner, dan status sistem:
+        <p class="doc-para lang-id">
+          Untuk memverifikasi ketersediaan seluruh link mirror, integritas biner, dan status sistem:
+        </p>
+        <p class="doc-para lang-en">
+          To continuously verify mirror availability, cryptographic hashes, and repository code health:
         </p>
         <div class="code-card">
           <div class="code-header">
@@ -21701,10 +22179,13 @@ trunk check --all</code></pre>
         <hr class="divider">
         <h2 id="ecosystem-tools--repositories" class="heading-anchor">
           <a href="#ecosystem-tools--repositories" class="anchor-link">#</a>
-          Ecosystem Tools &amp; Repositories
+          <span class="lang-id">Alat Ekosistem &amp; Repositori Terkait</span><span class="lang-en">Ecosystem Tools &amp; Related Repositories</span>
         </h2>
-        <p class="doc-para">
+        <p class="doc-para lang-id">
           Utilitas pendukung open source untuk operasional Zimbra:
+        </p>
+        <p class="doc-para lang-en">
+          Open-source companion utilities and ecosystem tooling for Zimbra operations:
         </p>
         <ul class="doc-list">
           <li>
@@ -21774,36 +22255,45 @@ trunk check --all</code></pre>
         </ul>
         <hr class="divider">
         <h2 id="contributing" class="heading-anchor">
-          <a href="#contributing" class="anchor-link">#</a> Contributing
+          <a href="#contributing" class="anchor-link">#</a> <span class="lang-id">Panduan Kontribusi</span><span class="lang-en">Contribution Guidelines</span>
         </h2>
-        <p class="doc-para">
-          Kontribusi berupa penambahan tautan rilis baru, pembaruan checksum,
-          laporan tautan mirror rusak, atau dokumentasi keamanan sangat
-          diapresiasi.
-        </p>
-        <ul class="doc-list">
-          <li><strong>Alur Kontribusi (Pull Request Workflow):</strong></li>
-        </ul>
-        <ol class="doc-list">
-          <li>Fork repository ini ke akun GitHub Anda.</li>
-          <li>
-            Buat branch fitur baru (<code
-              >git checkout -b feature/tambah-versi-10.1.x</code
-            >).
-          </li>
-          <li>Lakukan verifikasi checksum URL yang ditambahkan.</li>
-          <li>
-            Submit Pull Request dengan deskripsi yang jelas dan referensi rilis
-            resmi.
-          </li>
-        </ol>
+        <div class="lang-id">
+          <p class="doc-para">
+            Kontribusi berupa penambahan tautan rilis baru, pembaruan checksum, laporan tautan mirror rusak, atau dokumentasi keamanan sangat diapresiasi.
+          </p>
+          <ul class="doc-list">
+            <li><strong>Alur Kontribusi (Pull Request Workflow):</strong></li>
+          </ul>
+          <ol class="doc-list">
+            <li>Fork repository ini ke akun GitHub Anda.</li>
+            <li>Buat branch fitur baru (<code>git checkout -b feature/tambah-versi-10.1.x</code>).</li>
+            <li>Lakukan verifikasi checksum URL yang ditambahkan.</li>
+            <li>Submit Pull Request dengan deskripsi yang jelas dan referensi rilis resmi.</li>
+          </ol>
+        </div>
+        <div class="lang-en">
+          <p class="doc-para">
+            Contributions including new release links, checksum updates, broken mirror reports, or security documentation enhancements are highly appreciated.
+          </p>
+          <ul class="doc-list">
+            <li><strong>Pull Request Workflow:</strong></li>
+          </ul>
+          <ol class="doc-list">
+            <li>Fork this repository to your GitHub account.</li>
+            <li>Create a new feature branch (<code>git checkout -b feature/add-version-10.1.x</code>).</li>
+            <li>Verify the HTTP availability and checksums of all added URLs.</li>
+            <li>Submit a Pull Request with a clear description and official release references.</li>
+          </ol>
+        </div>
         <hr class="divider">
         <h2 id="official-contact--author" class="heading-anchor">
-          <a href="#official-contact--author" class="anchor-link">#</a> Official
-          Contact &amp; Author
+          <a href="#official-contact--author" class="anchor-link">#</a> <span class="lang-id">Kontak Resmi &amp; Penulis</span><span class="lang-en">Official Contact &amp; Author</span>
         </h2>
-        <p class="doc-para">
+        <p class="doc-para lang-id">
           Repository ini dikelola dan diperbarui secara berkala oleh:
+        </p>
+        <p class="doc-para lang-en">
+          This repository is actively developed and maintained by:
         </p>
         <ul class="doc-list">
           <li>
@@ -21903,16 +22393,24 @@ trunk check --all</code></pre>
           </figure>
         <hr class="divider">
         <h2 id="license" class="heading-anchor">
-          <a href="#license" class="anchor-link">#</a> License
+          <a href="#license" class="anchor-link">#</a> <span class="lang-id">Lisensi &amp; Ketentuan Hukum</span><span class="lang-en">License &amp; Legal Terms</span>
         </h2>
-        <p class="doc-para">
-          Didistribusikan di bawah <strong>Lisensi Resmi MIT</strong>. Lihat
-          berkas [LICENSE](LICENSE) untuk ketentuan hukum lengkap.
-        </p>
-        <p class="doc-para">
-          Copyright (c) 2016-2026
-          <strong>Harry Dertin Sutisna Alsyundawy</strong>. All rights reserved.
-        </p>
+        <div class="lang-id">
+          <p class="doc-para">
+            Didistribusikan di bawah <strong>Lisensi Resmi MIT</strong>. Lihat berkas <a href="LICENSE" target="_blank" rel="noopener noreferrer">LICENSE</a> untuk ketentuan hukum lengkap.
+          </p>
+          <p class="doc-para">
+            Copyright (c) 2016-2026 <strong>Harry Dertin Sutisna Alsyundawy</strong>. All rights reserved.
+          </p>
+        </div>
+        <div class="lang-en">
+          <p class="doc-para">
+            Distributed under the official <strong>MIT License</strong>. Refer to the <a href="LICENSE" target="_blank" rel="noopener noreferrer">LICENSE</a> file for full legal terms.
+          </p>
+          <p class="doc-para">
+            Copyright (c) 2016-2026 <strong>Harry Dertin Sutisna Alsyundawy</strong>. All rights reserved.
+          </p>
+        </div>
       </main>
     </div>
 
@@ -21923,7 +22421,7 @@ trunk check --all</code></pre>
       </button>
     </div>
 
-    <!-- External Libraries (Prism.js & Mermaid.js with Subresource Integrity) -->
+    <!-- External Libraries (Prism.js &amp; Mermaid.js with Subresource Integrity) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js" integrity="sha512-whYhDwtTmlC/NpZlCr6PSsAaLOrfjVg/iXAnC4H/dtiHawpShhT2SlIMbpIhT/IL/NrpdMm+Hq2C13+VKpHTYw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-ini.min.js" integrity="sha512-SEHSxegRLtkgGiD1O0/CV0ycF85DmBRLaZm0hIq0zTIKqZWJYX8z3tXDH8uPBexdsvFazJQ3TIcxMqFos4BRTw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -21940,7 +22438,7 @@ trunk check --all</code></pre>
       }
 
       document.addEventListener('DOMContentLoaded', () => {
-        // 1. Initialize & Programmatically Render Mermaid Diagram
+        // 1. Initialize &amp; Programmatically Render Mermaid Diagram
         if (typeof mermaid !== 'undefined') {
           try {
             mermaid.initialize({
@@ -22047,7 +22545,7 @@ trunk check --all</code></pre>
           }
         });
 
-        // 3. Back to Top Visibility & Smooth Scroll
+        // 3. Back to Top Visibility &amp; Smooth Scroll
         const backToTopBtn = document.getElementById('backToTopBtn');
         window.addEventListener('scroll', () => {
           if (window.scrollY > 300) {
@@ -22148,42 +22646,284 @@ trunk check --all</code></pre>
           observer.observe(heading);
         });
 
-        // 7. Bilingual Language Switcher (ID / EN)
+        // =====================================================================
+// =====================================================================
+        // 7. Comprehensive Full-Document Bilingual i18n Engine (ID <-> EN)
+        // =====================================================================
         const btnLangId = document.getElementById('btnLangId');
         const btnLangEn = document.getElementById('btnLangEn');
+
+        const i18nDict = {
+          id: {
+            title: "Zimbra Link Installer — Binary Archive &amp; CVE Matrix",
+            skipLink: "Lewati ke Konten Utama",
+            navLinks: [
+              '<i class="fa-solid fa-compass" aria-hidden="true"></i> Ringkasan',
+              '<i class="fa-solid fa-bolt" aria-hidden="true"></i> Mulai Cepat',
+              '<i class="fa-solid fa-box-archive" aria-hidden="true"></i> Arsip Resmi',
+              '<i class="fa-solid fa-users-gear" aria-hidden="true"></i> FOSS Komunitas',
+              '<i class="fa-solid fa-shield-halved" aria-hidden="true"></i> Keamanan &amp; CVE'
+            ],
+            sidebarTitles: [
+              "Navigasi Utama",
+              "Arsip Resmi Official",
+              "Arsip Komunitas (FOSS)",
+              "Keamanan &amp; Panduan",
+              "Operasional &amp; Migrasi"
+            ],
+            sidebarLinks: {
+              "#overview": '<i class="fa-solid fa-info-circle"></i> Ringkasan Eksekutif',
+              "#original-links--references": '<i class="fa-solid fa-link"></i> Tautan Asli &amp; Rujukan',
+              "#quickstart": '<i class="fa-solid fa-play"></i> Mulai Cepat (Quickstart)',
+              "#automated-cli-installer-zimbra-link-installersh": '<i class="fa-solid fa-terminal"></i> Installer CLI',
+              "#dependencies": '<i class="fa-solid fa-cubes"></i> Dependensi Sistem',
+              "#download-verification-status--legend": '<i class="fa-solid fa-circle-check"></i> Legenda Verifikasi',
+              "#zcs-101x-series-official-releases-daffodil": '<i class="fa-solid fa-box"></i> ZCS 10.1.x Daffodil',
+              "#zcs-100x-series-official-releases-daffodil": '<i class="fa-solid fa-box"></i> ZCS 10.0.x Daffodil',
+              "#zcs-900x-series-official-releases-kepler": '<i class="fa-solid fa-box"></i> ZCS 9.0.0 Kepler',
+              "#zcs-88x-series-official-releases-joule": '<i class="fa-solid fa-box"></i> ZCS 8.8.x Joule',
+              "#zcs-87x-series-official-releases-judaspriest": '<i class="fa-solid fa-box"></i> ZCS 8.7.x JudasPriest',
+              "#zcs-860-series-official-releases--cumulative-security-patches": '<i class="fa-solid fa-box"></i> ZCS 8.6.0 &amp; Security Patch',
+              "#zcs-85x-series-official-releases-851-ga--850-ga": '<i class="fa-solid fa-box"></i> ZCS 8.5.x Official',
+              "#zcs-80x-series-official-releases-809-ga-down-to-803-ga": '<i class="fa-solid fa-box"></i> ZCS 8.0.x Official',
+              "#zcs-7x-legacy-official-releases-727-ga-720-ga-713-ga-701-ga": '<i class="fa-solid fa-box"></i> ZCS 7.x Legacy',
+              "#zcs-6x-legacy-official-releases-6010-ga-609-ga-607-ga": '<i class="fa-solid fa-box"></i> ZCS 6.x Legacy',
+              "#zcs-5x-legacy-official-releases-5010-ga-down-to-500-ga": '<i class="fa-solid fa-box"></i> ZCS 5.x Legacy',
+              "#zcs-45x-historical-archive-4510-ga-down-to-455-ga": '<i class="fa-solid fa-box"></i> ZCS 4.5.x Historical',
+              "#techfilesonline-zimbra-foss-101x-ian-walker-builds": '<i class="fa-solid fa-cloud-arrow-down"></i> TechFiles 10.1.x',
+              "#zcs-foss-101x-series-all-26-community-releases-20242026": '<i class="fa-solid fa-layer-group"></i> FOSS 10.1.x (26 Builds)',
+              "#zcs-foss-100x-series-all-17-community-releases-20232026": '<i class="fa-solid fa-layer-group"></i> FOSS 10.0.x (17 Builds)',
+              "#zcs-foss-900x-series-all-8-kepler-community-releases-20202025": '<i class="fa-solid fa-layer-group"></i> FOSS 9.0.0.x (8 Builds)',
+              "#zcs-foss-8815x-series-all-joule-community-releases-20182024": '<i class="fa-solid fa-layer-group"></i> FOSS 8.8.15.x',
+              "#build-systems--source-compilation-guide": '<i class="fa-solid fa-screwdriver-wrench"></i> Build &amp; Kompilasi',
+              "#security-architecture--comprehensive-cve-matrix-20162026": '<i class="fa-solid fa-shield-virus"></i> Matriks CVE &amp; Keamanan',
+              "#taxonomy-of-zimbra-threat-vectors--exploit-chains": '<i class="fa-solid fa-diagram-project"></i> Taksonomi Ancaman',
+              "#zero-day-emergency-incident-response--hardening-protocol": '<i class="fa-solid fa-kit-medical"></i> Protokol Zero-Day',
+              "#enterprise-dns-architecture": '<i class="fa-solid fa-network-wired"></i> DNS &amp; Unbound',
+              "#enterprise-hot-backup-and-disaster-recovery": '<i class="fa-solid fa-hard-drive"></i> Hot Backup (zmbackup)',
+              "#firewall-network-and-host-hardening": '<i class="fa-solid fa-shield-halved"></i> Firewall &amp; UFW',
+              "#operational-best-practices-rfc-2119": '<i class="fa-solid fa-book-bookmark"></i> Praktik Terbaik (RFC 2119)',
+              "#strategic-migration--upgrade-methodology": '<i class="fa-solid fa-arrow-right-arrow-left"></i> Migrasi &amp; Z2C',
+              "#official-contact--author": '<i class="fa-solid fa-address-card"></i> Kontak &amp; Penulis'
+            },
+            heroTitle: '<a href="#zimbra-link-installer--the-complete-zimbra-collaboration-archive--installer-suite" class="anchor-link">#</a> ZIMBRA LINK INSTALLER — ARSIP LENGKAP &amp; SUITE PEMASANG ZIMBRA COLLABORATION',
+            heroSubtitle: "Unduhan Langsung Binary Enterprise, Rilis Resmi &amp; Komunitas FOSS, Checksum Kriptografi (MD5/SHA256), Matriks Keamanan CVE, dan Skrip Otomatisasi Instalasi CLI untuk Zimbra Collaboration Suite (ZCS 4.5.x – 10.1.x).",
+            copyBtnText: '<i class="fa-regular fa-copy"></i> Salin',
+            copiedBtnText: '<i class="fa-solid fa-check"></i> Tersalin!',
+            filterPlaceholder: "Cari versi, OS, tanggal rilis, atau checksum di tabel ini...",
+            headings: {
+              "table-of-contents": '<a href="#table-of-contents" class="anchor-link">#</a> Daftar Isi',
+              "overview": '<a href="#overview" class="anchor-link">#</a> Ringkasan Eksekutif &amp; Arsitektur',
+              "original-links--references": '<a href="#original-links--references" class="anchor-link">#</a> Tautan Asli &amp; Rujukan Resmi',
+              "portal-resmi--dokumentasi-zimbra-synacor": '<a href="#portal-resmi--dokumentasi-zimbra-synacor" class="anchor-link">#</a> <i class="fa-solid fa-globe text-primary"></i> Portal Resmi &amp; Dokumentasi Zimbra Synacor',
+              "unduhan-biner-komunitas-unofficial-foss--ose--mirror": '<a href="#unduhan-biner-komunitas-unofficial-foss--ose--mirror" class="anchor-link">#</a> <i class="fa-solid fa-box-archive text-warning"></i> Unduhan Biner Komunitas Unofficial FOSS / OSE &amp; Mirror',
+              "script-builder-incident-response--toolkits": '<a href="#script-builder-incident-response--toolkits" class="anchor-link">#</a> <i class="fa-solid fa-screwdriver-wrench text-success"></i> Script Builder, Incident Response &amp; Toolkits',
+              "quickstart": '<a href="#quickstart" class="anchor-link">#</a> Mulai Cepat (Quickstart)',
+              "metode-1-menggunakan-script-otomatis-interaktif-direkomendasikan": '<a href="#metode-1-menggunakan-script-otomatis-interaktif-direkomendasikan" class="anchor-link">#</a> Metode 1: Menggunakan Script Otomatis Interaktif (Direkomendasikan)',
+              "metode-2-unduhan-manual-biner-target": '<a href="#metode-2-unduhan-manual-biner-target" class="anchor-link">#</a> Metode 2: Unduhan Manual Biner Target',
+              "automated-cli-installer-zimbra-link-installersh": '<a href="#automated-cli-installer-zimbra-link-installersh" class="anchor-link">#</a> Automated CLI Installer (<code>zimbra-link-installer.sh</code>)',
+              "fitur-utama-cli": '<a href="#fitur-utama-cli" class="anchor-link">#</a> Fitur Utama CLI',
+              "dependencies": '<a href="#dependencies" class="anchor-link">#</a> Dependensi &amp; Persyaratan Sistem',
+              "sec-1-kebutuhan-runtime-minimum": '<a href="#sec-1-kebutuhan-runtime-minimum" class="anchor-link">#</a> 1. Kebutuhan Runtime Minimum',
+              "sec-2-kebutuhan-toolchain-kompilasi-build-environment": '<a href="#sec-2-kebutuhan-toolchain-kompilasi-build-environment" class="anchor-link">#</a> 2. Kebutuhan Toolchain Kompilasi (Build Environment)',
+              "download-verification-status--legend": '<a href="#download-verification-status--legend" class="anchor-link">#</a> Status Verifikasi Unduhan &amp; Legenda',
+              "official-zimbra-release-archive-45x--101x": '<a href="#official-zimbra-release-archive-45x--101x" class="anchor-link">#</a> Arsip Rilis Resmi Zimbra (4.5.x – 10.1.x)',
+              "unofficial--community-foss-archive-20182026": '<a href="#unofficial--community-foss-archive-20182026" class="anchor-link">#</a> Arsip FOSS Komunitas &amp; Unofficial (2018–2026)',
+              "build-systems--source-compilation-guide": '<a href="#build-systems--source-compilation-guide" class="anchor-link">#</a> Sistem Kompilasi &amp; Panduan Kode Sumber',
+              "os--zcs-build-compatibility-matrix": '<a href="#os--zcs-build-compatibility-matrix" class="anchor-link">#</a> Matriks Kompatibilitas Kompilasi OS &amp; ZCS',
+              "step-by-step-native-compilation": '<a href="#step-by-step-native-compilation" class="anchor-link">#</a> Langkah Kompilasi Native Mandiri',
+              "automated-docker--helper-methods": '<a href="#automated-docker--helper-methods" class="anchor-link">#</a> Metode Otomatisasi Docker &amp; Helper',
+              "configuration": '<a href="#configuration" class="anchor-link">#</a> Konfigurasi &amp; Optimasi Sistem',
+              "sec-1-file-descriptor--security-limits-etcsecuritylimitsconf": '<a href="#sec-1-file-descriptor--security-limits-etcsecuritylimitsconf" class="anchor-link">#</a> 1. File Descriptor &amp; Security Limits (/etc/security/limits.conf)',
+              "sec-2-kernel-tuning-etcsysctld99-zimbraconf": '<a href="#sec-2-kernel-tuning-etcsysctld99-zimbraconf" class="anchor-link">#</a> 2. Kernel Tuning (/etc/sysctl.d/99-zimbra.conf)',
+              "sec-3-konfigurasi-fqdn--local-dns-etchosts": '<a href="#sec-3-konfigurasi-fqdn--local-dns-etchosts" class="anchor-link">#</a> 3. Konfigurasi FQDN &amp; Local DNS (/etc/hosts)',
+              "security-architecture--comprehensive-cve-matrix-20162026": '<a href="#security-architecture--comprehensive-cve-matrix-20162026" class="anchor-link">#</a> Arsitektur Keamanan &amp; Matriks Lengkap CVE (2016–2026)',
+              "master-vulnerability-matrix--affected-versions-20162026": '<a href="#master-vulnerability-matrix--affected-versions-20162026" class="anchor-link">#</a> Matriks Kerentanan Utama &amp; Versi Terdampak Resmi (2016–2026)',
+              "deep-architecture--attack-surface-analysis": '<a href="#deep-architecture--attack-surface-analysis" class="anchor-link">#</a> Analisis Mendalam Arsitektur &amp; Permukaan Serangan',
+              "taxonomy-of-zimbra-threat-vectors--exploit-chains": '<a href="#taxonomy-of-zimbra-threat-vectors--exploit-chains" class="anchor-link">#</a> Taksonomi Vektor Ancaman &amp; Rantai Eksploitasi Zimbra',
+              "zero-day-emergency-incident-response--hardening-protocol": '<a href="#zero-day-emergency-incident-response--hardening-protocol" class="anchor-link">#</a> Protokol Tanggap Darurat Insiden Zero-Day &amp; Hardening',
+              "enterprise-dns-architecture": '<a href="#enterprise-dns-architecture" class="anchor-link">#</a> Arsitektur DNS Enterprise (Unbound, BIND9, dnsdist &amp; RBL)',
+              "sec-unbound-local-recursive-resolver": '<a href="#sec-unbound-local-recursive-resolver" class="anchor-link">#</a> 1. Konfigurasi Caching Recursive Resolver Lokal (Unbound)',
+              "sec-postfix-rbl-dnsbl-hardening": '<a href="#sec-postfix-rbl-dnsbl-hardening" class="anchor-link">#</a> 2. Integrasi Multi-Tier RBL / DNSBL pada Postfix MTA',
+              "enterprise-hot-backup-and-disaster-recovery": '<a href="#enterprise-hot-backup-and-disaster-recovery" class="anchor-link">#</a> Cadangan Panas &amp; Pemulihan Bencana Enterprise (zmbackup)',
+              "firewall-network-and-host-hardening": '<a href="#firewall-network-and-host-hardening" class="anchor-link">#</a> Firewall, Jaringan &amp; Pengerasan Host (UFW, iptables &amp; Fail2Ban)',
+              "sec-fail2ban-bruteforce-defense": '<a href="#sec-fail2ban-bruteforce-defense" class="anchor-link">#</a> Konfigurasi Fail2Ban untuk Perlindungan Autentikasi ZCS',
+              "sec-1-isolasi-dan-nonaktifkan-vektor-rce-umum": '<a href="#sec-1-isolasi-dan-nonaktifkan-vektor-rce-umum" class="anchor-link">#</a> 1. Isolasi dan Nonaktifkan Vektor RCE Umum',
+              "sec-2-audit-dan-karantina-jsp-webshell-di-webroot-jetty": '<a href="#sec-2-audit-dan-karantina-jsp-webshell-di-webroot-jetty" class="anchor-link">#</a> 2. Audit dan Karantina JSP Webshell di Webroot Jetty',
+              "sec-3-audit-persistensi-crontab--ssh-keys": '<a href="#sec-3-audit-persistensi-crontab--ssh-keys" class="anchor-link">#</a> 3. Audit Persistensi Crontab &amp; SSH Keys',
+              "sec-4-rotasi-kredensial-ldap--kunci-enkripsi": '<a href="#sec-4-rotasi-kredensial-ldap--kunci-enkripsi" class="anchor-link">#</a> 4. Rotasi Kredensial LDAP &amp; Kunci Enkripsi',
+              "operational-best-practices-rfc-2119": '<a href="#operational-best-practices-rfc-2119" class="anchor-link">#</a> Praktik Operasional Terbaik (RFC 2119)',
+              "strategic-migration--upgrade-methodology": '<a href="#strategic-migration--upgrade-methodology" class="anchor-link">#</a> Metodologi Migrasi Strategis &amp; Upgrade',
+              "running-tests": '<a href="#running-tests" class="anchor-link">#</a> Menjalankan Pengujian &amp; Verifikasi Otomatis',
+              "ecosystem-tools--repositories": '<a href="#ecosystem-tools--repositories" class="anchor-link">#</a> Alat Ekosistem &amp; Repositori Terkait',
+              "contributing": '<a href="#contributing" class="anchor-link">#</a> Panduan Kontribusi',
+              "official-contact--author": '<a href="#official-contact--author" class="anchor-link">#</a> Kontak Resmi &amp; Penulis',
+              "license": '<a href="#license" class="anchor-link">#</a> Lisensi &amp; Ketentuan Hukum'
+            }
+          },
+          en: {
+            title: "Zimbra Link Installer — Binary Archive &amp; CVE Matrix",
+            skipLink: "Skip to Main Content",
+            navLinks: [
+              '<i class="fa-solid fa-compass" aria-hidden="true"></i> Overview',
+              '<i class="fa-solid fa-bolt" aria-hidden="true"></i> Quickstart',
+              '<i class="fa-solid fa-box-archive" aria-hidden="true"></i> Official Archive',
+              '<i class="fa-solid fa-users-gear" aria-hidden="true"></i> Community FOSS',
+              '<i class="fa-solid fa-shield-halved" aria-hidden="true"></i> Security &amp; CVEs'
+            ],
+            sidebarTitles: [
+              "Main Navigation",
+              "Official Release Archive",
+              "Community Archive (FOSS)",
+              "Security &amp; Guides",
+              "Operations &amp; Migration"
+            ],
+            sidebarLinks: {
+              "#overview": '<i class="fa-solid fa-info-circle"></i> Executive Summary',
+              "#original-links--references": '<i class="fa-solid fa-link"></i> Original Links &amp; References',
+              "#quickstart": '<i class="fa-solid fa-play"></i> Quickstart Guide',
+              "#automated-cli-installer-zimbra-link-installersh": '<i class="fa-solid fa-terminal"></i> CLI Installer',
+              "#dependencies": '<i class="fa-solid fa-cubes"></i> System Dependencies',
+              "#download-verification-status--legend": '<i class="fa-solid fa-circle-check"></i> Verification Legend',
+              "#zcs-101x-series-official-releases-daffodil": '<i class="fa-solid fa-box"></i> ZCS 10.1.x Daffodil',
+              "#zcs-100x-series-official-releases-daffodil": '<i class="fa-solid fa-box"></i> ZCS 10.0.x Daffodil',
+              "#zcs-900x-series-official-releases-kepler": '<i class="fa-solid fa-box"></i> ZCS 9.0.0 Kepler',
+              "#zcs-88x-series-official-releases-joule": '<i class="fa-solid fa-box"></i> ZCS 8.8.x Joule',
+              "#zcs-87x-series-official-releases-judaspriest": '<i class="fa-solid fa-box"></i> ZCS 8.7.x JudasPriest',
+              "#zcs-860-series-official-releases--cumulative-security-patches": '<i class="fa-solid fa-box"></i> ZCS 8.6.0 &amp; Security Patches',
+              "#zcs-85x-series-official-releases-851-ga--850-ga": '<i class="fa-solid fa-box"></i> ZCS 8.5.x Official',
+              "#zcs-80x-series-official-releases-809-ga-down-to-803-ga": '<i class="fa-solid fa-box"></i> ZCS 8.0.x Official',
+              "#zcs-7x-legacy-official-releases-727-ga-720-ga-713-ga-701-ga": '<i class="fa-solid fa-box"></i> ZCS 7.x Legacy',
+              "#zcs-6x-legacy-official-releases-6010-ga-609-ga-607-ga": '<i class="fa-solid fa-box"></i> ZCS 6.x Legacy',
+              "#zcs-5x-legacy-official-releases-5010-ga-down-to-500-ga": '<i class="fa-solid fa-box"></i> ZCS 5.x Legacy',
+              "#zcs-45x-historical-archive-4510-ga-down-to-455-ga": '<i class="fa-solid fa-box"></i> ZCS 4.5.x Historical',
+              "#techfilesonline-zimbra-foss-101x-ian-walker-builds": '<i class="fa-solid fa-cloud-arrow-down"></i> TechFiles 10.1.x',
+              "#zcs-foss-101x-series-all-26-community-releases-20242026": '<i class="fa-solid fa-layer-group"></i> FOSS 10.1.x (26 Builds)',
+              "#zcs-foss-100x-series-all-17-community-releases-20232026": '<i class="fa-solid fa-layer-group"></i> FOSS 10.0.x (17 Builds)',
+              "#zcs-foss-900x-series-all-8-kepler-community-releases-20202025": '<i class="fa-solid fa-layer-group"></i> FOSS 9.0.0.x (8 Builds)',
+              "#zcs-foss-8815x-series-all-joule-community-releases-20182024": '<i class="fa-solid fa-layer-group"></i> FOSS 8.8.15.x',
+              "#build-systems--source-compilation-guide": '<i class="fa-solid fa-screwdriver-wrench"></i> Build &amp; Compilation',
+              "#security-architecture--comprehensive-cve-matrix-20162026": '<i class="fa-solid fa-shield-virus"></i> Security &amp; CVE Matrix',
+              "#taxonomy-of-zimbra-threat-vectors--exploit-chains": '<i class="fa-solid fa-diagram-project"></i> Threat Taxonomy Flow',
+              "#zero-day-emergency-incident-response--hardening-protocol": '<i class="fa-solid fa-kit-medical"></i> Zero-Day Protocol',
+              "#enterprise-dns-architecture": '<i class="fa-solid fa-network-wired"></i> DNS &amp; Unbound',
+              "#enterprise-hot-backup-and-disaster-recovery": '<i class="fa-solid fa-hard-drive"></i> Hot Backup (zmbackup)',
+              "#firewall-network-and-host-hardening": '<i class="fa-solid fa-shield-halved"></i> Firewall &amp; UFW',
+              "#operational-best-practices-rfc-2119": '<i class="fa-solid fa-book-bookmark"></i> RFC 2119 Best Practices',
+              "#strategic-migration--upgrade-methodology": '<i class="fa-solid fa-arrow-right-arrow-left"></i> Migration &amp; Z2C',
+              "#official-contact--author": '<i class="fa-solid fa-address-card"></i> Contact &amp; Author'
+            },
+            heroTitle: '<a href="#zimbra-link-installer--the-complete-zimbra-collaboration-archive--installer-suite" class="anchor-link">#</a> ZIMBRA LINK INSTALLER — THE COMPLETE ZIMBRA COLLABORATION ARCHIVE &amp; INSTALLER SUITE',
+            heroSubtitle: "Enterprise Direct Binary Downloads, Official &amp; Unofficial Community Builds, Cryptographic Checksums (MD5/SHA256), CVE Security Advisory Matrix, and Automated CLI Installer Script for Zimbra Collaboration Suite (ZCS 4.5.x – 10.1.x).",
+            copyBtnText: '<i class="fa-regular fa-copy"></i> Copy',
+            copiedBtnText: '<i class="fa-solid fa-check"></i> Copied!',
+            filterPlaceholder: "Search version, OS, build date, or checksum in this table...",
+            headings: {
+              "table-of-contents": '<a href="#table-of-contents" class="anchor-link">#</a> Table of Contents',
+              "overview": '<a href="#overview" class="anchor-link">#</a> Executive Summary &amp; Architecture',
+              "original-links--references": '<a href="#original-links--references" class="anchor-link">#</a> Original Links &amp; Official References',
+              "portal-resmi--dokumentasi-zimbra-synacor": '<a href="#portal-resmi--dokumentasi-zimbra-synacor" class="anchor-link">#</a> <i class="fa-solid fa-globe text-primary"></i> Official Zimbra Synacor Portals &amp; Documentation',
+              "unduhan-biner-komunitas-unofficial-foss--ose--mirror": '<a href="#unduhan-biner-komunitas-unofficial-foss--ose--mirror" class="anchor-link">#</a> <i class="fa-solid fa-box-archive text-warning"></i> Unofficial Community FOSS / OSE Binaries &amp; Mirrors',
+              "script-builder-incident-response--toolkits": '<a href="#script-builder-incident-response--toolkits" class="anchor-link">#</a> <i class="fa-solid fa-screwdriver-wrench text-success"></i> Script Builder, Incident Response &amp; Toolkits',
+              "quickstart": '<a href="#quickstart" class="anchor-link">#</a> Quickstart Guide',
+              "metode-1-menggunakan-script-otomatis-interaktif-direkomendasikan": '<a href="#metode-1-menggunakan-script-otomatis-interaktif-direkomendasikan" class="anchor-link">#</a> Method 1: Using Interactive Automated Script (Recommended)',
+              "metode-2-unduhan-manual-biner-target": '<a href="#metode-2-unduhan-manual-biner-target" class="anchor-link">#</a> Method 2: Target Binary Manual Download',
+              "automated-cli-installer-zimbra-link-installersh": '<a href="#automated-cli-installer-zimbra-link-installersh" class="anchor-link">#</a> Automated CLI Installer (<code>zimbra-link-installer.sh</code>)',
+              "fitur-utama-cli": '<a href="#fitur-utama-cli" class="anchor-link">#</a> CLI Key Features',
+              "dependencies": '<a href="#dependencies" class="anchor-link">#</a> System Dependencies &amp; Prerequisites',
+              "sec-1-kebutuhan-runtime-minimum": '<a href="#sec-1-kebutuhan-runtime-minimum" class="anchor-link">#</a> 1. Minimum Runtime Requirements',
+              "sec-2-kebutuhan-toolchain-kompilasi-build-environment": '<a href="#sec-2-kebutuhan-toolchain-kompilasi-build-environment" class="anchor-link">#</a> 2. Compilation Toolchain Requirements (Build Environment)',
+              "download-verification-status--legend": '<a href="#download-verification-status--legend" class="anchor-link">#</a> Download Verification Status &amp; Legend',
+              "official-zimbra-release-archive-45x--101x": '<a href="#official-zimbra-release-archive-45x--101x" class="anchor-link">#</a> Official Zimbra Release Archive (4.5.x – 10.1.x)',
+              "unofficial--community-foss-archive-20182026": '<a href="#unofficial--community-foss-archive-20182026" class="anchor-link">#</a> Unofficial &amp; Community FOSS Archive (2018–2026)',
+              "build-systems--source-compilation-guide": '<a href="#build-systems--source-compilation-guide" class="anchor-link">#</a> Build Systems &amp; Source Compilation Guide',
+              "os--zcs-build-compatibility-matrix": '<a href="#os--zcs-build-compatibility-matrix" class="anchor-link">#</a> OS &amp; ZCS Build Compatibility Matrix',
+              "step-by-step-native-compilation": '<a href="#step-by-step-native-compilation" class="anchor-link">#</a> Step-by-Step Native Compilation',
+              "automated-docker--helper-methods": '<a href="#automated-docker--helper-methods" class="anchor-link">#</a> Automated Docker &amp; Helper Methods',
+              "configuration": '<a href="#configuration" class="anchor-link">#</a> System Configuration &amp; OS Tuning',
+              "sec-1-file-descriptor--security-limits-etcsecuritylimitsconf": '<a href="#sec-1-file-descriptor--security-limits-etcsecuritylimitsconf" class="anchor-link">#</a> 1. File Descriptor &amp; Security Limits (/etc/security/limits.conf)',
+              "sec-2-kernel-tuning-etcsysctld99-zimbraconf": '<a href="#sec-2-kernel-tuning-etcsysctld99-zimbraconf" class="anchor-link">#</a> 2. Kernel Tuning (/etc/sysctl.d/99-zimbra.conf)',
+              "sec-3-konfigurasi-fqdn--local-dns-etchosts": '<a href="#sec-3-konfigurasi-fqdn--local-dns-etchosts" class="anchor-link">#</a> 3. FQDN &amp; Local DNS Configuration (/etc/hosts)',
+              "security-architecture--comprehensive-cve-matrix-20162026": '<a href="#security-architecture--comprehensive-cve-matrix-20162026" class="anchor-link">#</a> Security Architecture &amp; Comprehensive CVE Matrix (2016–2026)',
+              "master-vulnerability-matrix--affected-versions-20162026": '<a href="#master-vulnerability-matrix--affected-versions-20162026" class="anchor-link">#</a> Master Vulnerability Matrix &amp; Official Affected Versions (2016–2026)',
+              "deep-architecture--attack-surface-analysis": '<a href="#deep-architecture--attack-surface-analysis" class="anchor-link">#</a> Deep Architecture &amp; Attack Surface Analysis',
+              "taxonomy-of-zimbra-threat-vectors--exploit-chains": '<a href="#taxonomy-of-zimbra-threat-vectors--exploit-chains" class="anchor-link">#</a> Taxonomy of Zimbra Threat Vectors &amp; Exploit Chains',
+              "zero-day-emergency-incident-response--hardening-protocol": '<a href="#zero-day-emergency-incident-response--hardening-protocol" class="anchor-link">#</a> Zero-Day Emergency Incident Response &amp; Hardening Protocol',
+              "enterprise-dns-architecture": '<a href="#enterprise-dns-architecture" class="anchor-link">#</a> Enterprise DNS Architecture (Unbound, BIND9, dnsdist &amp; RBL)',
+              "sec-unbound-local-recursive-resolver": '<a href="#sec-unbound-local-recursive-resolver" class="anchor-link">#</a> 1. Local Caching Recursive Resolver Configuration (Unbound)',
+              "sec-postfix-rbl-dnsbl-hardening": '<a href="#sec-postfix-rbl-dnsbl-hardening" class="anchor-link">#</a> 2. Multi-Tier RBL / DNSBL Integration on Postfix MTA',
+              "enterprise-hot-backup-and-disaster-recovery": '<a href="#enterprise-hot-backup-and-disaster-recovery" class="anchor-link">#</a> Enterprise Hot Backup &amp; Disaster Recovery (zmbackup)',
+              "firewall-network-and-host-hardening": '<a href="#firewall-network-and-host-hardening" class="anchor-link">#</a> Firewall, Network &amp; Host Hardening (UFW, iptables &amp; Fail2Ban)',
+              "sec-fail2ban-bruteforce-defense": '<a href="#sec-fail2ban-bruteforce-defense" class="anchor-link">#</a> Fail2Ban Jail Configuration for ZCS Authentication Defense',
+              "sec-1-isolasi-dan-nonaktifkan-vektor-rce-umum": '<a href="#sec-1-isolasi-dan-nonaktifkan-vektor-rce-umum" class="anchor-link">#</a> 1. Isolate and Disable Common RCE Attack Vectors',
+              "sec-2-audit-dan-karantina-jsp-webshell-di-webroot-jetty": '<a href="#sec-2-audit-dan-karantina-jsp-webshell-di-webroot-jetty" class="anchor-link">#</a> 2. Audit and Quarantine JSP Webshells in Jetty Webroot',
+              "sec-3-audit-persistensi-crontab--ssh-keys": '<a href="#sec-3-audit-persistensi-crontab--ssh-keys" class="anchor-link">#</a> 3. Audit Crontab &amp; SSH Keys Persistence',
+              "sec-4-rotasi-kredensial-ldap--kunci-enkripsi": '<a href="#sec-4-rotasi-kredensial-ldap--kunci-enkripsi" class="anchor-link">#</a> 4. Rotate LDAP Credentials &amp; Encryption Keys',
+              "operational-best-practices-rfc-2119": '<a href="#operational-best-practices-rfc-2119" class="anchor-link">#</a> Operational Best Practices (RFC 2119)',
+              "strategic-migration--upgrade-methodology": '<a href="#strategic-migration--upgrade-methodology" class="anchor-link">#</a> Strategic Migration &amp; Upgrade Methodology',
+              "running-tests": '<a href="#running-tests" class="anchor-link">#</a> Running Automated Tests &amp; Checksum Verification',
+              "ecosystem-tools--repositories": '<a href="#ecosystem-tools--repositories" class="anchor-link">#</a> Ecosystem Tools &amp; Related Repositories',
+              "contributing": '<a href="#contributing" class="anchor-link">#</a> Contribution Guidelines',
+              "official-contact--author": '<a href="#official-contact--author" class="anchor-link">#</a> Official Contact &amp; Author',
+              "license": '<a href="#license" class="anchor-link">#</a> License &amp; Legal Terms'
+            }
+          }
+        };
 
         function setLanguage(lang) {
           localStorage.setItem('zimbra_docs_lang', lang);
           document.documentElement.lang = lang;
+          const dict = i18nDict[lang] || i18nDict['id'];
+
+          // 1. Toggle button active states
           if (lang === 'en') {
             btnLangEn?.classList.add('active');
             btnLangId?.classList.remove('active');
-            document.querySelectorAll('.copy-btn').forEach(b => {
-              if (!b.innerHTML.includes('Tersalin') && !b.innerHTML.includes('Copied')) {
-                b.innerHTML = '<i class="fa-regular fa-copy"></i> Copy';
-              }
-            });
-            document.querySelectorAll('.table-filter').forEach(f => {
-              f.placeholder = 'Search version, OS, build date, or checksum in this table...';
-            });
           } else {
             btnLangId?.classList.add('active');
             btnLangEn?.classList.remove('active');
-            document.querySelectorAll('.copy-btn').forEach(b => {
-              if (!b.innerHTML.includes('Tersalin') && !b.innerHTML.includes('Copied')) {
-                b.innerHTML = '<i class="fa-regular fa-copy"></i> Salin';
-              }
-            });
-            document.querySelectorAll('.table-filter').forEach(f => {
-              f.placeholder = 'Cari versi, OS, tanggal rilis, atau checksum di tabel ini...';
-            });
           }
+
+          // 2. Update Document Title &amp; Skip to Content
+          if (dict.title) document.title = dict.title;
+          const skipLink = document.querySelector('.skip-to-content');
+          if (skipLink) skipLink.textContent = dict.skipLink;
+
+          // 3. Update Navbar Navigation Links
+          const navLinks = document.querySelectorAll('.nav-links .nav-link');
+          dict.navLinks.forEach((html, i) => {
+            if (navLinks[i]) navLinks[i].innerHTML = html;
+          });
+
+          // 4. Update Sidebar Section Titles
+          const sidebarTitles = document.querySelectorAll('.sidebar-title');
+          dict.sidebarTitles.forEach((txt, i) => {
+            if (sidebarTitles[i]) sidebarTitles[i].textContent = txt;
+          });
+
+          // 5. Update Sidebar Menu Links
+          Object.keys(dict.sidebarLinks).forEach(href => {
+            const link = document.querySelector(`.sidebar-link[href="${href}"]`);
+            if (link) link.innerHTML = dict.sidebarLinks[href];
+          });
+
+          // 6. Update Table Search Filter Placeholders
+          document.querySelectorAll('.table-filter').forEach(input => {
+            input.placeholder = dict.filterPlaceholder;
+          });
+
+          // 7. Update Copy Buttons
+          document.querySelectorAll('.copy-btn').forEach(btn => {
+            if (!btn.classList.contains('copied')) {
+              btn.innerHTML = dict.copyBtnText;
+            }
+          });
         }
 
         btnLangId?.addEventListener('click', () => setLanguage('id'));
         btnLangEn?.addEventListener('click', () => setLanguage('en'));
 
-        // Initialize saved language
+        // Initialize from localStorage or default to Indonesian
         const savedLang = localStorage.getItem('zimbra_docs_lang') || 'id';
         setLanguage(savedLang);
       });

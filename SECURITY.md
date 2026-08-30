@@ -8,7 +8,7 @@
 
 | Component / Version | Supported | Maintenance Status |
 | :--- | :---: | :--- |
-| **Zimbra Link Installer & Telemetry Suite `v2.6.2`** | ✅ | **Active Support** (Continuous vulnerability patching & binary telemetry) |
+| **Zimbra Link Installer & Telemetry Suite `v2.6.3`** | ✅ | **Active Support** (Continuous vulnerability patching & binary telemetry) |
 | **Zimbra Link Installer & Telemetry Suite `< v2.6.0`** | ❌ | **End of Life** (Users must upgrade to latest script release) |
 
 ### Zimbra Collaboration Suite (ZCS) Lifecycle Matrix
