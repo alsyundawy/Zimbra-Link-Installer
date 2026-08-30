@@ -11,7 +11,7 @@ By **Harry Dertin Sutisna Alsyundawy**
 [![Language: ID](https://img.shields.io/badge/Language-Bahasa%20Indonesia-blue.svg)](#overview)
 [![Language: EN](https://img.shields.io/badge/Language-English-green.svg)](#-english-documentation--quickstart)
 [![ZCS Versions](https://img.shields.io/badge/ZCS%20Versions-4.5.x%20%7C%205.x%20%7C%206.x%20%7C%207.x%20%7C%208.x%20%7C%209.x%20%7C%2010.x%20%7C%2010.1.x-blue.svg)](https://github.com/alsyundawy/Zimbra-Link-Installer)
-[![Verified Downloads](<https://img.shields.io/badge/Verified%20Binaries-1%2C215%2B%20Active%20(HTTP%20200)-success.svg>)](https://github.com/alsyundawy/Zimbra-Link-Installer)
+[![Verified Downloads](https://img.shields.io/badge/Verified%20Binaries-1%2C215%2B%20Active%20(HTTP%20200)-success.svg)](https://github.com/alsyundawy/Zimbra-Link-Installer)
 [![Edition](https://img.shields.io/badge/Edition-Network%20%7C%20FOSS%20%7C%20Community-orange.svg)](https://github.com/alsyundawy/Zimbra-Link-Installer)
 [![Platform](https://img.shields.io/badge/Platform-Ubuntu%20%7C%20Debian%20%7C%20CentOS%20%7C%20RHEL%20%7C%20Rocky%20%7C%20Alma-lightgrey.svg)](https://github.com/alsyundawy)
 [![WhatsApp](https://img.shields.io/badge/WhatsApp-Chat%20%26%20Call-25D366?style=flat&logo=whatsapp&logoColor=white)](https://wa.me/6285658515212)
