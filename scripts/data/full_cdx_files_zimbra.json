@@ -11059,5 +11059,41 @@
     "200",
     "PXS7SAFGUI54RFNDKMQQGLVRRVAEWQUT",
     "98731113"
+  ],
+  [
+    "com,zimbra,files)/downloads/zxui/4.50.0/zimbra_desktop_4.50.0_1c29dbde6_20260828102825.dmg",
+    "20260828105331",
+    "https://files.zimbra.com/downloads/zxui/4.50.0/Zimbra_Desktop_4.50.0_1c29dbde6_20260828102825.dmg",
+    "application/x-apple-diskimage",
+    "200",
+    "-",
+    "230858210"
+  ],
+  [
+    "com,zimbra,files)/downloads/zxui/4.50.0/zimbra_desktop_4.50.0_1c29dbde6_20260828102825.dmg.sha256",
+    "20260828105331",
+    "https://files.zimbra.com/downloads/zxui/4.50.0/Zimbra_Desktop_4.50.0_1c29dbde6_20260828102825.dmg.sha256",
+    "binary/octet-stream",
+    "200",
+    "-",
+    "115"
+  ],
+  [
+    "com,zimbra,files)/downloads/zxui/4.50.0/zimbra_desktop_4.50.0_1c29dbde6_20260828104135.exe",
+    "20260828105406",
+    "https://files.zimbra.com/downloads/zxui/4.50.0/Zimbra_Desktop_4.50.0_1c29dbde6_20260828104135.exe",
+    "application/x-msdownload",
+    "200",
+    "-",
+    "118665744"
+  ],
+  [
+    "com,zimbra,files)/downloads/zxui/4.50.0/zimbra_desktop_4.50.0_1c29dbde6_20260828104135.exe.sha256",
+    "20260828105331",
+    "https://files.zimbra.com/downloads/zxui/4.50.0/Zimbra_Desktop_4.50.0_1c29dbde6_20260828104135.exe.sha256",
+    "binary/octet-stream",
+    "200",
+    "-",
+    "115"
   ]
 ]

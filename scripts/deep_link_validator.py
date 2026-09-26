@@ -22,7 +22,7 @@ print(f"Total extracted links from README.md: {len(urls)}")
 print(f"Total unique URLs to validate: {len(cleaned_urls)}")
 
 # Filter binary and checksum targets
-all_binary_urls = [u for u in cleaned_urls if any(u.endswith(ext) for ext in [".tgz", ".sha256", ".md5", ".zip", ".tar.gz"])]
+all_binary_urls = [u for u in cleaned_urls if any(u.endswith(ext) for ext in [".tgz", ".sha256", ".md5", ".zip", ".tar.gz", ".dmg", ".exe"])]
 non_binary_urls = [u for u in cleaned_urls if u not in all_binary_urls]
 
 # Domains / CDNs that block CI runner datacenter IPs via Cloudflare/WAF bot protection

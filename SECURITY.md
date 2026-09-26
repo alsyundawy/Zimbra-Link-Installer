@@ -8,14 +8,14 @@
 
 | Component / Version | Supported | Maintenance Status |
 | :--- | :---: | :--- |
-| **Zimbra Link Installer & Telemetry Suite `v2.6.3`** | ✅ | **Active Support** (Continuous vulnerability patching & binary telemetry) |
+| **Zimbra Link Installer & Telemetry Suite `v2.6.4`** | ✅ | **Active Support** (Continuous vulnerability patching & binary telemetry) |
 | **Zimbra Link Installer & Telemetry Suite `< v2.6.0`** | ❌ | **End of Life** (Users must upgrade to latest script release) |
 
 ### Zimbra Collaboration Suite (ZCS) Lifecycle Matrix
 
 | ZCS Major Series | Official Status | Lifecycle Notes |
 | :--- | :---: | :--- |
-| **ZCS 10.1.x (Daffodil)** | ✅ | **Active General Support** (Latest security patch: `10.1.20`) |
+| **ZCS 10.1.x (Daffodil)** | ✅ | **Active General Support** (Latest security patch: `10.1.21`) |
 | **ZCS 10.0.x (Daffodil)** | ❌ | **End of General Support** (EOL: June 30, 2025; Upgrade to 10.1.x required) |
 | **ZCS 9.0.0 (Kepler)** | ❌ | **End of General Support** (EOL: December 31, 2024; Legacy archive only) |
 | **ZCS 8.8.15 (Joule)** | ❌ | **End of General Support** (EOL: December 31, 2023; Cumulative P47 available) |

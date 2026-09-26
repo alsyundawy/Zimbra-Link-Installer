@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # ==============================================================================
-# ZIMBRA LINK INSTALLER & TELEMETRY SUITE (v2.6.3)
+# ZIMBRA LINK INSTALLER & TELEMETRY SUITE (v2.6.4)
 # Enterprise Binary Downloader, Checksum Verifier & Automated Installer
 # Supports Official NE (7-10.1), Official FOSS (7-8.8), and Community FOSS (8.8-10.1)
 #
@@ -23,7 +23,9 @@ readonly BOLD='\033[1m'
 readonly NC='\033[0m'
 
 # Global Configuration & Defaults
-readonly SCRIPT_VERSION="2.6.3"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+readonly SCRIPT_DIR
+readonly SCRIPT_VERSION="2.6.4"
 WORK_DIR="${HOME}/zimbra_install_cache"
 readonly DEFAULT_REFERER="https://techfiles.online/"
 readonly USER_AGENT="Mozilla/5.0 (X11; Linux x86_64) Zimbra-Link-Installer/${SCRIPT_VERSION}"
@@ -72,6 +74,35 @@ cleanup() {
 	exit "${exit_code}"
 }
 trap cleanup EXIT INT TERM HUP
+
+# ==============================================================================
+# CRYPTOGRAPHIC & SYSTEM PORTABILITY HELPERS
+# ==============================================================================
+compute_sha256() {
+	local target="$1"
+	if command -v sha256sum >/dev/null 2>&1; then
+		sha256sum "${target}" | awk '{print $1}'
+	elif command -v shasum >/dev/null 2>&1; then
+		shasum -a 256 "${target}" | awk '{print $1}'
+	else
+		echo ""
+	fi
+}
+
+compute_md5() {
+	local target="$1"
+	if command -v md5sum >/dev/null 2>&1; then
+		md5sum "${target}" | awk '{print $1}'
+	elif command -v md5 >/dev/null 2>&1; then
+		md5 -q "${target}"
+	else
+		echo ""
+	fi
+}
+
+to_lower() {
+	echo "$1" | tr '[:upper:]' '[:lower:]'
+}
 
 # ==============================================================================
 # PRIVILEGE HELPER
@@ -183,10 +214,20 @@ preflight_check() {
 	printf "\n%b--- [1/3] %s ---%b\n" "${BOLD}" "$(tr_msg "System Readiness Audit (Pre-Flight Checks)" "Memeriksa Kesiapan Sistem (Pre-Flight Checks)")" "${NC}"
 
 	# 1. RAM Check
+	local total_ram_gb=0
 	if [[ -f /proc/meminfo ]]; then
 		local total_ram_kb
 		total_ram_kb=$(grep -m1 MemTotal /proc/meminfo | awk '{print $2}')
-		local total_ram_gb=$((total_ram_kb / 1024 / 1024))
+		total_ram_gb=$((total_ram_kb / 1024 / 1024))
+	elif command -v sysctl >/dev/null 2>&1; then
+		local total_ram_bytes
+		total_ram_bytes=$(sysctl -n hw.memsize 2>/dev/null || echo 0)
+		if [[ -n ${total_ram_bytes} && ${total_ram_bytes} =~ ^[0-9]+$ ]]; then
+			total_ram_gb=$((total_ram_bytes / 1024 / 1024 / 1024))
+		fi
+	fi
+
+	if ((total_ram_gb > 0)); then
 		if ((total_ram_gb < 8)); then
 			log_warn "$(tr_msg "Detected RAM: ${total_ram_gb} GB (Zimbra recommends minimum 8 GB RAM, ideally 16+ GB)." "RAM Terdeteksi: ${total_ram_gb} GB (Zimbra merekomendasikan minimal 8 GB RAM, ideal 16+ GB).")"
 		else
@@ -195,11 +236,16 @@ preflight_check() {
 	fi
 
 	# 2. Disk Space Check
-	local free_disk_gb
-	free_disk_gb=$(df -BG /opt 2>/dev/null | awk 'NR==2 {print $4}' | tr -d 'G' || df -BG / | awk 'NR==2 {print $4}' | tr -d 'G')
-	if [[ -n ${free_disk_gb} ]] && ((free_disk_gb < 30)); then
+	local free_disk_kb
+	local free_disk_gb=0
+	free_disk_kb=$(df -k /opt 2>/dev/null | awk 'NR==2 {print $4}' || df -k / 2>/dev/null | awk 'NR==2 {print $4}')
+	if [[ -n ${free_disk_kb} && ${free_disk_kb} =~ ^[0-9]+$ ]]; then
+		free_disk_gb=$((free_disk_kb / 1024 / 1024))
+	fi
+
+	if ((free_disk_gb > 0 && free_disk_gb < 30)); then
 		log_warn "$(tr_msg "Free Disk Space on /opt: ${free_disk_gb} GB (Minimum 50 GB free recommended for /opt/zimbra)." "Ruang Disk Kosong di /opt: ${free_disk_gb} GB (Direkomendasikan minimal 50 GB kosong untuk /opt/zimbra).")"
-	else
+	elif ((free_disk_gb >= 30)); then
 		log_success "$(tr_msg "Free Disk Space on /opt: ${free_disk_gb} GB (Sufficient for ZCS installation & database)." "Ruang Disk Kosong di /opt: ${free_disk_gb} GB (Cukup untuk instalasi paket & database ZCS).")"
 	fi
 
@@ -312,10 +358,12 @@ download_and_verify() {
 				local raw_chk_content expected_hash actual_hash
 				raw_chk_content=$(cat "${chk_file}")
 				expected_hash=$(echo "${raw_chk_content}" | grep -oE '[a-fA-F0-9]{64}' | head -n1 || awk '{print $1}' "${chk_file}")
-				actual_hash=$(sha256sum "${file_name}" | awk '{print $1}')
+				actual_hash=$(compute_sha256 "${file_name}")
+				expected_hash=$(to_lower "${expected_hash}")
+				actual_hash=$(to_lower "${actual_hash}")
 				log_info "Expected SHA256 : ${expected_hash}"
 				log_info "Actual   SHA256 : ${actual_hash}"
-				if [[ ${expected_hash,,} == "${actual_hash,,}" ]]; then
+				if [[ -n "${actual_hash}" && "${expected_hash}" == "${actual_hash}" ]]; then
 					log_success "$(tr_msg "SHA256 VERIFICATION VALID: Binary integrity 100% verified!" "VERIFIKASI SHA256 VALID: Integritas biner terjamin!")"
 				else
 					log_error "$(tr_msg "HASH MISMATCH: Binary corrupted during download!" "HASH MISMATCH: Berkas rusak atau korup saat diunduh!")"
@@ -326,10 +374,12 @@ download_and_verify() {
 				local raw_chk_content expected_hash actual_hash
 				raw_chk_content=$(cat "${chk_file}")
 				expected_hash=$(echo "${raw_chk_content}" | grep -oE '[a-fA-F0-9]{32}' | head -n1 || awk '{print $1}' "${chk_file}")
-				actual_hash=$(md5sum "${file_name}" | awk '{print $1}')
+				actual_hash=$(compute_md5 "${file_name}")
+				expected_hash=$(to_lower "${expected_hash}")
+				actual_hash=$(to_lower "${actual_hash}")
 				log_info "Expected MD5 : ${expected_hash}"
 				log_info "Actual   MD5 : ${actual_hash}"
-				if [[ ${expected_hash,,} == "${actual_hash,,}" ]]; then
+				if [[ -n "${actual_hash}" && "${expected_hash}" == "${actual_hash}" ]]; then
 					log_success "$(tr_msg "MD5 VERIFICATION VALID: Binary integrity 100% verified!" "VERIFIKASI MD5 VALID: Integritas biner terjamin!")"
 				else
 					log_error "$(tr_msg "MD5 MISMATCH: Binary file corrupted!" "MD5 MISMATCH: Berkas rusak atau korup!")"
@@ -1018,10 +1068,13 @@ main_menu() {
 			read -rp "$(tr_msg "Press Enter to return to menu..." "Tekan Enter untuk kembali ke menu...")"
 			;;
 		5)
-			if command -v python3 >/dev/null 2>&1 && [[ -f scripts/deep_link_validator.py ]]; then
+			local validator_path="${SCRIPT_DIR}/scripts/deep_link_validator.py"
+			if command -v python3 >/dev/null 2>&1 && [[ -f ${validator_path} ]]; then
+				python3 "${validator_path}"
+			elif command -v python3 >/dev/null 2>&1 && [[ -f scripts/deep_link_validator.py ]]; then
 				python3 scripts/deep_link_validator.py
 			else
-				log_warn "$(tr_msg "Python3 or validator script (scripts/deep_link_validator.py) not found." "Python3 atau skrip validator (scripts/deep_link_validator.py) tidak ditemukan.")"
+				log_warn "$(tr_msg "Python3 or validator script (${validator_path}) not found." "Python3 atau skrip validator (${validator_path}) tidak ditemukan.")"
 			fi
 			read -rp "$(tr_msg "Press Enter to return to menu..." "Tekan Enter untuk kembali ke menu...")"
 			;;

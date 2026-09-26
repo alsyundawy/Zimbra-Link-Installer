@@ -17,7 +17,6 @@ By **Harry Dertin Sutisna Alsyundawy**
 [![WhatsApp](https://img.shields.io/badge/WhatsApp-Chat%20%26%20Call-25D366?style=flat&logo=whatsapp&logoColor=white)](https://wa.me/6285658515212)
 [![Telegram](https://img.shields.io/badge/Telegram-@alsyundawy-2CA5E0?style=flat&logo=telegram&logoColor=white)](https://t.me/alsyundawy)
 [![Donate with PayPal](https://img.shields.io/badge/PayPal-donate-orange)](https://www.paypal.me/alsyundawy)
-[![Donate with Ko-fi](https://img.shields.io/badge/Ko--fi-donate-ff5e5b?logo=ko-fi&logoColor=white)](https://ko-fi.com/alsyundawy)
 [![Sponsor with GitHub](https://img.shields.io/badge/GitHub-sponsor-orange)](https://github.com/sponsors/alsyundawy)
 
 ---
@@ -71,7 +70,7 @@ By **Harry Dertin Sutisna Alsyundawy**
 
 Berikut adalah komponen utama dari **Zimbra Link Installer & Telemetry Suite**:
 
-1. **Interactive Bash CLI Installer (`zimbra-link-installer.sh` v2.6.3):** Utilitas interaktif aman bilingual (English & Bahasa Indonesia) dengan _pre-flight system audit_ (RAM, storage, FQDN DNS, POSIX pax), penanganan sinyal _atomic cleanup trap_, _privilege elevation helper_ (`run_privileged`), dan verifikasi integritas kriptografi SHA256/MD5 otomatis.
+1. **Interactive Bash CLI Installer (`zimbra-link-installer.sh` v2.6.4):** Utilitas interaktif aman bilingual (English & Bahasa Indonesia) dengan _pre-flight system audit_ (RAM, storage, FQDN DNS, POSIX pax), penanganan sinyal _atomic cleanup trap_, _privilege elevation helper_ (`run_privileged`), dan verifikasi integritas kriptografi SHA256/MD5 otomatis.
 2. **Comprehensive Official & Unofficial Archive:** Mengindeks seluruh tautan unduhan langsung biner resmi (_Network Edition, Open Source Edition, Cumulative Security Patches_) dari `files.zimbra.com` serta seluruh kompilasi biner komunitas independen (_FOSS Edition 2018–2026_).
 3. **Cryptographic Checksums:** Nilai hash MD5 dan SHA256 untuk memverifikasi integritas setiap installer secara case-insensitive.
 4. **Compilation Masterclass:** Panduan lengkap kompilasi mandiri kode sumber ZCS (8.8, 9.0, 10.0, 10.1) pada Ubuntu (20.04, 22.04, 24.04) dan RHEL/Rocky/Alma/Oracle (8 & 9).
@@ -83,8 +82,8 @@ Berikut adalah komponen utama dari **Zimbra Link Installer & Telemetry Suite**:
 
 **Key Highlights (English):**
 
-- **Automated Dual-Language CLI (`zimbra-link-installer.sh` v2.6.3):** Interactive installer supporting English (`--lang=en`) and Bahasa Indonesia (`--lang=id`), pre-flight readiness checks (RAM, disk space, FQDN DNS, pax), and automated cryptographic verification.
-- **1,215+ Verified Direct Downloads:** Official Network Edition, Open Source Edition (FOSS/OSE), and community builds (TechFiles, Ian Walker, Maldua) from 2018 to 2026.
+- **Automated Dual-Language CLI (`zimbra-link-installer.sh` v2.6.4):** Interactive installer supporting English (`--lang=en`) and Bahasa Indonesia (`--lang=id`), pre-flight readiness checks (RAM, disk space, FQDN DNS, pax), and automated cryptographic verification.
+- **1,219+ Verified Direct Downloads:** Official Network Edition, Open Source Edition (FOSS/OSE), and community builds (TechFiles, Ian Walker, Maldua) from 2018 to 2026.
 - **Security & CVE Matrix (2016–2026):** Exhaustive vulnerability matrix with precise affected versions, CVSS 3.1 scores, and Zero-Day hardening playbooks.
 
 **Quick Start (One-Liner in English):**
@@ -104,11 +103,13 @@ Tautan resmi portal Zimbra Synacor, dokumentasi wiki, repository build system, d
 
 <h3 id="-portal-resmi--dokumentasi-zimbra-synacor">🌐 Portal Resmi & Dokumentasi Zimbra Synacor</h3>
 
-- **Official Network Edition Portal:** <https://www.zimbra.com/downloads/zimbra-collaboration/>
-- **Official Open Source Edition Portal:** <https://www.zimbra.com/downloads/zimbra-collaboration-open-source/>
+- **Official Network Edition Download Portal:** <https://www.zimbra.com/product/download/zimbra-collaboration-network-edition/>
+- **Official Zimbra Desktop Download Portal:** <https://www.zimbra.com/zimbra-desktop-download/>
 - **Official Zimbra Releases Wiki:** <https://wiki.zimbra.com/wiki/Zimbra_Releases>
+- **Official Zimbra Latest Daffodil Patch Release (10.1.21):** <https://wiki.zimbra.com/wiki/Zimbra_Releases/10.1.21>
 - **Official Zimbra Security Advisories & CVE Center:** <https://wiki.zimbra.com/wiki/Zimbra_Security_Advisories>
 - **Official Zimbra Technical Documentation Wiki:** <https://wiki.zimbra.com/wiki/Main_Page>
+- **Official Zimbra Source Build Guide (Wiki):** <https://wiki.zimbra.com/wiki/Building_Zimbra_using_Git>
 - **Official Product Management Portal & Release Notes:** <https://pm.zimbra.com>
 - **Official Zimbra Source Repositories (GitHub):** <https://github.com/Zimbra>
 
@@ -162,12 +163,12 @@ sudo ./install.sh
 
 ## Automated CLI Installer (`zimbra-link-installer.sh`)
 
-Skrip `zimbra-link-installer.sh` (v2.6.3) menyederhanakan siklus pengunduhan dan instalasi ZCS di lingkungan Linux enterprise dengan dukungan antarmuka dwibahasa:
+Skrip `zimbra-link-installer.sh` (v2.6.4) menyederhanakan siklus pengunduhan dan instalasi ZCS di lingkungan Linux enterprise dengan dukungan antarmuka dwibahasa:
 
 ```text
 ====================================================================
              Z I M B R A   L I N K   I N S T A L L E R
-        Enterprise Binary Downloader & Automated Suite (v2.6.3)
+        Enterprise Binary Downloader & Automated Suite (v2.6.4)
 ====================================================================
   Maintained by Harry Dertin Sutisna Alsyundawy (alsyundawy@gmail.com)
 ====================================================================
@@ -839,7 +840,10 @@ Panduan kompilasi mandiri kode sumber resmi (_official upstream source code_) me
    cd zm-build
    export ANT_OPTS="-Xmx4096m -XX:MaxMetaspaceSize=1024m"
    export MAVEN_OPTS="-Xmx4096m"
-   ENV_CACHE_CLEAR_FLAG=true ./build.pl --ant-options -DskipTests=true      --git-default-tag=10.1.20,10.1.18,10.1.0,10.0.0-GA      --build-release-no=10.1.20 --build-type=FOSS --build-release=DAFFODIL      --build-release-candidate=GA --build-thirdparty-server=files.zimbra.com --no-interactive
+   ENV_CACHE_CLEAR_FLAG=true ./build.pl --ant-options -DskipTests=true \
+     --git-default-tag=10.1.21,10.1.20,10.1.18,10.1.0,10.0.0-GA \
+     --build-release-no=10.1.21 --build-type=FOSS --build-release=DAFFODIL \
+     --build-release-candidate=GA --build-thirdparty-server=files.zimbra.com --no-interactive
    ```
 
 3. **Kompilasi ZCS 10.0.x (Daffodil):**
@@ -1240,7 +1244,6 @@ Repository ini dikelola dan diperbarui secara berkala oleh:
 **Dukungan Donasi & Riset:**
 
 - **PayPal:** [paypal.me/alsyundawy](https://www.paypal.me/alsyundawy)
-- **Ko-fi:** [ko-fi.com/alsyundawy](https://ko-fi.com/alsyundawy)
 - **GitHub Sponsor:** [github.com/sponsors/alsyundawy](https://github.com/sponsors/alsyundawy)
 - **QRIS:**
 

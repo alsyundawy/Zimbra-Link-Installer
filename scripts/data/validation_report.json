@@ -64,14 +64,6 @@
     "error": null
   },
   {
-    "text": "![Donate with Ko-fi",
-    "url": "https://img.shields.io/badge/Ko--fi-donate-ff5e5b?logo=ko-fi&logoColor=white",
-    "status": "NON_BINARY_SKIPPED",
-    "code": 200,
-    "size": 0,
-    "error": null
-  },
-  {
     "text": "![Sponsor with GitHub",
     "url": "https://img.shields.io/badge/GitHub-sponsor-orange",
     "status": "NON_BINARY_SKIPPED",
@@ -3032,14 +3024,6 @@
   {
     "text": "paypal.me/alsyundawy",
     "url": "https://www.paypal.me/alsyundawy",
-    "status": "NON_BINARY_SKIPPED",
-    "code": 200,
-    "size": 0,
-    "error": null
-  },
-  {
-    "text": "ko-fi.com/alsyundawy",
-    "url": "https://ko-fi.com/alsyundawy",
     "status": "NON_BINARY_SKIPPED",
     "code": 200,
     "size": 0,

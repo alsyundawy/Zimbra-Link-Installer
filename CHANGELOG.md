@@ -1,4 +1,4 @@
-# [2.6.3] - Changelog
+# [2.6.4] - Changelog
 
 <!-- markdownlint-disable MD013 MD024 -->
 
@@ -6,6 +6,52 @@ All notable changes to the **Zimbra Link Installer & Telemetry Suite** will be d
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+---
+
+## [2.6.4] - 2026-09-26
+
+### Added
+
+- **Zimbra Releases Wiki & Upstream Tag Audit (10.1.21)**:
+  - Scraped and verified official Zimbra Daffodil v10.1.21 patch release published on Sept 24, 2026 (`wiki.zimbra.com/wiki/Zimbra_Releases/10.1.21`).
+  - Added `https://wiki.zimbra.com/wiki/Zimbra_Releases/10.1.21` to `scripts/data/wiki_child_pages.json`.
+  - Confirmed official `10.1.21` tag on upstream build repository (`Zimbra/zm-build`).
+  - Updated native compilation build scripts in `README.md` and `index.html` to reference default tag `10.1.21,10.1.20,10.1.18,10.1.0,10.0.0-GA` with `--build-release-no=10.1.21`.
+  - Updated `SECURITY.md` lifecycle matrix to note `10.1.21` as the latest active security patch.
+- **Zimbra Desktop Release Audit (4.50.0)**:
+  - Audited official Zimbra Desktop download portal (`https://www.zimbra.com/zimbra-desktop-download/`).
+  - Discovered and validated active releases for Zimbra Desktop 4.50.0 (released August 28, 2026):
+    - macOS: `Zimbra_Desktop_4.50.0_1c29dbde6_20260828102825.dmg` (SHA256: `251e2f2bb6c2aac7d05529acbf0d83e85f7e984f514b6da07b427432a4be53ce`)
+    - Windows: `Zimbra_Desktop_4.50.0_1c29dbde6_20260828104135.exe` (SHA256: `80c1d73122b48eaeb7bb04c17390cdaa35f2e2376d07be8a8696c1fc26e6a7cc`)
+  - Updated CDX datasets `scripts/data/cdx_files_zimbra.json` and `scripts/data/full_cdx_files_zimbra.json`.
+- **Community Mirror & Official Portal Integrity Audit**:
+  - Replaced stale/archived landing page links with active canonical portals in `README.md` and `index.html` (`https://www.zimbra.com/product/download/zimbra-collaboration-network-edition/`, `https://wiki.zimbra.com/wiki/Building_Zimbra_using_Git`, and `https://www.zimbra.com/zimbra-desktop-download/`).
+  - Audited community FOSS mirrors: Maldua GitHub Releases (`10.1.20.p1`) and TechFiles Ian Walker Builds (`10.1.20_GA_0326`), confirming both remain the latest community builds available.
+
+### Fixed
+
+- **Bash 3.2+ & macOS Portability Fixes (`zimbra-link-installer.sh`)**:
+  - Eliminated Bash 4-only case conversion (`${expected_hash,,}` and `${actual_hash,,}`) by introducing a portable `to_lower()` helper (`tr '[:upper:]' '[:lower:]'`), fixing fatal `bad substitution` crashes on macOS default `/bin/bash` (Bash 3.2).
+  - Added cryptographic hashing fallback functions `compute_sha256()` and `compute_md5()`, dynamically routing to `shasum -a 256` or `md5 -q` when GNU `sha256sum`/`md5sum` are not present on BSD/macOS.
+  - Replaced non-portable `df -BG` disk space inspection with POSIX standard `df -k` calculation, preventing `df: illegal option -- B` errors on BSD/macOS hosts.
+  - Added Darwin `sysctl -n hw.memsize` memory inspection fallback when `/proc/meminfo` is absent.
+  - Fixed relative path dependency on menu option 5 by resolving `SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"`, enabling execution from any directory.
+  - Resolved ShellCheck SC2155 warning by separating declaration and assignment of `SCRIPT_DIR`.
+
+### Changed
+
+- **Telemetry & Validation Suite Expansion (`scripts/deep_link_validator.py`)**:
+  - Added `.dmg` and `.exe` to the binary file extension filter, ensuring automated validation of Zimbra Desktop releases.
+  - Validated 1,219 binary & checksum download links with 100% success rate (0 failures).
+- **Frontend Code Simplification & Dead Code Elimination (`index.html`)**:
+  - Purged ~150 lines of unused `headings`, `heroTitle`, and `heroSubtitle` strings from `i18nDict`, reducing browser memory heap footprint while leveraging fast CSS visibility rules for dual-language rendering.
+  - Updated JSON-LD structured data schema with `softwareVersion: "2.6.4"` and `dateModified: "2026-09-26"`.
+
+### Removed
+
+- **Ko-fi Donation Links**:
+  - Removed all Ko-fi donation badges, links, and cached references from `README.md`, `index.html`, and `validation_report.json`, focusing sponsorship channels on PayPal, GitHub Sponsors, and QRIS.
 
 ---
 
