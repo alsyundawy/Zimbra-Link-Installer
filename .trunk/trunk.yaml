@@ -11,6 +11,12 @@ runtimes:
     - node@18.12.1
     - python@3.10.8
 lint:
+  ignore:
+    - linters: [ALL]
+      paths:
+        - node_modules/**
+        - test-results/**
+        - package-lock.json
   enabled:
     - git-diff-check
     - markdownlint@0.41.0

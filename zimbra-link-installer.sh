@@ -170,7 +170,7 @@ select_language() {
 		printf "    2) Bahasa Indonesia\n\n"
 		read -rp "  Select Language / Pilih Bahasa [1/2] (Default: 1): " lang_in
 		case "${lang_in}" in
-		2|[iI][dD])
+		2 | [iI][dD])
 			APP_LANG="id"
 			;;
 		*)
@@ -205,7 +205,6 @@ detect_os() {
 	log_success "$(tr_msg "Detected Architecture" "Arsitektur Terdeteksi") : ${ARCH}"
 	log_success "$(tr_msg "Detected Distribution" "Distribusi Terdeteksi") : ${OS_NAME} (${OS_ID} ${OS_VER})"
 }
-
 
 # ==============================================================================
 # PRE-FLIGHT SYSTEM AUDIT & PREREQUISITES
@@ -363,7 +362,7 @@ download_and_verify() {
 				actual_hash=$(to_lower "${actual_hash}")
 				log_info "Expected SHA256 : ${expected_hash}"
 				log_info "Actual   SHA256 : ${actual_hash}"
-				if [[ -n "${actual_hash}" && "${expected_hash}" == "${actual_hash}" ]]; then
+				if [[ -n ${actual_hash} && ${expected_hash} == "${actual_hash}" ]]; then
 					log_success "$(tr_msg "SHA256 VERIFICATION VALID: Binary integrity 100% verified!" "VERIFIKASI SHA256 VALID: Integritas biner terjamin!")"
 				else
 					log_error "$(tr_msg "HASH MISMATCH: Binary corrupted during download!" "HASH MISMATCH: Berkas rusak atau korup saat diunduh!")"
@@ -379,7 +378,7 @@ download_and_verify() {
 				actual_hash=$(to_lower "${actual_hash}")
 				log_info "Expected MD5 : ${expected_hash}"
 				log_info "Actual   MD5 : ${actual_hash}"
-				if [[ -n "${actual_hash}" && "${expected_hash}" == "${actual_hash}" ]]; then
+				if [[ -n ${actual_hash} && ${expected_hash} == "${actual_hash}" ]]; then
 					log_success "$(tr_msg "MD5 VERIFICATION VALID: Binary integrity 100% verified!" "VERIFIKASI MD5 VALID: Integritas biner terjamin!")"
 				else
 					log_error "$(tr_msg "MD5 MISMATCH: Binary file corrupted!" "MD5 MISMATCH: Berkas rusak atau korup!")"
@@ -416,7 +415,6 @@ download_and_verify() {
 	cd "${original_pwd}"
 }
 
-
 ## ==============================================================================
 # MENU 1: OFFICIAL NETWORK EDITION (NE)
 # ==============================================================================
@@ -436,6 +434,7 @@ menu_official_ne() {
 		case "${ne_choice}" in
 		1)
 			printf "\n%b[ZCS NE 10.1.0 GA (Daffodil)]%b\n" "${CYAN}" "${NC}"
+			printf "  %b%s%b\n" "${YELLOW}" "$(tr_msg "Notice: Active cumulative patch is 10.1.21. Apply 'zimbra-patch' after base install." "Pemberitahuan: Patch kumulatif aktif adalah 10.1.21. Terapkan 'zimbra-patch' pasca instalasi.")" "${NC}"
 			printf "  1) Ubuntu 24.04 LTS (x86_64)\n"
 			printf "  2) Ubuntu 22.04 LTS (x86_64)\n"
 			printf "  3) Ubuntu 20.04 LTS (x86_64)\n"
@@ -708,7 +707,6 @@ menu_official_ne() {
 	done
 }
 
-
 ## ==============================================================================
 # MENU 2: OFFICIAL OPEN SOURCE EDITION (FOSS / OSE)
 # ==============================================================================
@@ -864,41 +862,119 @@ menu_official_foss() {
 menu_community_foss() {
 	while true; do
 		printf "\n%b=== UNOFFICIAL & COMMUNITY ZCS FOSS ARCHIVE (2018–2026) ===%b\n" "${BOLD}" "${NC}"
-		printf "  1) ZCS FOSS 10.1.20 (TechFiles / Ian Walker Builds - Latest)\n"
-		printf "  2) ZCS FOSS 10.1.x Series (Maldua Builds - 26 Versions)\n"
-		printf "  3) ZCS FOSS 10.0.x Series (Maldua Builds - 17 Versions)\n"
-		printf "  4) ZCS FOSS 9.0.0.x Kepler (Maldua Builds - 8 Versions)\n"
-		printf "  5) ZCS FOSS 8.8.15.x Joule (Maldua Builds - 8.8.15.p47 / p46)\n"
+		printf "  1) ZCS FOSS 10.1.21 / 10.1.x (TechFiles / Ian Walker Builds - 15 Versions)\n"
+		printf "  2) ZCS FOSS 10.1.21 (Kaelthasmanu Build - Ubuntu 24.04 Noble)\n"
+		printf "  3) ZCS FOSS 10.1.x Series (Maldua Builds - 26 Versions)\n"
+		printf "  4) ZCS FOSS 10.0.x Series (Maldua Builds - 17 Versions)\n"
+		printf "  5) ZCS FOSS 9.0.0.x Kepler (Maldua Builds - 8 Versions)\n"
+		printf "  6) ZCS FOSS 8.8.15.x Joule (Maldua Builds - 8.8.15.p47 / p46)\n"
 		printf "  0) %s\n" "$(tr_msg "Back to Main Menu" "Kembali ke Menu Utama")"
-		read -rp "$(tr_msg "Select Community Category [0-5]: " "Pilih Kategori Komunitas [0-5]: ")" comm_choice
+		read -rp "$(tr_msg "Select Community Category [0-6]: " "Pilih Kategori Komunitas [0-6]: ")" comm_choice
 
 		case "${comm_choice}" in
 		1)
-			printf "\n%b[ZCS FOSS 10.1.20 TechFiles Builds]%b\n" "${CYAN}" "${NC}"
-			printf "  1) Ubuntu 24.04 LTS (Noble Numbat)\n"
-			printf "  2) Ubuntu 22.04 LTS (Jammy Jellyfish)\n"
-			printf "  3) RHEL 9 / Rocky 9 / Alma 9 / Oracle 9\n"
-			printf "  4) RHEL 8 / Rocky 8 / Alma 8 / Oracle 8\n"
-			read -rp "$(tr_msg "Select Target OS: " "Pilih OS: ")" os_c
-			if [[ ${os_c} == "1" ]]; then
+			printf "\n%b[ZCS FOSS 10.1.x TechFiles Builds (Ian Walker - 15 Packages)]%b\n" "${CYAN}" "${NC}"
+			printf "  1) Ubuntu 24.04 LTS (Noble Numbat) [10.1.21 Q4 Latest]\n"
+			printf "  2) Ubuntu 22.04 LTS (Jammy Jellyfish) [10.1.21 Q4 Latest]\n"
+			printf "  3) RHEL 9 / Rocky 9 / Alma 9 / Oracle 9 [10.1.21 Q4 Latest]\n"
+			printf "  4) RHEL 8 / Rocky 8 / Alma 8 / Oracle 8 [10.1.21 Q4 Latest]\n"
+			printf "  5) Ubuntu 24.04 LTS [10.1.20 Archive]\n"
+			printf "  6) Ubuntu 22.04 LTS [10.1.20 Archive]\n"
+			printf "  7) RHEL 9 / Rocky 9 [10.1.20 Archive]\n"
+			printf "  8) RHEL 8 / Rocky 8 [10.1.20 Archive]\n"
+			printf "  9) Ubuntu 24.04 LTS [10.1.19 Archive]\n"
+			printf " 10) Ubuntu 22.04 LTS [10.1.19 Archive]\n"
+			printf " 11) RHEL 9 / Rocky 9 [10.1.19 Archive]\n"
+			printf " 12) RHEL 8 / Rocky 8 [10.1.19 Archive]\n"
+			printf " 13) Ubuntu 22.04 LTS [10.1.16 Archive]\n"
+			printf " 14) RHEL 9 / Rocky 9 [10.1.16 Archive]\n"
+			printf " 15) RHEL 8 / Rocky 8 [10.1.16 Archive]\n"
+			read -rp "$(tr_msg "Select Target OS [1-15]: " "Pilih OS [1-15]: ")" os_c
+			case "${os_c}" in
+			1)
+				download_and_verify \
+					"https://cdn.techfiles.online/ubuntu/zcs-10.1.21_GA_0426.UBUNTU24_64.20261002085539.tgz" \
+					"https://cdn.techfiles.online/ubuntu/zcs-10.1.21_GA_0426.UBUNTU24_64.20261002085539.tgz.sha256" "true"
+				;;
+			2)
+				download_and_verify \
+					"https://cdn.techfiles.online/ubuntu/zcs-10.1.21_GA_0426.UBUNTU22_64.20261002083733.tgz" \
+					"https://cdn.techfiles.online/ubuntu/zcs-10.1.21_GA_0426.UBUNTU22_64.20261002083733.tgz.sha256" "true"
+				;;
+			3)
+				download_and_verify \
+					"https://cdn.techfiles.online/rhel/zcs-10.1.21_GA_0426.RHEL9_64.20261002103439.tgz" \
+					"https://cdn.techfiles.online/rhel/zcs-10.1.21_GA_0426.RHEL9_64.20261002103439.tgz.sha256" "true"
+				;;
+			4)
+				download_and_verify \
+					"https://cdn.techfiles.online/rhel/zcs-10.1.21_GA_0426.RHEL8_64.20261002103423.tgz" \
+					"https://cdn.techfiles.online/rhel/zcs-10.1.21_GA_0426.RHEL8_64.20261002103423.tgz.sha256" "true"
+				;;
+			5)
 				download_and_verify \
 					"https://cdn.techfiles.online/ubuntu/zcs-10.1.20_GA_0326.UBUNTU24_64.20260821120929.tgz" \
 					"https://cdn.techfiles.online/ubuntu/zcs-10.1.20_GA_0326.UBUNTU24_64.20260821120929.tgz.sha256" "true"
-			elif [[ ${os_c} == "2" ]]; then
+				;;
+			6)
 				download_and_verify \
 					"https://cdn.techfiles.online/ubuntu/zcs-10.1.20_GA_0326.UBUNTU22_64.20260821115118.tgz" \
 					"https://cdn.techfiles.online/ubuntu/zcs-10.1.20_GA_0326.UBUNTU22_64.20260821115118.tgz.sha256" "true"
-			elif [[ ${os_c} == "3" ]]; then
+				;;
+			7)
 				download_and_verify \
 					"https://cdn.techfiles.online/rhel/zcs-10.1.20_GA_0326.RHEL9_64.20260821135258.tgz" \
 					"https://cdn.techfiles.online/rhel/zcs-10.1.20_GA_0326.RHEL9_64.20260821135258.tgz.sha256" "true"
-			elif [[ ${os_c} == "4" ]]; then
+				;;
+			8)
 				download_and_verify \
 					"https://cdn.techfiles.online/rhel/zcs-10.1.20_GA_0326.RHEL8_64.20260821135029.tgz" \
 					"https://cdn.techfiles.online/rhel/zcs-10.1.20_GA_0326.RHEL8_64.20260821135029.tgz.sha256" "true"
-			fi
+				;;
+			9)
+				download_and_verify \
+					"https://cdn.techfiles.online/ubuntu/zcs-10.1.19_GA_0326.UBUNTU24_64.20260707135412.tgz" \
+					"https://cdn.techfiles.online/ubuntu/zcs-10.1.19_GA_0326.UBUNTU24_64.20260707135412.tgz.sha256" "true"
+				;;
+			10)
+				download_and_verify \
+					"https://cdn.techfiles.online/ubuntu/zcs-10.1.19_GA_0326.UBUNTU22_64.20260707103023.tgz" \
+					"https://cdn.techfiles.online/ubuntu/zcs-10.1.19_GA_0326.UBUNTU22_64.20260707103023.tgz.sha256" "true"
+				;;
+			11)
+				download_and_verify \
+					"https://cdn.techfiles.online/rhel/zcs-10.1.19_GA_0326.RHEL9_64.20260707114805.tgz" \
+					"https://cdn.techfiles.online/rhel/zcs-10.1.19_GA_0326.RHEL9_64.20260707114805.tgz.sha256" "true"
+				;;
+			12)
+				download_and_verify \
+					"https://cdn.techfiles.online/rhel/zcs-10.1.19_GA_0326.RHEL8_64.20260707114737.tgz" \
+					"https://cdn.techfiles.online/rhel/zcs-10.1.19_GA_0326.RHEL8_64.20260707114737.tgz.sha256" "true"
+				;;
+			13)
+				download_and_verify \
+					"https://cdn.techfiles.online/ubuntu/zcs-10.1.16_GA_0226.UBUNTU22_64.20260409134039.tgz" \
+					"https://cdn.techfiles.online/ubuntu/zcs-10.1.16_GA_0226.UBUNTU22_64.20260409134039.tgz.sha256" "true"
+				;;
+			14)
+				download_and_verify \
+					"https://cdn.techfiles.online/rhel/zcs-10.1.16_GA_0226.RHEL9_64.20260409141310.tgz" \
+					"https://cdn.techfiles.online/rhel/zcs-10.1.16_GA_0226.RHEL9_64.20260409141310.tgz.sha256" "true"
+				;;
+			15)
+				download_and_verify \
+					"https://cdn.techfiles.online/rhel/zcs-10.1.16_GA_0226.RHEL8_64.20260409141503.tgz" \
+					"https://cdn.techfiles.online/rhel/zcs-10.1.16_GA_0226.RHEL8_64.20260409141503.tgz.sha256" "true"
+				;;
+			esac
 			;;
 		2)
+			printf "\n%b[ZCS FOSS 10.1.21 Kaelthasmanu Build (Ubuntu 24.04 Noble)]%b\n" "${CYAN}" "${NC}"
+			download_and_verify \
+				"https://github.com/kaelthasmanu/buildZimbraAuto/releases/download/zimbra-foss-build-ubuntu-24.04/10.1.21/zcs-10.1.21_GA_0326.UBUNTU24_64.20260911043550.tgz" \
+				"https://github.com/kaelthasmanu/buildZimbraAuto/releases/download/zimbra-foss-build-ubuntu-24.04/10.1.21/zcs-10.1.21_GA_0326.UBUNTU24_64.20260911043550.tgz.sha256" "false"
+			;;
+		3)
 			printf "\n%b[ZCS FOSS 10.1.20.p1 Maldua Builds]%b\n" "${CYAN}" "${NC}"
 			printf "  1) Ubuntu 24.04 LTS\n"
 			printf "  2) Ubuntu 22.04 LTS\n"
@@ -940,7 +1016,7 @@ menu_community_foss() {
 				;;
 			esac
 			;;
-		3)
+		4)
 			printf "\n%b[ZCS FOSS 10.0.18.p1 Maldua Builds]%b\n" "${CYAN}" "${NC}"
 			printf "  1) Ubuntu 20.04 LTS\n"
 			printf "  2) Ubuntu 18.04 LTS\n"
@@ -970,7 +1046,7 @@ menu_community_foss() {
 				;;
 			esac
 			;;
-		4)
+		5)
 			printf "\n%b[ZCS FOSS 9.0.0.p46 Kepler Builds]%b\n" "${CYAN}" "${NC}"
 			printf "  1) Ubuntu 20.04 LTS\n"
 			printf "  2) Ubuntu 18.04 LTS\n"
@@ -1000,7 +1076,7 @@ menu_community_foss() {
 				;;
 			esac
 			;;
-		5)
+		6)
 			printf "\n%b[ZCS FOSS 8.8.15.p47 Joule Builds]%b\n" "${CYAN}" "${NC}"
 			printf "  1) Ubuntu 20.04 LTS\n"
 			printf "  2) Ubuntu 18.04 LTS\n"
@@ -1106,7 +1182,7 @@ main_menu() {
 parse_args() {
 	while [[ $# -gt 0 ]]; do
 		case "$1" in
-		-l|--lang)
+		-l | --lang)
 			if [[ -n ${2:-} ]]; then
 				APP_LANG="$2"
 				CLI_LANG_SET=1
@@ -1120,7 +1196,7 @@ parse_args() {
 			CLI_LANG_SET=1
 			shift
 			;;
-		-w|--workdir)
+		-w | --workdir)
 			if [[ -n ${2:-} ]]; then
 				WORK_DIR="$2"
 				shift 2
@@ -1132,11 +1208,11 @@ parse_args() {
 			WORK_DIR="${1#*=}"
 			shift
 			;;
-		-h|--help)
+		-h | --help)
 			show_help
 			exit 0
 			;;
-		-v|--version)
+		-v | --version)
 			echo "Zimbra Link Installer v${SCRIPT_VERSION}"
 			exit 0
 			;;

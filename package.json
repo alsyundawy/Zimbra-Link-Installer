@@ -1,0 +1,25 @@
+{
+  "name": "zimbra-link-installer",
+  "version": "1.0.0",
+  "description": "<!-- markdownlint-disable MD013 MD024 MD026 MD033 MD034 MD028 MD031 MD060 -->",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "playwright test --workers=1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alsyundawy/Zimbra-Link-Installer.git"
+  },
+  "keywords": [],
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/alsyundawy/Zimbra-Link-Installer/issues"
+  },
+  "homepage": "https://github.com/alsyundawy/Zimbra-Link-Installer#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.64.1"
+  }
+}

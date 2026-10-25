@@ -31,3 +31,7 @@ ehthumbs.db
 .vscode/
 .idea/
 .kilo/
+
+# Node and Testing
+node_modules/
+test-results/
